@@ -1,0 +1,62 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Giant Coin Mining Information</title>
+    <meta name="description" content="Giant's Mining Pools">
+    <th:block th:replace="blocks/header :: head"></th:block>
+</head>
+<body>
+<div th:replace="blocks/header :: header"></div>
+
+<section class="page_header padding">
+    <div class="display-table">
+        <div class="table-cell">
+            <div class="container">
+                <div class="page_content">
+                    <h1>Giant <span>Mining</span></h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">Mining</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="promo_section bd-bottom padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 sm-padding">
+                <h2>Giant's pools</h2>
+
+                <div class="shadow p-3 mt-5 mb-5 bg-white rounded text-center">
+                    <h3>Official pool</h3>
+                    <p>
+                        <a href="https://pool.giantpay.network"
+                           rel="nofollow"
+                           target="_blank">
+                            <strong>https://pool.giantpay.network</strong>
+                        </a>
+                    </p>
+                    <pre>
+                    -o stratum+tcp://pool.giantpay.network:4033 -u &lt;GIC_ADDRESS&gt; -p c=GIC
+                    </pre>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="blocks/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Giant Coin Specification</title>
+    <meta name="description" content="Giant's Specification">
+    <th:block th:replace="blocks/header :: head"></th:block>
+</head>
+<body>
+<div th:replace="blocks/header :: header"></div>
+
+<section class="page_header padding">
+    <div class="display-table">
+        <div class="table-cell">
+            <div class="container">
+                <div class="page_content">
+                    <h1>Giant's <span>Specification</span></h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">About</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="promo_section bd-bottom padding">
+    <div class="container about_wrapper">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 sm-padding">
+                <table class="table table-striped table-hover table-borderless">
+                    <tbody>
+                    <tr>
+                        <td class="text-center" nowrap>Name</td>
+                        <td class="text-center" nowrap>Giant</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>Ticker</td>
+                        <td class="text-center" nowrap>GIC</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>Type</td>
+                        <td class="text-center" nowrap>POW + POS + MASTERNODE</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>POW Algorithm</td>
+                        <td class="text-center" nowrap>Quark</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>Block Time</td>
+                        <td class="text-center" nowrap>120 seconds</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>Difficulty Retarget</td>
+                        <td class="text-center" nowrap>Every block</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>Maturity</td>
+                        <td class="text-center" nowrap>101</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>Max Coin Supply</td>
+                        <td class="text-center" nowrap>5151000 POW Phase + Infinity POS Phase</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>Premine</td>
+                        <td class="text-center" nowrap>3.88% of POW</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>Masternode Collateral Price</td>
+                        <td class="text-center" nowrap>1000 GIC</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>P2P Port</td>
+                        <td class="text-center" nowrap>40444</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>RPC Port</td>
+                        <td class="text-center" nowrap>41444</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 col-sm-6 sm-padding">
+                <table class="table table-striped table-hover table-borderless">
+                    <tbody>
+                    <tr>
+                        <td class="text-center" nowrap colspan="2">
+                            POW Rewards<br>
+                            <small>(Miner + Masternode)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>2 &mdash; 500</td>
+                        <td class="text-center" nowrap>
+                            0 GIC<br>
+                            <small>(Instamine Protection)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>501 &mdash; 20000</td>
+                        <td class="text-center" nowrap>
+                            10 GIC<br>
+                            <small>(2 GIC + 8 GIC)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>20001 &mdash; 40000</td>
+                        <td class="text-center" nowrap>
+                            15 GIC<br>
+                            <small>(3 GIC + 12 GIC)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>40001 &mdash; 262800</td>
+                        <td class="text-center" nowrap>
+                            20 GIC<br>
+                            <small>(4 GIC + 16 GIC)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap colspan="2">
+                            POS Rewards<br>
+                            <small>(Stacker + Masternode)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>262801 &mdash; 525600</td>
+                        <td class="text-center" nowrap>
+                            10 GIC<br>
+                            <small>(2 GIC + 8 GIC)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>525601 &mdash; 788400</td>
+                        <td class="text-center" nowrap>
+                            8 GIC<br>
+                            <small>(1,6 GIC + 6,4 GIC)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>788401 &mdash; 1051200</td>
+                        <td class="text-center" nowrap>
+                            6 GIC<br>
+                            <small>(1,2 GIC + 4,8 GIC)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>1051201 &mdash; 1314000</td>
+                        <td class="text-center" nowrap>
+                            4 GIC<br>
+                            <small>(0,8 GIC + 3,2 GIC)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" nowrap>1314001 &mdash; INFINITE</td>
+                        <td class="text-center" nowrap>
+                            2 GIC<br>
+                            <small>(0,4 GIC + 1,6 GIC)</small>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="blocks/footer :: footer"></div>
+</body>
+</html>

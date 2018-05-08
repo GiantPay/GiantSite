@@ -1,0 +1,1 @@
+ALTER TABLE presale_requests ADD COLUMN btc_confirmations int DEFAULT 0;

@@ -1,0 +1,152 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Giant Coin Presale</title>
+    <meta name="description" content="GIANT MASTERNODE PRESALE - the exchange operation will be performed automatically after receiving the 1st confirmation of the BTC transaction.">
+    <th:block th:replace="blocks/header :: head"></th:block>
+</head>
+<body>
+<div th:replace="blocks/header :: header"></div>
+
+
+<section class="page_header padding">
+    <div class="display-table">
+        <div class="table-cell">
+            <div class="container">
+                <div class="page_content">
+                    <h1>Giant <span>Presale</span></h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">Presale</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact_section bd-bottom padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 xs-padding">
+                <div class="contact_form">
+                    <h2>Giant Masternode Presale</h2>
+                    <p>The exchange operation will be performed automatically after receiving the 1st confirmation of
+                        the BTC transaction.</p>
+                    <form action="" method="post" id="presaleForm" class="form-horizontal" novalidate>
+                        <div class="form-group row">
+                            <div class="col-sm-9">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Email"
+                                       required="">
+                                <small id="emailHelp" class="form-text text-muted">Your contact Email address, for
+                                    possible solving issues related to the payment.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-9">
+                                <label for="gicAddress">Giant Address:</label>
+                                <input type="text" id="gicAddress" name="giantAddress" class="form-control"
+                                       placeholder="Giant address ..."
+                                       required="">
+                                <small id="giantAddressHelp" class="form-text text-muted">Your GIC address.</small>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-3">
+                            <div class="col-sm-12">
+                                <div id="errorMessage" style="display: none;" class="text-danger mt-1 mb-1"></div>
+                                <button id="submit" class="button_1" type="submit" style="cursor: pointer;">Get 1001 GIC</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6 xs-padding">
+                <div class="text-center">
+                    <h2 class="mb-5">Masternode price:</h2>
+                    <h3>0,6 BTC / 1000 GIC</h3>
+                    <h3>Masternodes online: <span th:text="${masternodes}"></span></h3>
+                    <h3 class="mb-5">ROI: <span th:text="${masternodeRoi}"></span>%&nbsp;/&nbsp;
+                        <span th:text="${masternodeRoiDays}"></span>&nbsp;days</h3>
+                    <hr class="mt-3">
+                    <p class="mb-0">Feel free to ask questions:</p>
+                    <p>Our support: <a href="mailto:support@giantpay.network">support@giantpay.network</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="blocks/footer :: footer"></div>
+
+<script>
+
+    "use strict";
+
+    (function ($) {
+
+        var processed = false;
+
+        $("#presaleForm").submit(function () {
+            var $email = $("#presaleForm #email").val();
+            var $gicAddress = $("#presaleForm #gicAddress").val();
+
+            $("#presaleForm").addClass("was-validated");
+
+            if ($email && $gicAddress) {
+                if (processed) {
+                    return false;
+                }
+                processed = true;
+
+                $("#presaleForm #email")[0].setCustomValidity('');
+                $("#presaleForm #gicAddress")[0].setCustomValidity('');
+                $("#presaleForm").removeClass("was-validated");
+                $("#errorMessage").text('');
+                $("#errorMessage").hide();
+
+                $.ajax({
+                    url: "/api/presale",
+                    type: "POST",
+                    data: JSON.stringify({
+                        email: $email,
+                        gicAddress: $gicAddress
+                    }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        location = "/presale/status?id=" + data.guid;
+                    },
+                    error: function (xhr, status, error) {
+                        processed = false;
+
+                        var err = JSON.parse(xhr.responseText);
+                        console.log(err);
+
+                        if (err.field === 'email') {
+                            $("#presaleForm #email")[0].setCustomValidity('Email Error');
+                        } else if (err.field === 'gicAddress') {
+                            $("#presaleForm #gicAddress")[0].setCustomValidity('Gic Address Error');
+                        }
+                        $("#presaleForm").addClass("was-validated");
+                        $("#errorMessage").text(err.message || 'Something wrong, please try again later');
+                        $("#errorMessage").show();
+                    }
+                });
+            }
+            return false;
+        });
+
+    })(jQuery);
+
+</script>
+</body>
+</html>

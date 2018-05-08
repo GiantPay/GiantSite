@@ -1,0 +1,124 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Giant Coin Masternodes</title>
+    <meta name="description" content="">
+    <th:block th:replace="blocks/header :: head"></th:block>
+</head>
+<body>
+<div th:replace="blocks/header :: header"></div>
+
+<section class="page_header padding">
+    <div class="display-table">
+        <div class="table-cell">
+            <div class="container">
+                <div class="page_content">
+                    <h1>Giant's <span>Masternodes</span></h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">Exchanges</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="promo_section bd-bottom padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 sm-padding">
+                <h2>Help the network and you will be <strong>REWARDED</strong></h2>
+                <p><strong>MASTERNODES</strong> secure the blockchain and provide different services for the network
+                    like instant transactions, privacy and for this, each masternode receive a financial compensation,
+                    so called rewards. To create a masternode an investor need to block <strong>1000 GIC</strong> as
+                    collateral deposit that can be considered as an investment since he will be rewarded in
+                    <strong>GIC</strong> coins for this.</p>
+                <div class="col-md-3">
+                    <h3>Masternode Details</h3>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>Collateral deposit</td>
+                            <td>
+                                1000 GIC<br>
+                                780.0 USD<br>
+                                0.1299 BTC
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Online Masternodes
+                            </td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Exchange</td>
+                            <td>
+                                GIC/BTC: 0.0006<br>
+                                GIC/USD: 1.55
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-3">
+                    <h3>Masternode Profit Calculator</h3>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>Daily</td>
+                            <td>Monthly</td>
+                            <td>Yearly</td>
+                        </tr>
+                        <tr>
+                            <td>$7.9</td>
+                            <td>$237.1</td>
+                            <td>$2,884.1</td>
+                        </tr>
+                        <tr>
+                            <td>11.34 GIC</td>
+                            <td>340.18 GIC</td>
+                            <td>4,138.83 GIC</td>
+                        </tr>
+                        <tr>
+                            <td>0.000810757 BTC</td>
+                            <td>0.024332221 BTC</td>
+                            <td>0.295926258 BTC</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+
+    (function ($) {
+
+        $(window).on('load', function () {
+
+            $.getJSON("/api/masternodes", function (masternodes) {
+
+
+
+            });
+
+        });
+
+    })(jQuery);
+
+</script>
+
+<div th:replace="blocks/footer :: footer"></div>
+</body>
+</html>

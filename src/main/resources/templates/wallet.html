@@ -1,0 +1,77 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Giant Coin Wallets</title>
+    <meta name="description" content="">
+    <th:block th:replace="blocks/header :: head"></th:block>
+</head>
+<body>
+<div th:replace="blocks/header :: header"></div>
+
+<section class="page_header padding">
+    <div class="display-table">
+        <div class="table-cell">
+            <div class="container">
+                <div class="page_content">
+                    <h1>Giant <span>Wallets</span></h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">Wallets</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="promo_section bd-bottom padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 sm-padding">
+                <p>Below you can find a list of all wallets available and the source code.</p>
+
+                <div class="shadow p-3 mt-5 mb-5 bg-white rounded">
+                    <a href="https://github.com/GiantPay/GiantCore" rel="nofollow" target="_blank" style="line-height: 60px;">
+                        <i class="fab fa-github fa-4x mr-3 align-middle"></i> <strong>Giant source code</strong>
+                    </a>
+                </div>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <a href="https://giantpay.network/downloads/giant-1.0.0.1-win32.zip" rel="nofollow" target="_blank" style="line-height: 60px;">
+                        <i class="fab fa-windows fa-4x mr-3 align-middle"></i> <strong>Windows 32-bit wallet</strong>
+                    </a>
+                </div>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <a href="https://giantpay.network/downloads/giant-1.0.0.1-win64.zip" rel="nofollow" target="_blank" style="line-height: 60px;">
+                        <i class="fab fa-windows fa-4x mr-3 align-middle"></i> <strong>Windows 64-bit wallet</strong>
+                    </a>
+                </div>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <a href="https://giantpay.network/downloads/giant-1.0.0.1-linux32.zip" rel="nofollow" target="_blank" style="line-height: 60px;">
+                        <i class="fab fa-linux fa-4x mr-3 align-middle"></i> <strong>Linux 32-bit wallet</strong>
+                    </a>
+                </div>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <a href="https://giantpay.network/downloads/giant-1.0.0.1-linux64.zip" rel="nofollow" target="_blank" style="line-height: 60px;">
+                        <i class="fab fa-linux fa-4x mr-3 align-middle"></i> <strong>Linux 64-bit wallet</strong>
+                    </a>
+                </div>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <a href="https://giantpay.network/downloads/giant-1.0.0.1-osx.zip" rel="nofollow" target="_blank" style="line-height: 60px;">
+                        <i class="fab fa-apple fa-4x mr-3 align-middle"></i> <strong>MAC wallet</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="blocks/footer :: footer"></div>
+</body>
+</html>
