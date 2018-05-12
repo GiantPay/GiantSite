@@ -9,7 +9,8 @@
 <html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <title>Giant Coin Masternodes</title>
-    <meta name="description" content="">
+    <meta name="description"
+          content="Giant masternodes secure the blockchain and provide different services for the network like instant transactions, privacy and for this, each masternode receive a financial compensation, so called rewards.">
     <th:block th:replace="blocks/header :: head"></th:block>
 </head>
 <body>
@@ -35,65 +36,105 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 sm-padding">
-                <h2>Help the network and you will be <strong>REWARDED</strong></h2>
+                <h2>GIANT MASTERNODE</h2>
+                <h3>Help the network and you will be REWARDED</h3>
                 <p><strong>MASTERNODES</strong> secure the blockchain and provide different services for the network
-                    like instant transactions, privacy and for this, each masternode receive a financial compensation,
-                    so called rewards. To create a masternode an investor need to block <strong>1000 GIC</strong> as
-                    collateral deposit that can be considered as an investment since he will be rewarded in
-                    <strong>GIC</strong> coins for this.</p>
-                <div class="col-md-3">
-                    <h3>Masternode Details</h3>
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <td>Collateral deposit</td>
-                            <td>
-                                1000 GIC<br>
-                                780.0 USD<br>
-                                0.1299 BTC
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Online Masternodes
-                            </td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>Exchange</td>
-                            <td>
-                                GIC/BTC: 0.0006<br>
-                                GIC/USD: 1.55
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    like instant
+                    transactions, privacy and for this, each masternode receive a financial compensation, so called
+                    rewards. To create a masternode an investor need to block 1000 GIC as collateral deposit that can be
+                    considered as an investment since he will be rewarded in GIC coins for this.</p>
+            </div>
+            <div class="col-md-12 col-sm-12 shadow p-3 mt-5 mb-5 bg-white rounded">
+                <div class="row">
+                    <div class="col-sm-6 sm-padding text-center">
+                        <h2 class="text-center">Masternode <strong>Details</strong></h2>
+                        <table class="table table-bordered text-center">
+                            <tbody>
+                            <tr>
+                                <td class="align-middle" style="font-size:1.1em; background:#507cdd; color:white;">
+                                    Collateral price
+                                </td>
+                                <td>
+                                    <span id="collateralPriceGic">1000 GIC</span><br/>
+                                    <span id="collateralPriceUsd"></span><br/>
+                                    <span id="collateralPriceBtc"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-middle" style="font-size:1.1em; background:#507cdd; color:white;">
+                                    Online Masternodes
+                                </td>
+                                <td><span id="masternodesEnabled"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="align-middle"
+                                    style="font-size:1.1em; background:#507cdd; color:white;">Exchange:
+                                </td>
+                                <td>
+                                    GIC/USD: <span id="rateGicUsd"></span><br>
+                                    GIC/BTC: <span id="rateGicBtc"></span><br/>
+                                    (presale price, exchange coming soon)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-middle" style="font-size:1.1em; background:#507cdd; color:white;">ROI:
+                                </td>
+                                <td>
+                                    <span id="roiPercent"></span> / <span id="roiDays"></span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-6 sm-padding text-center">
+                        <h2 class="text-center">Masternode <strong>Income Calculator</strong></h2>
+                        <table class="table table-bordered text-center">
+                            <thead>
+                            <tr style="font-size:1.3em; background:#507cdd; color:white;">
+                                <th width="20%" style="background:#507cdd; color:white;">
+                                    Daily
+                                </th>
+                                <th width="20%" style="background:#507cdd; color:white;">
+                                    Monthly
+                                </th>
+                                <th width="20%" style="background:#507cdd; color:white;">
+                                    Yearly
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="active">
+                                <td id="dailyIncomeGic" class="align-middle mn-profit"></td>
+                                <td id="monthlyIncomeGic" class="align-middle mn-profit"></td>
+                                <td id="annualIncomeGic" class="align-middle mn-profit"></td>
+                            </tr>
+                            <tr>
+                                <td id="dailyIncomeUsd"></td>
+                                <td id="monthlyIncomeUsd"></td>
+                                <td id="annualIncomeUsd"></td>
+                            </tr>
+                            <tr>
+                                <td id="dailyIncomeBtc"></td>
+                                <td id="monthlyIncomeBtc"></td>
+                                <td id="annualIncomeBtc"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <h3>Masternode Profit Calculator</h3>
-                    <table class="table">
-                        <tbody>
+            </div>
+            <div class="col-md-12 col-sm-12 shadow p-3 mt-5 mb-5 bg-white rounded text-center">
+                <h2 class="text-center mb-5">Masternode List</h2>
+                <div class="table-responsive">
+                    <table id="example" class="display" style="width:100%">
+                        <thead>
                         <tr>
-                            <td>Daily</td>
-                            <td>Monthly</td>
-                            <td>Yearly</td>
+                            <th>Address</th>
+                            <th>Protocol</th>
+                            <th>Endpoint</th>
+                            <th>Status</th>
                         </tr>
-                        <tr>
-                            <td>$7.9</td>
-                            <td>$237.1</td>
-                            <td>$2,884.1</td>
-                        </tr>
-                        <tr>
-                            <td>11.34 GIC</td>
-                            <td>340.18 GIC</td>
-                            <td>4,138.83 GIC</td>
-                        </tr>
-                        <tr>
-                            <td>0.000810757 BTC</td>
-                            <td>0.024332221 BTC</td>
-                            <td>0.295926258 BTC</td>
-                        </tr>
-                        </tbody>
+                        </thead>
                     </table>
                 </div>
             </div>
@@ -101,24 +142,61 @@
     </div>
 </section>
 
+<div th:replace="blocks/footer :: footer"></div>
+
 <script type="text/javascript">
 
     (function ($) {
 
         $(window).on('load', function () {
 
-            $.getJSON("/api/masternodes", function (masternodes) {
+            $.getJSON("/api/rates", function (rates) {
+                $("#rateGicBtc").text(rates.btc + " BTC");
+                $("#rateGicUsd").text(rates.usd + "$");
+                $("#collateralPriceGic").text("1000 GIC");
+                $("#collateralPriceUsd").text((1000 * rates.btc).toFixed(2) + "$");
+                $("#collateralPriceBtc").text(numeral(100 * rates.usd).format('0,0.00') + " BTC");
 
+                $.getJSON("/api/masternodes/info", function (info) {
+                    $("#dailyIncomeGic").text(numeral(info.daily).format('0,0.00') + " GIC");
+                    $("#monthlyIncomeGic").text(numeral(info.monthly).format('0,0.00') + " GIC");
+                    $("#annualIncomeGic").text(numeral(info.annual).format('0,0.00') + " GIC");
 
+                    $("#dailyIncomeUsd").text(numeral(info.daily * rates.usd).format('0,0.00') + "$");
+                    $("#monthlyIncomeUsd").text(numeral(info.monthly * rates.usd).format('0,0.00') + "$");
+                    $("#annualIncomeUsd").text(numeral(info.annual * rates.usd).format('0,0.00') + "$");
 
+                    $("#dailyIncomeBtc").text(numeral(info.daily * rates.btc).format('0,0.00000000') + " BTC");
+                    $("#monthlyIncomeBtc").text(numeral(info.monthly * rates.btc).format('0,0.00000000') + " BTC");
+                    $("#annualIncomeBtc").text(numeral(info.annual * rates.btc).format('0,0.00000000') + " BTC");
+
+                    $("#roiPercent").text(numeral(info.roi).format('0,0.00') + "%");
+                    $("#roiDays").text(numeral(info.days).format('0') + " days");
+                });
             });
 
+            $.getJSON("/api/masternodes", function (masternodes) {
+                $("#masternodesEnabled").text(masternodes.filter(function (m) {
+                    return m.status === "ENABLED";
+                }).length);
+            });
+
+            $('#example').DataTable({
+                "ajax": {
+                    "url": "/api/masternodes",
+                    "dataSrc": ""
+                },
+                "columns": [
+                    {"data": "address"},
+                    {"data": "protocol"},
+                    {"data": "endpoint"},
+                    {"data": "status"}
+                ]
+            });
         });
 
     })(jQuery);
 
 </script>
-
-<div th:replace="blocks/footer :: footer"></div>
 </body>
 </html>

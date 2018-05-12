@@ -1,7 +1,7 @@
-package network.giantpay.rpc.giant;
+package network.giantpay.api.bitcoin;
 
-import network.giantpay.rpc.AbstractWallet;
-import network.giantpay.rpc.WalletException;
+import network.giantpay.api.AbstractWallet;
+import network.giantpay.api.WalletException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 import java.net.URL;
 
 @Component
-public class GiantWallet extends AbstractWallet {
+public class BitcoinWallet extends AbstractWallet {
 
     @Autowired
     private Environment env;
@@ -18,9 +18,9 @@ public class GiantWallet extends AbstractWallet {
     @PostConstruct
     public void createClient() throws WalletException {
         try {
-            URL url = new URL(env.getProperty("rpc.giant.url"));
-            String username = env.getProperty("rpc.giant.user");
-            String password = env.getProperty("rpc.giant.password");
+            URL url = new URL(env.getProperty("rpc.bitcoin.url"));
+            String username = env.getProperty("rpc.bitcoin.user");
+            String password = env.getProperty("rpc.bitcoin.password");
 
             this.initialize(url, username, password);
         } catch (Exception e) {
@@ -30,6 +30,6 @@ public class GiantWallet extends AbstractWallet {
 
     @Override
     protected String getTicker() {
-        return "GIC";
+        return "BTC";
     }
 }

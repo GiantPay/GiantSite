@@ -9,7 +9,8 @@
 <html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <title>Giant Coin Presale</title>
-    <meta name="description" content="GIANT MASTERNODE PRESALE - the exchange operation will be performed automatically after receiving the 1st confirmation of the BTC transaction.">
+    <meta name="description"
+          content="GIANT MASTERNODE PRESALE - the exchange operation will be performed automatically after receiving the 1st confirmation of the BTC transaction.">
     <th:block th:replace="blocks/header :: head"></th:block>
 </head>
 <body>
@@ -38,6 +39,7 @@
             <div class="col-sm-6 xs-padding">
                 <div class="contact_form">
                     <h2>Giant Masternode Presale</h2>
+
                     <p>The exchange operation will be performed automatically after receiving the 1st confirmation of
                         the BTC transaction.</p>
                     <form action="" method="post" id="presaleForm" class="form-horizontal" novalidate>
@@ -63,22 +65,58 @@
                         <div class="form-group row mt-3">
                             <div class="col-sm-12">
                                 <div id="errorMessage" style="display: none;" class="text-danger mt-1 mb-1"></div>
-                                <button id="submit" class="button_1" type="submit" style="cursor: pointer;">Get 1001 GIC</button>
+                                <button id="submit" class="button_1" type="submit" style="cursor: pointer;">Get 1001
+                                    GIC
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="col-sm-6 xs-padding">
+                <div class="countdown-wrapper">
+                    <div id="countdown"></div>
+                    <p id="note" class="text-center text-muted"></p>
+                    <p class="text-muted text-center mb-3 mt-2">Presale will last until 05/31/2018 or before listing on the exchange.</p>
+                </div>
                 <div class="text-center">
-                    <h2 class="mb-5">Masternode price:</h2>
-                    <h3>0,6 BTC / 1000 GIC</h3>
-                    <h3>Masternodes online: <span th:text="${masternodes}"></span></h3>
-                    <h3 class="mb-5">ROI: <span th:text="${masternodeRoi}"></span>%&nbsp;/&nbsp;
-                        <span th:text="${masternodeRoiDays}"></span>&nbsp;days</h3>
-                    <hr class="mt-3">
-                    <p class="mb-0">Feel free to ask questions:</p>
-                    <p>Our support: <a href="mailto:support@giantpay.network">support@giantpay.network</a></p>
+                    <table class="table table-bordered text-center">
+                        <tbody>
+                        <tr>
+                            <td class="align-middle" style="font-size:1.1em; background:#507cdd; color:white;">
+                                Collateral price
+                            </td>
+                            <td>
+                                <span>1000 GIC</span><br/>
+                                <span>0,6 BTC</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle" style="font-size:1.1em; background:#507cdd; color:white;">
+                                Online Masternodes
+                            </td>
+                            <td><span th:text="${enabledMasternodes}"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle" style="font-size:1.1em; background:#507cdd; color:white;">ROI:
+                            </td>
+                            <td>
+                                <span th:text="${masternodeRoi}"></span>% / <span th:text="${masternodeRoiDays}"></span>
+                                days
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle" style="font-size:1.1em; background:#507cdd; color:white;">
+                                Daily income
+                            </td>
+                            <td><span th:text="${dailyIncome}"></span> GIC</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="mb-0 mt-5 text-muted">Feel free to ask questions:</p>
+                    <p class="text-muted">Our support: <a href="mailto:support@giantpay.network">support@giantpay.network</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -93,8 +131,32 @@
 
     (function ($) {
 
-        var processed = false;
+        var note = $('#note'),
+            ts = new Date(2018, 4, 32),
+            newYear = true;
 
+        if ((new Date()) > ts) {
+            // The new year is here! Count towards something else.
+            // Notice the *1000 at the end - time must be in milliseconds
+            ts = (new Date()).getTime() + 10 * 24 * 60 * 60 * 1000;
+            newYear = false;
+        }
+
+        $('#countdown').countdown({
+            timestamp: ts,
+            callback: function (days, hours, minutes, seconds) {
+
+                var message = "";
+                message += days + " day" + (days == 1 ? '' : 's') + ", ";
+                message += hours + " hour" + (hours == 1 ? '' : 's') + ", ";
+                message += minutes + " minute" + (minutes == 1 ? '' : 's') + " and ";
+                message += seconds + " second" + (seconds == 1 ? '' : 's') + " <br />";
+                message += "left until the end of the presale";
+                note.html(message);
+            }
+        });
+
+        var processed = false;
         $("#presaleForm").submit(function () {
             var $email = $("#presaleForm #email").val();
             var $gicAddress = $("#presaleForm #gicAddress").val();

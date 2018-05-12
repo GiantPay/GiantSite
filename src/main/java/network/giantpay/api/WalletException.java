@@ -1,4 +1,4 @@
-package network.giantpay.rpc;
+package network.giantpay.api;
 
 public class WalletException extends Exception {
 

@@ -28,6 +28,8 @@ public class PresaleController {
         model.put("masternodes", info.getMasternodes());
         model.put("masternodeRoi", info.getMasternodeRoi());
         model.put("masternodeRoiDays", info.getMasternodeRoiDays());
+        model.put("dailyIncome", monitoringService.getDailyIncome());
+        model.put("enabledMasternodes", monitoringService.getEnabledMasternodes());
         return "presale";
     }
 

@@ -41,9 +41,9 @@
         nextText: "<i class='fas fa-arrow-right'></i>"
     });
 
-        /*=========================================================================
-                Mobile Menu
-        =========================================================================*/
+    /*=========================================================================
+            Mobile Menu
+    =========================================================================*/
     $(function () {
         $('#mainmenu').slicknav({
             prependTo: '.bottom_content_wrap',
@@ -52,24 +52,57 @@
         });
     });
 
+    function formatNetworkHashrate(networkHashrate) {
+        if (networkHashrate >= 1000000000000) {
+            return numeral(networkHashrate / 1000000000000.0).format('0,0.00') + " TH/s";
+        } else if (networkHashrate >= 1000000000) {
+            return numeral(networkHashrate / 1000000000.0).format('0,0.00') + " GH/s";
+        } else if (networkHashrate >= 1000000) {
+            return numeral(networkHashrate / 1000000.0).format('0,0.00') + " MH/s";
+        } else if (networkHashrate >= 1000) {
+            return numeral(networkHashrate / 1000.0).format('0,0.00') + " kH/s";
+        } else {
+            return numeral(networkHashrate).format('0,0.00') + " H/s";
+        }
+    }
+
     /*=========================================================================
         Webticker Active
     =========================================================================*/
-    $.getJSON("/api/info", function (info) {
-        var webTicker = $('#webTicker');
-        webTicker.append("<li>GIC/BTC (presale): <span>" + info.rate + "</span></li>");
-        webTicker.append("<li>Current Block: <span>" + info.height + "</span></li>");
-        webTicker.append("<li>Block Reward: <span>" + info.reward + " GIC</span></li>");
-        webTicker.append("<li>Network: <span>" + info.networkHashrate + " H/s</span></li>");
-        webTicker.append("<li>Difficulty: <span>" + info.networkDifficulty + "</span></li>");
-        webTicker.append("<li>Coin Supply: <span>" + info.coinSupply.toFixed(2) + " GIC</span></li>");
-        webTicker.append("<li>Masternodes online: <span>" + info.masternodes + "</span></li>");
-        webTicker.append("<li>ROI: <span>" + (info.masternodeRoi).toFixed(1) + "% / " + info.masternodeRoiDays + " days</span></li>");
+    function updateInfo(first) {
+        $.getJSON("/api/info", function (info) {
+            var webTicker = $('#webTicker');
 
-        webTicker.webTicker({
-            height: "40px",
+            if (first) {
+                var $html = "";
+                $html += "<li>GIC/BTC (presale): <span id='infoRate'>" + info.rate + "</span></li>";
+                $html += "<li>Current Block: <span id='infoHeight'>" + numeral(info.height).format('0') + "</span></li>";
+                $html += "<li>Block Reward: <span id='infoReward'>" + info.reward + " GIC</span></li>";
+                $html += "<li>Network: <span id='infoHashrate'>" + formatNetworkHashrate(info.networkHashrate) + "</span></li>";
+                $html += "<li>Difficulty: <span id='infoDifficulty'>" + numeral(info.networkDifficulty).format('0,0.00') + "</span></li>";
+                $html += "<li>Coin Supply: <span id='infoSupply'>" + numeral(info.coinSupply).format('0,0.00') + " GIC</span></li>";
+                $html += "<li>Masternodes online: <span id='infoMasternodes'>" + info.masternodes + "</span></li>";
+                $html += "<li>ROI: <span id='infoRoi'>" + (info.masternodeRoi).toFixed(1) + "% / " + info.masternodeRoiDays + " days</span></li>";
+                webTicker.html($html);
+
+                webTicker.webTicker({
+                    height: "40px",
+                });
+            } else {
+                webTicker.find('infoRate').text(info.rate);
+                webTicker.find('infoHeight').text(numeral(info.height).format('0'));
+                webTicker.find('infoReward').text(info.reward + " GIC");
+                webTicker.find('infoHashrate').text(formatNetworkHashrate(info.networkHashrate));
+                webTicker.find('infoDifficulty').text(numeral(info.networkDifficulty).format('0,0.00'));
+                webTicker.find('infoSupply').text(numeral(info.coinSupply).format('0,0.00') + " GIC");
+                webTicker.find('infoMasternodes').text(info.masternodes);
+                webTicker.find('infoRoi').text((info.masternodeRoi).toFixed(1) + "% / " + info.masternodeRoiDays + " days");
+            }
         });
-    });
+    }
+
+    updateInfo(true);
+    setInterval(updateInfo, 60000);
 
     /*=========================================================================
         Counter Up Active

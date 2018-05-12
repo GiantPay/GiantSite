@@ -37,4 +37,14 @@ public class ApiController {
     public List<MasternodeDto> getMasternodes() throws ApiException {
         return monitoringService.getMasternodes();
     }
+
+    @GetMapping("/masternodes/info")
+    public MasternodeInfoDto getMasternodeInfo() throws ApiException {
+        return monitoringService.getMasternodeInfo();
+    }
+
+    @GetMapping("/rates")
+    public RateDto getRates() throws ApiException {
+        return monitoringService.getRates();
+    }
 }

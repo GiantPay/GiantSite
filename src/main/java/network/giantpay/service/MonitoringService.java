@@ -4,11 +4,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
-import network.giantpay.dto.CoinInfoDto;
-import network.giantpay.dto.InfoDto;
-import network.giantpay.dto.MasternodeDto;
-import network.giantpay.dto.OutsetInfoDto;
-import network.giantpay.rpc.giant.GiantWallet;
+import network.giantpay.api.WalletException;
+import network.giantpay.api.giant.GiantExplorer;
+import network.giantpay.api.giant.GiantWallet;
+import network.giantpay.dto.*;
 import network.giantpay.utils.GiantUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +31,6 @@ public class MonitoringService {
     private final static Logger logger = LoggerFactory.getLogger(MonitoringService.class);
     private final static ObjectMapper jsonMapper = new ObjectMapper();
 
-    private AtomicReference<BigDecimal> rate = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicLong height = new AtomicLong(0);
     private AtomicReference<BigDecimal> reward = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> networkHashrate = new AtomicReference<>(BigDecimal.ZERO);
@@ -43,23 +41,33 @@ public class MonitoringService {
     private AtomicReference<BigDecimal> masternodeRoiDays = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<List<MasternodeDto>> masternodesList = new AtomicReference<>(ImmutableList.of());
     private Map<String, CoinInfoDto> coinInfos = Maps.newConcurrentMap();
+    private AtomicReference<BigDecimal> gicBtc = new AtomicReference<>(BigDecimal.ZERO);
+    private AtomicReference<BigDecimal> gicUsd = new AtomicReference<>(BigDecimal.ZERO);
+    private AtomicReference<BigDecimal> btcUsd = new AtomicReference<>(BigDecimal.ZERO);
+    private AtomicReference<BigDecimal> masternodeDaily = new AtomicReference<>(BigDecimal.ZERO);
+    private AtomicReference<BigDecimal> masternodeMonthly = new AtomicReference<>(BigDecimal.ZERO);
+    private AtomicReference<BigDecimal> masternodeAnnual = new AtomicReference<>(BigDecimal.ZERO);
 
     @Autowired
     private GiantWallet giantWallet;
+    @Autowired
+    private GiantExplorer giantExplorer;
 
     @PostConstruct
     public void initialize() {
-        coinInfos.put("BTC", new CoinInfoDto("Bitcoin", "BTC", BigDecimal.valueOf(7290), BigDecimal.valueOf(15.55), BigDecimal.valueOf(258087), BigDecimal.valueOf(923629)));
-        coinInfos.put("ETH", new CoinInfoDto("Ethereum", "ETH", BigDecimal.valueOf(7290), BigDecimal.valueOf(15.55), BigDecimal.valueOf(258087), BigDecimal.valueOf(923629)));
-        coinInfos.put("XRP", new CoinInfoDto("Ripple", "XRP", BigDecimal.valueOf(7290), BigDecimal.valueOf(15.55), BigDecimal.valueOf(258087), BigDecimal.valueOf(923629)));
-        coinInfos.put("LTC", new CoinInfoDto("Litecoin", "LTC", BigDecimal.valueOf(7290), BigDecimal.valueOf(15.55), BigDecimal.valueOf(258087), BigDecimal.valueOf(923629)));
-        coinInfos.put("DASH", new CoinInfoDto("Dash", "DASH", BigDecimal.valueOf(7290), BigDecimal.valueOf(15.55), BigDecimal.valueOf(258087), BigDecimal.valueOf(923629)));
-        coinInfos.put("BCH", new CoinInfoDto("Bitcoin Cash", "BCH", BigDecimal.valueOf(7290), BigDecimal.valueOf(15.55), BigDecimal.valueOf(258087), BigDecimal.valueOf(923629)));
+        coinInfos.put("BTC", new CoinInfoDto("Bitcoin", "BTC", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO));
+        coinInfos.put("ETH", new CoinInfoDto("Ethereum", "ETH", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO));
+        coinInfos.put("XRP", new CoinInfoDto("Ripple", "XRP", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO));
+        coinInfos.put("LTC", new CoinInfoDto("Litecoin", "LTC", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO));
+        coinInfos.put("DASH", new CoinInfoDto("Dash", "DASH", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO));
+        coinInfos.put("BCH", new CoinInfoDto("Bitcoin Cash", "BCH", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO));
+
+        gicBtc.set(BigDecimal.valueOf(0.0006));
     }
 
     public InfoDto getInfo() {
         InfoDto info = new InfoDto();
-        info.setRate(rate.get());
+        info.setRate(gicBtc.get());
         info.setHeight(height.get());
         info.setReward(reward.get());
         info.setNetworkHashrate(networkHashrate.get());
@@ -71,15 +79,14 @@ public class MonitoringService {
         return info;
     }
 
-    @Scheduled(initialDelay = 10000, fixedRate = 60000)
+    //    @Scheduled(initialDelay = 10000, fixedRate = 60000)
     public void updateRates() {
         try {
             logger.info("MonitoringService :: updateRates started");
 
-            // TODO currently presale price
-            rate.set(BigDecimal.valueOf(0.0006));
+            // TODO receive rates from exchange API
 
-            logger.info("MonitoringService :: updateRates rate = {}", rate.get());
+            logger.info("MonitoringService :: updateRates gic/btc= {}, gic/usd= {}", gicBtc.get(), gicUsd.get());
             logger.info("MonitoringService :: updateRates finished");
         } catch (Exception e) {
             if (logger.isErrorEnabled()) {
@@ -94,10 +101,11 @@ public class MonitoringService {
             logger.info("MonitoringService :: updateNetworkInfo started");
 
             OutsetInfoDto info = giantWallet.gettxoutsetinfo();
-            height.set(info.getHeight());
-            reward.set(getBlockReward(info.getHeight()));
-            networkHashrate.set(giantWallet.getnetworkhashps(info.getHeight()));
-            networkDifficulty.set(giantWallet.getdifficulty());
+
+            height.set(getHeight(info));
+            reward.set(getBlockReward(height.get()));
+            networkHashrate.set(getNetworkHashrate());
+            networkDifficulty.set(getNetworkDifficulty());
             coinSupply.set(info.getCoinSupply());
 
             logger.info("MonitoringService :: updateNetworkInfo height= {}, reward= {}, hashrate= {}, difficulty= {}, coinSupply= {}",
@@ -114,12 +122,27 @@ public class MonitoringService {
         }
     }
 
+    private BigDecimal getNetworkDifficulty() throws WalletException {
+        BigDecimal networkDifficulty = giantExplorer.getdifficulty();
+        return networkDifficulty != null && networkDifficulty.doubleValue() > 0 ? networkDifficulty : giantWallet.getdifficulty();
+    }
+
+    private BigDecimal getNetworkHashrate() throws WalletException {
+        BigDecimal networkHashrate = giantExplorer.getnetworkhashps();
+        return networkHashrate != null && networkHashrate.longValue() > 0 ? networkHashrate : giantWallet.getnetworkhashps(height.get());
+    }
+
+    private long getHeight(OutsetInfoDto info) {
+        BigDecimal height = giantExplorer.getblockcount();
+        return height != null && height.longValue() > 0 ? height.longValue() : info.getHeight();
+    }
+
     @Scheduled(initialDelay = 10000, fixedRate = 60000)
     public void updateCoinInfos() {
         try {
             logger.info("MonitoringService :: updateCoinInfos started");
 
-            JsonNode data = jsonMapper.readTree(new URL("https://api.coinmarketcap.com/v2/ticker/?convert=BTC&limit=10"));
+            JsonNode data = jsonMapper.readTree(new URL("https://api.coinmarketcap.com/v2/ticker/?convert=BTC&limit=30"));
             // BTC
             if (data.has("data") && data.get("data").has("1")) {
                 JsonNode btc = data.get("data").get("1");
@@ -135,7 +158,12 @@ public class MonitoringService {
                     btcInfo.setSupply(BigDecimal.valueOf(btc.get("circulating_supply").asDouble()));
                     coinInfos.put("BTC", btcInfo);
 
+                    btcUsd.set(btcInfo.getPrice());
+                    gicUsd.set(gicBtc.get().multiply(btcInfo.getPrice()));
+
                     logger.info("MonitoringService :: updateCoinInfos {}", btcInfo);
+                    logger.info("MonitoringService :: btcUsd= {}", btcUsd.get());
+                    logger.info("MonitoringService :: gicUsd= {}", gicUsd.get());
                 }
             }
             // ETH
@@ -249,22 +277,31 @@ public class MonitoringService {
 
             // annual ROI
             BigDecimal masternodeReward = GiantUtils.getMasternodeReward(height.get());
-            // 720 blocks per day, 365 days annualy
-            masternodeRoi.set(BigDecimal.valueOf(100 * 720 * 365)
-                    .multiply(masternodeReward)
-                    // 1000 colateral price
-                    .divide(BigDecimal.valueOf(1000 * this.masternodes.get()), 2, BigDecimal.ROUND_HALF_UP));
 
-            // ROI days
-            masternodeRoiDays.set(BigDecimal.valueOf(1000L) // 1000 colateral price
-                    .divide(BigDecimal.valueOf(720).multiply(masternodeReward) // 720 blocks per day
-                                    .divide(BigDecimal.valueOf(this.masternodes.get()), 2, BigDecimal.ROUND_HALF_UP)
-                            , 0, BigDecimal.ROUND_CEILING));
+            if (this.masternodes.get() > 0) {
+                // 720 blocks per day, 365 days annualy
+                masternodeRoi.set(BigDecimal.valueOf(100 * 720 * 365)
+                        .multiply(masternodeReward)
+                        // 1000 colateral price
+                        .divide(BigDecimal.valueOf(1000 * this.masternodes.get()), 2, BigDecimal.ROUND_HALF_UP));
 
-            logger.info("MonitoringService :: updateMasternodes masternodes= {}, roi= {}, days= {}",
+                // ROI days
+                masternodeRoiDays.set(BigDecimal.valueOf(1000L) // 1000 colateral price
+                        .divide(BigDecimal.valueOf(720).multiply(masternodeReward) // 720 blocks per day
+                                .divide(BigDecimal.valueOf(this.masternodes.get()), 2, BigDecimal.ROUND_HALF_UP), 0, BigDecimal.ROUND_CEILING));
+
+                masternodeDaily.set(BigDecimal.valueOf(720).multiply(masternodeReward).divide(BigDecimal.valueOf(this.masternodes.get()), 2, BigDecimal.ROUND_HALF_UP));
+                masternodeMonthly.set(masternodeDaily.get().multiply(BigDecimal.valueOf(30)));
+                masternodeAnnual.set(masternodeDaily.get().multiply(BigDecimal.valueOf(365)));
+            }
+
+            logger.info("MonitoringService :: updateMasternodes masternodes= {}, roi= {}, days= {}, daily= {}, monthly= {}, annual= {}",
                     this.masternodes.get(),
                     masternodeRoi.get(),
-                    masternodeRoiDays.get());
+                    masternodeRoiDays.get(),
+                    masternodeDaily.get(),
+                    masternodeMonthly.get(),
+                    masternodeAnnual.get());
             logger.info("MonitoringService :: updateMasternodes finished");
         } catch (Exception e) {
             if (logger.isErrorEnabled()) {
@@ -279,5 +316,33 @@ public class MonitoringService {
 
     public CoinInfoDto getCoinInfo(String ticker) {
         return coinInfos.get(ticker);
+    }
+
+    public RateDto getRates() {
+        RateDto rateDto = new RateDto();
+        rateDto.setBtc(gicBtc.get());
+        rateDto.setUsd(gicUsd.get());
+        return rateDto;
+    }
+
+    public MasternodeInfoDto getMasternodeInfo() {
+        MasternodeInfoDto masternodeInfoDto = new MasternodeInfoDto();
+        masternodeInfoDto.setDaily(masternodeDaily.get());
+        masternodeInfoDto.setMonthly(masternodeMonthly.get());
+        masternodeInfoDto.setAnnual(masternodeAnnual.get());
+        masternodeInfoDto.setRoi(masternodeRoi.get());
+        masternodeInfoDto.setDays(masternodeRoiDays.get());
+        return masternodeInfoDto;
+    }
+
+    public BigDecimal getDailyIncome() {
+        return masternodeDaily.get();
+    }
+
+    public long getEnabledMasternodes() {
+        return masternodesList.get()
+                .stream()
+                .filter(m -> "ENABLED".equals(m.getStatus()))
+                .count();
     }
 }

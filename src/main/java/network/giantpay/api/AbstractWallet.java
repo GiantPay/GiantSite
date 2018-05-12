@@ -1,4 +1,4 @@
-package network.giantpay.rpc;
+package network.giantpay.api;
 
 import com.google.common.base.Splitter;
 import com.google.common.primitives.Longs;
