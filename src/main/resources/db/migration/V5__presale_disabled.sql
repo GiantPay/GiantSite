@@ -1,0 +1,1 @@
+UPDATE presale_settings SET enabled = false;

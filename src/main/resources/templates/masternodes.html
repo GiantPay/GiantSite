@@ -73,7 +73,6 @@
                                 <td>
                                     GIC/USD: <span id="rateGicUsd"></span><br>
                                     GIC/BTC: <span id="rateGicBtc"></span><br/>
-                                    (presale price, exchange coming soon)
                                 </td>
                             </tr>
                             <tr>
@@ -154,8 +153,8 @@
                 $("#rateGicBtc").text(rates.btc + " BTC");
                 $("#rateGicUsd").text(rates.usd + "$");
                 $("#collateralPriceGic").text("1000 GIC");
-                $("#collateralPriceUsd").text((1000 * rates.btc).toFixed(2) + "$");
-                $("#collateralPriceBtc").text(numeral(100 * rates.usd).format('0,0.00') + " BTC");
+                $("#collateralPriceUsd").text((1000 * rates.btc).toFixed(2) + " BTC");
+                $("#collateralPriceBtc").text(numeral(1000 * rates.usd).format('0,0.00') + "$");
 
                 $.getJSON("/api/masternodes/info", function (info) {
                     $("#dailyIncomeGic").text(numeral(info.daily).format('0,0.00') + " GIC");

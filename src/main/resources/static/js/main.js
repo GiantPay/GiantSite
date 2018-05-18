@@ -75,7 +75,7 @@
 
             if (first) {
                 var $html = "";
-                $html += "<li>GIC/BTC (presale): <span id='infoRate'>" + info.rate + "</span></li>";
+                $html += "<li>GIC/BTC: <span id='infoRate'>" + info.rate + "</span></li>";
                 $html += "<li>Current Block: <span id='infoHeight'>" + numeral(info.height).format('0') + "</span></li>";
                 $html += "<li>Block Reward: <span id='infoReward'>" + info.reward + " GIC</span></li>";
                 $html += "<li>Network: <span id='infoHashrate'>" + formatNetworkHashrate(info.networkHashrate) + "</span></li>";

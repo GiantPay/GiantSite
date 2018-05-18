@@ -30,7 +30,7 @@ import javax.mail.Session;
 import java.math.BigDecimal;
 import java.util.*;
 
-@Service
+//@Service
 public class PresaleService {
 
     private final static Logger logger = LoggerFactory.getLogger(PresaleService.class);
@@ -121,8 +121,8 @@ public class PresaleService {
         }
     }
 
-    @Transactional
-    @Scheduled(initialDelay = 60000, fixedRate = 10000)
+//    @Transactional
+//    @Scheduled(initialDelay = 60000, fixedRate = 10000)
     public void checkPayments() {
         presaleRequestRepository.findUnconfirmed().forEach(this::checkPayment);
     }

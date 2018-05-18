@@ -7,6 +7,7 @@ import com.google.common.collect.Maps;
 import network.giantpay.api.WalletException;
 import network.giantpay.api.giant.GiantExplorer;
 import network.giantpay.api.giant.GiantWallet;
+import network.giantpay.api.graviex.GraviexApi;
 import network.giantpay.dto.*;
 import network.giantpay.utils.GiantUtils;
 import org.slf4j.Logger;
@@ -52,6 +53,8 @@ public class MonitoringService {
     private GiantWallet giantWallet;
     @Autowired
     private GiantExplorer giantExplorer;
+    @Autowired
+    private GraviexApi graviexApi;
 
     @PostConstruct
     public void initialize() {
@@ -63,6 +66,7 @@ public class MonitoringService {
         coinInfos.put("BCH", new CoinInfoDto("Bitcoin Cash", "BCH", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO));
 
         gicBtc.set(BigDecimal.valueOf(0.0006));
+        btcUsd.set(BigDecimal.valueOf(9000D));
     }
 
     public InfoDto getInfo() {
@@ -79,12 +83,17 @@ public class MonitoringService {
         return info;
     }
 
-    //    @Scheduled(initialDelay = 10000, fixedRate = 60000)
+    @Scheduled(initialDelay = 10000, fixedRate = 60000)
     public void updateRates() {
         try {
             logger.info("MonitoringService :: updateRates started");
 
-            // TODO receive rates from exchange API
+            // TODO calculate aggregate price from one or more exchanges API
+            MarketDto graviexMarket = graviexApi.getMarketInfo();
+            if (graviexMarket != null && graviexMarket.getLast() != null) {
+                gicBtc.set(graviexMarket.getLast());
+                gicUsd.set(gicBtc.get().multiply(btcUsd.get()));
+            }
 
             logger.info("MonitoringService :: updateRates gic/btc= {}, gic/usd= {}", gicBtc.get(), gicUsd.get());
             logger.info("MonitoringService :: updateRates finished");

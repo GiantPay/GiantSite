@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 
-@Controller
+//@Controller
 public class PresaleController {
 
     @Autowired
@@ -22,7 +22,7 @@ public class PresaleController {
     @Autowired
     private PresaleRequestRepository presaleRequestRepository;
 
-    @GetMapping("/presale")
+//    @GetMapping("/presale")
     public String presale(Map<String, Object> model) {
         InfoDto info = monitoringService.getInfo();
         model.put("masternodes", info.getMasternodes());
@@ -33,7 +33,7 @@ public class PresaleController {
         return "presale";
     }
 
-    @GetMapping("/presale/status")
+//    @GetMapping("/presale/status")
     public String status(@RequestParam("id") String id, Map<String, Object> model) {
         PresaleRequest presaleRequest = presaleRequestRepository.findByGuid(id);
         model.put("presale", presaleRequest);

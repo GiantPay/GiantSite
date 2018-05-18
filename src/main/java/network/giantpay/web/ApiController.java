@@ -13,20 +13,20 @@ import java.util.List;
 @RequestMapping(value = "/api", produces = "application/json; charset=UTF-8")
 public class ApiController {
 
-    @Autowired
-    private PresaleService presaleService;
+//    @Autowired
+//    private PresaleService presaleService;
     @Autowired
     private MonitoringService monitoringService;
 
-    @PostMapping("/presale")
-    public PresaleResponseDto presaleRequest(@RequestBody PresaleRequestDto presaleRequest) throws ApiException {
-        return presaleService.createRequest(presaleRequest);
-    }
+//    @PostMapping("/presale")
+//    public PresaleResponseDto presaleRequest(@RequestBody PresaleRequestDto presaleRequest) throws ApiException {
+//        return presaleService.createRequest(presaleRequest);
+//    }
 
-    @GetMapping("/presale")
-    public PresaleStatusResponseDto presaleStatus(@RequestParam("id") String guid) throws ApiException {
-        return presaleService.getStatus(guid);
-    }
+//    @GetMapping("/presale")
+//    public PresaleStatusResponseDto presaleStatus(@RequestParam("id") String guid) throws ApiException {
+//        return presaleService.getStatus(guid);
+//    }
 
     @GetMapping("/info")
     public InfoDto getInfo() throws ApiException {
