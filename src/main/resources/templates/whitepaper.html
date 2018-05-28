@@ -36,7 +36,12 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 sm-padding">
                 <div class="shadow p-3 mt-5 mb-5 bg-white rounded text-center">
-                    <p><a href="/whitepaper.pdf" target="_blank"><strong>Giant White Paper</strong></a></p>
+                    <p style="margin-bottom: 15px;"><a href="/whitepaper.pdf" target="_blank">
+                        <strong>https://giantpay.network/whitepaper.pdf</strong></a></p>
+                    <div id="whitepaper"></div>
+                </div>
+
+                <div class="shadow p-3 mt-5 mb-5 bg-white rounded text-center">
                     <p><strong class="text-muted">Giant Contract White Paper (Coming Soon)</strong></p>
                     <p><strong class="text-muted">Giant.Exchange Paper (Coming Soon)</strong></p>
                 </div>
@@ -46,5 +51,26 @@
 </section>
 
 <div th:replace="blocks/footer :: footer"></div>
+
+<script type="text/javascript">
+
+    (function ($) {
+
+        $(window).on('load', function () {
+            PDFObject.embed("/whitepaper.pdf", "#whitepaper");
+        });
+
+    })(jQuery);
+
+</script>
+<style>
+    .pdfobject-container {
+        height: 670px;
+    }
+
+    .pdfobject {
+        border: 1px solid #666;
+    }
+</style>
 </body>
 </html>
