@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 public class InfoDto extends AbstractDto {
 
     private BigDecimal rate;
+    private BigDecimal volume;
     private long height;
     private BigDecimal reward;
     private BigDecimal networkHashrate;
@@ -20,6 +21,14 @@ public class InfoDto extends AbstractDto {
 
     public void setRate(BigDecimal rate) {
         this.rate = rate;
+    }
+
+    public BigDecimal getVolume() {
+        return volume;
+    }
+
+    public void setVolume(BigDecimal volume) {
+        this.volume = volume;
     }
 
     public long getHeight() {

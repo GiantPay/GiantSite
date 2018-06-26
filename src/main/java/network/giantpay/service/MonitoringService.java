@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import network.giantpay.api.WalletException;
+import network.giantpay.api.cryptobridge.CryptobridgeApi;
 import network.giantpay.api.giant.GiantExplorer;
 import network.giantpay.api.giant.GiantWallet;
 import network.giantpay.api.graviex.GraviexApi;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
@@ -45,9 +47,11 @@ public class MonitoringService {
     private AtomicReference<BigDecimal> gicBtc = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> gicUsd = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> btcUsd = new AtomicReference<>(BigDecimal.ZERO);
+    private AtomicReference<BigDecimal> btcVolume = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> masternodeDaily = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> masternodeMonthly = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> masternodeAnnual = new AtomicReference<>(BigDecimal.ZERO);
+    private Map<String, MarketDto> markets = Maps.newConcurrentMap();
 
     @Autowired
     private GiantWallet giantWallet;
@@ -55,6 +59,8 @@ public class MonitoringService {
     private GiantExplorer giantExplorer;
     @Autowired
     private GraviexApi graviexApi;
+    @Autowired
+    private CryptobridgeApi cryptobridgeApi;
 
     @PostConstruct
     public void initialize() {
@@ -72,6 +78,7 @@ public class MonitoringService {
     public InfoDto getInfo() {
         InfoDto info = new InfoDto();
         info.setRate(gicBtc.get());
+        info.setVolume(btcVolume.get());
         info.setHeight(height.get());
         info.setReward(reward.get());
         info.setNetworkHashrate(networkHashrate.get());
@@ -89,11 +96,32 @@ public class MonitoringService {
             logger.info("MonitoringService :: updateRates started");
 
             // TODO calculate aggregate price from one or more exchanges API
+            BigDecimal gicRate = BigDecimal.ZERO;
+            BigDecimal gicVolume = BigDecimal.ZERO;
+
             MarketDto graviexMarket = graviexApi.getMarketInfo();
             if (graviexMarket != null && graviexMarket.getLast() != null) {
-                gicBtc.set(graviexMarket.getLast());
-                gicUsd.set(gicBtc.get().multiply(btcUsd.get()));
+                gicRate = gicRate.add(graviexMarket.getLast().multiply(graviexMarket.getVolumeBtc()));
+                gicVolume = gicVolume.add(graviexMarket.getVolumeBtc());
+
+                markets.put("graviex", graviexMarket);
+
+                logger.info("MonitoringService :: updateRates graviex {}", graviexMarket);
             }
+
+            MarketDto cryptobridgeMarket = cryptobridgeApi.getMarketInfo();
+            if (cryptobridgeMarket != null && cryptobridgeMarket.getLast() != null) {
+                gicRate = gicRate.add(cryptobridgeMarket.getLast().multiply(cryptobridgeMarket.getVolumeBtc()));
+                gicVolume = gicVolume.add(cryptobridgeMarket.getVolumeBtc());
+
+                markets.put("cryptobridge", cryptobridgeMarket);
+
+                logger.info("MonitoringService :: updateRates cryptobridge {}", cryptobridgeMarket);
+            }
+
+            gicBtc.set(gicRate.divide(gicVolume, 8, RoundingMode.HALF_UP));
+            gicUsd.set(gicBtc.get().multiply(btcUsd.get()));
+            btcVolume.set(gicVolume);
 
             logger.info("MonitoringService :: updateRates gic/btc= {}, gic/usd= {}", gicBtc.get(), gicUsd.get());
             logger.info("MonitoringService :: updateRates finished");
@@ -353,5 +381,9 @@ public class MonitoringService {
                 .stream()
                 .filter(m -> "ENABLED".equals(m.getStatus()))
                 .count();
+    }
+
+    public Map<String, MarketDto> getMarkets() {
+        return this.markets;
     }
 }

@@ -1,6 +1,6 @@
 package network.giantpay.web;
 
-import network.giantpay.api.graviex.GraviexApi;
+import network.giantpay.service.MonitoringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,12 +11,11 @@ import java.util.Map;
 public class ExchangeController {
 
     @Autowired
-    private GraviexApi graviexApi;
+    private MonitoringService monitoringService;
 
     @GetMapping("/exchange")
     public String exchange(Map<String, Object> model) {
-        model.put("graviex", graviexApi.getMarketInfo());
-
+        model.putAll(monitoringService.getMarkets());
         return "exchange";
     }
 }

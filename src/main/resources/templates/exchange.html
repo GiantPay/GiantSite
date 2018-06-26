@@ -35,23 +35,38 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 sm-padding">
-                <h2>Giant's exchanges</h2>
+                <h2>Giant exchanges</h2>
 
                 <div class="shadow p-3 mt-5 mb-5 bg-white rounded text-center">
-                    <img src="/images/graviex_400x200.png" class="mb-2"><br>
-                    <p class="text-center"><a href="https://graviex.net/markets/gicbtc" target="_blank"
-                                              rel="nofollow">https://graviex.net/markets/gicbtc</a>
+                    <img src="/images/cryptobridge_400x200.png" class="mb-2"><br>
+                    <p>
+                        <a href="https://wallet.crypto-bridge.org/market/BRIDGE.GIC_BRIDGE.BTC" target="_blank"
+                           rel="nofollow">https://wallet.crypto-bridge.org/market/BRIDGE.GIC_BRIDGE.BTC</a>
                     </p>
-                    <p>Last price: <strong th:text="${#numbers.formatDecimal(graviex.last,1,'COMMA',8,'POINT')}"></strong> <strong>BTC</strong></p>
+                    <p>Last price: <strong
+                            th:text="${#numbers.formatDecimal(cryptobridge.last,1,'COMMA',8,'POINT')}"></strong>
+                        <strong>BTC</strong></p>
+                    <p>Volume 24h: <strong
+                            th:text="${#numbers.formatDecimal(cryptobridge.volumeBtc,1,'COMMA',8,'POINT')}"></strong>
+                        <strong>BTC</strong></p>
                 </div>
                 <div class="shadow p-3 mt-5 mb-5 bg-white rounded text-center">
-                    <img src="/images/cryptobridge_400x200.png" class="mb-2"><br>
-                    <p><a href="https://wallet.crypto-bridge.org/market/BRIDGE.GIC_BRIDGE.BTC" target="_blank">https://wallet.crypto-bridge.org/market/BRIDGE.GIC_BRIDGE.BTC</a></p>
-                    (Waiting for listing)
+                    <img src="/images/graviex_400x200.png" class="mb-2"><br>
+                    <p class="text-center">
+                        <a href="https://graviex.net/markets/gicbtc" target="_blank" rel="nofollow">https://graviex.net/markets/gicbtc</a>
+                    </p>
+                    <p>Last price: <strong
+                            th:text="${#numbers.formatDecimal(graviex.last,1,'COMMA',8,'POINT')}"></strong>
+                        <strong>BTC</strong></p>
+                    <p>Volume 24h: <strong
+                            th:text="${#numbers.formatDecimal(graviex.volumeBtc,1,'COMMA',8,'POINT')}"></strong>
+                        <strong>BTC</strong></p>
                 </div>
                 <div class="shadow p-3 mt-5 mb-5 bg-white rounded text-center">
                     <img src="/images/southexchange_400x200.png" class="mb-2"><br>
-                    <p><a href="https://www.southxchange.com/Home/Vote" target="_blank">https://www.southxchange.com/Home/Vote</a></p>
+                    <p>
+                        <a href="https://www.southxchange.com/Home/Vote" target="_blank" rel="nofollow">https://www.southxchange.com/Home/Vote</a>
+                    </p>
                     (Voting in progress)
                 </div>
             </div>
