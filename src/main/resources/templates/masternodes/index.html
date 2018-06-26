@@ -24,7 +24,7 @@
                     <h1>Giant <span>Masternodes</span></h1>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active">Exchanges</li>
+                        <li class="breadcrumb-item active">Masternode list</li>
                     </ol>
                 </div>
             </div>
@@ -43,6 +43,9 @@
                     transactions, privacy and for this, each masternode receive a financial compensation, so called
                     rewards. To create a masternode an investor need to block 1000 GIC as collateral deposit that can be
                     considered as an investment since he will be rewarded in GIC coins for this.</p>
+                <p><a href="/GiantMasternodeGuideForWindows.pdf" target="_blank">Masternode Windows Setup Guide</a></p>
+                <p><a href="/GiantMasternodeGuideForLinux.pdf" target="_blank">Masternode Linux Setup Guide</a></p>
+                <p><a href="https://www.youtube.com/channel/UCV4o0e0gtVAU2K97TVxYWcA" target="_blank">Video guides</a></p>
             </div>
             <div class="col-md-12 col-sm-12 shadow p-3 mt-5 mb-5 bg-white rounded">
                 <div class="row">
@@ -175,7 +178,7 @@
             });
 
             $.getJSON("/api/masternodes", function (masternodes) {
-                $("#masternodesEnabled").text(masternodes.filter(function (m) {
+                $("#masternodesEnabled").text(index.filter(function (m) {
                     return m.status === "ENABLED";
                 }).length);
             });
