@@ -178,7 +178,7 @@
             });
 
             $.getJSON("/api/masternodes", function (masternodes) {
-                $("#masternodesEnabled").text(index.filter(function (m) {
+                $("#masternodesEnabled").text(masternodes.filter(function (m) {
                     return m.status === "ENABLED";
                 }).length);
             });
