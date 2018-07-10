@@ -28,9 +28,9 @@ public class WhitepaperController {
 
     @GetMapping("/whitepaper/exchange")
     public String giantExchangeWhitepaper(Map<String, Object> model) {
-        model.put("ready", false);
+        model.put("ready", true);
         model.put("title", "Giant.Exchange WP");
-        model.put("text", "Giant.Exchange (Coming soon)");
+        model.put("whitepaperUrl", "/GiantExchangeWhitepaper.pdf");
 
         return "whitepapers/index";
     }

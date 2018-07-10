@@ -2416,3 +2416,35 @@ a, a:hover, .overlay, img, .form-control, .form-control:hover, button {
     background-color: #1f293d;
     color: #fff;
 }
+
+.blog_single h1 {
+    font-size: 1.7em;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.blog_single h2 {
+    font-size: 1.5em;
+    color: #000;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-transform: none;
+}
+
+.blog_single h3 {
+    font-size: 1.3em;
+    color: #000;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-transform: none;
+}
+
+.blog_single ul {
+    margin-bottom: 30px;
+    list-style: circle;
+    margin-left: 40px;
+}
+
+.blog_single p {
+    font-size: 1.2em;
+}

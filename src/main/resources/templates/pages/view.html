@@ -1,0 +1,93 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title th:text="${page.seoTitle}"></title>
+    <meta name="description" data-th-attr="content=${page.seoDescription}">
+    <meta name="keywords" data-th-attr="content=${page.seoKeywords}">
+    <meta property="og:title" data-th-attr="content=${page.title}" />
+    <meta property="og:description" data-th-attr="content=${page.seoDescription}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" data-th-attr="content=${'https://giantpay.network/pages' + page.url}" />
+    <link rel="canonical" th:href="${'https://giantpay.network/pages' + page.url}" />
+
+    <th:block th:replace="blocks/header :: head"></th:block>
+    <script src="//platform-api.sharethis.com/js/sharethis.js#property=5b45320a3cd9e600119c7a00&product=inline-share-buttons"></script>
+</head>
+<body>
+<div th:replace="blocks/header :: header"></div>
+
+<section class="page_header padding">
+    <div class="display-table">
+        <div class="table-cell">
+            <div class="container">
+                <div class="page_content">
+                    <h2>News</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">News</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="blog_section bd-bottom padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 sm-padding">
+                <div class="blog_wrapper">
+                    <div class="blog_single">
+                        <h1 class="mb-15" th:text="${page.title}"></h1>
+                        <div class="mb-4 mt-1">
+                            <div class="sharethis-inline-share-buttons"></div>
+                        </div>
+                        <th:block th:remove="tag" th:utext="${page.text}"></th:block>
+                        <div class="mb-4 mt-1">
+                            <div class="sharethis-inline-share-buttons"></div>
+                        </div>
+                        <div>
+                            <div id="disqus_thread"></div>
+                            <script th:inline="javascript">
+                                /*<![CDATA[*/
+                                var disqus_config = function () {
+                                    this.page.url = "http://giantpay.network/pages" + /*[[${page.url}]]*/;
+                                    this.page.identifier = /*[[${page.url}]]*/ '/';
+                                };
+
+                                (function() {
+                                    var d = document, s = d.createElement('script');
+                                    s.src = 'https://GiantCoin.disqus.com/embed.js';
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                })();
+                                /*]]>*/
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 sm-padding">
+                <div class="sidebar_box">
+                    <div class="sidebar_widget mb-30">
+                        <h3 class="mb-20">Category</h3>
+                        <ul class="cat_list">
+                            <li th:each="category : ${categories}"><a th:href="${'/pages?c=' + category}" th:text="${category}"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="blocks/footer :: footer"></div>
+</body>
+</html>

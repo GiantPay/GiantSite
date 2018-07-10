@@ -63,18 +63,22 @@
                     <div class="col-sm-10 text-right">
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
                             <li><a href="/wallet">Wallet</a></li>
-                            <li><a href="/roadmap">Roadmap</a></li>
-                            <li><a href="/about">Specification</a></li>
+                            <li>
+                                <a href="/about">Info</a>
+                                <ul>
+                                    <li><a href="/about">Specification</a></li>
+                                    <li><a href="/roadmap">Roadmap</a></li>
+                                    <li><a href="/pages">News</a></li>
+                                </ul>
+                            </li>
                             <li><a href="https://explorer.giantpay.network" target="_blank">Explorer</a></li>
                             <li><a href="/mining">Mining</a></li>
                             <li><a href="/exchange">Exchange</a></li>
+                            <li><a href="/masternodes">Masternodes</a></li>
                             <li>
-                                <a href="/masternodes">Masternodes</a>
-                            </li>
-                            <li>
-                                <a href="https://discord.gg/7NRqsAN" target="_blank" rel="nofollow">Community</a>
+                                <a th:href="${@marketingService.getDiscordUrl()}" target="_blank" rel="nofollow">Community</a>
                                 <ul>
-                                    <li><a href="https://discord.gg/7NRqsAN" target="_blank" rel="nofollow">Discord</a></li>
+                                    <li><a th:href="${@marketingService.getDiscordUrl()}" target="_blank" rel="nofollow">Discord</a></li>
                                     <li><a href="https://twitter.com/giant_coin" target="_blank" rel="nofollow">Twitter</a></li>
                                     <li><a href="https://bitcointalk.org/index.php?topic=3655657.0" target="_blank" rel="nofollow">Bitcointalk</a></li>
                                     <li><a href="https://trello.com/b/3QPfSlfL" target="_blank" rel="nofollow">Trello</a></li>
@@ -87,7 +91,7 @@
                                 <ul>
                                     <li><a href="/whitepaper">Giant WP</a></li>
                                     <li><a href="/whitepaper/contracts">GiantContracts WP</a></li>
-                                    <li style="display: none"><a href="/whitepaper/exchange">Giant.Exchange WP</a></li>
+                                    <li><a href="/whitepaper/exchange">Giant.Exchange WP</a></li>
                                 </ul>
                             </li>
                         </ul>
