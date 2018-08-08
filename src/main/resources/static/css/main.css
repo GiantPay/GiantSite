@@ -2213,6 +2213,8 @@ a, a:hover, .overlay, img, .form-control, .form-control:hover, button {
     font-weight: 700;
     font-size: 28px;
     color: #fff;
+    padding-right: 180px;
+    line-height: 32px;
 }
 
 .page_header .page_content h2 span {
@@ -2443,6 +2445,13 @@ a, a:hover, .overlay, img, .form-control, .form-control:hover, button {
     margin-bottom: 30px;
     list-style: circle;
     margin-left: 40px;
+    font-size: 1.15em;
+}
+
+.blog_single ol {
+    margin-bottom: 30px;
+    margin-left: 40px;
+    font-size: 1.15em;
 }
 
 .blog_single p {

@@ -12,6 +12,7 @@ CREATE TABLE pages (
     announcement character varying(4000),
     text character varying(1000000),
     tags character varying(1000),
+    category character varying(1000),
     visible boolean DEFAULT false,
     CONSTRAINT articles_pkey PRIMARY KEY (id),
     CONSTRAINT articles_created_id_fkey FOREIGN KEY (created_id) REFERENCES users (id)
