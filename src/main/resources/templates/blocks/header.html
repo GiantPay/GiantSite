@@ -1,6 +1,6 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head">
+<th:block th:fragment="head">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,7 +45,7 @@
 
         gtag('config', 'UA-11023961-18');
     </script>
-</head>
+</th:block>
 <body>
 <th:block th:fragment="header">
     <!--[if lt IE 8]>
