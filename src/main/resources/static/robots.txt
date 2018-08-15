@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /*pages?c=
+Host: https://giantpay.network

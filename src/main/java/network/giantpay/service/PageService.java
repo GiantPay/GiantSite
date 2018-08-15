@@ -67,6 +67,11 @@ public class PageService {
         page.setVisible(Boolean.parseBoolean((String) params.getFirst("visible")));
         if (page.getId() == null) {
             page.setUrl("/" + page.getTitle()
+                    .replaceAll("#", "")
+                    .replaceAll("\\&", "")
+                    .replaceAll("\\?", "")
+                    .replaceAll("\\!", "")
+                    .replaceAll("\\?", "")
                     .replaceAll(" ", "-")
                     .replaceAll(":", "-")
                     .replaceAll(";", "-")
