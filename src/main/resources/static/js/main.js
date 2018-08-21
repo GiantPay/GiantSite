@@ -79,8 +79,7 @@
                 $html += "<li>Volume 24h: <span id='volume'>" + info.volume.toFixed(3) + " BTC</span></li>";
                 $html += "<li>Current Block: <span id='infoHeight'>" + numeral(info.height).format('0') + "</span></li>";
                 $html += "<li>Block Reward: <span id='infoReward'>" + info.reward + " GIC</span></li>";
-                $html += "<li>Network: <span id='infoHashrate'>" + formatNetworkHashrate(info.networkHashrate) + "</span></li>";
-                $html += "<li>Difficulty: <span id='infoDifficulty'>" + numeral(info.networkDifficulty).format('0,0.00') + "</span></li>";
+                $html += "<li>POS Difficulty: <span id='infoDifficulty'>" + numeral(info.networkDifficulty).format('0,0.00') + "</span></li>";
                 $html += "<li>Coin Supply: <span id='infoSupply'>" + numeral(info.coinSupply).format('0,0.00') + " GIC</span></li>";
                 $html += "<li>Masternodes online: <span id='infoMasternodes'>" + info.masternodes + "</span></li>";
                 $html += "<li>ROI: <span id='infoRoi'>" + (info.masternodeRoi).toFixed(1) + "% / " + info.masternodeRoiDays + " days</span></li>";
@@ -93,7 +92,6 @@
                 webTicker.find('infoRate').text(info.rate);
                 webTicker.find('infoHeight').text(numeral(info.height).format('0'));
                 webTicker.find('infoReward').text(info.reward + " GIC");
-                webTicker.find('infoHashrate').text(formatNetworkHashrate(info.networkHashrate));
                 webTicker.find('infoDifficulty').text(numeral(info.networkDifficulty).format('0,0.00'));
                 webTicker.find('infoSupply').text(numeral(info.coinSupply).format('0,0.00') + " GIC");
                 webTicker.find('infoMasternodes').text(info.masternodes);
