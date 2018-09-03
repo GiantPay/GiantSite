@@ -1,11 +1,15 @@
 package network.giantpay.web;
 
-import network.giantpay.dto.*;
+import network.giantpay.dto.InfoDto;
+import network.giantpay.dto.MasternodeDto;
+import network.giantpay.dto.MasternodeInfoDto;
+import network.giantpay.dto.RateDto;
 import network.giantpay.error.ApiException;
 import network.giantpay.service.MonitoringService;
-import network.giantpay.service.PresaleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -13,20 +17,8 @@ import java.util.List;
 @RequestMapping(value = "/api", produces = "application/json; charset=UTF-8")
 public class ApiController {
 
-//    @Autowired
-//    private PresaleService presaleService;
     @Autowired
     private MonitoringService monitoringService;
-
-//    @PostMapping("/presale")
-//    public PresaleResponseDto presaleRequest(@RequestBody PresaleRequestDto presaleRequest) throws ApiException {
-//        return presaleService.createRequest(presaleRequest);
-//    }
-
-//    @GetMapping("/presale")
-//    public PresaleStatusResponseDto presaleStatus(@RequestParam("id") String guid) throws ApiException {
-//        return presaleService.getStatus(guid);
-//    }
 
     @GetMapping("/info")
     public InfoDto getInfo() throws ApiException {

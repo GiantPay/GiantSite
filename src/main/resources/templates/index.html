@@ -8,9 +8,9 @@
 <!--[if gt IE 8]><!-->
 <html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <title>Giant Coin</title>
+    <title>Giant Coin Cryptocurrency | GiantPay | Network | POS | MASTERNODES</title>
     <meta name="description"
-          content="GIANTCOIN (GIC) — a cryptocurrency designed to work with the GIANT exchange. Option placing fees and rewarding are available only in GIC. Anyone can buy GIC on an exchange or mine it. Also you can earn passive income by running a masternode.">
+          content="Giant is a cutting-edge blockchain environment with fast smart contracts, a marketplace where every user can find an interesting role and be sure there are no unfair parties. The efficiency of the blockchain technologies has been positively characterized even by the most conservative financial organizations">
     <th:block th:replace="blocks/header :: head"></th:block>
 </head>
 <body>
@@ -143,28 +143,21 @@
 <div id="counter" class="counter_section">
     <div class="container">
         <ul class="row counters">
-            <li class="col-md-3 col-sm-6 sm-padding">
+            <li class="col-md-4 col-sm-12 sm-padding">
                 <div class="counter_content">
                     <i class="fas fa-cubes"></i>
                     <h3 class="counter" th:text="${currentHeight}"></h3>
                     <h4>CURRENT BLOCK HEIGHT</h4>
                 </div>
             </li>
-            <li class="col-md-3 col-sm-6 sm-padding">
-                <div class="counter_content">
-                    <i class="fas fa-wrench"></i>
-                    <h3 class="counter" th:text="${currentHashrate}"></h3>
-                    <h4>CURRENT HASHRATE, H/s</h4>
-                </div>
-            </li>
-            <li class="col-md-3 col-sm-6 sm-padding">
+            <li class="col-md-4 col-sm-12 sm-padding">
                 <div class="counter_content">
                     <i class="fas fa-chart-line"></i>
                     <h3 class="counter" th:text="${currentDifficulty}"></h3>
                     <h4>CURRENT DIFFICULTY</h4>
                 </div>
             </li>
-            <li class="col-md-3 col-sm-6 sm-padding">
+            <li class="col-md-4 col-sm-12 sm-padding">
                 <div class="counter_content">
                     <i class="fab fa-bitcoin"></i>
                     <h3 class="counter" th:text="${coinSupply}"></h3>
