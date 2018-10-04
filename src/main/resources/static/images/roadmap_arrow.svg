@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="16px" viewBox="0 0 25 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_chevron_right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-page" transform="translate(-853.000000, -8336.000000)">
+            <g id="Roadmap" transform="translate(0.000000, 8036.000000)">
+                <g id="Exchanges">
+                    <g id="ic_chevron_right" transform="translate(865.500000, 308.500000) rotate(-90.000000) translate(-865.500000, -308.500000) translate(841.000000, 284.000000)">
+                        <g id="Icon-24px">
+                            <polygon id="Shape" fill="#FFFFFF" points="20.4166667 12.25 17.5379167 15.12875 26.88875 24.5 17.5379167 33.87125 20.4166667 36.75 32.6666667 24.5"></polygon>
+                            <polygon id="Shape" points="0 0 49 0 49 49 0 49"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

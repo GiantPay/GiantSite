@@ -1,68 +1,74 @@
 <!doctype html>
 <!--[if lt IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang="en"> <![endif]-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <title>Giant news | Contracts | Exchange | Progress reports</title>
-    <meta name="description" content="All the news of the project in one place. We reveal all the nuances and features.">
+    <meta name="description"
+          content="All the news of the project in one place. We reveal all the nuances and features.">
     <th:block th:replace="blocks/header :: head"></th:block>
 </head>
-<body>
-<div th:replace="blocks/header :: header"></div>
+<body class="news-page">
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
 
-<section class="page_header padding">
-    <div class="display-table">
-        <div class="table-cell">
-            <div class="container">
-                <div class="page_content">
-                    <h1>News</h1>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active">NEWS</li>
-                    </ol>
+<section class="internal-section">
+    <div class="container">
+        <h1 class="line-blu line-blu-internal">News</h1>
+        <div class="row">
+            <div class="col-md-12 col-lg-3">
+                <div class="download-pdf">
+                    <a class="blue-bordered-button"
+                       href="/pages">ALL NEWS</a>
+                </div>
+                <div class="news-nav">
+                    <nav class="navbar navbar-light">
+                        <nav class="nav nav-pills flex-column">
+                            <a th:each="category : ${categories}"
+                               th:href="${'/pages?c=' + category}"
+                               th:text="${category.toUpperCase()}"
+                               th:classappend="${currentCategory != null && category.toUpperCase() == currentCategory.toUpperCase()} ? 'active' : ''"
+                               class="nav-link"></a>
+                        </nav>
+                    </nav>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="news" class="blog_section bd-bottom padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 sm-padding">
-                <div class="row blog_wrapper">
-                    <div th:each="page : ${pages}" class="col-sm-12 mb-3">
-                        <div class="blog_post">
-                            <div class="blog_content">
-                                <h4><a th:href="${'/pages' + page.url}" th:text="${page.title}"></a></h4>
+            <div class="col-md-12 col-lg-9 news-list">
+                <div class="row">
+                    <div th:each="page : ${pages}" class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="information-slide">
+                            <div class="information-slide-top">
+                                <a th:href="${'/pages' + page.url}" target="_blank">
+                                    <img class="cover" th:src="${page.coverUrl}">
+                                </a>
+                            </div>
+                            <div class="information-slide-bottom">
+                                <h3 th:text="${page.title}"></h3>
                                 <p th:text="${page.announcement}"></p>
-                                <span th:text="${#dates.format(page.createdAt, 'MM/dd/yyyy')}" class="float-right"></span>
-                                <span class="post_meta"><a th:href="${'/pages' + page.url}">READ MORE</a></span>
+                                <div class="information-slide-bottom-date">
+                                    <p class="date">
+                                        <img src="/images/cal.svg">
+                                        <span th:text="${#dates.format(page.createdAt, 'dd-MM-yyyy')}"></span>
+                                    </p>
+                                    <a th:href="${'/pages' + page.url}" target="_blank" class="read-more">
+                                        Read more
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-md-4 sm-padding">
-                <div class="sidebar_box">
-                    <div class="sidebar_widget mb-30">
-                        <h3 class="mb-20">Category</h3>
-                        <ul class="cat_list">
-                            <li th:each="category : ${categories}"><a th:href="${'/pages?c=' + category}" th:text="${category}"></a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </section>
 
-<div th:replace="blocks/footer :: footer"></div>
+<th:block th:replace="blocks/footer :: footer"></th:block>
 </body>
 </html>

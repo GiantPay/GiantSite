@@ -1,0 +1,498 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Giant White Paper</title>
+    <meta name="description" content="The whitepaper reflects the main ideas of our project">
+    <th:block th:replace="blocks/header :: head"></th:block>
+</head>
+<body class="about-page" data-spy="scroll" data-target="#giant-whitepaper-navbar" data-offset="50">
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
+
+<section class="internal-section">
+    <div class="container">
+        <h1 class="line-blu line-blu-internal">Giant White Paper</h1>
+        <div class="row whitepaper-links">
+            <div class="col-sm-12 col-md-4">
+                <a href="/whitepaper" class="active">
+                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
+                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
+                    <span>Giant<br>White Paper</span>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a href="/whitepaper/contracts">
+                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
+                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
+                    <span>Giant Contracts<br>White Paper</span>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a href="/whitepaper/exchange">
+                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
+                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
+                    <span>Giant.Exchange<br>White Paper</span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="download-pdf">
+                    <a class="blue-bordered-button"
+                       href="/whitepaper.pdf"
+                       target="_blank"
+                       rel="nofollow">DOWNLOAD PDF</a>
+                </div>
+                <div class="whitepaper-nav">
+                    <nav id="giant-whitepaper-navbar" class="navbar navbar-light">
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link" href="#design-goals">Giant Design Goals: Smart Bets</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ml-3" href="#digital-assets">Digital Assets</a>
+                                <a class="nav-link ml-3" href="#coin-specification">Giant Coin Specification</a>
+                                <a class="nav-link ml-3" href="#application-ecosystem">Application and Ecosystem</a>
+                            </nav>
+                            <a class="nav-link" href="#management-model">Giant Management Model</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ml-3" href="#economic-model">Economic Model</a>
+                            </nav>
+                            <a class="nav-link" href="#masternode-rewards">Masternode Rewards</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ml-3" href="#remine-distribution">Premine Distribution</a>
+                            </nav>
+                            <a class="nav-link" href="#governance-mechanism">Governance Mechanism</a>
+                            <a class="nav-link" href="#smart-contracts">Smart Contracts</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ml-4"
+                                   href="#giant-vm">GiantVM - Universal Block Chain Virtual Machine</a>
+                                <a class="nav-link ml-4"
+                                   href="#sdk">Software Development Kit - Compiler and IDE plugin</a>
+                            </nav>
+                            <a class="nav-link" href="#giant-exchange">The Decentralized Binary Options
+                                Giant.Exchange</a>
+                            <a class="nav-link" href="#acknowledgments">Acknowledgments</a>
+                            <a class="nav-link" href="#legal">Legal</a>
+                            <a class="nav-link" href="#summary">Summary</a>
+                            <a class="nav-link" href="#references">References</a>
+                        </nav>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-8">
+                <div class="whitepaper-body">
+                    <h2 id="design-goals">Giant Design Goals: Smart Bets</h2>
+                    <p>
+                        Giant is the use of blockchain technology and smart contracts for digital assets to be
+                        self-managed, to achieve "smart bets" with a distributed network.
+                    </p>
+                    <h3 id="digital-assets">Digital Assets</h3>
+                    <p>
+                        Digital assets are programmable assets that exist in the form of electronic data. With
+                        blockchain technology, the digitization of assets can be decentralized, trustful, traceable,
+                        highly transparent, and free of intermediaries. On the Giant blockchain, users are able to
+                        register, trade, and circulate single type of assets - Giant Coin.
+                    </p>
+                    <p>
+                        Giant has two forms of digital assets: global assets and contract assets. Global assets can be
+                        recorded in the system space and can be identified by all smart contracts and clients. Contract
+                        assets are recorded in the private storage area of the smart contract and require a compatible
+                        client to recognize them. Contract assets can adhere to certain standards in order to achieve
+                        compatibility with most clients.
+                    </p>
+                    <h3 id="coin-specification">Giant Coin Specification</h3>
+                    <ul>
+                        <li>Name: Giant</li>
+                        <li>Ticker: GIC</li>
+                        <li>Type: PoS + MASTERNODE</li>
+                        <li>Premine: 200,000 GIC</li>
+                        <li>Collateral: 1,000 GIC</li>
+                        <li>Maturity: 200</li>
+                        <li>Max Coin Supply: 1,323,000 PoW Phase + Infinite PoS Phase</li>
+                        <li>Block Time: 120 seconds</li>
+                        <li>Difficulty Retarget: DGW v3.0 Every block</li>
+                        <li>P2P Port: 40444</li>
+                        <li>RPC Port: 41444</li>
+                    </ul>
+                    <h3 id="application-ecosystem">Application and Ecosystem</h3>
+                    <p>
+                        Ecosystem is vital for the open source community. In order to achieve the goal of an intelligent
+                        economic network, Giant will be committed to the development of its ecosystem, providing mature
+                        development kits, improving the quality of project documents. We plan to support the following
+                        Giant-based applications and ecology and to reward improvements to the design of the experience:
+                    </p>
+                    <ul>
+                        <li>Node Program
+                            <ul>
+                                <li>A fully functioning Full node PC program</li>
+                                <li>Web / Android / iOS clients that do not need to synchronize with the blockchain</li>
+                            </ul>
+                        </li>
+                        <li>Giant Network site</li>
+                        <li>Blockchain Explorer</li>
+                        <li>Giant Contracts
+                            <ul>
+                                <li>giantjs</li>
+                                <li>GiantConnect</li>
+                                <li>GiantSigner</li>
+                            </ul>
+                        </li>
+                        <li>Decentralized Applications
+                            <ul>
+                                <li>Giant.Exchange</li>
+                                <li>Giant.Bet</li>
+                                <li>Giant.ColdStake</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h2 id="management-model">Giant Management Model</h2>
+                    <h3 id="economic-model">Economic Model</h3>
+                    <p>
+                        Giant has a single native token, Giant Coin (abbreviated symbol GIC).
+                    </p>
+                    <p>
+                        GIC coins emission is unlimited, but the reward for a block is regulated depending on the block
+                        height. At the beginning, the emission curve is designed for the rapid growth of the network,
+                        while further, the number of issued coins will decrease. The decrease will occur both due to the
+                        reduction of the fee for a block, and due to burning of the transaction fees. Burning of the
+                        transaction fees is an important element of the Giant network, since the fee is required to
+                        create a transaction and to execute the smart contract. Burning of the fees in the Giant network
+                        provides a long-term effect by increasing the value of GIC and by eliminating the problem of
+                        transaction spam. The emission of Giant is divided into two phases:
+                    </p>
+                    <ol start="1">
+                        <li>the PoW phase (8 May 2018 - 20 August 2018)</li>
+                        <li>the PoS phase (all subsequent time)</li>
+                    </ol>
+                    <p>
+                        A key element of the Giant economy is Giant masternodes. Masternode is a full node of the Giant
+                        network and it is associated with a frozen collateral of GIC on the account of the masternode
+                        owner. By helping to scale and to validate the Giant network, the owner of the masternode
+                        receives the following options:
+                    <ul>
+                        <li>Payment of 80% of rewards from a block</li>
+                        <li>Ability to create smart contracts in the Giant network</li>
+                        <li>Opportunity to participate in Giant technology-backed projects revenue</li>
+                        <li>
+                            Opportunity to participate in determining of the future of the Giant network through voting,
+                            where 1 vote equals 1 masternode
+                        </li>
+                    </ul>
+                    </p>
+                    <h2 id="masternode-rewards">Masternode Rewards</h2>
+                    <p>
+                        The Masternode Reward depends on the phase and number of enabled Masternodes in the network. In
+                        general, payments for a standard day for running a Masternode can be calculated by using the
+                        following formula:
+                    </p>
+                    <pre class="formula"><code>(n / t) &times; r &times; b &times; a</code></pre>
+                    <p>Where</p>
+                    <ul class="list-unstyled">
+                        <li><strong>n</strong> is the number of Masternodes an operator controls</li>
+                        <li><strong>t</strong> is the total number of Masternodes</li>
+                        <li><strong>r</strong> is the current block reward</li>
+                        <li><strong>b</strong> is blocks in an average day. For the Giant network this usually is 720
+                        </li>
+                        <li><strong>a</strong> is the average Masternode payment (80% of the average block amount)</li>
+                    </ul>
+                    <p>
+                        Return on investment for running a Masternode can be calculated as
+                    </p>
+                    <pre class="formula"><code>(n / t) &times; r &times; b &times; a</code></pre>
+                    <p>where variables are the same as above.</p>
+
+                    <table class="table-custom block-rewards">
+                        <thead>
+                        <tr class="pow">
+                            <th nowrap class="text-center">PoW Phase</th>
+                            <th nowrap class="text-center">Block</th>
+                            <th nowrap class="text-center">Miner + Masternode</th>
+                            <th nowrap class="text-center">Coin Emission</th>
+                            <th nowrap class="text-center">Total Supply</th>
+                            <th nowrap class="text-center">Inflation Rate</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td nowrap class="text-center">Premine</td>
+                            <td nowrap class="text-center">1&nbsp;&mdash;&nbsp;500</td>
+                            <td nowrap class="text-center">0</td>
+                            <td nowrap class="text-center">200,000</td>
+                            <td nowrap class="text-center">200,000</td>
+                            <td nowrap class="text-center">&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">08.05.2018&nbsp;&mdash;&nbsp;04.06.2018</td>
+                            <td nowrap class="text-center">501&nbsp;&mdash;&nbsp;20,000</td>
+                            <td nowrap class="text-center">2 GIC + 8 GIC</td>
+                            <td nowrap class="text-center">194,990</td>
+                            <td nowrap class="text-center">394,990</td>
+                            <td nowrap class="text-center">49.37%</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">04.06.2018&nbsp;&mdash;&nbsp;01.07.2018</td>
+                            <td nowrap class="text-center">20,001&nbsp;&mdash;&nbsp;40,000</td>
+                            <td nowrap class="text-center">3 GIC + 12 GIC</td>
+                            <td nowrap class="text-center">299,985</td>
+                            <td nowrap class="text-center">694,975</td>
+                            <td nowrap class="text-center">43.16%</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center"><strong>01.07.2018&nbsp;&mdash;&nbsp;20.08.2018</strong></td>
+                            <td nowrap class="text-center"><strong>40,001&nbsp;&mdash;&nbsp;71,400</strong></td>
+                            <td nowrap class="text-center"><strong>4 GIC + 16 GIC</strong></td>
+                            <td nowrap class="text-center"><strong>628,000</strong></td>
+                            <td nowrap class="text-center"><strong>1,322,975</strong></td>
+                            <td nowrap class="text-center"><strong>47.47%</strong></td>
+                        </tr>
+                        </tbody>
+                        <thead>
+                        <tr class="pos">
+                            <th nowrap class="text-center">PoS Phase</th>
+                            <th nowrap class="text-center">Block</th>
+                            <th nowrap class="text-center">Staker + Masternode</th>
+                            <th nowrap class="text-center">Coin Emission</th>
+                            <th nowrap class="text-center">Total Supply</th>
+                            <th nowrap class="text-center">Inflation Rate</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td nowrap class="text-center">20.08.2018&nbsp;&mdash;&nbsp;07.05.2019</td>
+                            <td nowrap class="text-center">71,401&nbsp;&mdash;&nbsp;262,800</td>
+                            <td nowrap class="text-center">4 GIC + 16 GIC</td>
+                            <td nowrap class="text-center">3,827,980</td>
+                            <td nowrap class="text-center">5,150,955</td>
+                            <td nowrap class="text-center">74.32%</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">07.05.2019&nbsp;&mdash;&nbsp;07.05.2020</td>
+                            <td nowrap class="text-center">262,801&nbsp;&mdash;&nbsp;525,600</td>
+                            <td nowrap class="text-center">2 GIC + 8 GIC</td>
+                            <td nowrap class="text-center">2,627,990</td>
+                            <td nowrap class="text-center">7,778,945</td>
+                            <td nowrap class="text-center">33.78%</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">07.05.2020&nbsp;&mdash;&nbsp;07.05.2021</td>
+                            <td nowrap class="text-center">525,601&nbsp;&mdash;&nbsp;788,400</td>
+                            <td nowrap class="text-center">1.6 GIC + 6.4 GIC</td>
+                            <td nowrap class="text-center">2,102,392</td>
+                            <td nowrap class="text-center">9,881,337</td>
+                            <td nowrap class="text-center">21.28%</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">07.05.2021&nbsp;&mdash;&nbsp;07.05.2022</td>
+                            <td nowrap class="text-center">788,401&nbsp;&mdash;&nbsp;1,051,200</td>
+                            <td nowrap class="text-center">1.2 GIC + 4.8 GIC</td>
+                            <td nowrap class="text-center">1,576,794</td>
+                            <td nowrap class="text-center">11,458,131</td>
+                            <td nowrap class="text-center">13.76%</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">07.05.2022&nbsp;&mdash;&nbsp;07.05.2023</td>
+                            <td nowrap class="text-center">1,051,201&nbsp;&mdash;&nbsp;1,314,000</td>
+                            <td nowrap class="text-center">0.8 GIC + 3.2 GIC</td>
+                            <td nowrap class="text-center">1,051,196</td>
+                            <td nowrap class="text-center">12,509,327</td>
+                            <td nowrap class="text-center">8.40%</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">07.05.2023&nbsp;&mdash;&nbsp;&infin;</td>
+                            <td nowrap class="text-center">1,314,001&nbsp;&mdash;&nbsp;&infin;</td>
+                            <td nowrap class="text-center">0.4 GIC + 1.6 GIC</td>
+                            <td nowrap class="text-center">&mdash;</td>
+                            <td nowrap class="text-center">&mdash;</td>
+                            <td nowrap class="text-center">&mdash;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        As you can see, the GIC supply is designed for the fast accumulation of Masternodes in the
+                        Network during the first years. By that we can ensure the speed of transactions once the Giant
+                        based projects start.
+                    <p/>
+                    <h3 id="remine-distribution">Premine Distribution</h3>
+                    <p>
+                        200,000 GIC Premine (3.88% of the PoW phase) is reserved for the following purposes:
+                    </p>
+                    <ul>
+                        <li>6000 GIC - to create the first 6 masternodes that stabilize the Giant network</li>
+                        <li>44000 GIC - to have bounty programs and airdrops</li>
+                        <li>
+                            50000 GIC - marketing budget for the promotion of the Giant network and Giant-based
+                            applications (Giant.Exchange, etc)
+                        </li>
+                        <li>
+                            100000 GIC - motivation of developers for the development of the Giant network and its
+                            ecosystem
+                        </li>
+                    </ul>
+                    <p>
+                        Note that the pre-mined coins are excluded from the process of staking after the Proof-of-Stake
+                        phase begins.
+                    </p>
+                    <h2 id="governance-mechanism">Governance Mechanism</h2>
+                    <p>
+                        The Giant decentralized and self-financing governance system empowers the community to steer the
+                        direction of Giant. This system will allow someone to make a management proposal using the
+                        application giantpay.network. Proposals are voted on by masternodes to direct the future of the
+                        currency and projects. Initially the Giant block reward allocates 0% into a community-governed
+                        Treasury Fund. In the future, after the implementation of the planned for 2018, the community
+                        will decide what percentage of the reward block will go to the Treasury Fund. This fund will be
+                        fully open to audit by the public, providing assurance of the fund’s intended use.
+                    </p>
+                    <p>
+                        The Giant community will be able to determine if a certain course of action is feasible by using
+                        the mechanism of proposals. The budget allocation will only be conducted after a two-step vote.
+                        The first stage will be held on our Discord server. The second stage - a masternode owners vote
+                        - will be opened if the proposal passes the Discord vote. This means that all users will be able
+                        to have a say in a sensitive question of budget allocating, including the masternode dividends.
+                        The masternode owners can be compared to the board of shareholders.
+                    </p>
+                    <h2 id="smart-contracts">Smart Contracts</h2>
+                    <p>
+                        Blockchain technology provides us with a decentralized, tamper-resistant, highly reliable system
+                        in which smart contracts are very useful. Giant has an independent smart contract system:
+                        GiantContract.
+                    </p>
+                    <p>
+                        The GiantContract smart contract system is the biggest feature of the seamless integration of
+                        the existing developer ecosystem. Developers do not need to learn a new programming language but
+                        use Javascript (Java and C # in the future) in their familiar IDE environments for smart
+                        contract development, debugging and compilation. Giant’s Universal Lightweight Virtual Machine,
+                        GiantVM, has the advantages of high certainty, high concurrency, and high scalability. The
+                        GiantContract smart contract system will allow millions of developers around the world to
+                        quickly carry out the development of smart contracts. GiantContract will have a separate white
+                        paper describing the implementation details.
+                    </p>
+                    <p>Giant smart contract system consists of two parts.</p>
+                    <h3 id="giant-vm">GiantVM - Universal Block Chain Virtual Machine</h3>
+                    <p>
+                        GiantVM is a lightweight, general-purpose virtual machine. Its architecture is based on the
+                        Javascript V8 engine that reads and executes instructions in the contract in sequence, controls
+                        the process based on the functionality of the instruction operations, logic operations and so
+                        on. It has a good start-up speed and versatility, is very suitable for programs such as smart
+                        contracts, can also be ported to non-blockchain systems, or integrated with the IDE to provide
+                        an optimal development experience.
+                    </p>
+                    <h3 id="sdk">Software Development Kit - Compiler and IDE plugin</h3>
+                    <p>
+                        DevPack includes the high-level language compiler and the IDE plug-in. Because GiantVM's
+                        architecture is based on Javascript engine, the compilers in DevPack can compile Javascript code
+                        into GiantVM's instruction set. Developers do not need to learn new languages and will be able
+                        to immediately start developing smart contracts in any Javascript IDE. This greatly reduces the
+                        learning curve for developing smart contracts, allowing us to easily build a vibrant community
+                        around GiantContract.
+                    </p>
+                    <p>
+                        The first implementation of the API for smart contracts will focus on the issues of implementing
+                        smart bets, but in the future, smart contracts in the Giant network will become increasingly
+                        universal.
+                    </p>
+                    <h2 id="giant-exchange">The Decentralized Binary Options Giant.Exchange</h2>
+                    <p>
+                        Decentralization, transparency and other good features of the Giant project will be demonstrated
+                        in the first Giant decentralized application — Giant.Exchange.
+                    </p>
+                    <p>
+                        Centralized binary option companies have been known to scam investors by manipulating the price
+                        feed in their favor, hold their funds and suspend accounts when payout is to be proceeded.
+                        Traders are being robbed by fraudsters. They may win the trade or two but still lose their
+                        money.
+                    </p>
+                    <p>
+                        Giant.Exchange founders aim to build an independent and decentralized platform for the binary
+                        options industry based on the Giant blockchain. Traders on the Giant.Exchange receive:
+                    </p>
+                    <ul>
+                        <li>
+                            P2P trades - Traders bet against Brokers (the same traders who create a smart bet contract),
+                            Giant.Exchange does not receive a share of profit as traditional platforms do.
+                        </li>
+                        <li>
+                            Guaranteed Payout - payments are made by the smart contract directly to traders’ GIC
+                            address. No one can block withdrawals.
+                        </li>
+                        <li>
+                            100% Transparency and Provably Fair by getting assets price on blockchain. Therefore
+                            cheating by price feed manipulation is impossible.
+                        </li>
+                        <li>
+                            Independent suppliers of the verified information - Oracles will provide the data on price
+                            motion and market dynamics by creating their own smart contracts which link the API of
+                            crypto exchanges with the binary options platform Giant.Exchange.
+                        </li>
+                    </ul>
+                    <p>
+                        We create a 100% on-chain system, as we believe the foundations of the Giant blockchain are
+                        solid and can support a high user-friendly Dapp.
+                    </p>
+                    <p>
+                        We do not bet against traders but provide a large catalog of assets and create marketplace by
+                        letting bankrollers (masternode owners) create varied asset contracts by themselves on our
+                        platform, e.g. 1 minute BTC/USD, 5 minutes BTC/ETH etc.
+                    </p>
+                    <p>
+                        Giant.Exchange has a separate <a href="/whitepaper/exchange">White Paper</a> that describes its
+                        features and technological aspects.
+                    </p>
+                    <h2 id="acknowledgments">Acknowledgments</h2>
+                    <p>
+                        This project would not be possible without the previous work of the Bitcoin and Dash development
+                        teams. We appreciate their efforts greatly. We are excited to belong to an open source community
+                        and appreciate the opportunity to contribute to this growing technological field.
+                    </p>
+                    <h2 id="legal">Legal</h2>
+                    <p>
+                        Cryptocurrency investments are inherently high risk. Before using any cryptocurrency, it is
+                        important to consider the nature, complexity and risk. Do not invest more than you can afford to
+                        lose. It is important not to use coins with taking into account the possible loss, since the
+                        type of change in these currencies is highly volatile and the Giant team is unable to regulate
+                        market-defined prices. We strongly suggest seeking advice from your own financial, investment,
+                        tax, or legal adviser. The Giant Development Team will always act in good faith and is not
+                        liable for the use of Giant by other community members, people or institutions.
+                    </p>
+                    <h2 id="summary">Summary</h2>
+                    <p>
+                        Giant is a distributed network that combines digital assets, smart contracts and masternodes.
+                        The Giant system will use many original technologies, as the infrastructure for the products
+                        which may benefit from the user-generated Smart Bets and transparency.
+                    </p>
+                    <p>
+                        To make this all possible, the digital currency called Giant Coin (GIC) is used for all Giant
+                        in-blockchain operations. GIC as a single mean of payment of Giant based projects is capable of
+                        becoming mass used among users of Giant based projects and investors running Masternodes.
+                    </p>
+                    <h2 id="references">References</h2>
+                    <p>
+                    <ol start="1">
+                        <li>
+                            <a href="https://bitcoin.org/bitcoin.pdf"
+                               target="_blank"
+                               rel="nofollow">Bitcoin: A Peer-to-Peer Electronic Cash System</a>
+                        </li>
+                        <li>
+                            <a href="https://dashpay.atlassian.net/wiki/spaces/DOC/pages/5472261/Whitepaper"
+                               target="_blank"
+                               rel="nofollow">Dash White Paper</a>
+                        </li>
+                    </ol>
+                    <p/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<th:block th:replace="blocks/footer :: footer"></th:block>
+</body>
+</html>

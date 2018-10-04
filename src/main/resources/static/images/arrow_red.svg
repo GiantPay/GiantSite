@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="19px" viewBox="0 0 18 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>down icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="14.1176471%" y1="-41.1764706%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#3375B3" offset="0%"></stop>
+            <stop stop-color="#234E85" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-page" transform="translate(-812.000000, -4583.000000)" fill="#D0021B" fill-rule="nonzero">
+            <g id="GIC-Market" transform="translate(0.000000, 4220.000000)">
+                <g id="Group-11" transform="translate(175.000000, 248.000000)">
+                    <g id="Tabs">
+                        <g id="Users---active-tab">
+                            <polygon id="down-icon" points="648.25 115.173913 643.75 115.173913 643.75 124.173913 637 124.173913 646 133.173913 655 124.173913 648.25 124.173913"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

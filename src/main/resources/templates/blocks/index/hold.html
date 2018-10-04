@@ -1,0 +1,63 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="block">
+    <section class="coin-locked">
+        <div class="container">
+            <h2 class="line-blu">Locked Coins</h2>
+            <p class="font20">
+                Locked coins is a value that displays the amount of the coin supply not used incrypto trading and which
+                are instead stored in the project community investment portfolio. Premine can also be connected to this
+                value - this sum is also reflected in the wallet balance of the Giant developers. Overall, the Locked
+                Coins value can show the general level of trust of the project users and its reliability.
+            </p>
+            <div class="coin-locked-wrapper">
+                <div class="row">
+                    <div class="col-md-12 col-lg-4">
+                        <div class="coin-locked-block">
+                            <div class="coin-locked-top">
+                                LOCKED COINS IN MASTERNODES
+                            </div>
+                            <div class="coin-locked-center">
+                                <span th:text="${masternodeCoinLockedPercent}"></span>%
+                            </div>
+                            <div class="coin-locked-bottom">
+                                <span th:text="${masternodeCoinLocked}"></span> GIC
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="coin-locked-block">
+                            <div class="coin-locked-top">
+                                TOTAL<br>
+                                LOCKED COINS
+                            </div>
+                            <div class="coin-locked-center">
+                                <canvas id="chart-area" width="350" height="350"></canvas>
+                                <span th:text="${coinLockedPercent}"></span>%
+                            </div>
+                            <div class="coin-locked-bottom">
+                                <span th:text="${coinLocked}"></span> GIC
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="coin-locked-block">
+                            <div class="coin-locked-top">
+                                LOCKED COINS IN PREMINE
+                            </div>
+                            <div class="coin-locked-center">
+                                <span th:text="${premineCoinLockedPercent}"></span>%
+                            </div>
+                            <div class="coin-locked-bottom">
+                                <span th:text="${premineCoinLocked}"></span> GIC
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

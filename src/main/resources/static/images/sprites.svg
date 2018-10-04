@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<path id="arrow-a" d="M.008 15L17.5 7.5.008 0 0 5.833 12.5 7.5 0 9.167z"/>
+		<linearGradient id="arrow-c" x1="14.118%" y1="-41.176%" y2="100%">
+			<stop offset="0%" stop-color="#3375B3"/>
+			<stop offset="100%" stop-color="#234E85"/>
+		</linearGradient>
+	</defs>
+<symbol id="arrow">
+	<g fill="none" fill-rule="evenodd">
+		<mask id="arrow-b" fill="#fff">
+			<use xlink:href="#arrow-a"/>
+		</mask>
+		<use fill="#6C7A89" xlink:href="#arrow-a"/>
+		<g mask="url(#arrow-b)">
+			<path fill="url(#arrow-c)" d="M0 0h18v15H0z"/>
+			<path fill="#127AEA" d="M0 0h18v15H0z"/>
+		</g>
+	</g>
+</symbol>
+</svg>

@@ -26,6 +26,11 @@ public class Page extends Identifiable {
     private String text;
     private String tags;
     private boolean visible;
+    @Column(name = "cover_url")
+    private String coverUrl;
+    @Transient
+    private String html;
+    private String images;
 
     public User getCreatedBy() {
         return createdBy;
@@ -121,5 +126,29 @@ public class Page extends Identifiable {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
+
+    public String getHtml() {
+        return html;
+    }
+
+    public void setHtml(String html) {
+        this.html = html;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
     }
 }

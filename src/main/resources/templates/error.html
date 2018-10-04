@@ -12,8 +12,9 @@
     <th:block th:replace="blocks/header :: head"></th:block>
 </head>
 <body>
-<div th:replace="blocks/header :: header"></div>
-
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
 <section class="page_header not_found padding">
     <div class="display-table">
         <div class="table-cell">
@@ -32,6 +33,6 @@
     </div>
 </section>
 
-<div th:replace="blocks/footer :: footer"></div>
+<th:block th:replace="blocks/footer :: footer"></th:block>
 </body>
 </html>

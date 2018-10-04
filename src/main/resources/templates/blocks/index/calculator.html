@@ -1,0 +1,362 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="block">
+    <section id="calculator" class="investments-calculator">
+        <div class="container">
+            <h2 class="line-blu white-color">Investments Calculator</h2>
+            <p class="font20">
+                To ensure stable network performance, the Giant blockchain uses the Proof-of-Stake (PoS) consensus
+                algorithm and the Masternode (MN) technology - but users always store their funds on their own wallets.
+                In exchange for this, the blockchain generates a reward for network maintainers.
+                This reward comes from each new block. All this is creating a solid investment opportunity.
+            </p>
+            <div class="investments-calculator-wrapper">
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="investments-calculator-block">
+                            <h3>What is a Masternode?</h3>
+                            <p class="font20">
+                                The Giant blockchain environment is maintained by central hubs similar to Internet
+                                servers. One such server, called a masternode, costs 1000 GIC. You can launch as many
+                                working masternodes as you like, and each of them will generate a passive income from
+                                new network blocks. Additionally, masternode owners have extensive powers and can form
+                                investor votes.
+                            </p>
+                        </div>
+                        <div class="investments-calculator-block">
+                            <h3>What is PoS?</h3>
+                            <p class="font20">
+                                Proof-of-Stake — reward distribution for each new cryptocurrency block created. The
+                                system checks your own Giant Coin stake when the Giant wallet client is online.
+                                The more coins your wallet has, the higher your chances to receive a new block reward.
+                                In PoS, the higher the network difficulty is, the more coins are required
+                                to get a reward.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="investments-calculator-r">
+                            <div class="button-wrapper-2 d-flex justify-content-center">
+                                <ul class="nav nav-pills" id="chooseCurrency" role="tablist">
+                                    <li class="nav-item mr-1">
+                                        <a class="button-white nav-link active"
+                                           id="chooseBTC"
+                                           data-toggle="tab"
+                                           href="#amountBTC"
+                                           role="tab"
+                                           aria-controls="pills-home"
+                                           aria-selected="true">BTC</a>
+                                    </li>
+                                    <li class="nav-item ml-1">
+                                        <a class="button-white nav-link"
+                                           id="chooseUSD"
+                                           data-toggle="tab"
+                                           href="#amountUSD"
+                                           role="tab"
+                                           aria-controls="pills-profile"
+                                           aria-selected="false">USD</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content" id="pills-tabContent3">
+                                <div class="tab-pane show active"
+                                     id="amountBTC"
+                                     role="tabpanel"
+                                     aria-labelledby="pills-home-tab">
+                                    <div class="calculator-wrapper">
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>GIC Price</p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p id="btcRate" th:text="${btcRate.toPlainString()}"></p>
+                                                <span>BTC</span>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>You Invest</p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r-input">
+                                                <input id="btcAmountGIC"
+                                                       type="number"
+                                                       min="0.00000001"
+                                                       max="10000000"
+                                                       step="0.00000001"
+                                                       placeholder="Your Invest in GIC">
+                                                <span>GIC</span>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>You Invest</p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r-input">
+                                                <input id="btcAmountBTC"
+                                                       type="number"
+                                                       min="0.00000001"
+                                                       max="10000000"
+                                                       step="0.00000001"
+                                                       placeholder="Your Invest in BTC">
+                                                <span>BTC</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane"
+                                     id="amountUSD"
+                                     role="tabpanel"
+                                     aria-labelledby="pills-profile-tab">
+                                    <div class="calculator-wrapper">
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>GIC Price</p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p id="usdRate" th:text="${usdRate.toPlainString()}"></p>
+                                                <span>USD</span>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>You Invest</p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r-input">
+                                                <input id="usdAmountGIC"
+                                                       type="number"
+                                                       min="0.00000001"
+                                                       max="10000000"
+                                                       step="0.00000001"
+                                                       placeholder="Your Invest in GIC">
+                                                <span>GIC</span>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>You Invest</p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r-input">
+                                                <input id="usdAmountUSD"
+                                                       type="number"
+                                                       min="0.01"
+                                                       max="1000000"
+                                                       step="0.01"
+                                                       placeholder="Your Invest in USD">
+                                                <span>USD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-wrapper-2 d-flex justify-content-center">
+                                <ul class="nav nav-pills" id="chooseInvestment" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="button-white nav-link active mr-1"
+                                           id="chooseMasternode"
+                                           data-toggle="pill"
+                                           href="#masternodeCalculator"
+                                           role="tab"
+                                           aria-controls="pills-home"
+                                           aria-selected="true">Masternodes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="button-white nav-link ml-1"
+                                           id="choosePOS"
+                                           data-toggle="pill"
+                                           href="#posCalculator"
+                                           role="tab"
+                                           aria-controls="pills-profile"
+                                           aria-selected="false">Staking</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content" id="pills-tabContent4">
+                                <div class="tab-pane fade show active"
+                                     id="masternodeCalculator"
+                                     role="tabpanel"
+                                     aria-labelledby="pills-home-tab">
+                                    <div class="calculator-wrapper">
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Active Masternodes </p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r-input">
+                                                <p id="masternodeCount"></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Masternode Reward</p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p><em>16</em><span>GIC</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Reward frequency</p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p id="rewardFrequency"><em></em><span>GIC</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Daily Income</p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r2">
+                                                <p id="mnDailyIncomeGic"><em></em><span>GIC</span></p>
+                                                <p id="mnDailyIncomeBtc"><em></em><span>BTC</span></p>
+                                                <p id="mnDailyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Weekly income </p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r2">
+                                                <p id="mnWeeklyIncomeGic"><em></em><span>GIC</span></p>
+                                                <p id="mnWeeklyIncomeBtc"><em></em><span>BTC</span></p>
+                                                <p id="mnWeeklyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Monthly income </p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r2">
+                                                <p id="mnMonthlyIncomeGic"><em></em><span>GIC</span></p>
+                                                <p id="mnMonthlyIncomeBtc"><em></em><span>BTC</span></p>
+                                                <p id="mnMonthlyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Yearly income</p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r2">
+                                                <p id="mnAnnualIncomeGic"><em></em><span>GIC</span></p>
+                                                <p id="mnAnnualIncomeBtc"><em></em><span>BTC</span></p>
+                                                <p id="mnAnnualIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>ROI (annual) </p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p id="mnRoiPercent"><em></em><span>%</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Payback period</p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p id="mnRoiDays"><em></em><span>days</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade"
+                                     id="posCalculator"
+                                     role="tabpanel"
+                                     aria-labelledby="pills-home-tab">
+                                    <div class="calculator-wrapper">
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Average Difficulty</p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p id="averageDifficulty"></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Stake Reward</p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p><em>4</em><span>GIC</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Stake Interval</p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r-input">
+                                                <p id="stakeInterval"></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Daily Income</p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r2">
+                                                <p id="sDailyIncomeGic"><em></em><span>GIC</span></p>
+                                                <p id="sDailyIncomeBtc"><em></em><span>BTC</span></p>
+                                                <p id="sDailyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Weekly income </p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r2">
+                                                <p id="sWeeklyIncomeGic"><em></em><span>GIC</span></p>
+                                                <p id="sWeeklyIncomeBtc"><em></em><span>BTC</span></p>
+                                                <p id="sWeeklyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Monthly income </p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r2">
+                                                <p id="sMonthlyIncomeGic"><em></em><span>GIC</span></p>
+                                                <p id="sMonthlyIncomeBtc"><em></em><span>BTC</span></p>
+                                                <p id="sMonthlyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Yearly income</p>
+                                            </div>
+                                            <div class="calculator-block-r calculator-block-r2">
+                                                <p id="sAnnualIncomeGic"><em></em><span>GIC</span></p>
+                                                <p id="sAnnualIncomeBtc"><em></em><span>BTC</span></p>
+                                                <p id="sAnnualIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>ROI (annual) </p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p id="sRoiPercent"><em></em><span>%</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-block">
+                                            <div class="calculator-block-l">
+                                                <p>Payback period</p>
+                                            </div>
+                                            <div class="calculator-block-r">
+                                                <p id="sRoiDays"><em></em><span>days</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="p-calculator">
+                                Please note that the estimations above are based on mean values.
+                                The real-time data might be slightly different.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

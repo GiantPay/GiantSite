@@ -1,0 +1,16 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="code">
+    <script>
+        $(function () {
+
+            $('.dropdown-menu-custom a').on('click', function () {
+                $('.dropdown-toggle-custom').html($(this).html() + '<span class="caret"></span>');
+            })
+
+        });
+    </script>
+</th:block>
+</body>
+</html>

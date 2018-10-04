@@ -9,6 +9,7 @@ public class MasternodeInfoDto {
     private BigDecimal annual;
     private BigDecimal roi;
     private BigDecimal days;
+    private long masternodeCount;
 
     public BigDecimal getDaily() {
         return daily;
@@ -48,5 +49,13 @@ public class MasternodeInfoDto {
 
     public void setDays(BigDecimal days) {
         this.days = days;
+    }
+
+    public long getMasternodeCount() {
+        return masternodeCount;
+    }
+
+    public void setMasternodeCount(long masternodeCount) {
+        this.masternodeCount = masternodeCount;
     }
 }

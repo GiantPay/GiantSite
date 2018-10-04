@@ -8,13 +8,14 @@ import java.util.List;
 
 public interface PageRepository extends JpaRepository<Page, Long> {
 
-    List<Page> findAllByVisibleTrueOrderByCreatedAtDesc();
+    List<Page> findFirst7ByVisibleTrueOrderByCreatedAtDesc();
 
+    @Query(nativeQuery = true, value = "SELECT p.* FROM pages AS p WHERE p.visible AND upper(p.category) = upper(?) ORDER BY p.created_id DESC")
     List<Page> findAllByVisibleTrueAndCategoryOrderByCreatedAtDesc(String category);
 
-    @Query(nativeQuery = true, value = "SELECT c.name FROM " +
-            "(SELECT p.category AS name, COUNT(*) AS count FROM pages AS p GROUP BY p.category) AS c " +
-            "ORDER BY c.count")
+    List<Page> findAllByVisibleTrueOrderByCreatedAtDesc();
+
+    @Query(nativeQuery = true, value = "SELECT DISTINCT p.category FROM pages AS p WHERE visible ORDER BY 1")
     List<String> findCategories();
 
     Page findByUrl(String url);

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>F3BB434E-2B2F-4B56-9318-5D6209261F77</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M5.4,8.1 L3.6,8.1 L3.6,9.9 L5.4,9.9 L5.4,8.1 Z M9,8.1 L7.2,8.1 L7.2,9.9 L9,9.9 L9,8.1 Z M12.6,8.1 L10.8,8.1 L10.8,9.9 L12.6,9.9 L12.6,8.1 Z M14.4,1.8 L13.5,1.8 L13.5,0 L11.7,0 L11.7,1.8 L4.5,1.8 L4.5,0 L2.7,0 L2.7,1.8 L1.8,1.8 C0.801,1.8 0.009,2.61 0.009,3.6 L0,16.2 C0,17.19 0.801,18 1.8,18 L14.4,18 C15.39,18 16.2,17.19 16.2,16.2 L16.2,3.6 C16.2,2.61 15.39,1.8 14.4,1.8 Z M14.4,16.2 L1.8,16.2 L1.8,6.3 L14.4,6.3 L14.4,16.2 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/date">
+            <g id="Colour/Light-Grey-1" transform="translate(1.000000, 0.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                <g id="🎨-Colour/Light-Grey-1" mask="url(#mask-2)" fill="#BDC3C7">
+                    <g transform="translate(-1.000000, -1.000000)" id="Brand/Colour/BDC3C7">
+                        <rect x="0" y="0" width="18" height="20" rx="5"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

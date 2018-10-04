@@ -4,18 +4,23 @@ import network.giantpay.dto.InfoDto;
 import network.giantpay.dto.MasternodeDto;
 import network.giantpay.dto.MasternodeInfoDto;
 import network.giantpay.dto.RateDto;
+import network.giantpay.dto.trello.Board;
 import network.giantpay.error.ApiException;
 import network.giantpay.service.MonitoringService;
+import network.giantpay.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/api", produces = "application/json; charset=UTF-8")
 public class ApiController {
+
+    @Autowired
+    private StorageService storageService;
 
     @Autowired
     private MonitoringService monitoringService;
@@ -38,5 +43,17 @@ public class ApiController {
     @GetMapping("/rates")
     public RateDto getRates() throws ApiException {
         return monitoringService.getRates();
+    }
+
+    @PostMapping("/upload")
+    public Map<String, Object> uploadImage(@RequestParam("image") MultipartFile file,
+                                           @RequestParam("username") String username,
+                                           @RequestParam("password") String password) {
+        return storageService.uploadImage(username, password, file);
+    }
+
+    @GetMapping("/workflow")
+    public Board getTrello() {
+        return monitoringService.getTrelloBoard();
     }
 }

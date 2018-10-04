@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>down icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-page" transform="translate(-212.000000, -4581.000000)" fill="#7ED321" fill-rule="nonzero">
+            <g id="GIC-Market" transform="translate(0.000000, 4220.000000)">
+                <g id="Group-11" transform="translate(175.000000, 248.000000)">
+                    <g id="Tabs" transform="translate(37.000000, 30.000000)">
+                        <g id="Users---active-tab">
+                            <polygon id="down-icon" transform="translate(9.538364, 92.281250) scale(1, -1) translate(-9.538364, -92.281250) " points="11.788364 83.28125 7.28836403 83.28125 7.28836403 92.28125 0.538364032 92.28125 9.53836403 101.28125 18.538364 92.28125 11.788364 92.28125"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

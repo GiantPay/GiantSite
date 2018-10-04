@@ -1,10 +1,10 @@
 <!doctype html>
 <!--[if lt IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang="en"> <![endif]-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
 <head>
@@ -16,82 +16,70 @@
     <meta property="og:type" content="article"/>
     <meta property="og:url" data-th-attr="content=${'https://giantpay.network/pages' + page.url}"/>
     <link rel="canonical" th:href="${'https://giantpay.network/pages' + page.url}"/>
-
     <th:block th:replace="blocks/header :: head"></th:block>
     <script src="//platform-api.sharethis.com/js/sharethis.js#property=5b45320a3cd9e600119c7a00&product=inline-share-buttons"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
-    <link rel="stylesheet" href="/css/table.css">
 </head>
-<body>
-<div th:replace="blocks/header :: header"></div>
+<body class="news-page">
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
 
-<section class="page_header padding">
-    <div class="display-table">
-        <div class="table-cell">
-            <div class="container">
-                <div class="page_content">
-                    <h2 th:text="${page.title}"></h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active">News</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="news" class="blog_section bd-bottom padding">
+<section class="internal-section">
     <div class="container">
+        <h1 class="line-blu line-blu-internal" th:text="${page.title}">Information</h1>
         <div class="row">
-            <div class="col-md-8 sm-padding">
-                <div class="blog_wrapper">
-                    <div class="blog_single">
-                        <h1 class="mb-15" th:text="${page.title}"></h1>
-                        <div class="mb-4 mt-1">
-                            <div class="sharethis-inline-share-buttons"></div>
-                        </div>
-                        <th:block th:remove="tag" th:utext="${page.text}"></th:block>
-                        <div class="mb-4 mt-1">
-                            <div class="sharethis-inline-share-buttons"></div>
-                        </div>
-                        <div>
-                            <div id="disqus_thread"></div>
-                            <script th:inline="javascript">
-                                /*<![CDATA[*/
-                                var disqus_config = function () {
-                                    this.page.url = "http://giantpay.network/pages" + /*[[${page.url}]]*/;
-                                    this.page.identifier = /*[[${page.url}]]*/ '/';
-                                };
-
-                                (function () {
-                                    var d = document, s = d.createElement('script');
-                                    s.src = 'https://giantpay-network.disqus.com/embed.js';
-                                    s.setAttribute('data-timestamp', +new Date());
-                                    (d.head || d.body).appendChild(s);
-                                })();
-                                /*]]>*/
-                            </script>
-                        </div>
-                    </div>
+            <div class="col-md-12 col-lg-3">
+                <div class="download-pdf">
+                    <a class="blue-bordered-button"
+                       href="/pages">ALL NEWS</a>
+                </div>
+                <div class="news-nav">
+                    <nav class="navbar navbar-light">
+                        <nav class="nav nav-pills flex-column">
+                            <a th:each="category : ${categories}"
+                               th:href="${'/pages?c=' + category}"
+                               th:text="${category.toUpperCase()}"
+                               class="nav-link"></a>
+                        </nav>
+                    </nav>
                 </div>
             </div>
-            <div class="col-md-4 sm-padding">
-                <div class="sidebar_box">
-                    <div class="sidebar_widget mb-30">
-                        <h3 class="mb-20">Category</h3>
-                        <ul class="cat_list">
-                            <li th:each="category : ${categories}"><a th:href="${'/pages?c=' + category}"
-                                                                      th:text="${category}"></a></li>
-                        </ul>
-                    </div>
+            <div class="col-md-12 col-lg-9 news-body">
+                <p class="date">
+                    <img src="/images/cal.svg">
+                    <span th:text="${#dates.format(page.createdAt, 'dd-MM-yyyy')}"></span>
+                </p>
+                <div class="mb-4 mt-1">
+                    <div class="sharethis-inline-share-buttons"></div>
+                </div>
+                <th:block th:remove="tag" th:utext="${page.html}"></th:block>
+                <div class="mb-4 mt-1">
+                    <div class="sharethis-inline-share-buttons"></div>
+                </div>
+                <div>
+                    <div id="disqus_thread"></div>
+                    <script th:inline="javascript">
+                        /*<![CDATA[*/
+                        var disqus_config = function () {
+                            this.page.url = "http://giantpay.network/pages" + /*[[${page.url}]]*/;
+                            this.page.identifier = /*[[${page.url}]]*/ '/';
+                        };
+
+                        (function () {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://giantpay-network.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                        /*]]>*/
+                    </script>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<div th:replace="blocks/footer :: footer"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<th:block th:replace="blocks/footer :: footer"></th:block>
 </body>
 </html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="block">
+    <section class="giant-network">
+        <div class="container">
+            <h2 class="line-blu white-color">Giant Network</h2>
+            <div class="giant-network-counter benefits__inner" id="counts">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="giant-network-counter-block">
+                            <p>CURRENT BLOCK</p>
+                            <p class="spincrement white-color">
+                                <span class="benefits__number" th:text="${currentHeight}"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="giant-network-counter-block">
+                            <p>SUPPLY</p>
+                            <p class="spincrement white-color">
+                                <span class="benefits__number" th:text="${coinSupply}"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="giant-network-counter-block">
+                            <p>DIFFICULTY</p>
+                            <p class="spincrement white-color">
+                                <span class="benefits__number2" th:text="${currentDifficulty}"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="giant-network-counter-block">
+                            <p>MASTERNODES</p>
+                            <p class="spincrement white-color">
+                                <span class="benefits__number" th:text="${masternodes}"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</th:block>
+
+<th:block th:fragment="data">
+    <section class="giant-network giant-network_inner">
+        <div class="container">
+            <div class="giant-network-counter benefits__inner" id="counts">
+                <div class="row">
+                    <div class="col-md-3 offset-md-1">
+                        <div class="giant-network-counter-block">
+                            <p>SUPPLY</p>
+                            <p class="spincrement white-color">
+                                <span class="benefits__number" th:text="${coinSupply}"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="giant-network-counter-block">
+                            <p>CURRENT BLOCK</p>
+                            <p class="spincrement white-color">
+                                <span class="benefits__number" th:text="${currentHeight}"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="giant-network-counter-block">
+                            <p>BLOCK REWARD</p>
+                            <p class="spincrement white-color"><span class="benefits__number2" style="opacity: 1;">20</span> <span class="benefits__sibling">GIC</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

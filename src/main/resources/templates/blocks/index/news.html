@@ -1,0 +1,76 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="block">
+    <section id="articles" class="information">
+        <div class="container">
+            <h2 class="line-blu">News</h2>
+            <div class="nav-wrapper d-none">
+                <ul class="nav-tabs-custom nav-tabs-custom2 nav nav-pills mb-3" id="pills-tab2" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab2" data-toggle="pill" href="#id4" role="tab"
+                           aria-controls="id4" aria-selected="true"> News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab3" data-toggle="pill" href="#id5" role="tab"
+                           aria-controls="id5" aria-selected="false"> Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab4" data-toggle="pill" href="#id6" role="tab"
+                           aria-controls="id6" aria-selected="false"> Articles</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent2">
+                <div class="tab-pane fade show active" id="id4" role="tabpanel" aria-labelledby="pills-home-tab2">
+                    <div class="wrapper-carousel-information">
+                        <div class="am-prev"><img src="./images/slide_arrow.svg"></div>
+                        <div class="am-next"><img src="./images/slide_arrow.svg"></div>
+                        <div class="owl-carousel owl-carousel-information owl-carousel4 owl-theme owl-loaded owl-drag">
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage">
+                                    <div th:each="page : ${lastPages}" class="owl-item">
+                                        <div class="information-slide">
+                                            <div class="information-slide-top">
+                                                <a th:href="${'/pages' + page.url}" target="_blank">
+                                                    <img class="cover" th:src="${page.coverUrl}">
+                                                </a>
+                                            </div>
+                                            <div class="information-slide-bottom">
+                                                <h3 th:text="${page.title}"></h3>
+                                                <p th:text="${page.announcement}"></p>
+                                                <div class="information-slide-bottom-date">
+                                                    <p class="date"><img src="/images/cal.svg"><span th:text="${#dates.format(page.createdAt, 'dd-MM-yyyy')}"></span> </p>
+                                                    <a th:href="${'/pages' + page.url}" target="_blank" class="read-more">Read more</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-nav disabled">
+                                <button type="button"
+                                        role="presentation"
+                                        class="owl-prev">
+                                    <span aria-label="Previous">‹</span>
+                                </button>
+                                <button type="button"
+                                        role="presentation"
+                                        class="owl-next">
+                                    <span aria-label="Next">›</span>
+                                </button>
+                            </div>
+                            <div class="owl-dots disabled"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-center">
+                <a href="/pages" class="blu-button">All News</a>
+            </div>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

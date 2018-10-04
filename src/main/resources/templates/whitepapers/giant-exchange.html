@@ -1,0 +1,701 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Giant.Exchange White Paper</title>
+    <meta name="description" content="The whitepaper reflects the main ideas of our project">
+    <th:block th:replace="blocks/header :: head"></th:block>
+</head>
+<body class="about-page" data-spy="scroll" data-target="#giant-whitepaper-navbar" data-offset="50">
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
+
+<section class="internal-section">
+    <div class="container">
+        <h1 class="line-blu line-blu-internal">Giant.Exchange White Paper</h1>
+        <div class="row whitepaper-links">
+            <div class="col-sm-12 col-md-4">
+                <a href="/whitepaper">
+                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
+                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
+                    <span>Giant<br>White Paper</span>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a href="/whitepaper/contracts">
+                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
+                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
+                    <span>Giant Contracts<br>White Paper</span>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a href="/whitepaper/exchange" class="active">
+                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
+                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
+                    <span>Giant.Exchange<br>White Paper</span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="download-pdf">
+                    <a class="blue-bordered-button"
+                       href="/GiantExchangeWhitepaper.pdf"
+                       target="_blank"
+                       rel="nofollow">DOWNLOAD PDF</a>
+                </div>
+                <div class="whitepaper-nav">
+                    <nav id="giant-whitepaper-navbar" class="navbar navbar-light">
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link" href="#introduction">Introduction</a>
+                            <a class="nav-link" href="#bo-industry">Binary Options Industry</a>
+                            <a class="nav-link" href="#what-is">What is Giant.Exchange</a>
+                            <a class="nav-link" href="#platform">Giant.Exchange Platform</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ml-3" href="#blockchain">Giant Blockchain</a>
+                                <a class="nav-link ml-3" href="#backend">Giant.Exchange Backend Application</a>
+                                <a class="nav-link ml-3" href="#api">Giant.Exchange API</a>
+                                <a class="nav-link ml-3" href="#frontend">Giant.Exchange Frontend Application</a>
+                                <a class="nav-link ml-3" href="#smart-contract">«Giant.Exchange» Smart Contract</a>
+                                <a class="nav-link ml-3" href="#oracle-sc">«Oracle» Smart Contract</a>
+                                <a class="nav-link ml-3" href="#oracle-be">«Oracle» Backend Application</a>
+                                <a class="nav-link ml-3" href="#bin-opt-sc">«Binary Option» Smart Contract</a>
+                                <a class="nav-link ml-3" href="#bin-opt-purchases">Binary Option Purchases</a>
+                            </nav>
+                            <a class="nav-link" href="#ge-asset">Giant.Exchange Underlying Asset</a>
+                            <a class="nav-link" href="#ge-cases">Giant.Exchange Use Cases</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ml-3" href="#bin-opt-trading">Binary Option Trading</a>
+                                <a class="nav-link ml-3" href="#bin-opt-creation">«Binary Option» Сontracts Сreation</a>
+                                <a class="nav-link ml-3" href="#oracle-creation">«Oracle» Сreation</a>
+                                <a class="nav-link ml-3" href="#dev-sc">Development of Smart Contracts for Giant.Exchange</a>
+                                <a class="nav-link ml-3" href="#media-creation">Media and Information Content Creation</a>
+                            </nav>
+                            <a class="nav-link" href="#ge-budget">Giant.Exchange Budget</a>
+                            <a class="nav-link" href="#ge-rep">Giant.Exchange Reputation System</a>
+                            <a class="nav-link" href="#ge-voting">Giant.Exchange Voting System</a>
+                            <a class="nav-link" href="#ge-airdrop">Giant.Exchange Airdrop</a>
+                            <a class="nav-link" href="#summary">Summary</a>
+                            <a class="nav-link" href="#references">References</a>
+                        </nav>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-8">
+                <div class="whitepaper-body">
+                    <h2 id="introduction">Introduction</h2>
+                    <p>
+                        A Binary Option is a contract which provides either a fixed amount of payoff or no payoff at all
+                        depending on the fulfillment of the agreed terms at a specified time. Usually, an option is
+                        bought in advance at a fixed price and the result of this purchase is either positive (the
+                        difference between the reward and the cost of the option) or negative (the cost of the option).
+                        Commonly, the size of the reward is several times the size of an option.
+                    </p>
+                    <p>
+                        Usually, the substance of a binary option is whether the stock price of the underlying asset
+                        will be above or below the certain level. Herewith, the reward is paid in case when option wins,
+                        regardless of the degree of a price change. In order to receive a payoff it is enough to specify
+                        the correct price movement.
+                    </p>
+                    <p>
+                        Binary options provide an opportunity to accurately calculate the amount of payments and
+                        potential risks before the option is purchased. This gives an opportunity to easily manage a
+                        large portfolio of such contracts.
+                    </p>
+                    <p>
+                        There are three main types of Binary Options:
+                    </p>
+                    <ul>
+                        <li>
+                            Call and put options. Betting on the price fixed in a certain time point. Example: a user
+                            thinks that the asset will grow in price at a specified future date and invests in a call
+                            option (or in a put option if he thinks that the asset price will drop).
+                        </li>
+                        <li>
+                            One-touch and no-touch options. Betting on the price fixed in a time point specified by a
+                            broker. Example: a user believes that Bitcoin will reach $8000 by August 11 and bets on this
+                            event (one-touch), while another user thinks that Bitcoin will not reach $8000 and makes a
+                            corresponding bet (no-touch).
+                        </li>
+                        <li>
+                            In options and out options. Betting on the price corridor made in a time point set by a
+                            broker. Example: a user is sure that Bitcoin will fluctuate between $6000 and $7000 from 8
+                            August to 8 September 2018, and bets that this will happen.
+                        </li>
+                    </ul>
+                    <p>
+                        Binary options are excellent financial instruments since the majority of their advantages are
+                        unattainable for other financial instruments, namely:
+                    </p>
+                    <ul>
+                        <li>
+                            Simplicity &mdash; the size of the binary option reward does not depend on the price
+                            difference.
+                            It only depends on the predicted direction of the price of an asset, therefore the less
+                            information is required in order to make a profit. This makes entry into binary options
+                            trading simple for non-professional traders.
+                        </li>
+                        <li>
+                            Profitability - the profitability of binary options can be many times higher than the yield
+                            from the direct purchase of assets.
+                        </li>
+                        <li>
+                            Availability &mdash; traders buy the contract, not the asset itself and this allows more
+                            traders to get income from forecasting the price movement.
+                        </li>
+                        <li>
+                            Controlled risk &mdash; before the purchase of a binary option, the trader already knows how
+                            much he can lose or earn.
+                        </li>
+                    </ul>
+                    <h2 id="bo-industry">Binary Options Industry</h2>
+                    <p>
+                        Originally, binary options were considered an exotic financial instrument and they did not have
+                        a large secondary market. Therefore, they could not be resold to third parties. In 2008, the
+                        American Stock Exchange (AMEX) and the Chicago Board Options Exchange (CBOE) began systematic
+                        trading of binary options, and in June 2008 these exchanges standardized such contracts. This
+                        allows them now to have a continuous stock quote. By 2018, a large number of brokers have
+                        appeared on the market and they offer binary options trading under a slightly different scheme
+                        than the above mentioned exchanges do.
+                    </p>
+                    <p>
+                        Nowadays, binary options is a multi-billion dollar market, the main issues of which are a bad
+                        regulation or no regulation at all. Therefore, the fate of the binary options market is
+                        entrusted to private brokers, and traders have to rely on their honesty. The aforementioned
+                        advantages of binary options attract not only inexperienced traders, but also dishonest brokers
+                        and sometimes outright scams. When this kind of brokers enters the market, this results in
+                        unfair losses for traders and exposes this financial instrument to criticism.
+                    </p>
+                    <p>
+                        Since 2015, a number of media organizations from around the globe have published a series of
+                        articles, exposing the binary options industry as a big scam.
+                    </p>
+                    <p>
+                        The United States Commodity Futures Trading Commission (CFTC) alerts that the binary
+                        marketplaces mislead users, promising huge payouts with limited risk. In reality, users
+                        sometimes lose all their money within a few days or weeks, while brokers receive large profits.
+                    </p>
+                    <p>
+                        From 2016 onwards, regulators from different countries have begun to impose bans on binary
+                        options trading within their jurisdictions. Regardless, brokers focused on rapid and large
+                        profits bypass the restrictions of regulators, choosing less regulated jurisdictions and coming
+                        up with new schemes of luring inexperienced traders.
+                    </p>
+                    <p>
+                        Obviously, in addressing this situation it is necessary to understand the main problems which
+                        regulators try to combat applying preventive measures. Trading binary options with an
+                        unregulated broker leads to the following:
+                    </p>
+                    <ul>
+                        <li>
+                            The broker plays against the trader, unlike in situations where traders play against
+                            traders, this leads to an obvious conflict of interests
+                        </li>
+                        <li>
+                            The broker manages the data source on the price of the asset and this source of data is at
+                            best incomplete, at worst unreliable or even just fictitious
+                        </li>
+                        <li>
+                            The broker controls the trader's deposits and can unilaterally decide whether to pay the
+                            trader's deposit or block the trader's funds at its own discretion
+                        </li>
+                        <li>The broker has no motivation to make his work transparent</li>
+                        <li>The broker does not accept appeals on issues related to historical data of asset prices</li>
+                    </ul>
+                    <p>
+                        This allows the broker to create situations where the trader has a profit from binary options
+                        but loses all his earned money on the broker's platform. Obviously, bans from the regulators
+                        will not solve the above issues, but will only force brokers to look for loopholes for more or
+                        less legal continuation of their activities.
+                    </p>
+                    <p>
+                        We believe that the solution lies not within the tighter regulation or other prohibitions, but
+                        within the elimination of the subject of regulation. This subject is the need for trust between
+                        the broker and the trader and the solution is a creation of such environment where everyone does
+                        his own business and has no opportunities for manipulation.
+                    </p>
+                    <p>
+                        The solution for the aforementioned problems of the binary options market will be the emergence
+                        of such trading platforms that will:
+                    </p>
+                    <ul>
+                        <li>
+                            Introduce a third party &mdash; the Oracle which supplies reliable data on the price of the
+                            asset and which is not affiliated with either the broker or the trader
+                        </li>
+                        <li>Provide an automatic execution of a binary options contract</li>
+                        <li>Provide a decentralized storage of traders’ funds</li>
+                        <li>
+                            Provide transparent information about the current market situation regarding specific binary
+                            options contracts
+                        </li>
+                        <li>
+                            Limit the area of responsibility of each user of the platform:
+                            <ul>
+                                <li>Broker &mdash; formulates the terms of a contract</li>
+                                <li>Trader &mdash; concludes a contract</li>
+                                <li>
+                                    Oracle &mdash; provides reliable data on the price of the asset necessary for the
+                                    execution of the contract
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>
+                        Such platforms will deprive the broker and the trader of the opportunity to manipulate the asset
+                        prices or deposits of traders. In doing so, the work of a platform will be transparent and
+                        accessible for an audit by either party.
+                    </p>
+                    <p>
+                        The first platform of such kind will be Giant.Exchange, a decentralized binary options exchange.
+                    </p>
+                    <h2 id="what-is">What is Giant.Exchange</h2>
+                    <p>
+                        Giant.Exchange is a decentralized binary options exchange. This definition fully describes the
+                        functionality of the platform and the details are covered below. So, what is Giant.Exchange?
+                    </p>
+                    <p>
+                        Firstly, Giant.Exchange is a decentralized application (DApp) based on the Giant blockchain
+                        which supports the smart contract technology. Giant technologies are designed in such a way that
+                        the questions connected to &laquo;Smart Bets&raquo; are optimally solved. More information on
+                        the Giant blockchain can be found in <a href="/whitepaper">the Giant White Paper</a> and in
+                        <a href="/whitepaper/contracts">the Giant Contracts White Paper</a>. It is important to
+                        understand that in Giant.Exchange, the “Oracles” and the “Binary options” are smart contracts
+                        and a purchase of a binary option is a payment for a call of a smart contract method. On the
+                        Giant Exchange all the trades and payments will be only in the space of native tokens of the
+                        Giant blockchain (ticker GIC).
+                    </p>
+                    <p>Secondly, Giant.Exchange is a platform for:</p>
+                    <ol start="1">
+                        <li>creation of binary options contracts (Broker)</li>
+                        <li>purchase of binary options contracts (Trader)</li>
+                        <li>creation of datasets about the price assets (Oracle)</li>
+                    </ol>
+                    <p>Thirdly, Giant.Exchange is an open platform that allows:</p>
+                    <ol start="1">
+                        <li>anyone to become a Broker</li>
+                        <li>anyone to become a Trader</li>
+                        <li>anyone to become an Oracle</li>
+                    </ol>
+                    <p>
+                        Fourthly, you do not need programming skills for the creation of neither for "Binary Option" nor
+                        for "Oracle” smart contracts. Giant.Exchange will provide a package of standard smart contracts
+                        and an interface for its step-by-step creation. In other words, Giant.Exchange is both the
+                        constructor and the framework for smart contracts. You will also have an opportunity to code
+                        your own smart contract by implementing smart contract interface expected by Giant.Exchange.
+                    </p>
+                    <p>
+                        Fifthly, Giant.Exchange is a self-regulated system, as is the Giant blockchain . Giant community
+                        represented by masternode owners defines any significant question concerning Giant.Exchange
+                        through voting. In order to vote, a separate module will be created and it will be available
+                        through https://proposals.giant.exchange.
+                    </p>
+                    <p>
+                        Finally, Giant.Exchange is developed as an open source software with its repository available at
+                        <a href="https://github.com/GiantPay/GiantExchange"
+                           target="_blank"
+                           rel="nofollow">https://github.com/GiantPay/GiantExchange</a>. The Giant.Exchange itself will
+                        be available at <a href="https://giant.exchange"
+                                           target="_blank"
+                                           rel="nofollow">https://giant.exchange</a>. In the future, we will also
+                        implement Android and iOS mobile clients.
+                    </p>
+                    <h3 id="platform">Giant.Exchange Platform</h3>
+                    <img alt="Giant.Exchange structure" src="/images/wp/exchange/structure.jpg" border="0">
+                    <p>
+                        Giant.Exchange infrastructure diagram
+                    </p>
+                    <p>
+                        The choice of specific implementation technologies is based on the experience of the current
+                        members of the Giant.Exchange development team. Let's describe in more detail each of the nodes
+                        of the presented diagram.
+                    </p>
+                    <h3 id="blockchain">Giant Blockchain</h3>
+                    <p>
+                        As it was said earlier, Giant.Exchange works as a DApp on the Giant blockchain. Conceptually
+                        this means that Giant.Exchange does not use a centralized storage (such as DBMS or NoSQL) as the
+                        primary means of storing system information. Giant.Exchange takes all the data directly from the
+                        Giant blockchain in a form of transactions or the data received from a smart contract call (in
+                        the process, Backend Giant.Exchange application will use centralized storage to cache
+                        unchangeable or almost unchangeable information).
+                    </p>
+                    <h3 id="backend">Giant.Exchange Backend Application</h3>
+                    <p>
+                        The Giant.Exchange backend application is a classic backend application, the main function of
+                        which is to obtain data from the Giant blockchain and to provide this data using the
+                        Giant.Exchange API. This application will be implemented on the universal open-source framework
+                        - the Spring Framework.
+                    </p>
+                    <h3 id="api">Giant.Exchange API</h3>
+                    <p>
+                        API or Application Programming Interface is an interface of a Backend application and it is
+                        accessible via HTTP. At first Giant.Exchange Frontend application and then mobile clients will
+                        be built on this interface. API’s documentation will be available at https://api.giant.exchange
+                        and at wiki Github repository, therefore, anyone will be able to write an application which
+                        improves or complements the functionality of the exchange client.
+                    </p>
+                    <h3 id="frontend">Giant.Exchange Frontend Application</h3>
+                    <p>
+                        Frontend application is a web client of the Giant.Exchange and it is available at
+                        https://giant.exchange. This application will be implemented through the Vue.JS Javascript
+                        framework. It will be possible to create smart contracts or to call their methods directly in
+                        the browser. In order to sign a smart contract, plugins which support the most common browsers
+                        will be developed.
+                    </p>
+                    <h3 id="smart-contract">&laquo;Giant.Exchange&raquo; Smart Contract</h3>
+                    <p>
+                        Giant.Exchange smart contract is a core element that fully determines the logic of the exchange.
+                        Smart contract has the following features:
+                    </p>
+                    <ol>
+                        <li>It manages the list of relevant assets (the subject of binary options contracts)
+                            <ol>
+                                <li>Providing a list of assets</li>
+                                <li>Adding a new asset (through voting)</li>
+                                <li>Removing an asset (through voting)</li>
+                            </ol>
+                        </li>
+                        <li>It manages the list of relevant oracles
+                            <ol>
+                                <li>Providing a list of oracles</li>
+                                <li>Adding a new oracle (through voting)</li>
+                                <li>Removing an oracle (through voting)</li>
+                            </ol>
+                        </li>
+                        <li>It manages the Giant.Exchange voting procedure
+                            <ol>
+                                <li>Creating voting</li>
+                                <li>Cancelling voting (after the expiration, through voting)</li>
+                                <li>Allocating funds (automatically based on the voting results)</li>
+                            </ol>
+                        </li>
+                        <li>It accumulates the Giant.Exchange funds out of the platform fees</li>
+                        <li>It distributes the Giant.Exchange funds (through voting)</li>
+                        <li>It accumulates feedbacks and recommendations from the platform users</li>
+                    </ol>
+                    <p>
+                        Thus, Giant.Exchange will be completely self-regulated. All the critical parameters and the data
+                        of the exchange will be put in the state of a smart contract, the change of which will be
+                        available only through community voting. Budgeting, voting and reputational systems are
+                        described below.
+                    </p>
+                    <h3 id="oracle-sc">&laquo;Oracle&raquo; Smart Contract</h3>
+                    <p>
+                        The Oracle is needed to acquire data from the real world and use it in the world of the Giant
+                        blockchain. The Giant.Exchange Oracle provides information about the value of an asset at
+                        specific times, both at the request of other smart contracts and at the request of
+                        Giant.Exchange users.
+                    </p>
+                    <p>
+                        Anyone will be able to create and register an Oracle on the Giant.Exchange platform. This
+                        implies that any Oracle smart contract must implement the standard Giant.Exchange Oracle
+                        interface. This interface will be called GEOracle and will be fixed in the form of a smart
+                        contract. A definition of a random Oracle smart contract will look as follows:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+import GEOracle from 'AddressOfSmartContractGEOracle'
+class MyOracle extends GEOracle {
+ …
+}
+</code>
+</pre>
+                    <p>
+                        GEOracle defines the Giant.Exchange Oracle interface and MyOracle helps to redefine any method
+                        of this interface. A detailed description of the methods of this interface will be given in the
+                        Giant.Exchange technical documentation.
+                    </p>
+                    <p>
+                        In order to appear on the Giant.Exchange platform, MyOracle must complete the registration
+                        procedure through voting in the Giant.Exchange smart contract. To prevent any violations by
+                        MyOracle (for instance, a data falsification) we will implement a procedure of removing an
+                        Oracle from the Giant.Exchange platform also through voting.
+                    </p>
+                    <h3 id="oracle-be">&laquo;Oracle&raquo; Backend Application</h3>
+                    <p>
+                        Oracle backend application is created by the Oracle smart contract owner for each such smart
+                        contract. This application has the following features:
+                    </p>
+                    <ul>
+                        <li>
+                            The call of an Oracle smart contract method at a specific time with a transfer of a current
+                            asset value
+                        </li>
+                        <li>The provision of real-time data on the price of the asset through the API</li>
+                    </ul>
+                    <h3 id="bin-opt-sc">&laquo;Binary Option&raquo; Smart Contract</h3>
+                    <p>
+                        The "Binary Option" smart contract contains the terms of the option, the methods for its
+                        purchase by the trader (the conclusion of the contract) and the methods of its automatic
+                        execution. "Binary Option" smart contract can be created by anyone, which means that any binary
+                        option smart contract must implement the standard Giant.Exchange Binary Option interface.
+                    </p>
+                    <p>
+                        This interface will be called GEBinaryOption and it will be fixed in the form of a smart
+                        contract. A definition of a random binary option smart contract will look as follows:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+import GEBinaryOption from 'AddressOfSmartContractGEBinaryOption'
+class MyBinaryOption extends GEBinaryOption {
+ …
+}
+</code>
+</pre>
+                    <p>
+                        GEBinaryOption defines an interface of a Giant.Exchange binary option. In MyBinaryOption you can
+                        redefine any method of this interface. We also implement the logic of the most widely spread
+                        binary options types (such as Call, Put, Touch options etc.) in the form of separate smart
+                        contracts, GEBinaryOption successors. A more detailed description of the methods of this
+                        interface will be given in the Giant.Exchange. technical documentation.
+                    </p>
+                    <p>
+                        &laquo;Binary Option&raquo; smart contract is inextricably linked with the &laquo;Oracle&raquo;
+                        smart contract. The latter calls the methods of opening and closing a binary option contract and
+                        transfers the value of the asset in them. Due to the fact that smart contracts are passive, the
+                        call of the &laquo;Oracle&raquo; smart contract methods initiates the Oracle backend
+                        application. The interface of the binary option contract has to also provide the withdrawal of
+                        the contract, at times when the smart contract has not transferred the necessary data after a
+                        certain time.
+                    </p>
+                    <h3 id="bin-opt-purchases">Binary Option Purchases</h3>
+                    <p>
+                        A purchase of a binary options contract is a payment for a call of a method of “Binary option”
+                        smart contract. The purchase rules (such as contract amount, terms, etc.) are formulated in the
+                        smart contract, therefore the purchase is an acceptance of the binary option contract. Any user
+                        of the Giant network can make a purchase of the contract.
+                    </p>
+                    <h2 id="ge-asset">Giant.Exchange Underlying Asset</h2>
+                    <p>
+                        The underlying asset is the asset on which the binary option contract is based. The underlying
+                        asset can be represented in the form of currencies, commodities, securities, interest rates,
+                        inflation rates, official statistical information and so on.
+                    </p>
+                    <p>
+                        Giant.Exchange does not limit the list of assets, thus any asset can be added to Giant.Exchange
+                        through the voting procedure in the Giant.Exchange smart contract.
+                    </p>
+                    <p> An asset addition implies the development of a data schema (JSON Schema) which describe:</p>
+                    <ol start="1">
+                        <li>data format for an exchange between "Oracle" and " Binary option” smart contracts</li>
+                        <li>
+                            data format for the API of historical data of asset value (provided by the Oracle backend
+                            application)
+                        </li>
+                    </ol>
+                    <p>At the start of the project we plan to add to Giant.Exchange the following underlying assets:</p>
+                    <ul>
+                        <li>BTC/USD</li>
+                        <li>ETH/BTC</li>
+                        <li>ETH/USD</li>
+                        <li>XRP/BTC</li>
+                        <li>XRP/USD</li>
+                        <li>LTC/BTC</li>
+                        <li>LTC/USD</li>
+                        <li>DASH/BTC</li>
+                        <li>DASH/USD</li>
+                        <li>BCH/BTC</li>
+                        <li>BCH/USD</li>
+                        <li>GIC/BTC</li>
+                    </ul>
+                    <p>
+                        As a source of data for Oracles, we will use API services of data aggregators from various
+                        crypto-exchanges, such as: https://www.cryptocompare.com/api or https://coinmarketcap.com/api
+                    </p>
+                    <p>
+                        In the future, any developer will have a possibility to offer an arbitrary asset to the
+                        Giant.Exchange community. In order to do so, a developer will need to implement both the data
+                        format and the smart contract/Oracle backend app bundle for the asset.
+                    </p>
+                    <h2 id="ge-cases">Giant.Exchange Use Cases</h2>
+                    <p>
+                        Since the Giant.Exchange platform is open and self-regulatory, any user has equal rights to
+                        access or to expand the Giant.Exchange infrastructure. The only limitations are the set of
+                        competencies and available funds.
+                    </p>
+                    <p>
+                        Now we are going to describe the most common use cases of Giant.Exchange.
+                    </p>
+                    <h3 id="bin-opt-trading">Binary Option Trading</h3>
+                    <p>
+                        Anyone can make money on binary options trading on the Giant.Exchange platform. To start
+                        trading, it is enough only to have a certain number of GIC tokens (the minimum amount required
+                        to purchase a binary option contract) at your Giant address. The storage of funds of all the
+                        users is decentralized, they are stored exclusively in their personal wallets, so Giant.Exchange
+                        does not need to create centralized balances.
+                    </p>
+                    <p>
+                        In comparison with binary options platforms of conventional brokers, Giant.Exchange provides
+                        more benefits to the trader:
+                    </p>
+                    <p>
+                    <table class="table-custom broker-comparison">
+                        <thead>
+                        <tr>
+                            <th nowrap class="text-center">Comparison</th>
+                            <th nowrap class="text-center">Regular broker</th>
+                            <th nowrap class="text-center">Giant.Exchange</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td nowrap class="text-center">Transparency</td>
+                            <td nowrap class="text-center">generally, no</td>
+                            <td nowrap class="text-center">yes</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">Resistance to manipulation</td>
+                            <td nowrap class="text-center">no</td>
+                            <td nowrap class="text-center">yes</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">Safety of funds</td>
+                            <td nowrap class="text-center">no</td>
+                            <td nowrap class="text-center">yes</td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="text-center">Safety of a platform</td>
+                            <td nowrap class="text-center">no</td>
+                            <td nowrap class="text-center">yes</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </p>
+                    <p>
+                        On Giant.Exchange, all your transactions and funds are more secure than on a traditional
+                        platform, because it is “impossible” to hack the Giant blockchain in order to manipulate
+                        particular smart contracts or balances. Certainly, the POW and the POS consensuses are subject
+                        to a 51% attack, but this is the attack on the entire network, not on individual GIC addresses.
+                    </p>
+                    <h3 id="bin-opt-creation">&laquo;Binary Option&raquo; Сontracts Сreation</h3>
+                    <p>
+                        Anyone can make money by creating "Binary Option" smart contracts on the Giant.Exchange
+                        platform. The contract owner independently determines all the conditions of a purchase and
+                        execution of a binary option, namely he:
+                    </p>
+                    <ul>
+                        <li>selects an asset</li>
+                        <li>selects an oracle</li>
+                        <li>specifies the type of a binary option (Call, Put, Touch, etc.)</li>
+                        <li>specifies the contract purchase price (fixed or a range with two strike prices)</li>
+                        <li>specifies the terms of opening and closing of the contract</li>
+                        <li>
+                            determines the contract earnings strategy, a game against the trader (in this case, you will
+                            need a security deposit from the contract owner) or a game when traders play against traders
+                            (in this case, the broker earns a fee from the sale of contracts)
+                        </li>
+                        <li>specifies the platform fees</li>
+                    </ul>
+                    <p>
+                        A smart contract can be created from a template provided by Giant.Exchange, or can be
+                        implemented independently. To create a smart contract, you will need an active Giant network
+                        masternode to sign the smart contract when placing it in the Giant blockchain.
+                    </p>
+                    <h3 id="oracle-creation">&laquo;Oracle&raquo; Сreation</h3>
+                    <p>
+                        Anyone can earn money by providing reliable data on the value of assets. This is a more
+                        complicated way to earn money than the previously described ones, as in addition to creating an
+                        “Oracle” smart contract you will also need to create and maintain a backend Oracle application.
+                        “Oracle" smart contract also earns on the fee from the sale of those binary options which
+                        include the information about the value of assets.
+                    </p>
+                    <h3 id="dev-sc">Development of Smart Contracts for Giant.Exchange</h3>
+                    <p>
+                        Any developer can implement smart contracts on demand. Giant.Exchange allows the implementation
+                        of smart contracts (both binary options and oracles) with non-standard logic.
+                    </p>
+                    <h3 id="media-creation">Media and Information Content Creation</h3>
+                    <p>
+                        Any user who has media resources at his disposal (a YouTube channel, website, blog, popular
+                        social media account, etc.) can offer an initiative to cover the news on the Giant.Exchange. In
+                        case this initiative is supported by the community, the user will receive a budget for the
+                        creation of such content.
+                    </p>
+                    <h2 id="ge-budget">Giant.Exchange Budget</h2>
+                    <p>
+                        Giant.Exchange does not bet against traders and does not make money when traders lose, but it
+                        receives a fee from each sale of a binary options contract. In this case, the specific amount of
+                        fee is set by the broker when he creates a specific "Binary Option" smart contract.
+                    </p>
+                    <p>
+                        The fee amount affects the ranking of available sales contracts when they are displayed in the
+                        Giant.Exchange interface. The higher the fee, the higher the position of the contract in the
+                        ranking and the broader the audience of this option. Theoretically, the amount of the fee can be
+                        even 0.
+                    </p>
+                    <p>
+                        All the income of the platform is accumulated on the balance of the “Giant.Exchange” smart
+                        contract and is not available for withdrawal by the smart contract owner. These funds form the
+                        budget of Giant.Exchange, which will be spent on initiatives supported be the community.
+                    </p>
+                    <h2 id="ge-rep">Giant.Exchange Reputation System</h2>
+                    <p>
+                        Giant.Exchange will have the feature of the accumulation of reputational information about the
+                        participants of the system: brokers, oracles, traders. You will be able to give feedback about
+                        the participants of the system by calling the methods of the Giant.Exchange smart contract.
+                        Feedbacks and ratings will remain anonymous, as the reputational information will be linked to
+                        the Giant address.
+                    </p>
+                    <h2 id="ge-voting">Giant.Exchange Voting System</h2>
+                    <p>
+                        All important decisions in the Giant.Exchange ecosystem are determined through voting which
+                        takes place on the exchange platform, using the smart contract “Giant.Exchange". As a result of
+                        decision-making, usually a budget for the implementation of community initiatives, such as the
+                        development and/or maintenance of infrastructure, public relations, marketing, etc is
+                        allocated.Any user of the Giant network can take part in voting procedure, and the owner of the
+                        masternode will have a multiplying coefficient proportional to the sum of the giant network
+                        masternode investment.
+                    </p>
+                    <h2 id="ge-airdrop">Giant.Exchange Airdrop</h2>
+                    <p>
+                        Before the launch of Giant.Exchange anyone can take part in the Giant.Exchange airdrop campaign.
+                        Registration is available on: https://giant.exchange. In order to become a member, you have just
+                        to enter your email.
+                    </p>
+                    <p>
+                        During the exchange release we will send to all registered a link to activate your account at
+                        Giant.Exchange. The first 100 users who activate their accounts will receive 100 GIC. Thus, the
+                        total airdrop amount will be 10 000 GIC.
+                    </p>
+                    <h2 id="summary">Summary</h2>
+                    <p>Giant.Exchange is built around the advantages of the Giant blockchain, namely:</p>
+                    <ul>
+                        <li>all the data of the exchange is put in the state of blockchain and is managed by the
+                            community decision after the consensus is reached
+                        </li>
+                        <li>the exchange platform is open to anyone for trading, brokerage and for an expansion of
+                            exchange’s functionality
+                        </li>
+                    </ul>
+                    <p>
+                        In the binary options industry, competition is very intense, that is why centralized exchanges
+                        fight literally for every customer. We are sure that the decentralization is a future of the
+                        entire financial market, and especially of binary options market. Centralized exchanges cannot
+                        exist without regulation, and therefore in the coming years, they will become obsolete, giving
+                        way to decentralized ones. Giant.Exchange is the first self-regulated decentralized exchange,
+                        and we have no doubt that it will be able to become the leader of the binary options industry.
+                    </p>
+                    <h2 id="references">References</h2>
+                    <ol start="1">
+                        <li><a href="/whitepaper">Giant White Paper</a></li>
+                        <li><a href="/whitepaper/contracts">Giant Contracts White Paper</a></li>
+                        <li><a href="https://giant.exchange" target="_blank">Airdrop Campaign registration</a></li>
+                        <li><a href="https://giantpay.network" target="_blank">Giant blockchain website</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<th:block th:replace="blocks/footer :: footer"></th:block>
+</body>
+</html>

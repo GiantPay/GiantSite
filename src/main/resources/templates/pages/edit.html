@@ -1,10 +1,10 @@
 <!doctype html>
 <!--[if lt IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang="en"> <![endif]-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
 <head>
@@ -16,182 +16,235 @@
     <meta property="og:url" data-th-attr="content=${'https://giantpay.network/pages' + page.url}"/>
     <link rel="canonical" th:href="${'https://giantpay.network/pages' + page.url}"/>
     <th:block th:replace="blocks/header :: head"></th:block>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
-    <link rel="stylesheet" href="/css/table.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/css/jquery.fileupload.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.js"></script>
 </head>
-<body>
-<div th:replace="blocks/header :: header"></div>
+<body class="news-page">
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
 
-<section class="page_header padding">
-    <div class="display-table">
-        <div class="table-cell">
-            <div class="container">
-                <div class="page_content">
-                    <h2>Edit page</h2>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active">News</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="news" class="blog_section bd-bottom padding">
+<section class="internal-section">
     <div class="container">
+        <h1 class="line-blu line-blu-internal" th:text="${page.title}">Information</h1>
         <div class="row">
-            <div class="col-md-8 sm-padding">
-                <div class="blog_wrapper">
-                    <div class="blog_single">
-                        <form method="post" action="/pages/edit">
-                            <input type="hidden" id="id" name="id" th:field="${page.id}">
-
-                            <h1>Edit Page</h1>
-                            <fieldset style="border: 1px #ccc solid; padding: 20px; margin-bottom: 30px;">
-                                <legend style="width: auto; padding: 0 10px;">Autorization</legend>
-                                <div class="form-group">
-                                    <label for="username">Username:</label>
-                                    <input type="text"
-                                           id="username"
-                                           name="username"
-                                           class="form-control"
-                                           placeholder="Username"
-                                           required>
-                                    <div class="form-group">
-                                        <label for="title">Password:</label>
-                                        <input type="password"
-                                               id="password"
-                                               name="password"
-                                               class="form-control"
-                                               placeholder="******"
-                                               required>
-                            </fieldset>
-
-                            <div class="form-group">
-                                <label for="title">Title:</label>
-                                <input type="text"
-                                       id="title"
-                                       name="title"
-                                       th:field="${page.title}"
-                                       class="form-control"
-                                       placeholder="Title ..."
-                                       required>
-                            </div>
-                            <div class="form-group">
-                                <label for="category">Category:</label>
-                                <input type="text"
-                                       id="category"
-                                       name="category"
-                                       th:field="${page.category}"
-                                       class="form-control"
-                                       placeholder="Category ..."
-                                       required>
-                            </div>
-                            <div class="form-group">
-                                <label for="announcement">Announcement:</label>
-                                <input type="text"
-                                       id="announcement"
-                                       name="announcement"
-                                       th:field="${page.announcement}"
-                                       class="form-control"
-                                       placeholder="Announcement ..."
-                                       required>
-                            </div>
-                            <div class="form-group">
-                                <label for="seoTitle">SEO title:</label>
-                                <input type="text"
-                                       id="seoTitle"
-                                       name="seoTitle"
-                                       th:field="${page.seoTitle}"
-                                       class="form-control"
-                                       placeholder="SEO title ..."
-                                       required>
-                            </div>
-                            <div class="form-group">
-                                <label for="seoDescription">SEO descipton:</label>
-                                <input type="text"
-                                       id="seoDescription"
-                                       name="seoDescription"
-                                       th:field="${page.seoDescription}"
-                                       class="form-control"
-                                       placeholder="SEO desciption ..."
-                                       required>
-                            </div>
-                            <div class="form-group">
-                                <label for="seoKeywords">SEO keywords:</label>
-                                <input type="text"
-                                       name="seoKeywords"
-                                       th:field="${page.seoKeywords}"
-                                       class="form-control"
-                                       id="seoKeywords"
-                                       placeholder="SEO keywords ..."
-                                       required>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <div class="form-check">
-                                        <input id="visible"
-                                               name="visible"
-                                               th:field="${page.visible}"
-                                               type="checkbox"
-                                               class="form-check-input">
-                                        <label class="form-check-label" for="visible">
-                                            Visible
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <div class="form-group mt-5">
-                                <textarea id="editor" th:field="${page.text}"></textarea>
-                            </div>
-                        </form>
-                    </div>
+            <div class="col-md-12 col-lg-3">
+                <div class="download-pdf">
+                    <a class="blue-bordered-button"
+                       href="/pages">ALL NEWS</a>
+                </div>
+                <div class="news-nav">
+                    <nav class="navbar navbar-light">
+                        <nav class="nav nav-pills flex-column">
+                            <a th:each="category : ${categories}"
+                               th:href="${'/pages?c=' + category}"
+                               th:text="${category.toUpperCase()}"
+                               class="nav-link"></a>
+                        </nav>
+                    </nav>
                 </div>
             </div>
-            <div class="col-md-4 sm-padding">
-                <div class="sidebar_box">
-                    <div class="sidebar_widget mb-30">
-                        <h3 class="mb-20">Category</h3>
-                        <ul class="cat_list">
-                            <li th:each="category : ${categories}"><a th:href="${'/pages?c=' + category}"
-                                                                      th:text="${category}"></a></li>
-                        </ul>
+            <div class="col-md-12 col-lg-9 news-body">
+                <form method="post" action="/pages/edit">
+                    <input type="hidden" id="id" name="id" th:field="${page.id}">
+
+                    <h1>Edit Page</h1>
+                    <fieldset style="border: 1px #ccc solid; padding: 20px; margin-bottom: 30px;">
+                        <legend style="width: auto; padding: 0 10px;">Autorization</legend>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text"
+                                   id="username"
+                                   name="username"
+                                   class="form-control"
+                                   placeholder="Username"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Password:</label>
+                            <input type="password"
+                                   id="password"
+                                   name="password"
+                                   class="form-control"
+                                   placeholder="******"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                            <a class="btn btn-outline-secondary btn-lg" th:href="${'/pages' + page.url}">Cancel</a>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <div class="form-check">
+                                <input id="visible"
+                                       name="visible"
+                                       th:field="${page.visible}"
+                                       type="checkbox"
+                                       class="form-check-input">
+                                <label class="form-check-label" for="visible">
+                                    Visible
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text"
+                               id="title"
+                               name="title"
+                               th:field="${page.title}"
+                               class="form-control"
+                               placeholder="Title ..."
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <input type="text"
+                               id="category"
+                               name="category"
+                               th:field="${page.category}"
+                               class="form-control"
+                               placeholder="Category ..."
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="announcement">Announcement:</label>
+                        <textarea type="text"
+                                  id="announcement"
+                                  name="announcement"
+                                  th:field="${page.announcement}"
+                                  class="form-control"
+                                  placeholder="Announcement ..."
+                                  required
+                                  style="min-height: 160px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="seoTitle">SEO title:</label>
+                        <input type="text"
+                               id="seoTitle"
+                               name="seoTitle"
+                               th:field="${page.seoTitle}"
+                               class="form-control"
+                               placeholder="SEO title ..."
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="seoDescription">SEO descipton:</label>
+                        <textarea type="text"
+                                  id="seoDescription"
+                                  name="seoDescription"
+                                  th:field="${page.seoDescription}"
+                                  class="form-control"
+                                  placeholder="SEO desciption ..."
+                                  required
+                                  style="min-height: 160px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="seoKeywords">SEO keywords:</label>
+                        <input type="text"
+                               name="seoKeywords"
+                               th:field="${page.seoKeywords}"
+                               class="form-control"
+                               id="seoKeywords"
+                               placeholder="SEO keywords ..."
+                               required>
+                    </div>
+                    <fieldset style="border: 1px #ccc solid; padding: 20px; margin-bottom: 30px;">
+                        <legend style="width: auto; padding: 0 10px;">Cover</legend>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <img id="coverImage" th:src="${page.coverUrl}">
+                            </div>
+                        </div>
+                        <label for="coverUrl">URL:</label>
+                        <input type="text"
+                               id="coverUrl"
+                               name="coverUrl"
+                               th:value="${page.coverUrl}"
+                               class="form-control"
+                               placeholder="Cover URL ..."
+                               readonly="true"
+                               required>
+                        <input id="coverUpload" type="file" name="image" class="mt-3">
+                    </fieldset>
+                    <fieldset style="border: 1px #ccc solid; padding: 20px; margin-bottom: 30px;">
+                        <legend style="width: auto; padding: 0 10px;">Images</legend>
+                        <div id="image-list">
+                            <p th:each="image : ${images}">
+                                <a th:href="${image}" th:text="${image}" target="_blank"></a>
+                            </p>
+                        </div>
+                        <input id="imagesUpload" type="file" name="image" multiple>
+                        <div id="image-inputs">
+                            <input th:each="image : ${images}" type="hidden" name="images" th:value="${image}">
+                        </div>
+                    </fieldset>
+                    <div class="form-group mt-5">
+                        <textarea id="editor" th:field="${page.text}"></textarea>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 
 <div th:replace="blocks/footer :: footer"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/vendor/jquery.ui.widget.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.iframe-transport.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.fileupload.min.js"></script>
 <script>
-    var newEditor;
-
-    ClassicEditor
-        .create(document.querySelector('#editor'), {
-            toolbar: ['heading',
-                '|',
-                'alignment',
-                'bold',
-                'italic',
-                'link',
-                'bulletedList',
-                'numberedList',
-                'blockQuote',
-                'undo',
-                'redo']
-        })
-        .then(function (newEditor) {
-            editor = newEditor;
-        })
-        .catch(function (error) {
-            console.error(error);
+    $(function () {
+        new SimpleMDE({
+            element: document.getElementById("editor"),
+            spellChecker: true,
         });
+
+        $("#coverUpload").fileupload({
+            url: "/api/upload",
+            dataType: 'json',
+            add: function (e, data) {
+                data.formData = {
+                    username: $("#username").val(),
+                    password: $("#password").val()
+                };
+                data.submit();
+            },
+            done: function (e, data) {
+                if (data.result.ok) {
+                    $("#coverImage").attr("src", data.result.url);
+                    $("#coverUrl").val(data.result.url);
+                } else {
+                    alert(data.result.message);
+                }
+            }
+        });
+
+        $("#imagesUpload").fileupload({
+            url: "/api/upload",
+            dataType: 'json',
+            add: function (e, data) {
+                data.formData = {
+                    username: $("#username").val(),
+                    password: $("#password").val()
+                };
+                data.submit();
+            },
+            done: function (e, data) {
+                if (data.result.ok) {
+                    $("#image-list").append("<p><a href=\"" + data.result.url + "\" target=\"_blank\">" + data.result.url + "</a></p>");
+                    $("#image-inputs").append("<input type=\"hidden\" name=\"images\" value=\"" + data.result.url + "\">");
+                } else {
+                    alert(data.result.message);
+                }
+            }
+        });
+    });
+
 </script>
 </body>
 </html>
