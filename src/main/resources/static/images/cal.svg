@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="19px" viewBox="0 0 18 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/cal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5.7,8.55 L3.8,8.55 L3.8,10.45 L5.7,10.45 L5.7,8.55 Z M9.5,8.55 L7.6,8.55 L7.6,10.45 L9.5,10.45 L9.5,8.55 Z M13.3,8.55 L11.4,8.55 L11.4,10.45 L13.3,10.45 L13.3,8.55 Z M15.2,1.9 L14.25,1.9 L14.25,0 L12.35,0 L12.35,1.9 L4.75,1.9 L4.75,0 L2.85,0 L2.85,1.9 L1.9,1.9 C0.8455,1.9 0.0095,2.755 0.0095,3.8 L0,17.1 C0,18.145 0.8455,19 1.9,19 L15.2,19 C16.245,19 17.1,18.145 17.1,17.1 L17.1,3.8 C17.1,2.755 16.245,1.9 15.2,1.9 Z M15.2,17.1 L1.9,17.1 L1.9,6.65 L15.2,6.65 L15.2,17.1 Z" id="path-1"></path>
+        <linearGradient x1="14.1176471%" y1="-41.1764706%" x2="100%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#3375B3" offset="0%"></stop>
+            <stop stop-color="#234E85" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="stage" transform="translate(-26.000000, -448.000000)">
+            <g id="Stage">
+                <g id="event-card">
+                    <g id="whitecard-&amp;-txt-area">
+                        <g id="icon/date" transform="translate(25.000000, 448.000000)">
+                            <g id="Colour/Light-Grey-1" transform="translate(1.055556, 0.000000)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                <g id="🎨-Colour/Gradient-Logo" mask="url(#mask-2)">
+                                    <g transform="translate(-1.055556, -1.055556)" id="Brand/Colour/Winter-Neva">
+                                        <rect fill="url(#linearGradient-3)" x="0" y="0" width="19" height="21"></rect>
+                                        <rect fill="#127AEA" x="0" y="0" width="19" height="21"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

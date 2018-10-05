@@ -1,0 +1,146 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Giant Products</title>
+    <meta name="description" content="The Giant blockchain has been designed to solve the problems of trust between the contracts and bets participants and of the safety of obligations fulfillment">
+    <th:block th:replace="blocks/header :: head"></th:block>
+</head>
+<body>
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
+<div class="content">
+    <div class="container">
+        <div class="content-block">
+            <h1 class="content-block__header">Giant Products</h1>
+            <div class="projects">
+                <div class="projects-tabs">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="projects-tabs-tab _active"
+                                 data-target="#exchange"
+                                 style="background-image: url('/images/projects_1.jpg')">
+                                <span class="projects-tabs-tab__text">Giant.Exchange</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="projects-tabs-tab"
+                                 data-target="#bet"
+                                 style="background-image: url('/images/projects_2.jpg')">
+                                <span class="projects-tabs-tab__text">Giant.Bet</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="projects-tabs-tab"
+                                 data-target="#goldstake"
+                                 style="background-image: url('/images/projects_3.jpg')">
+                                <span class="projects-tabs-tab__text">Giant.ColdStake</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-content">
+                    <div class="projects-content-block _active" id="exchange" style="display: block;">
+                        <div class="projects-content__heading">Giant.Exchange</div>
+                        <div class="projects-content__author">
+                            <a href="https://giant.exchange" target="_blank">
+                                <img class="projects-content__icon" src="images/arrow.svg"> Giant.Exchange
+                            </a>
+                        </div>
+                        <div class="projects-content__date">
+                            <img class="projects-content__icon" src="images/date.svg"> Release date Q4 2018
+                        </div>
+                        <p class="projects-content-block-text">
+                            This decentralized binary options platform puts every step of traditional binary options
+                            trading procedures on the blockchain. In practice, this means dedicated smart contracts for
+                            every binary option created by Brokers, and using a price data source provided by Oracles.
+                            Financial payments are only made after all parties meet the contract terms — nobody can lie
+                            about the amount of funds locked up, embezzle them, or create fraudulent schemes. On
+                            Giant.Exchange, traders can safely bet on the price motions of various assets using Giant
+                            coin as the primary financial tool.<br>
+                            The future of the project is backed by the vibrant economic space of cryptocurrencies (they
+                            will become the first underlying assets of binary options on the exchange) and other
+                            spheres. Brokers may also create smart contracts related to completely new assets. This
+                            user-generated options platform will be the first practical test of the Giant blockchain and
+                            its smart contracts.
+                        </p>
+                        <div class="projects-content-block-footer">
+                            <a class="btn btn-primary" href="/whitepaper/exchange">White Paper</a>
+                            <a class="btn btn-primary d-none" href="#">Video</a>
+                        </div>
+                    </div>
+                    <div class="projects-content-block" id="bet" style="display: none;">
+                        <div class="projects-content__heading">Giant.Bet</div>
+                        <div class="projects-content__author">
+                            <img class="projects-content__icon" src="images/arrow.svg"> Giant.Bet
+                        </div>
+                        <div class="projects-content__date"><img class="projects-content__icon" src="images/date.svg">
+                            Release date Q3 2019
+                        </div>
+                        <p class="projects-content-block-text">
+                            This decentralized application is focused on safe sports betting. Just like on
+                            Giant.Exchange, every bet is put on a smart contract and, again, Giant Coin (GIC) will be
+                            the primary means of payment. All the development experience gained from Giant.Exchange will
+                            be used when creating Giant.Bet. Oracles will pull information about sports matches from
+                            trustworthy sources, e.g. the FIFA website. In traditional sports betting, you are
+                            restrained by the range of offerings created by offline bookmakers. On Giant.Bet, anybody
+                            can create a smart contract connected with a new sports event, as long as there is a
+                            reliable source of data to pull game or match information.<br>
+                            The continuously growing world of sports ensures the bright future of Giant.Bet. In
+                            comparison to Giant.Exchange, this application may become even more popular in the long
+                            term, as more people are interested in sports betting than options trading. Cybersport
+                            matches can also potentially appear as the theme of wagers on Giant.Bet. The more types of
+                            sports included on Giant.Bet, the more diverse the community becomes. All of this is
+                            possible due to the unique Giant Contract technology, which allows for any bet creation as
+                            long as there is a reliable API and the underlying event is clear. This will make Giant.Bet
+                            a truly global marketplace.
+                        </p>
+                        <div class="projects-content-block-footer">
+                            <a class="btn btn-primary d-none" href="#">White paper</a>
+                            <a class="btn btn-primary d-none" href="#">Video</a>
+                        </div>
+                    </div>
+                    <div class="projects-content-block" id="goldstake" style="display: none;">
+                        <div class="projects-content__heading">Giant.ColdStake</div>
+                        <div class="projects-content__author">
+                            <img class="projects-content__icon" src="images/arrow.svg"> Giant.ColdStake
+                        </div>
+                        <div class="projects-content__date">
+                            <img class="projects-content__icon" src="images/date.svg"> Release date Q3 2019
+                        </div>
+                        <p class="projects-content-block-text">
+                            This project seriously differs from two previously explained, as it is aimed solely at the
+                            crypto community and uses the peculiarities of the Proof-of-Stake (PoS) consensus algorithm.
+                            Currently, PoS wallet clients need to stay online to receive block rewards — this mechanism
+                            is called HotStake. With Giant.Coldstake, stakeholders will be able to receive staking
+                            rewards even if their wallet client is offline. This innovative technology makes
+                            Proof-of-Stake extremely convenient for everyone. No longer will it be required to have a
+                            computer turned on 24/7 to be a network participant and receive a cryptocurrency reward.<br>
+                            In comparison to masternode sharing and cloud mining services, of which there are many
+                            already available in the crypto space, there is a deficit of projects dedicated to shared
+                            staking. This is partly explained by the dominance of PoW coins, but the biggest issue is
+                            the difficulty of creating an accurate reward accounting system. The Giant technology
+                            protocol allows for the implementation of a smart contract that can accurately and
+                            efficiently calculate all of the required payment procedures.
+                        </p>
+                        <div class="projects-content-block-footer">
+                            <a class="btn btn-primary d-none" href="#">White paper</a>
+                            <a class="btn btn-primary d-none" href="#">Video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<th:block th:replace="blocks/footer :: footer"></th:block>
+<th:block th:replace="javascript/products/switch :: code"></th:block>
+</body>
+</html>

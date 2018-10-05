@@ -1,0 +1,188 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="code">
+    <script>
+        $(function () {
+
+            var rates = {
+                btc: parseFloat($("#btcRate").text()),
+                usd: parseFloat($("#usdRate").text())
+            };
+            var values = {
+                gic: 0,
+                btc: 0,
+                usd: 0
+            };
+
+            $("#chooseBTC").click(function () {
+                $("[id$=\"IncomeBtc\"]").removeClass("d-none");
+                $("[id$=\"IncomeUsd\"]").addClass("d-none");
+            });
+
+            $("#chooseUSD").click(function () {
+                $("[id$=\"IncomeBtc\"]").addClass("d-none");
+                $("[id$=\"IncomeUsd\"]").removeClass("d-none");
+            });
+
+            $("#btcAmountGIC, #usdAmountGIC").on("keypress keyup", function (e) {
+                var $this = $(this);
+                var oldGicValue = parseFloat($this.val());
+                setTimeout(function () {
+                    var newGicValue = parseFloat($this.val());
+                    if (oldGicValue === newGicValue) {
+                        setGic(newGicValue);
+                    }
+                }, 1000);
+            });
+
+            $("#btcAmountBTC").on("keypress keyup", function (e) {
+                var $this = $(this);
+                var oldBtcValue = parseFloat($this.val());
+                setTimeout(function () {
+                    var newBtcValue = parseFloat($this.val());
+                    if (oldBtcValue === newBtcValue) {
+                        setBtc(newBtcValue);
+                    }
+                }, 500);
+            });
+
+            $("#usdAmountUSD").on("keypress keyup", function (e) {
+                var $this = $(this);
+                var oldUsdValue = parseFloat($this.val());
+                setTimeout(function () {
+                    var newUsdValue = parseFloat($this.val());
+                    if (oldUsdValue === newUsdValue) {
+                        setUsd(newUsdValue);
+                    }
+                }, 500);
+            });
+
+            function setGic(gic) {
+                values.gic = gic.toFixed(0);
+                values.btc = (gic * rates.btc).toFixed(8);
+                values.usd = (gic * rates.usd).toFixed(2);
+
+                $("#btcAmountGIC").val(values.gic);
+                $("#usdAmountGIC").val(values.gic);
+                $("#btcAmountBTC").val(values.btc);
+                $("#usdAmountUSD").val(values.usd);
+                calculate();
+            }
+
+            function setBtc(btc) {
+                values.btc = btc.toFixed(8);
+                values.gic = (values.btc / rates.btc).toFixed(0);
+                values.usd = (values.gic * rates.usd).toFixed(2);
+
+                $("#btcAmountGIC").val(values.gic);
+                $("#usdAmountGIC").val(values.gic);
+                $("#btcAmountBTC").val(values.btc);
+                $("#usdAmountUSD").val(values.usd);
+                calculate();
+            }
+
+            function setUsd(usd) {
+                values.usd = usd.toFixed(2);
+                values.gic = (values.usd / rates.usd).toFixed(0);
+                values.btc = (values.gic * rates.btc).toFixed(8);
+
+                $("#btcAmountGIC").val(values.gic);
+                $("#usdAmountGIC").val(values.gic);
+                $("#btcAmountBTC").val(values.btc);
+                $("#usdAmountUSD").val(values.usd);
+                calculate();
+            }
+
+            function formatDuration(seconds) {
+                var days = Math.floor(seconds / (3600 * 24));
+                seconds -= days * 3600 * 24;
+                var hrs = Math.floor(seconds / 3600);
+                seconds -= hrs * 3600;
+                var mnts = Math.floor(seconds / 60);
+                seconds -= mnts * 60;
+                return (days > 0 ? (days + "d ") : "") + hrs + "h " + mnts + "m";
+            }
+
+            function calculate() {
+                var masternodeResult = false;
+                var posResult = false;
+                $("#btcAmountGIC").attr("readonly", true);
+                $("#btcAmountBTC").attr("readonly", true);
+                $("#usdAmountGIC").attr("readonly", true);
+                $("#usdAmountUSD").attr("readonly", true);
+
+                $.getJSON("/api/masternodes/info", function (info) {
+                    var multiply = values.gic / 1000.0;
+                    var rewardFrequency = formatDuration(3600 * 16 * 24 / info.daily);
+
+                    $("#masternodeCalculator #masternodeCount").text(info.masternodeCount);
+                    $("#masternodeCalculator #rewardFrequency").text(rewardFrequency);
+
+                    $("#masternodeCalculator #mnDailyIncomeGic em").text(numeral(info.daily * multiply).format('0,0.00'));
+                    $("#masternodeCalculator #mnWeeklyIncomeGic em").text(numeral(info.daily * 7 * multiply).format('0,0.00'));
+                    $("#masternodeCalculator #mnMonthlyIncomeGic em").text(numeral(info.monthly * multiply).format('0,0.00'));
+                    $("#masternodeCalculator #mnAnnualIncomeGic em").text(numeral(info.annual * multiply).format('0,0.00'));
+
+                    $("#masternodeCalculator #mnDailyIncomeUsd em").text(numeral(info.daily * rates.usd * multiply).format('0,0.00'));
+                    $("#masternodeCalculator #mnWeeklyIncomeUsd em").text(numeral(info.daily * 7 * rates.usd * multiply).format('0,0.00'));
+                    $("#masternodeCalculator #mnMonthlyIncomeUsd em").text(numeral(info.monthly * rates.usd * multiply).format('0,0.00'));
+                    $("#masternodeCalculator #mnAnnualIncomeUsd em").text(numeral(info.annual * rates.usd * multiply).format('0,0.00'));
+
+                    $("#masternodeCalculator #mnDailyIncomeBtc em").text(numeral(info.daily * rates.btc * multiply).format('0,0.00000000'));
+                    $("#masternodeCalculator #mnWeeklyIncomeBtc em").text(numeral(info.daily * 7 * rates.btc * multiply).format('0,0.00000000'));
+                    $("#masternodeCalculator #mnMonthlyIncomeBtc em").text(numeral(info.monthly * rates.btc * multiply).format('0,0.00000000'));
+                    $("#masternodeCalculator #mnAnnualIncomeBtc em").text(numeral(info.annual * rates.btc * multiply).format('0,0.00000000'));
+
+                    $("#masternodeCalculator #mnRoiPercent em").text(numeral(info.roi).format('0,0.00'));
+                    $("#masternodeCalculator #mnRoiDays em").text(numeral(info.days).format('0'));
+
+                    masternodeResult = true;
+                    if (masternodeResult && posResult) {
+                        $("#btcAmountGIC").removeAttr("readonly");
+                        $("#btcAmountBTC").removeAttr("readonly");
+                        $("#usdAmountGIC").removeAttr("readonly");
+                        $("#usdAmountUSD").removeAttr("readonly");
+                    }
+                });
+
+                $.getJSON("https://giantpay.network/api/gic/calc?amount=" + values.gic, function (r) {
+                    $("#stakeInterval").text();
+
+                    $("#posCalculator #averageDifficulty").text(r.avgDiff.toFixed(1));
+                    $("#posCalculator #stakeInterval").text(formatDuration(r.avgDiffTime));
+
+                    $("#posCalculator #sDailyIncomeGic em").text(numeral(4 * 86400.0 / r.avgDiffTime).format('0,0.00'));
+                    $("#posCalculator #sWeeklyIncomeGic em").text(numeral(4 * 604800.0 / r.avgDiffTime).format('0,0.00'));
+                    $("#posCalculator #sMonthlyIncomeGic em").text(numeral(4 * 2592000.0 / r.avgDiffTime).format('0,0.00'));
+                    $("#posCalculator #sAnnualIncomeGic em").text(numeral(4 * 31536000 / r.avgDiffTime).format('0,0.00'));
+
+                    $("#posCalculator #sDailyIncomeUsd em").text(numeral(4 * 86400.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
+                    $("#posCalculator #sWeeklyIncomeUsd em").text(numeral(4 * 604800.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
+                    $("#posCalculator #sMonthlyIncomeUsd em").text(numeral(4 * 2592000.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
+                    $("#posCalculator #sAnnualIncomeUsd em").text(numeral(4 * 31536000 / r.avgDiffTime * rates.usd).format('0,0.00'));
+
+                    $("#posCalculator #sDailyIncomeBtc em").text(numeral(4 * 86400.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                    $("#posCalculator #sWeeklyIncomeBtc em").text(numeral(4 * 604800.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                    $("#posCalculator #sMonthlyIncomeBtc em").text(numeral(4 * 2592000.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                    $("#posCalculator #sAnnualIncomeBtc em").text(numeral(4 * 31536000 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+
+                    $("#posCalculator #sRoiPercent em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00'));
+                    $("#posCalculator #sRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
+
+                    posResult = true;
+                    if (masternodeResult && posResult) {
+                        $("#btcAmountGIC").removeAttr("readonly");
+                        $("#btcAmountBTC").removeAttr("readonly");
+                        $("#usdAmountGIC").removeAttr("readonly");
+                        $("#usdAmountUSD").removeAttr("readonly");
+                    }
+                });
+            }
+
+            setGic(1000);
+        });
+    </script>
+</th:block>
+</body>
+</html>

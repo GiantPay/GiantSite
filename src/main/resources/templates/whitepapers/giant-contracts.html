@@ -1,0 +1,738 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>Giant Contracts White Paper</title>
+    <meta name="description" content="The whitepaper reflects the main ideas of our project">
+    <th:block th:replace="blocks/header :: head"></th:block>
+</head>
+<body class="about-page" data-spy="scroll" data-target="#giant-whitepaper-navbar" data-offset="50">
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
+
+<section class="internal-section">
+    <div class="container">
+        <h1 class="line-blu line-blu-internal">Giant Contracts White Paper</h1>
+        <div class="row whitepaper-links">
+            <div class="col-sm-12 col-md-4">
+                <a href="/whitepaper">
+                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
+                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
+                    <span>Giant<br>White Paper</span>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a href="/whitepaper/contracts" class="active">
+                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
+                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
+                    <span>Giant Contracts<br>White Paper</span>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a href="/whitepaper/exchange">
+                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
+                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
+                    <span>Giant.Exchange<br>White Paper</span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="download-pdf">
+                    <a class="blue-bordered-button"
+                       href="/GiantContractsWhitepaper.pdf"
+                       target="_blank"
+                       rel="nofollow">DOWNLOAD PDF</a>
+                </div>
+                <div class="whitepaper-nav">
+                    <nav id="giant-whitepaper-navbar" class="navbar navbar-light">
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link" href="#preface">Preface</a>
+                            <a class="nav-link" href="#giant-vm">Giant Virtual Machine</a>
+                            <a class="nav-link" href="#code-update">Smart Contract Code Updating</a>
+                            <a class="nav-link" href="#sc-interaction">Smart Contracts Interaction</a>
+                            <a class="nav-link" href="#sc-destruction">Smart Contracts Destruction</a>
+                            <a class="nav-link" href="#sc-signing">Smart Contracts Signing</a>
+                            <a class="nav-link" href="#efficiency">Efficiency</a>
+                            <a class="nav-link" href="#fees">Fees</a>
+                            <a class="nav-link" href="#sc-examples">Smart Contracts Implementation Examples</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ml-3" href="#locking-sc">Locking Smart Contract</a>
+                                <a class="nav-link ml-3" href="#domain-name">Domain Name System Smart Contract</a>
+                                <a class="nav-link ml-3" href="#token">Token Smart Contract</a>
+                            </nav>
+                            <a class="nav-link" href="#testing">Testing and Debugging the Smart Contracts</a>
+                            <a class="nav-link" href="#summary">Summary</a>
+                        </nav>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-8">
+                <div class="whitepaper-body">
+                    <h2 id="preface">Preface</h2>
+                    <p>
+                        Smart contracts are computer programs that automatically fulfill the terms of the contract which
+                        are fixed at the time of its creation. The concept of autonomous contracts is not new and it was
+                        first formulated in 1994 by a cryptographer Nick Szabo. However, due to the lack of a
+                        decentralized and at the same time secure environment, his idea has not been widely implemented.
+                    </p>
+                    <p>
+                        The first working example of this environment appeared in 2008 and it is known as Bitcoin. To
+                        verify and confirm Bitcoin transactions the Bitcoin blockchain uses a very simple virtual
+                        machine, the so-called Bitcoin Script. Bitcoin Script allows you to implement scenarios which
+                        are more complex than just transfer of funds, for instance, a receival of payment by
+                        multi-signature, deferred payments and so on. However, Bitcoin Script cannot be described as a
+                        complete environment for smart contracts since it is not a separate entity in the Bitcoin
+                        blockchain. Due to this fact, the more complex logic with an autonomous smart contract balance
+                        or with transfers from one smart contract to another cannot be implemented.
+                    </p>
+                    <p>
+                        A fundamentally new blockchain of Ethereum was launched in 2014 and it provided a full-fledged
+                        environment for the execution of smart contracts. In comparison with the Bitcoin Script, the
+                        Ethereum virtual machine allows you to realize almost any idea in the form of a smart contract.
+                        Nevertheless, the implementation of Ethereum has several disadvantages such as:
+                    </p>
+                    <ul>
+                        <li>
+                            The code of the smart contract, which is already in the blockchain, cannot be changed and
+                            this can create inconveniences for fixing bugs of smart contracts. Thus, the creation of a
+                            new code leads to a new smart contract deployment which leads to a new smart contract
+                            address. These steps cause both a change to the whole logic tied to the address of the
+                            previous version of the smart contract and a loss of confidential information stored in the
+                            contract repository. The majority of Ethereum smart contracts remain uncorrected which makes
+                            the use of such smart contracts risky for ordinary users of the Ethereum network.
+                        </li>
+                        <li>
+                            A barrier for the entrance of new developers into the development of smart contracts because
+                            of the Ethereum's own programming language Solidity.
+                        </li>
+                    </ul>
+                    <p>The implementation of smart contracts by Giant offers the following features:</p>
+                    <ol start="1">
+                        <li>
+                            JavaScript of ECMAScript 6 standard - a programming language for writing Giant smart
+                            contracts
+                        </li>
+                        <li>The possibility to edit the code of the deployed smart contract</li>
+                        <li>
+                            The signature of a smart contract with a private key of the Giant masternode for its
+                            deployment into the main Giant network
+                        </li>
+                    </ol>
+                    <h2 id="giant-vm">Giant Virtual Machine</h2>
+                    <p>
+                        The Giant virtual machine executes JavaScript code of the ECMAScript 6 standard. Giant uses a
+                        specific JS engine V8 (Chrome) version 6.6. Thus, the programming language of the Giant smart
+                        contracts supports ECMAScript 6 features as much as the V8 does. It is important to note that in
+                        V8, the majority of the ES6 features are supported only when use strict is on.
+                    </p>
+                    <p>A number of conditionalities is applied in the GiantContracts:</p>
+                    <ul>
+                        <li>Smart contract is a class declaration</li>
+                        <li>
+                            The class of a smart contract should be exported from the source code of a module by
+                            default, that is, by export default command
+                        </li>
+                        <li>
+                            The class of a smart contract should be inherited from the Contract class provided by the
+                            Giant
+                        </li>
+                        <li>
+                            All declared methods in the smart contract class are public and available for call in the
+                            blockchain
+                        </li>
+                        <li>
+                            All the declared methods and properties of the smart contract class are stored as part of
+                            the smart contract object in the smart contract storage
+                        </li>
+                        <li>
+                            The source code of a smart contract сan contain JS code outside the smart contract class,
+                            but the properties installed outside the class of the smart contract are not saved between
+                            the executions of the smart contract
+                        </li>
+                    </ul>
+                    <p>
+                        Basic contract implies a number of certain conventions fixed in the form of a class. Each smart
+                        contract has an address which means it can accept payments and has its own balance. The basic
+                        implementation of the Contract class will provide the basic capabilities of a smart contract
+                        both to accept transactions where the recipient is the current smart contract and to send
+                        transactions where the sender is the current smart contract.
+                    </p>
+                    <p>
+                        Thus, the simplest Giant smart contract is as follows:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+'use strict'
+import Contract from 'GiantContract'
+
+export default class SimpleContract extends Contract {
+
+  constructor(text = 'Hello world!') {
+    this.text = text
+  }
+
+  setText(text) {
+    this.text = text
+  }
+
+  getText() {
+    return this.text
+  }
+}
+</code>
+</pre>
+                    <p>
+                        The implementation of the Giant smart contract execution environment will have some limitations
+                        in order to resolve non-deterministic behavior issues of JS code on different nodes. If the
+                        smart contract is not deterministic, the results of different nodes may be inconsistent. As a
+                        result, a consensus between nodes cannot be reached and the network becomes stagnant. These
+                        restrictions will be described in more detail in a GiantContracts technical documentation.
+                    </p>
+                    <h2 id="code-update">Smart Contract Code Updating</h2>
+                    <p>
+                        The smart contract code updating mechanism is a very demanded feature that is lacking in the
+                        ecosystem of Ethereum, NEO and in the other smart contracts. Smart contract code update will
+                        allow:
+                    </p>
+                    <ul>
+                        <li>not to lose sensitive data of the smart contract during its update</li>
+                        <li>to promptly fix bugs in a working smart contract</li>
+                        <li>to iteratively develop a smart contract, gradually improving its functionality</li>
+                    </ul>
+                    <p>
+                        JavaScript is a dynamic programming language that allows you to define data types and to perform
+                        syntax analysis and “just in time” compilation (JIT), at the stage of program execution. Each
+                        smart contract has its own isolated storage, which stores the status of the smart contract
+                        execution. It stores the status since the moment of its deployment into the blockchain and until
+                        the last call of any smart contract method. Because of the dynamic nature of the JavaScript, the
+                        method declared in a smart contract class is also an object that is kept in the smart contract
+                        storage. This allows you to replace the smart contract method, through a special method provided
+                        by the developer of the smart contract.
+                    </p>
+                    <p>
+                        An example of an implementation of such a mechanism with a simple verification where changes to
+                        the smart contract code can be made by the same user who carried out the smart contract
+                        deployment, is given below:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+'use strict'
+import Contract from 'GiantContract'
+import {getCallerAddress} from 'GiantBlockchain'
+
+export default class ChangableContract extends Contract {
+
+  constructor() {
+    this.owner = getCallerAddress()
+    this.a = 1
+    this.b = 2
+  }
+
+  get() {
+    return this.a
+  }
+
+  changeCode(newCode) {
+    if (this.owner === getCallerAddress()) {
+      eval(newCode)
+    }
+  }
+}
+</code>
+</pre>
+                    <p>
+                        Example of execution in the js console:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+giantjs> const c = new ChangableContract()
+giantjs> c.get()
+1
+giantjs> c.changeCode('this.get = () => this.b')
+giantjs> c.get()
+2
+</code>
+</pre>
+                    <p>
+                        Even though this mechanism is highly applicable for the developers of smart contracts, it could
+                        cause a potential vulnerability to smart contracts in cases when developer treats them
+                        dismissively. JS has built-in mechanisms for protection of the properties of the object from
+                        rewriting. In such case, the code of the smart contract will look as follows:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+…
+export default class NotChangableContract extends Contract {
+  …
+}
+
+Object.defineProperty(NotChangableContract.prototype, 'get', {
+  value: () => this.a,
+  enumerable: false,
+  configurable: true,
+  writable: false
+});
+</code>
+</pre>
+                    <p>
+                        In the future, we are going to implement a support for the ES7 standard, which will have shorter
+                        solutions - decorators. With the help of the decorators, you can get the same solution in a more
+                        elegant way:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+…
+function notModifyed(target, key, descriptor) {
+    descriptor.writable = false;
+    return descriptor;
+}
+
+export default class NotChangableContract extends Contract {
+  …
+
+  @notModifyed
+  get() {
+    return this.a
+  }
+}
+</code>
+</pre>
+                    <h2 id="sc-interaction">Smart Contracts Interaction</h2>
+                    <p>
+                        In the Giant blockchain, smart contracts can interact with each other, in other words, some
+                        contracts can call the methods of other contracts or even generate new smart contracts. However,
+                        this kind of interaction has certain limitations, for instance, Giant will not support recursive
+                        calls of smart contracts. Recursion can be achieved within a contract, but it cannot cross the
+                        boundaries of the current contract.
+                    </p>
+                    <p>
+                        The links between contracts can be both static and dynamic which gives greater flexibility to
+                        the interaction between smart contracts.
+                    </p>
+                    <p>
+                        The static connection of the external smart contract will look like a simple import to the smart
+                        contract address, and then in the current smart contract it will be available as an object with
+                        methods available for calling, for example:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+'use strict'
+import Contract from 'GiantContract'
+import invokableContract from '0x123…'
+
+export default class InvokedContract extends Contract {
+
+  constructor() {
+    this.foo = invokableContract.bar()
+  }
+}
+</code>
+</pre>
+                    <p>
+                        Dynamic connection of an external smart contract is a more flexible solution and it is
+                        implemented through the call method imported from the GiantUtils package. It allows smart
+                        contracts to interact “just in time”. An example below demonstrates a simple interaction between
+                        two smart contracts where one smart contract can subscribe for a call of its methods with
+                        another smart contract.
+                    </p>
+                    <p>
+                        The first smart contract has an interface for adding calls of other smart contracts:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+'use strict'
+import Contract from 'GiantContract'
+import {sha3, call, getTime} from 'GiantUtils'
+
+export default class InvocationContract extends Contract {
+
+  constructor() {
+    this.invocations = new Map()
+  }
+
+  addInvocation(invokedAt, invokedContractId, fnName) {
+    const invocationKey = sha3(invokedAt + invokedContractId + fnName)
+
+    this.invocations.set(invocationKey, {
+      time: invokedAt,
+      contractId: invokedContractId,
+      fn: fnName
+    }
+  }
+
+  getInvocations() {
+    return this.invocations
+  }
+
+  invoke(invocationKey) {
+    const invocation = this.invocations.get(invocationKey)
+
+    if (invocation && invocation.invokedAt >= getTime()) {
+      call(invocation.contractId, invocation.fnName)
+      this.invocations.delete(invocationKey)
+    }
+  }
+}
+</code>
+</pre>
+                    <p>
+                        The second smart contract signs to execute its method in the future in the constructor.
+                    </p>
+                    <pre>
+<code class="language-javascript">
+'use strict'
+import Contract from 'GiantContract'
+import {getAddress, getBlockTime} from 'GiantBlockchain'
+import invocationContract from '0x123…'
+
+export default class InvokedInFutureContract extends Contract {
+
+  constructor() {
+   invocationContract.addInvocation(getBlockTime() + 3600, getAddress(), 'foo')
+  }
+
+  foo() {
+    // doing something in future
+  }
+}
+</code>
+</pre>
+                    <p>
+                        This example has a number of disadvantages, for instance InvocationContract does not provide for
+                        the transfer of parameters into the called methods of other smart contracts. However, it is only
+                        a demonstration of the potential of the interaction of smart contracts in the Giant blockchain.
+                    </p>
+                    <h2 id="sc-destruction">Smart Contracts Destruction</h2>
+                    <p>
+                        Smart contracts destruction is an extremely useful feature for the Giant ecosystem. It will make
+                        impossible for users to utilize the outdated or irrelevant smart contracts and to clear all the
+                        data they use in the smart contract storage. Definitely, this mechanism should be used by the
+                        developers with caution. However, it is important to understand that all calls of the methods of
+                        the smart contract remain in the blockchain, therefore, the state of the storage of the smart
+                        contract until its destruction is completely recoverable. In fact, when a smart contract is
+                        destroyed, only the off-chain data of the smart contract is cleared.
+                    </p>
+                    <p>
+                        Below you can see an example of a smart contract with a destroy function that is available to
+                        any user:
+                    </p>
+                    <pre>
+<code class="language-javascript">
+'use strict'
+import Contract from 'GiantContract'
+import destroy from 'GiantDestroy'
+
+export default class DestroyableContract extends Contract {
+
+  constructor() {
+  }
+
+  destroyContract() {
+    destroy()
+  }
+}
+</code>
+</pre>
+                    <h2 id="sc-signing">Smart Contracts Signing</h2>
+                    <p>
+                        In the Giant mainnet, the smart contract method call and deployment are possible only if it is
+                        signed by a private key of an active Giant masternode. This creates a barrier for a smart
+                        contract creation, but the use of this mechanism is due to several reasons:
+                    </p>
+                    <ul>
+                        <li>
+                            It does not allow the creation of garbage smart contracts in the Giant blockchain. Each
+                            smart contract should be useful and applicable for users of the Giant network
+                        </li>
+                        <li>
+                            The creator of the smart contract has to become an investor of the Giant network. It should
+                            encourage the growth of the audience interested in the development of the Giant blockchain
+                        </li>
+                        <li>
+                            The masternode owner has an opportunity to influence the development of the Giant technology
+                            through voting. In this case, the creators of smart contracts will have a real opportunity
+                            to influence the further development of the Giant smart contracts ecosystem
+                        </li>
+                    </ul>
+                    <p>
+                        This restriction may be lifted in the future, but only if the Giant community votes so.
+                    </p>
+                    <p>
+                        In the testnet of Giant, smart contract methods placement and call will not depend on the
+                        availability of an active masternode.
+                    </p>
+                    <h2 id="efficiency">Efficiency</h2>
+                    <p>
+                        The efficiency of execution of smart contracts is essential for the success of the ecosystem, as
+                        it directly affects the potential number of transactions per time unit and increases (or
+                        decreases) the requirements for the hardware on which the full Giant network node is deployed.
+                        When we analyze the efficiency of any execution environment, there are two main metrics that are
+                        critical:
+                    </p>
+                    <ul>
+                        <li>The speed of code execution</li>
+                        <li>The speed of initialization of the execution environment</li>
+                    </ul>
+                    <p>
+                        For smart contracts, the execution environment is often more important than the speed of
+                        instructions execution. Each time a smart contract is called, it must start a new virtual
+                        machine. Therefore, the speed of launching the virtual machine has a great impact on the
+                        efficiency of the smart contract system.
+                    </p>
+                    <p>
+                        Giant uses the JS V8 engine as its smart contract execution environment, which runs very
+                        quickly, takes up few resources and has built-in mechanisms for optimizing JS code.
+                    </p>
+                    <p>
+                        V8 engine differs from the other JS engines by a high performance, and this has become more
+                        noticeable after the V8 switched to the use of Ignition + TurboFan.
+                    </p>
+                    <h2 id="fees">Fees</h2>
+                    <p>
+                        Unlike in Ethereum, NEO and other networks, where an additional token, the so-called GAS, is
+                        charged for the use of their ecosystem, we use a different approach to pay for the network
+                        resources in Giant. In the Giant network, the transaction fee does not go to the miner, but
+                        simply burns helping to counter GIC inflation. The same happens when a smart contract is placed
+                        or its methods are executed. In doing so, the user operates the price of the transaction in the
+                        smart contract (GasPrice analogue) and the amount that he can spend on the execution of the
+                        smart contract code. Means of deployment and call of smart contracts will assess the number of
+                        GIC tokens required for the execution of an operation. The unused commission will be burned.
+                    </p>
+                    <p>
+                        The Giant architecture provides high redundancy of the storage capacity of the smart contract
+                        (essentially it is limited only by physically available space on the host), and the use of this
+                        capacity is not free. The deployment of a smart contract in the Giant network requires a fee
+                        which will be determined further in the technical documentation. A smart contract deployed on
+                        the Giant blockchain can be used multiple times until it is destroyed by its creator.
+                    </p>
+                    <p>
+                        Giant provides a secure execution environment for smart contracts. In order to execute the
+                        contract, the consumption of computing resources for each full node in the network is required,
+                        so the users of smart contracts have to pay for the execution. If the commission is not enough
+                        to perform a smart contract then its execution will be interrupted and the commission will be
+                        burned.
+                    </p>
+                    <p>
+                        The majority of simple smart contracts will be executed almost free of charge. More expensive
+                        will be the operations of deploying/updating the code of the smart contract in the blockchain,
+                        of calling other smart contracts and of using the storage of smart contracts.
+                    </p>
+                    <h2 id="sc-examples">Smart Contracts Implementation Examples</h2>
+                    <p>
+                        All code samples shown below are intended to demonstrate the ideas we want to implement and they
+                        cannot be taken as the final description of the syntax and vocabulary of the Giant smart
+                        contracts. Perhaps during the implementation, more appropriate technical solutions will be
+                        adopted.
+                    </p>
+                    <p>
+                        Follow the documentation on our website and on our GitHub account. We consider the code
+                        documentation as important as the code writing.
+                    </p>
+                    <p>
+                        We want to make an open platform and we hope to attract a wide audience of developers, both for
+                        the development of smart contracts on the Giant blockchain, and for the participation in the
+                        development of the Giant itself.
+                    </p>
+                    <h3 id="locking-sc">Locking Smart Contract</h3>
+                    <p>
+                        The contract implements a function that defines a specific time stamp. No one can withdraw any
+                        assets from the smart contract before the specified time expires. As soon as the specified time
+                        is reached, the owners of the contract can withdraw their assets.
+                    </p>
+                    <p>
+                        The current time received under the contract is the time of the last block in the blockchain
+                        (the error is the average block time).
+                    </p>
+                    <pre>
+<code class="language-javascript">
+'use strict'
+import Contract from 'GiantContract'
+import {GetBlockTime} from 'GiantBlockchain'
+
+export default class LockContract extends Contract {
+
+  constructor(timestamp) {
+    this.timestamp = timestamp
+  }
+
+  // overriding the method inherited from Contract class
+  send(to, amount) {
+    if (this.timestamp >= getBlockTime()) {
+      super.send(to, amount)
+    }
+  }
+}
+</code>
+</pre>
+                    <h3 id="domain-name">Domain Name System Smart Contract</h3>
+                    <p>
+                        The contract introduced a system of domain names in which domain names point to data in the
+                        blockchain. These are not real Internet domain names. The above code implements requests,
+                        registration, transfer, and deletion of domain names.
+                    </p>
+                    <pre>
+<code class="language-javascript">
+'use strict'
+import Contract from 'GiantContract'
+import {GetBlockTime, getCallerAddress} from 'GiantBlockchain'
+
+export default class DomainNameContract extends Contract {
+
+  constructor() {
+    this.domains = new Map()
+  }
+
+  query(domain) {
+    return this.domains.get(domain)
+  }
+
+  register(domainName, ipv4) {
+    if (this.domains.has(domainName)) {
+      return false
+    }
+
+    this.domains.set(domainName, {
+      owner: getCallerAddress(),
+      address: ipv4
+    })
+    return true
+  }
+
+  transfer(domainName, ipv4) {
+    const domain = this.domains.get(domainName)
+
+    if (domain && domain.owner === getCallerAddress()) {
+       domain.address = ipv4
+    }
+  }
+
+  delete(domainName) {
+    const domain = this.domains.get(domainName)
+
+    if (domain && domain.owner === getCallerAddress()) {
+       this.domains.delete(domain)
+    }
+  }
+}
+</code>
+</pre>
+                    <h3 id="token">Token Smart Contract</h3>
+                    <p>
+                        The contract implements a simple logic of the token issued on the Giant blockchain. The smart
+                        contract provides for the preliminary release of 1,000,000 smart contract tokens and for the
+                        exchange of GIC tokens for smart contract tokens at the rate of 1:1.
+                    </p>
+                    <pre>
+<code class="language-javascript">
+'use strict'
+import Contract from 'GiantContract'
+import {getAddress, getCallerAddress} from 'GiantBlockchain'
+
+export default class TokenContract extends Contract {
+
+  constructor() {
+    this.balances = new Map()
+    this.balances.put(getAddress(), 1000000)
+  }
+
+  onTransaction(tx) {
+    const contractAddress = getAddress()
+    const contractBalance = this.balances.get(contractAddress)
+    const recipientAddress = getCallerAddress()
+    const recipientBalance = this.balances.get(recipientAddress)
+
+    this.balances.set(contractAddress, contractBalance - tx.amount)
+    this.balances.set(recipientAddress,
+      (recipientBalance ? recipientBalance : 0) + tx.amount)
+  }
+
+  getBalance(address) {
+    return this.balances.get(address)
+  }
+}
+</code>
+</pre>
+                    <h3 id="testing">Testing and Debugging the Smart Contracts</h3>
+                    <p>
+                        Due to the low connectivity between the virtual machine and the blockchain, it is very easy to
+                        integrate Giant directly with any IDE to provide a test environment compatible with the
+                        execution environment of the Giant. Therefore, for the Giant smart contracts it will be possible
+                        to easily write both modular and integration tests, using the popular testing frameworks of JS
+                        code.
+                    </p>
+                    <p>
+                        The Giant team values the efficient use of the eponymous blockchain network. In order to prevent
+                        the emergence of new smart contracts with mistakes we introduce GiantJS — a software developer's
+                        kit (SDK) for Giant smart contracts developers. It provides a sandbox environment for automated
+                        testing before using new smart contracts in the mainnet.
+                    </p>
+                    <p>
+                        We would like to describe the advantages of GiantJS in the following list.
+                    </p>
+                    <ol start="1">
+                        <li>
+                            Automated contract testing with Mocha and Chai. Testing smart contracts using popular JS
+                            frameworks called Mocha and Chai. They allow to write modular, E2E and integration tests. In
+                            this case, 'automatic' means that GiantJS makes possible to automatically call them — for
+                            example before calling the deploy, not just manually typing the command 'giantjs test'.
+                        </li>
+                        <li>
+                            Configurable build pipeline with support for custom build processes. A customizable
+                            build-and-deployment process. The pipeline (or the process of building) includes
+                            compilation, validation, tests launch, migration scripts execution and, finally, the
+                            deployment. Every process stage can be customized.
+                        </li>
+                        <li>
+                            Scriptable deployment & migrations framework. The deploy and migration of smart contracts
+                            can be programmed with a script. Here, 'migration' means data operations before or after the
+                            deployment, for instance, updating the price balance with a new formula.
+                        </li>
+                        <li>
+                            Instant rebuilding of assets during development. GiantJS will check if the code you are
+                            writing will actually work and will offer to change in necessary strings in case the code is
+                            corrupted.
+                        </li>
+                        <li>
+                            External script runner that executes scripts within a GiantJS environment - sometimes the
+                            migration logic suffers from various obstacles e.g. asynchronous interaction. An external
+                            script will allow to interact easily in the context of the environment of the launched
+                            network and the deployed smart contract.
+                        </li>
+                    </ol>
+                    <h2 id="summary">Summary</h2>
+                    <p>
+                        Bitcoin has created an era of blockchain and private decentralized money. Ethereum has created
+                        an era of smart contracts. Ethereum made a huge contribution to the idea, the economic model and
+                        the technological implementation of the smart contract system. Currently, the Ethereum platform
+                        has already implemented many distributed applications, such as gambling, digital assets,
+                        electronic gold, gaming platforms, various types of insurance which are already widely used in
+                        many industries. Theoretically, all these Dapps can be easily transferred to the Giant
+                        blockchain platform.
+                    </p>
+                    <p>
+                        Giant does not just simply replicate the technological solutions of Ethereum or other networks,
+                        but offers new key features, namely:
+                    <ul>
+                        <li>Development of smart contracts using JavaScript standard ES6 (and ES7 in the near future)
+                        </li>
+                        <li>Smart contract code update</li>
+                        <li>Smart contracts destruction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<th:block th:replace="blocks/footer :: footer"></th:block>
+</body>
+</html>

@@ -5,7 +5,9 @@ import java.math.BigDecimal;
 public class InfoDto extends AbstractDto {
 
     private BigDecimal rate;
+    private BigDecimal changePrice24h;
     private BigDecimal volume;
+    private BigDecimal changeVolume24h;
     private long height;
     private BigDecimal reward;
     private BigDecimal networkHashrate;
@@ -23,12 +25,28 @@ public class InfoDto extends AbstractDto {
         this.rate = rate;
     }
 
+    public BigDecimal getChangePrice24h() {
+        return changePrice24h;
+    }
+
+    public void setChangePrice24h(BigDecimal changePrice24h) {
+        this.changePrice24h = changePrice24h;
+    }
+
     public BigDecimal getVolume() {
         return volume;
     }
 
     public void setVolume(BigDecimal volume) {
         this.volume = volume;
+    }
+
+    public BigDecimal getChangeVolume24h() {
+        return changeVolume24h;
+    }
+
+    public void setChangeVolume24h(BigDecimal changeVolume24h) {
+        this.changeVolume24h = changeVolume24h;
     }
 
     public long getHeight() {

@@ -2,6 +2,10 @@ package network.giantpay.web;
 
 import network.giantpay.model.Page;
 import network.giantpay.service.PageService;
+import network.giantpay.utils.ImageUtils;
+import org.commonmark.node.Node;
+import org.commonmark.parser.Parser;
+import org.commonmark.renderer.html.HtmlRenderer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +34,18 @@ public class PageController {
         model.put("page", page);
         model.put("categories", pageService.findCategories());
 
+        try {
+            Parser parser = Parser.builder().build();
+            Node document = parser.parse(page.getText());
+            HtmlRenderer renderer = HtmlRenderer.builder().build();
+            page.setHtml(renderer.render(document));
+        } catch (Exception e) {
+            if (logger.isErrorEnabled()) {
+                logger.error(e.getMessage(), e);
+            }
+            page.setHtml(page.getText());
+        }
+
         return "pages/view";
     }
 
@@ -42,9 +58,11 @@ public class PageController {
         }
         model.put("page", page);
         model.put("categories", pageService.findCategories());
+        model.put("images", ImageUtils.getImages(page.getImages()));
 
         return "pages/edit";
     }
+
 
     @PostMapping(value = "/pages/edit")
     public String edit(@RequestBody MultiValueMap params,
@@ -59,6 +77,7 @@ public class PageController {
             Map<String, Object> model) {
         model.put("pages", pageService.findAll(category));
         model.put("categories", pageService.findCategories());
+        model.put("currentCategory", category);
 
         return "pages/list";
     }

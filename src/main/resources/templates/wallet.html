@@ -13,65 +13,273 @@
     <th:block th:replace="blocks/header :: head"></th:block>
 </head>
 <body>
-<div th:replace="blocks/header :: header"></div>
-
-<section class="page_header padding">
-    <div class="display-table">
-        <div class="table-cell">
-            <div class="container">
-                <div class="page_content">
-                    <h1>Giant <span>Wallets</span></h1>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active">Wallets</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="promo_section bd-bottom padding">
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
+<div class="content">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 sm-padding">
-                <p>Below you can find a list of all wallets available and the source code.</p>
-
-                <div class="shadow p-3 mt-5 mb-5 bg-white rounded">
-                    <a href="https://github.com/GiantPay/GiantCore" rel="nofollow" target="_blank" style="line-height: 60px;">
-                        <i class="fab fa-github fa-4x mr-3 align-middle"></i> <strong>Giant source code</strong>
-                    </a>
+        <div class="content-block">
+            <h1 class="content-block__header">Giant Wallets</h1>
+            <p class="mb-4">
+                In order to become a user of the Giant blockchain you have to download a wallet for your
+                operational system and synchronize with the network.
+            </p>
+            <div class="wallets-selector">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="wallets-selector-block">
+                            <div class="wallets-selector-block__heading">Desktop</div>
+                            <div class="wallets-selector-tabs">
+                                <div class="wallets-selector-tabs__item _active" data-target="#windows">
+                                    <div class="wallets-selector-tabs__item__img">
+                                        <svg viewBox="0 0 256 257" width="2490" height="2500"
+                                             xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                            <path class="fill_theme"
+                                                  d="M0 36.357L104.62 22.11l.045 100.914-104.57.595L0 36.358zm104.57 98.293l.08 101.002L.081 221.275l-.006-87.302 104.494.677zm12.682-114.405L255.968 0v121.74l-138.716 1.1V20.246zM256 135.6l-.033 121.191-138.716-19.578-.194-101.84L256 135.6z"></path>
+                                        </svg>
+                                    </div>
+                                    WINDOWS
+                                </div>
+                                <div class="wallets-selector-tabs__item" data-target="#linux">
+                                    <div class="wallets-selector-tabs__item__img">
+                                        <svg width="430" height="500" viewBox="0 0 43 50"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path class="fill_theme"
+                                                  d="M41.626 40.146c-1.474-.6-2.104-1.398-2.043-2.587.063-1.388-.729-2.404-1.104-2.806.227-.863.89-3.848 0-6.441-.956-2.775-3.875-7.014-6.888-11.181-1.233-1.711-1.291-3.571-1.359-5.725-.064-2.054-.137-4.383-1.288-6.971C27.692 1.616 25.18 0 22.052 0c-1.86 0-3.77.579-5.24 1.588-3.01 2.067-2.613 6.573-2.35 9.555.036.409.07.795.09 1.124.175 2.92.016 4.46-.193 4.928-.135.305-.799 1.176-1.502 2.097-.727.953-1.551 2.033-2.227 3.04-.806 1.21-1.457 3.061-2.086 4.851-.46 1.31-.895 2.547-1.319 3.287a4.455 4.455 0 0 0-.436 3.361c-.304.21-.743.623-1.113 1.403-.448.95-1.357 1.462-3.246 1.823-.868.177-1.467.54-1.78 1.08-.455.785-.207 1.772.02 2.446.333.992.125 1.62-.254 2.759-.087.263-.186.56-.287.889-.158.518-.1.99.17 1.4.713 1.086 2.795 1.468 4.939 1.72 1.28.151 2.68.66 4.035 1.153 1.327.483 2.7.982 3.947 1.134.19.023.378.035.559.035 1.884 0 2.735-1.243 3.005-1.754.676-.138 3.01-.578 5.415-.637 2.402-.068 4.725.404 5.383.55.207.395.753 1.295 1.622 1.759.478.26 1.143.409 1.825.409.727 0 2.111-.171 3.207-1.318 1.092-1.152 3.822-2.623 5.816-3.697.445-.24.86-.464 1.226-.666 1.12-.618 1.73-1.5 1.676-2.422-.045-.765-.554-1.436-1.328-1.751zm-24.79-.222c-.14-.977-1.403-1.946-2.866-3.068-1.196-.918-2.551-1.958-2.925-2.838-.772-1.817-.163-5.011.897-6.656.525-.824.953-2.073 1.367-3.28.447-1.305.91-2.654 1.427-3.244.819-.922 1.576-2.715 1.71-4.128.767.728 1.956 1.653 3.055 1.653.17 0 .334-.022.49-.066.753-.216 1.859-.852 2.928-1.467.922-.53 2.06-1.184 2.487-1.243.734 1.048 4.997 10.435 5.433 13.45.344 2.385-.02 4.356-.203 5.129a3.81 3.81 0 0 0-.507-.036c-1.188 0-1.502.644-1.584 1.03-.21 1-.233 4.2-.235 4.918-.43.543-2.6 3.099-5.718 3.558-1.27.184-2.455.277-3.524.277-.913 0-1.496-.07-1.738-.107l-1.567-1.783c.618-.303 1.236-.944 1.073-2.1zm1.987-29.408a2.51 2.51 0 0 0-.144.068 2.89 2.89 0 0 0-.033-.32c-.17-.98-.823-1.69-1.551-1.69-.054 0-.109.003-.168.012-.433.072-.773.396-.959.855.163-1.007.737-1.753 1.417-1.753.8 0 1.474 1.071 1.474 2.34 0 .16-.011.318-.036.488zm6.21.755a2.47 2.47 0 0 0 .112-.742c0-1.15-.733-2.051-1.67-2.051-.914 0-1.658.92-1.658 2.05 0 .078.004.155.011.232a30.355 30.355 0 0 0-.142-.054 3.121 3.121 0 0 1-.158-.986c0-1.375.883-2.494 1.968-2.494 1.086 0 1.97 1.119 1.97 2.494 0 .572-.16 1.118-.434 1.551zm-.801 2.677c-.016.069-.05.1-.417.29-.186.097-.417.216-.707.392l-.193.116c-.778.47-2.598 1.567-3.092 1.632-.335.045-.543-.085-1.01-.4a14.576 14.576 0 0 0-.336-.224c-.842-.549-1.383-1.154-1.444-1.39.274-.212.954-.74 1.302-1.052.707-.654 1.418-1.093 1.77-1.093a.28.28 0 0 1 .053.004c.413.073 1.433.478 2.178.774.345.136.642.254.851.33.66.224 1.003.513 1.045.62zM30.154 44.5c.372-1.669.8-3.94.73-5.278a33.812 33.812 0 0 0-.068-.955c-.05-.598-.122-1.488-.047-1.752a.323.323 0 0 1 .05-.017c.003.765.17 2.291 1.397 2.823.365.16.783.24 1.241.24 1.23 0 2.593-.6 3.151-1.156.329-.327.606-.728.8-1.045.042.124.068.285.054.493-.073 1.129.478 2.626 1.527 3.178l.153.08c.374.195 1.366.713 1.382.96 0 0-.008.028-.063.08-.25.225-1.124.67-1.97 1.1-1.501.763-3.203 1.627-3.967 2.427-1.076 1.126-2.292 1.883-3.027 1.883a.8.8 0 0 1-.24-.034c-.799-.247-1.456-1.393-1.103-3.027zM2.952 40.242c-.082-.379-.146-.678-.077-.968.05-.215 1.116-.445 1.57-.543.64-.138 1.302-.281 1.735-.542.585-.353.902-1.003 1.181-1.577.202-.415.411-.844.66-.985a.14.14 0 0 1 .076-.017c.466 0 1.443.974 2.006 1.846.143.22.408.66.714 1.17.915 1.524 2.169 3.612 2.824 4.312.59.629 1.545 1.838 1.31 2.875-.172.805-1.088 1.46-1.304 1.604a1.342 1.342 0 0 1-.29.027c-1.253 0-3.733-1.037-5.066-1.595l-.197-.082c-.744-.31-1.959-.506-3.134-.696-.935-.15-2.215-.356-2.427-.542-.172-.192.028-.817.204-1.367.126-.396.257-.805.329-1.233.101-.684-.018-1.24-.114-1.687z"
+                                                  fill="#127AEA" fill-rule="nonzero"></path>
+                                        </svg>
+                                    </div>
+                                    LINUX
+                                </div>
+                                <div class="wallets-selector-tabs__item" data-target="#macos">
+                                    <div class="wallets-selector-tabs__item__img">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="2038" height="2500"
+                                             viewBox="0 0 496.255 608.728">
+                                            <path class="fill_theme"
+                                                  d="M273.81 52.973C313.806.257 369.41 0 369.41 0s8.271 49.562-31.463 97.306c-42.426 50.98-90.649 42.638-90.649 42.638s-9.055-40.094 26.512-86.971zM252.385 174.662c20.576 0 58.764-28.284 108.471-28.284 85.562 0 119.222 60.883 119.222 60.883s-65.833 33.659-65.833 115.331c0 92.133 82.01 123.885 82.01 123.885s-57.328 161.357-134.762 161.357c-35.565 0-63.215-23.967-100.688-23.967-38.188 0-76.084 24.861-100.766 24.861C89.33 608.73 0 455.666 0 332.628c0-121.052 75.612-184.554 146.533-184.554 46.105 0 81.883 26.588 105.852 26.588z"></path>
+                                        </svg>
+                                    </div>
+                                    Mac OS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="wallets-selector-block d-none">
+                            <div class="wallets-selector-block__heading">Mobile</div>
+                            <div class="wallets-selector-tabs">
+                                <div class="wallets-selector-tabs__item _active" data-target="#android">
+                                    <div class="wallets-selector-tabs__item__img">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="2232" height="2500"
+                                             viewBox="32.163 68.509 203.691 228.155">
+                                            <path class="fill_theme"
+                                                  d="M101.885 207.092c7.865 0 14.241 6.376 14.241 14.241v61.09c0 7.865-6.376 14.24-14.241 14.24-7.864 0-14.24-6.375-14.24-14.24v-61.09c0-7.864 6.376-14.24 14.24-14.24z"></path>
+                                            <path class="fill_theme"
+                                                  d="M69.374 133.645c-.047.54-.088 1.086-.088 1.638v92.557c0 9.954 7.879 17.973 17.66 17.973h94.124c9.782 0 17.661-8.02 17.661-17.973v-92.557c0-.552-.02-1.1-.066-1.638H69.374z"></path>
+                                            <path class="fill_theme"
+                                                  d="M166.133 207.092c7.865 0 14.241 6.376 14.241 14.241v61.09c0 7.865-6.376 14.24-14.241 14.24-7.864 0-14.24-6.375-14.24-14.24v-61.09c0-7.864 6.376-14.24 14.24-14.24zM46.405 141.882c7.864 0 14.24 6.376 14.24 14.241v61.09c0 7.865-6.376 14.241-14.24 14.241-7.865 0-14.241-6.376-14.241-14.24v-61.09c-.001-7.865 6.375-14.242 14.241-14.242zM221.614 141.882c7.864 0 14.24 6.376 14.24 14.241v61.09c0 7.865-6.376 14.241-14.24 14.241-7.865 0-14.241-6.376-14.241-14.24v-61.09c0-7.865 6.376-14.242 14.241-14.242zM69.79 127.565c.396-28.43 25.21-51.74 57.062-54.812h14.312c31.854 3.073 56.666 26.384 57.062 54.812H69.79z"></path>
+                                            <path class="stroke_theme"
+                                                  d="M74.743 70.009l15.022 26.02M193.276 70.009l-15.023 26.02"
+                                                  fill="none" stroke-width="3" stroke-linecap="round"
+                                                  stroke-linejoin="round"></path>
+                                            <path class="fill_theme _revert"
+                                                  d="M114.878 102.087c.012 3.974-3.277 7.205-7.347 7.216-4.068.01-7.376-3.202-7.388-7.176v-.04c-.011-3.975 3.278-7.205 7.347-7.216 4.068-.011 7.376 3.2 7.388 7.176v.04zM169.874 102.087c.012 3.974-3.277 7.205-7.347 7.216-4.068.01-7.376-3.202-7.388-7.176v-.04c-.011-3.975 3.278-7.205 7.347-7.216 4.068-.011 7.376 3.2 7.388 7.176v.04z"></path>
+                                        </svg>
+                                    </div>
+                                    Android
+                                </div>
+                                <div class="wallets-selector-tabs__item" data-target="#ios">
+                                    <div class="wallets-selector-tabs__item__img">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="2038" height="2500"
+                                             viewBox="0 0 496.255 608.728">
+                                            <path class="fill_theme"
+                                                  d="M273.81 52.973C313.806.257 369.41 0 369.41 0s8.271 49.562-31.463 97.306c-42.426 50.98-90.649 42.638-90.649 42.638s-9.055-40.094 26.512-86.971zM252.385 174.662c20.576 0 58.764-28.284 108.471-28.284 85.562 0 119.222 60.883 119.222 60.883s-65.833 33.659-65.833 115.331c0 92.133 82.01 123.885 82.01 123.885s-57.328 161.357-134.762 161.357c-35.565 0-63.215-23.967-100.688-23.967-38.188 0-76.084 24.861-100.766 24.861C89.33 608.73 0 455.666 0 332.628c0-121.052 75.612-184.554 146.533-184.554 46.105 0 81.883 26.588 105.852 26.588z"></path>
+                                        </svg>
+                                    </div>
+                                    IOs
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="shadow p-3 mb-5 bg-white rounded">
-                    <a href="https://github.com/GiantPay/GiantCore/releases" rel="nofollow" target="_blank" style="line-height: 60px;">
-                        <i class="fab fa-windows fa-4x mr-3 align-middle"></i> <strong>Windows 32-bit wallet</strong>
-                    </a>
+            </div>
+            <div class="wallets-download">
+                <div class="wallets-download-panel" id="windows" style="display: block;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wallets-download__img">
+                                <svg viewBox="0 0 256 257" width="2490" height="2500" xmlns="http://www.w3.org/2000/svg"
+                                     preserveAspectRatio="xMidYMid">
+                                    <path class="fill_theme"
+                                          d="M0 36.357L104.62 22.11l.045 100.914-104.57.595L0 36.358zm104.57 98.293l.08 101.002L.081 221.275l-.006-87.302 104.494.677zm12.682-114.405L255.968 0v121.74l-138.716 1.1V20.246zM256 135.6l-.033 121.191-138.716-19.578-.194-101.84L256 135.6z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="wallets-download-description">
+                                <p class="wallets-download-description__heading">Windows Wallet</p>
+                                <p class="wallets-download-description__version">v1.2.2.1-cdb5b04</p>
+                                <div class="wallets-download-buttons">
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/giant-1.2.2.1-win32.zip"
+                                       target="_blank"
+                                       rel="nofollow">32 BIT</a>
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/giant-1.2.2.1-win64.zip"
+                                       target="_blank"
+                                       rel="nofollow">64 BIT</a>
+                                    <br>
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       target="_blank"
+                                       href="/GiantMasternodeGuideForWindows.pdf">LAUNCH GUIDE</a>
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       onclick="lity('https://www.youtube.com/watch?v=JUr9KMqvobg'); return false;"
+                                       href="#">LAUNCH VIDEO</a>
+                                    <br>
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       href="https://github.com/GiantPay/GiantCore"
+                                       target="_blank"
+                                       rel="nofollow">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="shadow p-3 mb-5 bg-white rounded">
-                    <a href="https://github.com/GiantPay/GiantCore/releases" rel="nofollow" target="_blank" style="line-height: 60px;">
-                        <i class="fab fa-windows fa-4x mr-3 align-middle"></i> <strong>Windows 64-bit wallet</strong>
-                    </a>
+                <div class="wallets-download-panel" id="linux" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wallets-download__img">
+                                <svg width="430" height="500" viewBox="0 0 43 50" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="fill_theme"
+                                          d="M41.626 40.146c-1.474-.6-2.104-1.398-2.043-2.587.063-1.388-.729-2.404-1.104-2.806.227-.863.89-3.848 0-6.441-.956-2.775-3.875-7.014-6.888-11.181-1.233-1.711-1.291-3.571-1.359-5.725-.064-2.054-.137-4.383-1.288-6.971C27.692 1.616 25.18 0 22.052 0c-1.86 0-3.77.579-5.24 1.588-3.01 2.067-2.613 6.573-2.35 9.555.036.409.07.795.09 1.124.175 2.92.016 4.46-.193 4.928-.135.305-.799 1.176-1.502 2.097-.727.953-1.551 2.033-2.227 3.04-.806 1.21-1.457 3.061-2.086 4.851-.46 1.31-.895 2.547-1.319 3.287a4.455 4.455 0 0 0-.436 3.361c-.304.21-.743.623-1.113 1.403-.448.95-1.357 1.462-3.246 1.823-.868.177-1.467.54-1.78 1.08-.455.785-.207 1.772.02 2.446.333.992.125 1.62-.254 2.759-.087.263-.186.56-.287.889-.158.518-.1.99.17 1.4.713 1.086 2.795 1.468 4.939 1.72 1.28.151 2.68.66 4.035 1.153 1.327.483 2.7.982 3.947 1.134.19.023.378.035.559.035 1.884 0 2.735-1.243 3.005-1.754.676-.138 3.01-.578 5.415-.637 2.402-.068 4.725.404 5.383.55.207.395.753 1.295 1.622 1.759.478.26 1.143.409 1.825.409.727 0 2.111-.171 3.207-1.318 1.092-1.152 3.822-2.623 5.816-3.697.445-.24.86-.464 1.226-.666 1.12-.618 1.73-1.5 1.676-2.422-.045-.765-.554-1.436-1.328-1.751zm-24.79-.222c-.14-.977-1.403-1.946-2.866-3.068-1.196-.918-2.551-1.958-2.925-2.838-.772-1.817-.163-5.011.897-6.656.525-.824.953-2.073 1.367-3.28.447-1.305.91-2.654 1.427-3.244.819-.922 1.576-2.715 1.71-4.128.767.728 1.956 1.653 3.055 1.653.17 0 .334-.022.49-.066.753-.216 1.859-.852 2.928-1.467.922-.53 2.06-1.184 2.487-1.243.734 1.048 4.997 10.435 5.433 13.45.344 2.385-.02 4.356-.203 5.129a3.81 3.81 0 0 0-.507-.036c-1.188 0-1.502.644-1.584 1.03-.21 1-.233 4.2-.235 4.918-.43.543-2.6 3.099-5.718 3.558-1.27.184-2.455.277-3.524.277-.913 0-1.496-.07-1.738-.107l-1.567-1.783c.618-.303 1.236-.944 1.073-2.1zm1.987-29.408a2.51 2.51 0 0 0-.144.068 2.89 2.89 0 0 0-.033-.32c-.17-.98-.823-1.69-1.551-1.69-.054 0-.109.003-.168.012-.433.072-.773.396-.959.855.163-1.007.737-1.753 1.417-1.753.8 0 1.474 1.071 1.474 2.34 0 .16-.011.318-.036.488zm6.21.755a2.47 2.47 0 0 0 .112-.742c0-1.15-.733-2.051-1.67-2.051-.914 0-1.658.92-1.658 2.05 0 .078.004.155.011.232a30.355 30.355 0 0 0-.142-.054 3.121 3.121 0 0 1-.158-.986c0-1.375.883-2.494 1.968-2.494 1.086 0 1.97 1.119 1.97 2.494 0 .572-.16 1.118-.434 1.551zm-.801 2.677c-.016.069-.05.1-.417.29-.186.097-.417.216-.707.392l-.193.116c-.778.47-2.598 1.567-3.092 1.632-.335.045-.543-.085-1.01-.4a14.576 14.576 0 0 0-.336-.224c-.842-.549-1.383-1.154-1.444-1.39.274-.212.954-.74 1.302-1.052.707-.654 1.418-1.093 1.77-1.093a.28.28 0 0 1 .053.004c.413.073 1.433.478 2.178.774.345.136.642.254.851.33.66.224 1.003.513 1.045.62zM30.154 44.5c.372-1.669.8-3.94.73-5.278a33.812 33.812 0 0 0-.068-.955c-.05-.598-.122-1.488-.047-1.752a.323.323 0 0 1 .05-.017c.003.765.17 2.291 1.397 2.823.365.16.783.24 1.241.24 1.23 0 2.593-.6 3.151-1.156.329-.327.606-.728.8-1.045.042.124.068.285.054.493-.073 1.129.478 2.626 1.527 3.178l.153.08c.374.195 1.366.713 1.382.96 0 0-.008.028-.063.08-.25.225-1.124.67-1.97 1.1-1.501.763-3.203 1.627-3.967 2.427-1.076 1.126-2.292 1.883-3.027 1.883a.8.8 0 0 1-.24-.034c-.799-.247-1.456-1.393-1.103-3.027zM2.952 40.242c-.082-.379-.146-.678-.077-.968.05-.215 1.116-.445 1.57-.543.64-.138 1.302-.281 1.735-.542.585-.353.902-1.003 1.181-1.577.202-.415.411-.844.66-.985a.14.14 0 0 1 .076-.017c.466 0 1.443.974 2.006 1.846.143.22.408.66.714 1.17.915 1.524 2.169 3.612 2.824 4.312.59.629 1.545 1.838 1.31 2.875-.172.805-1.088 1.46-1.304 1.604a1.342 1.342 0 0 1-.29.027c-1.253 0-3.733-1.037-5.066-1.595l-.197-.082c-.744-.31-1.959-.506-3.134-.696-.935-.15-2.215-.356-2.427-.542-.172-.192.028-.817.204-1.367.126-.396.257-.805.329-1.233.101-.684-.018-1.24-.114-1.687z"
+                                          fill="#127AEA" fill-rule="nonzero"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="wallets-download-description">
+                                <p class="wallets-download-description__heading">Linux</p>
+                                <p class="wallets-download-description__version">v1.2.2.1-cdb5b04</p>
+                                <div class="wallets-download-buttons">
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/giant-1.2.2.1-linux64.zip"
+                                       target="_blank"
+                                       rel="nofollow">Ubuntu 16.04</a>
+                                    <br>
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       target="_blank"
+                                       href="/GiantMasternodeGuideForLinux.pdf">LAUNCH GUIDE</a>
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       onclick="lity('https://www.youtube.com/watch?v=5cmjIZZErCw'); return false;"
+                                       href="#">LAUNCH VIDEO</a>
+                                    <br>
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       href="https://github.com/GiantPay/GiantCore"
+                                       target="_blank"
+                                       rel="nofollow">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="shadow p-3 mb-5 bg-white rounded" style="display: none;">
-                    <a href="https://github.com/GiantPay/GiantCore/releases" rel="nofollow" target="_blank" style="line-height: 60px;">
-                        <i class="fab fa-linux fa-4x mr-3 align-middle"></i> <strong>Linux 32-bit wallet</strong>
-                    </a>
+                <div class="wallets-download-panel" id="macos" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wallets-download__img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2038" height="2500"
+                                     viewBox="0 0 496.255 608.728">
+                                    <path class="fill_theme"
+                                          d="M273.81 52.973C313.806.257 369.41 0 369.41 0s8.271 49.562-31.463 97.306c-42.426 50.98-90.649 42.638-90.649 42.638s-9.055-40.094 26.512-86.971zM252.385 174.662c20.576 0 58.764-28.284 108.471-28.284 85.562 0 119.222 60.883 119.222 60.883s-65.833 33.659-65.833 115.331c0 92.133 82.01 123.885 82.01 123.885s-57.328 161.357-134.762 161.357c-35.565 0-63.215-23.967-100.688-23.967-38.188 0-76.084 24.861-100.766 24.861C89.33 608.73 0 455.666 0 332.628c0-121.052 75.612-184.554 146.533-184.554 46.105 0 81.883 26.588 105.852 26.588z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="wallets-download-description">
+                                <p class="wallets-download-description__heading">Mac OS</p>
+                                <p class="wallets-download-description__version">v1.2.2.1-cdb5b04</p>
+                                <div class="wallets-download-buttons">
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/GIANT-Qt.dmg"
+                                       target="_blank"
+                                       rel="nofollow">High Sierra</a>
+                                    <a class="wallets-download__button btn btn-outline-primary d-none" href="#">LAUNCH
+                                        GUIDE</a>
+                                    <a class="wallets-download__button btn btn-outline-primary d-none" href="#">LAUNCH
+                                        VIDEO</a>
+                                    <a class="wallets-download__button btn btn-outline-primary"
+                                       href="https://github.com/GiantPay/GiantCore"
+                                       target="_blank"
+                                       rel="nofollow">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="shadow p-3 mb-5 bg-white rounded">
-                    <a href="https://github.com/GiantPay/GiantCore/releases" rel="nofollow" target="_blank" style="line-height: 60px;">
-                        <i class="fab fa-linux fa-4x mr-3 align-middle"></i> <strong>Linux 64-bit wallet</strong>
-                    </a>
+                <div class="wallets-download-panel" id="android" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wallets-download__img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2232" height="2500"
+                                     viewBox="32.163 68.509 203.691 228.155">
+                                    <path class="fill_theme"
+                                          d="M101.885 207.092c7.865 0 14.241 6.376 14.241 14.241v61.09c0 7.865-6.376 14.24-14.241 14.24-7.864 0-14.24-6.375-14.24-14.24v-61.09c0-7.864 6.376-14.24 14.24-14.24z"></path>
+                                    <path class="fill_theme"
+                                          d="M69.374 133.645c-.047.54-.088 1.086-.088 1.638v92.557c0 9.954 7.879 17.973 17.66 17.973h94.124c9.782 0 17.661-8.02 17.661-17.973v-92.557c0-.552-.02-1.1-.066-1.638H69.374z"></path>
+                                    <path class="fill_theme"
+                                          d="M166.133 207.092c7.865 0 14.241 6.376 14.241 14.241v61.09c0 7.865-6.376 14.24-14.241 14.24-7.864 0-14.24-6.375-14.24-14.24v-61.09c0-7.864 6.376-14.24 14.24-14.24zM46.405 141.882c7.864 0 14.24 6.376 14.24 14.241v61.09c0 7.865-6.376 14.241-14.24 14.241-7.865 0-14.241-6.376-14.241-14.24v-61.09c-.001-7.865 6.375-14.242 14.241-14.242zM221.614 141.882c7.864 0 14.24 6.376 14.24 14.241v61.09c0 7.865-6.376 14.241-14.24 14.241-7.865 0-14.241-6.376-14.241-14.24v-61.09c0-7.865 6.376-14.242 14.241-14.242zM69.79 127.565c.396-28.43 25.21-51.74 57.062-54.812h14.312c31.854 3.073 56.666 26.384 57.062 54.812H69.79z"></path>
+                                    <path class="stroke_theme"
+                                          d="M74.743 70.009l15.022 26.02M193.276 70.009l-15.023 26.02" fill="none"
+                                          stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="fill_theme _revert"
+                                          d="M114.878 102.087c.012 3.974-3.277 7.205-7.347 7.216-4.068.01-7.376-3.202-7.388-7.176v-.04c-.011-3.975 3.278-7.205 7.347-7.216 4.068-.011 7.376 3.2 7.388 7.176v.04zM169.874 102.087c.012 3.974-3.277 7.205-7.347 7.216-4.068.01-7.376-3.202-7.388-7.176v-.04c-.011-3.975 3.278-7.205 7.347-7.216 4.068-.011 7.376 3.2 7.388 7.176v.04z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="wallets-download-description">
+                                <p class="wallets-download-description__heading">Android</p>
+                                <p class="wallets-download-description__version">v 1.2.2.0</p>
+                                <div class="wallets-download-buttons"><a
+                                        class="wallets-download__button btn btn-outline-primary" href="#">32 BIT</a><a
+                                        class="wallets-download__button btn btn-outline-primary" href="#">64 BIT</a><a
+                                        class="wallets-download__button btn btn-outline-primary" href="#">LAUNCH
+                                    GUIDE</a><a class="wallets-download__button btn btn-outline-primary" href="#">LAUNCH
+                                    VIDEO</a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="shadow p-3 mb-5 bg-white rounded">
-                    <a href="https://github.com/GiantPay/GiantCore/releases" rel="nofollow" target="_blank" style="line-height: 60px;">
-                        <i class="fab fa-apple fa-4x mr-3 align-middle"></i> <strong>MAC wallet</strong>
-                    </a>
+                <div class="wallets-download-panel" id="ios" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="wallets-download__img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2038" height="2500"
+                                     viewBox="0 0 496.255 608.728">
+                                    <path class="fill_theme"
+                                          d="M273.81 52.973C313.806.257 369.41 0 369.41 0s8.271 49.562-31.463 97.306c-42.426 50.98-90.649 42.638-90.649 42.638s-9.055-40.094 26.512-86.971zM252.385 174.662c20.576 0 58.764-28.284 108.471-28.284 85.562 0 119.222 60.883 119.222 60.883s-65.833 33.659-65.833 115.331c0 92.133 82.01 123.885 82.01 123.885s-57.328 161.357-134.762 161.357c-35.565 0-63.215-23.967-100.688-23.967-38.188 0-76.084 24.861-100.766 24.861C89.33 608.73 0 455.666 0 332.628c0-121.052 75.612-184.554 146.533-184.554 46.105 0 81.883 26.588 105.852 26.588z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="wallets-download-description">
+                                <p class="wallets-download-description__heading">IOS</p>
+                                <p class="wallets-download-description__version">v 1.2.2.0</p>
+                                <div class="wallets-download-buttons"><a
+                                        class="wallets-download__button btn btn-outline-primary" href="#">32 BIT</a><a
+                                        class="wallets-download__button btn btn-outline-primary" href="#">64 BIT</a><a
+                                        class="wallets-download__button btn btn-outline-primary" href="#">LAUNCH
+                                    GUIDE</a><a class="wallets-download__button btn btn-outline-primary" href="#">LAUNCH
+                                    VIDEO</a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<div th:replace="blocks/footer :: footer"></div>
+<th:block th:replace="blocks/footer :: footer"></th:block>
+<th:block th:replace="javascript/wallet/download :: code"></th:block>
 </body>
 </html>

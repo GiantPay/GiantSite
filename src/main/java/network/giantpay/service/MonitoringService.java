@@ -5,11 +5,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import network.giantpay.api.WalletException;
+import network.giantpay.api.cmc.CoinmarketcapApi;
 import network.giantpay.api.cryptobridge.CryptobridgeApi;
 import network.giantpay.api.giant.GiantExplorer;
 import network.giantpay.api.giant.GiantWallet;
 import network.giantpay.api.graviex.GraviexApi;
+import network.giantpay.api.trello.TrelloApi;
 import network.giantpay.dto.*;
+import network.giantpay.dto.trello.Board;
 import network.giantpay.utils.GiantUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +55,9 @@ public class MonitoringService {
     private AtomicReference<BigDecimal> masternodeMonthly = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> masternodeAnnual = new AtomicReference<>(BigDecimal.ZERO);
     private Map<String, MarketDto> markets = Maps.newConcurrentMap();
+    private AtomicReference<Board> trelloBoard = new AtomicReference<>();
+    private AtomicReference<BigDecimal> changePrice24h = new AtomicReference<>(BigDecimal.ZERO);
+    private AtomicReference<BigDecimal> changeVolume24h = new AtomicReference<>(BigDecimal.ZERO);
 
     @Autowired
     private GiantWallet giantWallet;
@@ -61,6 +67,10 @@ public class MonitoringService {
     private GraviexApi graviexApi;
     @Autowired
     private CryptobridgeApi cryptobridgeApi;
+    @Autowired
+    private TrelloApi trelloApi;
+    @Autowired
+    private CoinmarketcapApi coinmarketcapApi;
 
     @PostConstruct
     public void initialize() {
@@ -78,7 +88,9 @@ public class MonitoringService {
     public InfoDto getInfo() {
         InfoDto info = new InfoDto();
         info.setRate(gicBtc.get());
+        info.setChangePrice24h(changePrice24h.get());
         info.setVolume(btcVolume.get());
+        info.setChangeVolume24h(changeVolume24h.get());
         info.setHeight(height.get());
         info.setReward(reward.get());
         info.setNetworkHashrate(networkHashrate.get());
@@ -88,6 +100,12 @@ public class MonitoringService {
         info.setMasternodeRoi(masternodeRoi.get());
         info.setMasternodeRoiDays(masternodeRoiDays.get());
         return info;
+    }
+
+    @Scheduled(initialDelay = 10000, fixedRate = 3600000)
+    public void updateChanges() {
+        InfoDto changes = coinmarketcapApi.getChanges();
+        changePrice24h.set(changes.getChangePrice24h());
     }
 
     @Scheduled(initialDelay = 10000, fixedRate = 60000)
@@ -157,6 +175,11 @@ public class MonitoringService {
                 logger.error(e.getMessage(), e);
             }
         }
+    }
+
+    @Scheduled(initialDelay = 10000, fixedRate = 3600000)
+    public void updateTrello() {
+        trelloBoard.set(trelloApi.getBoard());
     }
 
     private BigDecimal getNetworkDifficulty() throws WalletException {
@@ -369,6 +392,7 @@ public class MonitoringService {
         masternodeInfoDto.setAnnual(masternodeAnnual.get());
         masternodeInfoDto.setRoi(masternodeRoi.get());
         masternodeInfoDto.setDays(masternodeRoiDays.get());
+        masternodeInfoDto.setMasternodeCount(masternodes.get());
         return masternodeInfoDto;
     }
 
@@ -385,5 +409,9 @@ public class MonitoringService {
 
     public Map<String, MarketDto> getMarkets() {
         return this.markets;
+    }
+
+    public Board getTrelloBoard() {
+        return trelloBoard.get();
     }
 }

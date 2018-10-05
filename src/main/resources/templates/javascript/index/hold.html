@@ -1,0 +1,75 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="code">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        $(function () {
+            var ctx = $('#chart-area')[0].getContext("2d");
+            var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+            gradientStroke.addColorStop(0, "#0b4a8e");
+            gradientStroke.addColorStop(1, "#127aea");
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                width: 350,
+                height: 350,
+                data: {
+                    datasets: [{
+                        data: [
+                            100 - parseFloat(/*[[${coinLockedPercent}]]*/ 0),
+                            parseFloat(/*[[${coinLockedPercent}]]*/ 0)
+                        ],
+                        backgroundColor: [
+                            "#dcdcdc",
+                            gradientStroke
+                        ],
+                        borderColor: [
+                            "#dcdcdc",
+                            gradientStroke
+                        ],
+                        borderWidth: [
+                            10,
+                            10
+                        ],
+                        hoverBackgroundColor: [
+                            "#dcdcdc",
+                            gradientStroke
+                        ],
+                        hoverBorderColor: [
+                            "#dcdcdc",
+                            gradientStroke
+                        ],
+                        hoverBorderWidth: [
+                            10,
+                            10
+                        ]
+                    }]
+                },
+                options: {
+                    cutoutPercentage: 96,
+                    rotation: 0,
+                    tooltips: {
+                        enabled: false
+                    },
+                    responsive: false,
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false,
+                    },
+                    animation: {
+                        easing: 'easeInOutCubic',
+                        animateScale: false,
+                        animateRotate: true
+                    }
+                }
+            });
+        });
+        /*]]>*/
+    </script>
+</th:block>
+</body>
+</html>

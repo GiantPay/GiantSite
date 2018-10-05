@@ -1,0 +1,131 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="block">
+    <section class="exchanges">
+        <div class="container">
+            <h2 class="line-blu white-color">Exchanges</h2>
+            <ul class="nav-tabs-custom nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       id="pills-home-tab"
+                       data-toggle="pill"
+                       href="#id1"
+                       role="tab"
+                       aria-controls="pills-home"
+                       aria-selected="true"> Listed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       id="pills-profile-tab"
+                       data-toggle="pill"
+                       href="#id2"
+                       role="tab"
+                       aria-controls="pills-profile"
+                       aria-selected="false"> Voting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       id="pills-contact-tab"
+                       data-toggle="pill"
+                       href="#id3"
+                       role="tab"
+                       aria-controls="pills-contact"
+                       aria-selected="false"> Soon</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="id1" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="wrapper-carousel-exchanges">
+                        <div class="am-prev"><img src="/images/roadmap_arrow.svg"></div>
+                        <div class="am-next"><img src="/images/roadmap_arrow.svg"></div>
+                        <div class="owl-carousel owl-carousel2 owl-theme">
+                            <div class="exchanges-block">
+                                <img src="/images/cryptobridge.png">
+                                <h3>CryptoBridge</h3>
+                                <a href="https://wallet.crypto-bridge.org/market/BRIDGE.GIC_BRIDGE.BTC"
+                                   rel="nofollow"
+                                   target="_blank"
+                                   class="blu-button">BUY/SELL</a>
+                            </div>
+                            <div class="exchanges-block">
+                                <img src="/images/graviex.jpg">
+                                <h3>Graviex</h3>
+                                <a href="https://graviex.net/markets/gicbtc"
+                                   rel="nofollow"
+                                   target="_blank"
+                                   class="blu-button">BUY/SELL</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="id2" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="wrapper-carousel-exchanges">
+                        <div class="am-prev"><img src="/images/roadmap_arrow.svg"></div>
+                        <div class="am-next"><img src="/images/roadmap_arrow.svg"></div>
+                        <div class="owl-carousel owl-carousel5 owl-theme">
+                            <div class="exchanges-block">
+                                <img src="/images/southxchange.png">
+                                <h3>SouthXchange</h3>
+                                <a href="https://www.southxchange.com/Home/Vote"
+                                   rel="nofollow"
+                                   target="_blank"
+                                   class="blu-button">Vote</a>
+                            </div>
+                            <div class="exchanges-block">
+                                <img src="/images/coinex.svg">
+                                <h3>CoinEx</h3>
+                                <a href="https://www.coinex.com/vote/project?id=2007"
+                                   rel="nofollow"
+                                   target="_blank"
+                                   class="blu-button">Vote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="id3" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="wrapper-carousel-exchanges">
+                        <div class="am-prev"><img src="/images/roadmap_arrow.svg"></div>
+                        <div class="am-next"><img src="/images/roadmap_arrow.svg"></div>
+                        <div class="owl-carousel owl-carousel6 owl-theme">
+                            <div class="exchanges-block">
+                                <img src="/images/cryptopia.png">
+                                <h3>Cryptopia</h3>
+                                <a href="https://www.cryptopia.co.nz"
+                                   rel="nofollow"
+                                   target="_blank"
+                                   class="blu-button">cryptopia.co.nz</a>
+                            </div>
+                            <div class="exchanges-block">
+                                <img src="/images/hitbtc.svg">
+                                <h3>HitBTC</h3>
+                                <a href="https://hitbtc.com/"
+                                   rel="nofollow"
+                                   target="_blank"
+                                   class="blu-button">hitbtc.com</a>
+                            </div>
+                            <div class="exchanges-block">
+                                <img src="/images/cryptology.svg">
+                                <h3>Cryptology</h3>
+                                <a href="https://cryptology.com/"
+                                   rel="nofollow"
+                                   target="_blank"
+                                   class="blu-button">cryptology.com</a>
+                            </div>
+                            <div class="exchanges-block">
+                                <img src="/images/exmo.svg">
+                                <h3>Exmo</h3>
+                                <a href="https://exmo.com/"
+                                   rel="nofollow"
+                                   target="_blank"
+                                   class="blu-button">exmo.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

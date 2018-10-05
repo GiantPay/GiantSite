@@ -1,0 +1,65 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="block">
+    <section id="workflow" class="transparent-team-work">
+        <div class="container">
+            <h2 class="line-blu white-color">Transparent Teamwork</h2>
+            <div class="transparent-p-wrapper">
+                <p class="font20">
+                    To increase productivity, plan our goals clearly, and control the execution of tasks efficiently,
+                    the Giant team uses the SCRUM methodology. The work process consists of two-week sprints andis
+                    recorded on a public Trello board. Every user can watch over the transparent work of the Giant team,
+                    insuring that we are not standing still.
+                </p>
+            </div>
+            <div class="transparent-team-work-wrapper">
+                <div class="sprint-top">
+                    <h3><em id="sprintName"></em><span><span>Date: </span><em id="sprintPeriod"></em></span></h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-work-block custom-scroll">
+                            <a id="inProgressUrl"
+                               href="#"
+                               target="_blank"
+                               rel="nofollow"
+                               class="button-white h3-team-work">In Progress</a>
+                            <ul id="inProgressCards" class="team-work-list"></ul>
+                        </div>
+                        <div class="team-work-block-bottom">
+                            <span id="inProgressCount"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-work-block custom-scroll">
+                            <a id="inReviewUrl"
+                               href="#"
+                               target="_blank"
+                               rel="nofollow"
+                               class="button-white h3-team-work">In Review</a>
+                            <ul id="inReviewCards" class="team-work-list"></ul>
+                        </div>
+                        <div class="team-work-block-bottom">
+                            <span id="inReviewCount"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-work-block custom-scroll">
+                            <a id="doneUrl"
+                               target="_blank"
+                               rel="nofollow"
+                               class="button-white h3-team-work">Done</a>
+                            <ul id="doneCards" class="team-work-list"></ul>
+                        </div>
+                        <div class="team-work-block-bottom">
+                            <span id="doneCount"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

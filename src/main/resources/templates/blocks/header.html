@@ -3,18 +3,18 @@
 <th:block th:fragment="head">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.8.3/venobox.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nivoslider/3.2/nivo-slider.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SlickNav/1.0.10/slicknav.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="/css/jquery.countdown.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.4.0/css/slider-pro.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
+    <link rel="stylesheet" href="/css/site.css"/>
 
     <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
@@ -40,64 +40,98 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11023961-18"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
         gtag('config', 'UA-11023961-18');
     </script>
 </th:block>
 <body>
-<th:block th:fragment="header">
-    <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
-            href="http://browsehappy.com/">upgrade
-        your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <header id="header" class="header_section bd-bottom">
-        <div class="bottom_header">
-            <div class="container">
-                <div class="bottom_content_wrap row">
-                    <div class="col-sm-2">
-                        <a href="/"><img style="height: 65px;" src="/images/logo.png" alt="Giant Coin"></a>
-                    </div>
-                    <div class="col-sm-10 text-right">
-                        <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                            <li><a href="/wallet">Wallet</a></li>
-                            <li><a href="/roadmap">Roadmap</a></li>
-                            <li><a href="/about">Info</a></li>
-                            <li><a href="https://explorer.giantpay.network" target="_blank">Explorer</a></li>
-                            <li><a href="/exchange">Exchange</a></li>
-                            <li><a href="/masternodes">Masternodes</a></li>
-                            <li><a href="/pages">News</a></li>
-                            <li>
-                                <a th:href="${@marketingService.getDiscordUrl()}" target="_blank" rel="nofollow">Community</a>
-                                <ul>
-                                    <li><a th:href="${@marketingService.getDiscordUrl()}" target="_blank" rel="nofollow">Discord</a></li>
-                                    <li><a href="https://twitter.com/giant_coin" target="_blank" rel="nofollow">Twitter</a></li>
-                                    <li><a href="https://bitcointalk.org/index.php?topic=3655657.0" target="_blank" rel="nofollow">Bitcointalk</a></li>
-                                    <li><a href="https://trello.com/b/3QPfSlfL" target="_blank" rel="nofollow">Trello</a></li>
-                                    <li><a href="https://www.youtube.com/channel/UCV4o0e0gtVAU2K97TVxYWcA" target="_blank" rel="nofollow">Youtube</a></li>
-                                    <li><a href="https://github.com/GiantPay/GiantCore" target="_blank" rel="nofollow">Github</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/whitepaper">Whitepaper</a>
-                                <ul>
-                                    <li><a href="/whitepaper">Giant WP</a></li>
-                                    <li><a href="/whitepaper/contracts">GiantContracts WP</a></li>
-                                    <li><a href="/whitepaper/exchange">Giant.Exchange WP</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+<th:block th:fragment="mainmenu">
+    <div class="header-top">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-static-top navbar-expand-lg">
+                <a class="navbar-brand" href="/"><img src="/images/logo.png"></a>
+                <div class="navbar-header">
+                    <button class="navbar-toggler collapsed"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-main">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/whitepaper">White Paper</a></li>
+                        <li><a href="/wallet">WALLET</a></li>
+                        <li class="nav-item dropdown d-none">
+                            <a class="nav-link dropdown-toggle"
+                               id="navbarDropdown"
+                               href="#"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">ABOUT</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="d-none dropdown-item" href="/wallet">Wallets</a>
+                                <a class="dropdown-item" href="https://github.com/GiantPay" target="_blank" rel="nofollow">Github</a>
+                                <a class="dropdown-item" href="/whitepaper">White Papers</a>
+                                <a class="dropdown-item" href="/about">Specification</a>
+                            </div>
+                        </li>
+                        <li><a href="/about">Specification</a></li>
+                        <li><a href="http://explorer.giantpay.network" target="_blank">EXPLORER</a></li>
+                        <li class="d-none"><a href="/roadmap">WORKFLOW</a></li>
+                        <li><a href="/products">PRODUCTS</a></li>
+                        <li class="d-none"><a href="/masternode">INVESTMENTS</a></li>
+                        <li class="d-none"><a href="https://github.com/GiantPay" target="_blank" rel="nofollow">Github</a></li>
+                        <li><a href="/pages">NEWS</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown dropdown-custom d-none">
+                    <button class="btn btn-secondary dropdown-toggle dropdown-toggle-custom"
+                            id="dropdownMenuButton"
+                            type="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                        <span>fr</span><img src="/images/france.svg">
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">
+                            <span>fr</span><img src="/images/france.svg">
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <span>ge</span><img src="/images/germany.svg">
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <span>kaz</span><img src="/images/kazakhstan.svg">
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <span>pol</span><img src="/images/poland.svg">
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <span>por</span><img src="/images/portugal.svg">
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <span>ru</span><img src="/images/russia.svg">
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <span>sp</span><img src="/images/spain.svg">
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <span>sw</span><img src="/images/sweden.svg">
+                        </a>
                     </div>
                 </div>
-            </div>
+            </nav>
         </div>
-    </header><!-- Header Section -->
-
-    <div class="ticker_wrapper bd-bottom">
-        <ul id="webTicker"></ul>
-    </div><!-- Ticker -->
+    </div>
 </th:block>
 </body>
 </html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>pos-mn-small</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polyline id="path-1" points="8.90791236 2.78040639 4.28222763 0.0986937591 0.854595253 2.08577649 0 2.58185776 0 7.94441219 4.28222763 5.4616836 4.2829504 5.46211901 8.90791236 2.7808418 8.90791236 2.78040639"></polyline>
+        <polyline id="path-3" points="4.64103025 0.0230607966 0.0887690925 2.68528564 4.30330937 5.15077306 8.85557053 2.4879717 4.64103025 0.0230607966"></polyline>
+        <polygon id="path-5" points="4.69842466 7.97387518 4.66859238 7.97387518 0.096759639 5.30522496 8.93662838 0.134542816 13.5282609 2.8179971"></polygon>
+        <polygon id="path-7" points="0.00867315886 5.43608744 0.00867315886 0.0664303441 8.90805691 5.23483309 4.28945526 7.91770682"></polygon>
+    </defs>
+    <g id="Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-page" transform="translate(-216.000000, -1286.000000)">
+            <g id="Strengths" transform="translate(0.000000, 951.000000)">
+                <g id="pos-mn-small" transform="translate(218.000000, 337.000000)">
+                    <g id="ethereum-blockchain" stroke="#127AEA" stroke-width="4">
+                        <circle id="Oval" cx="42" cy="3.81818182" r="3.81818182"></circle>
+                        <circle id="Oval" cx="42" cy="80.1818182" r="3.81818182"></circle>
+                        <circle id="Oval" cx="3.81818182" cy="42" r="3.81818182"></circle>
+                        <circle id="Oval" cx="80.1818182" cy="42" r="3.81818182"></circle>
+                        <circle id="Oval" cx="15.0054545" cy="15.0054545" r="3.81818182"></circle>
+                        <circle id="Oval" cx="68.9945455" cy="68.9945455" r="3.81818182"></circle>
+                        <circle id="Oval" cx="15.0054545" cy="68.9945455" r="3.81818182"></circle>
+                        <circle id="Oval" cx="68.9945455" cy="15.0054545" r="3.81818182"></circle>
+                        <path d="M54.8290909,54.8290909 L66.2836364,66.2836364" id="Shape"></path>
+                        <path d="M17.7163636,17.7163636 L29.1709091,29.1709091" id="Shape"></path>
+                        <path d="M29.1709091,54.8290909 L17.7163636,66.2836364" id="Shape"></path>
+                        <path d="M66.2836364,17.7163636 L54.8290909,29.1709091" id="Shape"></path>
+                        <path d="M42,60.1363636 L42,76.3636364" id="Shape"></path>
+                        <path d="M42,7.63636364 L42,23.8636364" id="Shape"></path>
+                        <path d="M60.1363636,42 L76.3636364,42" id="Shape"></path>
+                        <path d="M7.63636364,42 L23.8636364,42" id="Shape"></path>
+                        <ellipse id="Oval" cx="42" cy="41.2554545" rx="18.1363636" ry="18.8809091"></ellipse>
+                    </g>
+                    <g id="Group" transform="translate(34.000000, 32.000000)">
+                        <g id="Group-9" transform="translate(0.000000, 2.394775)" fill="#127AEA">
+                            <polyline id="Fill-8" points="0 6.89537222 4.72350457 9.58562866 4.72350457 0.1139779 0 2.80030908 0 6.89537222"></polyline>
+                        </g>
+                        <g id="Group-12" transform="translate(4.675964, 0.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-11"></g>
+                            <polyline id="Fill-10" fill="#127AEA" mask="url(#mask-2)" points="8.90791236 2.78040639 4.28222763 0.0986937591 0.854595253 2.08577649 0 2.58185776 0 7.94441219 4.28222763 5.4616836 4.2829504 5.46211901 8.90791236 2.7808418 8.90791236 2.78040639"></polyline>
+                        </g>
+                        <g id="Group-15" transform="translate(8.962264, 2.793904)">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <g id="Clip-14"></g>
+                            <polyline id="Fill-13" fill="#127AEA" mask="url(#mask-4)" points="4.64103025 0.0230607966 0.0887690925 2.68528564 4.30330937 5.15077306 8.85557053 2.4879717 4.64103025 0.0230607966"></polyline>
+                        </g>
+                        <g id="Group-18" transform="translate(4.286300, 13.171263)">
+                            <mask id="mask-6" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <g id="Clip-17"></g>
+                            <polygon id="Fill-16" fill="#127AEA" mask="url(#mask-6)" points="-4.15463495 7.97387518 61.6113413 7.97387518 61.6113413 -12.6734398 -4.15463495 -12.6734398"></polygon>
+                        </g>
+                        <g id="Group-21" transform="translate(0.000000, 10.377358)">
+                            <mask id="mask-8" fill="white">
+                                <use xlink:href="#path-7"></use>
+                            </mask>
+                            <g id="Clip-20"></g>
+                            <polygon id="Fill-19" fill="#127AEA" mask="url(#mask-8)" points="0.00867315886 10.586357 66.2292529 10.586357 66.2292529 -10.0609579 0.00867315886 -10.0609579"></polygon>
+                        </g>
+                        <polyline id="Fill-22" fill="#127AEA" points="14.377488 8.38171263 9.74159147 11.1217068 17.9245283 15.9651669 17.9245283 10.4811733 14.377488 8.38171263"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

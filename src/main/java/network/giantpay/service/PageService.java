@@ -5,6 +5,7 @@ import com.google.common.primitives.Longs;
 import network.giantpay.model.Page;
 import network.giantpay.model.User;
 import network.giantpay.repository.PageRepository;
+import network.giantpay.utils.ImageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
@@ -65,6 +66,8 @@ public class PageService {
         page.setCategory((String) params.getFirst("category"));
         page.setTags(page.getSeoKeywords());
         page.setVisible(Boolean.parseBoolean((String) params.getFirst("visible")));
+        page.setCoverUrl((String) params.getFirst("coverUrl"));
+        page.setImages(ImageUtils.getImages(params));
         if (page.getId() == null) {
             page.setUrl("/" + page.getTitle()
                     .replaceAll("#", "")
@@ -89,5 +92,9 @@ public class PageService {
             );
         }
         return pageRepository.save(page);
+    }
+
+    public List<Page> findLastPages() {
+        return pageRepository.findFirst7ByVisibleTrueOrderByCreatedAtDesc();
     }
 }

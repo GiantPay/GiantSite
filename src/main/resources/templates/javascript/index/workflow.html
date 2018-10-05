@@ -1,0 +1,74 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="code">
+    <script>
+        $(function () {
+
+            function parseSprintName(boardName) {
+                return "Sprint #" + boardName.replace(/.* #(\d+) .*/, "$1");
+            }
+
+            function parseSprintPeriod(boardName) {
+                return boardName.split("-")[1].replace(")", "").trim();
+            }
+
+            $.getJSON("/api/workflow", function (board) {
+                var sprintName = parseSprintName(board.name);
+                var sprintPeriod = parseSprintPeriod(board.name);
+                var sprintUrl = board.url;
+                var inProgressCount = 0;
+                var inReviewCount = 0;
+                var doneCount = 0;
+
+                if (board.lists) {
+                    board.lists.forEach(function (list) {
+                        var listName = list.name.toLowerCase().trim().replace(" ", "-");
+                        if (listName === "in-progress") {
+                            $("#inProgressUrl").attr("href", sprintUrl);
+
+                            var inProgressCards = "";
+                            if (list.cards) {
+                                list.cards.forEach(function (card) {
+                                    inProgressCards += "<li><a href=\"" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
+                                    inProgressCount++;
+                                });
+                            }
+                            $("#inProgressCards").html(inProgressCards);
+                        } else if (listName === "in-review") {
+                            $("#inReviewUrl").attr("href", sprintUrl);
+
+                            var inReviewCards = "";
+                            if (list.cards) {
+                                list.cards.forEach(function (card) {
+                                    inReviewCards += "<li><a href=\"" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
+                                    inReviewCount++;
+                                });
+                            }
+                            $("#inReviewCards").html(inReviewCards);
+                        } else if (listName === "done") {
+                            $("#doneUrl").attr("href", sprintUrl);
+
+                            var doneCards = "";
+                            if (list.cards) {
+                                list.cards.forEach(function (card) {
+                                    doneCards += "<li><a href=\"" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
+                                    doneCount++;
+                                });
+                            }
+                            $("#doneCards").html(doneCards);
+                        }
+                    });
+                }
+
+                $("#sprintName").text(sprintName);
+                $("#sprintPeriod").text(sprintPeriod);
+                $("#inProgressCount").text(inProgressCount);
+                $("#inReviewCount").text(inReviewCount);
+                $("#doneCount").text(doneCount);
+            });
+        });
+    </script>
+</th:block>
+</body>
+</html>

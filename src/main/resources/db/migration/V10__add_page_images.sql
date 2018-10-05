@@ -1,0 +1,1 @@
+ALTER TABLE pages ADD COLUMN images character varying(10000);
