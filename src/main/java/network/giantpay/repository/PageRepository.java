@@ -15,7 +15,7 @@ public interface PageRepository extends JpaRepository<Page, Long> {
 
     List<Page> findAllByVisibleTrueOrderByCreatedAtDesc();
 
-    @Query(nativeQuery = true, value = "SELECT DISTINCT p.category FROM pages AS p WHERE visible ORDER BY 1")
+    @Query(nativeQuery = true, value = "SELECT DISTINCT upper(p.category) FROM pages AS p WHERE visible ORDER BY 1")
     List<String> findCategories();
 
     Page findByUrl(String url);
