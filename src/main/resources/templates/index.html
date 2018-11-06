@@ -1,42 +1,2735 @@
 <!doctype html>
 <!--[if lt IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <title>Giant Coin Cryptocurrency | GiantPay | Network | POS | MASTERNODES</title>
     <meta name="description"
           content="Giant is a cutting-edge blockchain environment with fast smart contracts, a marketplace where every user can find an interesting role and be sure there are no unfair parties. The efficiency of the blockchain technologies has been positively characterized even by the most conservative financial organizations">
-    <th:block th:replace="blocks/header :: head"></th:block>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.4.0/css/slider-pro.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="css/fixes.css"/>
+    <link rel="stylesheet" href="css/additions.css"/>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11023961-18"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-11023961-18');
+    </script>
+
 </head>
 <body class="index-page">
 <header class="header-main">
-    <th:block th:replace="blocks/header :: mainmenu"></th:block>
-    <th:block th:replace="blocks/index/header :: header"></th:block>
+
+    <div class="header-top">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-static-top navbar-expand-lg">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png"></a>
+                <div class="navbar-header">
+                    <button class="navbar-toggler collapsed"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-main">
+                    <ul class="nav navbar-nav">
+                        <li><a href="whitepaper.html">White Paper</a></li>
+                        <li><a href="wallet.html">WALLET</a></li>
+                        <li class="nav-item dropdown d-none">
+                            <a class="nav-link dropdown-toggle"
+                               id="navbarDropdown"
+                               href="index.html#"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">ABOUT</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="d-none dropdown-item" href="wallet.html">Wallets</a>
+                                <a class="dropdown-item" href="https://github.com/GiantPay" target="_blank"
+                                   rel="nofollow">Github</a>
+                                <a class="dropdown-item" href="whitepaper.html">White Papers</a>
+                                <a class="dropdown-item" href="about.html">Specification</a>
+                            </div>
+                        </li>
+                        <li><a href="about.html">Specification</a></li>
+                        <li><a href="http://explorer.giantpay.network" target="_blank">EXPLORER</a></li>
+                        <li class="d-none"><a href="roadmap.html">WORKFLOW</a></li>
+                        <li><a href="products.html">PRODUCTS</a></li>
+                        <li class="d-none"><a href="https://giantpay.network/masternode">INVESTMENTS</a></li>
+                        <li class="d-none"><a href="https://github.com/GiantPay" target="_blank"
+                                              rel="nofollow">Github</a></li>
+                        <li><a href="pages.html">NEWS</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown dropdown-custom d-none">
+                    <button class="btn btn-secondary dropdown-toggle dropdown-toggle-custom"
+                            id="dropdownMenuButton"
+                            type="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                        <span>fr</span><img src="images/france.svg">
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="index.html#">
+                            <span>fr</span><img src="images/france.svg">
+                        </a>
+                        <a class="dropdown-item" href="index.html#">
+                            <span>ge</span><img src="images/germany.svg">
+                        </a>
+                        <a class="dropdown-item" href="index.html#">
+                            <span>kaz</span><img src="images/kazakhstan.svg">
+                        </a>
+                        <a class="dropdown-item" href="index.html#">
+                            <span>pol</span><img src="images/poland.svg">
+                        </a>
+                        <a class="dropdown-item" href="index.html#">
+                            <span>por</span><img src="images/portugal.svg">
+                        </a>
+                        <a class="dropdown-item" href="index.html#">
+                            <span>ru</span><img src="images/russia.svg">
+                        </a>
+                        <a class="dropdown-item" href="index.html#">
+                            <span>sp</span><img src="images/spain.svg">
+                        </a>
+                        <a class="dropdown-item" href="index.html#">
+                            <span>sw</span><img src="images/sweden.svg">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <div class="header-bottom-l">
+                        <h1>Giant<span>blockchain</span><span>& smart contracts</span></h1>
+                        <div class="button-wrapper">
+                            <a class="blu-button" href="whitepaper.pdf" target="_blank">Giant WP</a>
+                            <a class="blu-button" href="GiantContractsWhitepaper.pdf" target="_blank">
+                                Giant Contracts WP
+                            </a>
+                        </div>
+                        <div class="link-pulsation-wrapper">
+                            <div class="pulse"></div>
+                            <div class="pulse2"></div>
+                            <div class="pulse3"></div>
+                            <div class="pulse4"></div>
+                            <a href="index.html#" onclick="lity('https://youtu.be/2gFc1e5qxRk'); return false;">
+                                <img src="images/Play.svg" alt="Video about Giant Coin">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-7">
+                    <div class="header-bottom-r">
+                        <div class="tab-content" id="nav-tabContent3">
+                            <div class="tab-pane fade show active"
+                                 id="nav-home3"
+                                 data-interval="100"
+                                 role="tabpanel"
+                                 aria-labelledby="nav-home-tab">
+                                <h3>What is Giant?</h3>
+                                <p class="font20">
+                                    Giant is the first blockchain environment that supports JavaScript-based smart
+                                    contracts. This gives our blockchain greater flexibility and also makes it easier
+                                    for the average developer to work with. In addition, Giant platform utilizes a
+                                    masternode system to ensure the highest level of decentralization and security. In
+                                    order to create a smart contract using Giant you must be a masternode owner, making
+                                    masternodes an inseparable part our blockchain. The Giant blockchain counters
+                                    scalability issues with burning fees and combines the best experience of other
+                                    open-source projects, such as Ethereum and Dash.
+                                </p>
+                            </div>
+                            <div class="tab-pane fade"
+                                 id="nav-profile3"
+                                 data-interval="100"
+                                 role="tabpanel"
+                                 aria-labelledby="nav-profile-tab">
+                                <h3>What problems are solved by Giant?</h3>
+                                <p class="font20">
+                                    Currently, most contracts require trust between parties or a third-party arbitrator.
+                                    Since third-party arbitrators can be biased, there is always a risk that the terms
+                                    may not be fulfilled as they should be. Without full transparency, the contract
+                                    results can also be changed. Giant offers a system where all terms are automatically
+                                    executed after the fulfillment of the pre-written agreements. Any funds connected
+                                    with the contract are protected, eliminating any issues of transparency and ensuring
+                                    safety for all parties involved. Giant creates a friendly and productive atmosphere
+                                    where everyone feels secure.
+                                </p>
+                            </div>
+                            <div class="tab-pane fade"
+                                 id="nav-contact3"
+                                 data-interval="100"
+                                 role="tabpanel"
+                                 aria-labelledby="nav-contact-tab">
+                                <h3>Where Giant can be used?</h3>
+                                <p class="font20">
+                                    Currently, there are many industries where one party does not respect the
+                                    obligations of a contract. We are certain that Giant can be used to solve this
+                                    problem in a variety of settings, allowing these sectors to function more
+                                    efficiently. For instance, Giant can minimize or completely eliminate the numerous
+                                    issues found in user-generated bets in the gambling industry. The pilot program
+                                    based on the Giant blockchain is a binary options platform called Giant.Exchange
+                                    where we will demonstrate the advantages of transparency, decentralized fiscal
+                                    management via masternode voting, decentralized storage of funds, and independent
+                                    data sources.
+                                </p>
+                            </div>
+                        </div>
+                        <nav>
+                            <ul class="nav nav-tabs square-ul" id="nav-tab3" role="tablist">
+                                <li>
+                                    <a class="nav-item nav-link active"
+                                       id="nav-home-tab3"
+                                       data-toggle="tab"
+                                       href="index.html#nav-home3"
+                                       role="tab"
+                                       aria-controls="nav-home"
+                                       aria-selected="true">What is Giant?</a>
+                                </li>
+                                <li>
+                                    <a class="nav-item nav-link"
+                                       id="nav-profile-tab3"
+                                       data-toggle="tab"
+                                       href="index.html#nav-profile3"
+                                       role="tab"
+                                       aria-controls="nav-profile"
+                                       aria-selected="false">What problems are solved by Giant?</a>
+                                </li>
+                                <li>
+                                    <a class="nav-item nav-link"
+                                       id="nav-contact-tab3"
+                                       data-toggle="tab"
+                                       href="index.html#nav-contact3"
+                                       role="tab"
+                                       aria-controls="nav-contact"
+                                       aria-selected="false">Where Giant can be used?</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </header>
 
-<th:block th:replace="blocks/index/strengths :: block"></th:block>
-<th:block th:replace="blocks/index/network :: block"></th:block>
-<th:block th:replace="blocks/index/products :: block"></th:block>
-<th:block th:replace="blocks/index/asset :: block"></th:block>
-<th:block th:replace="blocks/index/market :: block"></th:block>
-<th:block th:replace="blocks/index/exchanges :: block"></th:block>
-<th:block th:replace="blocks/index/hold :: block"></th:block>
-<th:block th:replace="blocks/index/calculator :: block"></th:block>
-<th:block th:replace="blocks/index/roadmap :: block"></th:block>
-<th:block th:replace="blocks/index/workflow :: block"></th:block>
-<th:block th:replace="blocks/index/news :: block"></th:block>
 
-<th:block th:replace="blocks/footer :: footer"></th:block>
-<th:block th:replace="javascript/index/header :: code"></th:block>
-<th:block th:replace="javascript/index/network :: code"></th:block>
-<th:block th:replace="javascript/index/market :: code"></th:block>
-<th:block th:replace="javascript/index/hold :: code"></th:block>
-<th:block th:replace="javascript/index/calculator :: code"></th:block>
-<th:block th:replace="javascript/index/workflow :: code"></th:block>
+<section class="strengths">
+    <div class="container">
+        <h2 class="line-blu">Strengths</h2>
+        <p class="font20 text-center">
+            In the Giant blockchain we have combined and upgraded the best practices previously developed
+            by three separate blockchain teams. The idea of smart contracts comes from Ethereum, the masternode
+            governance is borrowed from Dash, and the closest equivalent of our current Proof-of-Stake consensus
+            model can be found in PIVX. By combining the best aspects of each of these technologies,
+            Giant has the following advantages:
+        </p>
+        <div class="strengths-icon">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab2" role="tablist">
+                    <a class="nav-item nav-link active"
+                       id="nav-home-tab2"
+                       data-toggle="tab"
+                       href="index.html#nav-home2"
+                       role="tab"
+                       aria-controls="nav-home"
+                       aria-selected="true">
+                        <div class="strengths-icon-block">
+                            <div class="strengths-icon-block-img">
+                                <img src="images/pos-mn.svg">
+                            </div>
+                            <p class="font20">PoS & MN</p>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link"
+                       id="nav-profile-tab"
+                       data-toggle="tab"
+                       href="index.html#nav-profile2"
+                       role="tab"
+                       aria-controls="nav-profile"
+                       aria-selected="false">
+                        <div class="strengths-icon-block">
+                            <div class="strengths-icon-block-img">
+                                <img src="images/javascript.svg">
+                            </div>
+                            <p class="font20">JavaScript</p>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link"
+                       id="nav-contact-tab"
+                       data-toggle="tab"
+                       href="index.html#nav-contact2"
+                       role="tab"
+                       aria-controls="nav-contact"
+                       aria-selected="false">
+                        <div class="strengths-icon-block">
+                            <div class="strengths-icon-block-img">
+                                <img src="images/code-update.svg">
+                            </div>
+                            <p class="font20">Code Update</p>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link"
+                       id="nav-contact-tab2"
+                       data-toggle="tab"
+                       href="index.html#nav-contact4"
+                       role="tab"
+                       aria-controls="nav-contact"
+                       aria-selected="false">
+                        <div class="strengths-icon-block">
+                            <div class="strengths-icon-block-img">
+                                <img src="images/shredder.svg">
+                            </div>
+                            <p class="font20">Destruction</p>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link"
+                       id="nav-contact-tab4"
+                       data-toggle="tab"
+                       href="index.html#nav-contact5"
+                       role="tab"
+                       aria-controls="nav-contact"
+                       aria-selected="false">
+                        <div class="strengths-icon-block">
+                            <div class="strengths-icon-block-img">
+                                <img src="images/burning.svg">
+                            </div>
+                            <p class="font20">Burning Fees</p>
+                        </div>
+                    </a>
+                    <a class="nav-item nav-link"
+                       id="nav-contact-tab5"
+                       data-toggle="tab"
+                       href="index.html#nav-contact6"
+                       role="tab"
+                       aria-controls="nav-contact"
+                       aria-selected="false">
+                        <div class="strengths-icon-block">
+                            <div class="strengths-icon-block-img">
+                                <img src="images/bank.svg">
+                            </div>
+                            <p class="font20">Self-Governance</p>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent2">
+                <div class="tab-pane fade show active" id="nav-home2" role="tabpanel"
+                     aria-labelledby="nav-home-tab">
+                    <div class="strengths-bottom">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="strengths-bottom-img" src="images/pos-mn.svg">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>PoS & MN</h3>
+                                <p class="font20">
+                                    Proof-of-Stake (PoS) and masternodes (MN) – while the former decreases the GIC
+                                    volatility by making its price independent from miners (and making GIC
+                                    eco-friendly), the latter is a reliable governance technology. Masternodes form
+                                    a decentralized board of investors with an incentive to support the structural
+                                    changes. This increases the stability and security of the whole Giant blockchain
+                                    network.
+                                </p>
+                                <a href="pages/giant-proof-of-stake.html" target="_blank" class="blu-button">Article</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-profile2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="strengths-bottom">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="strengths-bottom-img" src="images/javascript.svg">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>JavaScript</h3>
+                                <p class="font20">
+                                    JavaScript — the most popular programming language is used in the Giant smart
+                                    contracts. This seriously increases the number of potential Giant programmers
+                                    around the world. It also makes the source code of smart contracts easy to
+                                    comprehend for a wide group of cryptocurrency and information technology
+                                    enthusiasts.
+                                </p>
+                                <a href="pages/javascript-in-the-code-of-smart-contracts.html" target="_blank"
+                                   class="blu-button">Article</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-contact2" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="strengths-bottom">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="strengths-bottom-img" src="images/code-update.svg">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Code Update</h3>
+                                <p class="font20">
+                                    Code Update – allows developers make important changes and/or additions in a
+                                    smart contract that already exists instead of creating a hundred of iterations
+                                    of the same code — in the long term this means that the system will not become
+                                    overrun with obsolete deal data, resulting in better scalability.
+                                </p>
+                                <a href="pages/the-giant-smart-contracts-code-update.html" target="_blank"
+                                   class="blu-button">Article</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-contact4" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="strengths-bottom">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="strengths-bottom-img" src="images/shredder.svg">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Destruction</h3>
+                                <p class="font20">
+                                    Smart Contracts Destruction – old Giant smart contracts can be deleted, which
+                                    prevents a situation where the Giant blockchain system is potentially filled
+                                    with old data nobody needs anymore. The network scalability becomes even less of
+                                    a problem if this function is combined with the previously mentioned Code Update
+                                    feature.
+                                </p>
+                                <a href="pages/scaling-the-giants-network-the-destruction-of-smart-contracts.html"
+                                   target="_blank" class="blu-button">Article</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-contact5" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="strengths-bottom">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="strengths-bottom-img" src="images/burning.svg">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Burning Fees</h3>
+                                <p class="font20">
+                                    Burning Fees – to solve the inflationary problem connected to the non-stop
+                                    network expansion due to the infinite Giant Coin supply, we have introduced the
+                                    mechanism of burning fees for transactions and smart contract settlement: these
+                                    commissions are made in Giant Coin (GIC) and burning them will lead to a stable
+                                    demand for this cryptocurrency.
+                                </p>
+                                <a href="pages/burning-fees-to-counter-cryptocurrency-inflation.html" target="_blank"
+                                   class="blu-button">Article</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-contact6" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="strengths-bottom">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="strengths-bottom-img" src="images/bank.svg">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Self-Governance</h3>
+                                <p class="font20">
+                                    Self-Governance – due to the high level of decentralization, the blockchain is
+                                    able to outlive the original developers as there is no centralized fiscal
+                                    authority issuing Giant Coin or controlling the smart contracts. Budget
+                                    decisions are made first with the help of the regular users who hold a vote on
+                                    Discord, then the voting system of masternodes.
+                                </p>
+                                <a href="pages/governance-mechanism-of-giant.html" target="_blank" class="blu-button">Article</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="giant-network">
+    <div class="container">
+        <h2 class="line-blu white-color">Giant Network</h2>
+        <div class="giant-network-counter benefits__inner" id="counts">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="giant-network-counter-block">
+                        <p>CURRENT BLOCK</p>
+                        <p class="spincrement white-color">
+                            <span class="benefits__number">107262</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="giant-network-counter-block">
+                        <p>SUPPLY</p>
+                        <p class="spincrement white-color">
+                            <span class="benefits__number">2037931</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="giant-network-counter-block">
+                        <p>DIFFICULTY</p>
+                        <p class="spincrement white-color">
+                            <span class="benefits__number2">8370.2</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="giant-network-counter-block">
+                        <p>MASTERNODES</p>
+                        <p class="spincrement white-color">
+                            <span class="benefits__number">1496</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="projects-giant">
+    <div class="container">
+        <h2 class="line-blu">Giant Products</h2>
+        <p class="font20">
+            The Giant blockchain has been designed to solve the problems of trust between the contracts and bets
+            participants and of the safety of obligations fulfillment. Giant allows users to create projects in
+            various business industries that suffer from these problems. Let’s look at some of these projects.
+        </p>
+        <div class="projects-giant-wrapper">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="projects-giant-block">
+                        <div class="projects-giant-block-img projects-giant-block-img1"></div>
+                        <div class="projects-giant-block-text">
+                            <h3>Giant.Exchange</h3>
+                            <p>
+                                Giant.Exchange — a decentralized binary options marketplace with
+                                trustworthy assets data controlled by an independent arbiter,
+                                with automatic terms execution and public Broker reputation.
+                            </p>
+                            <p class="link-giant-block">
+                                <a href="https://giant.exchange" target="_blank">
+                                    <img src="images/aircraft.png">Giant.Exchange
+                                </a>
+                            </p>
+                            <p class="link-giant-block">
+                                <img src="images/cal.svg">Release date Q4 2018
+                            </p>
+                            <div class="button-wrapper">
+                                <a href="products.html" class="blu-button">MORE</a>
+                                <a href="index.html#" class="blu-button d-none">VIDEO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="projects-giant-block">
+                        <div class="projects-giant-block-img projects-giant-block-img2"></div>
+                        <div class="projects-giant-block-text">
+                            <h3>Giant.Bet</h3>
+                            <p>
+                                Giant.Bet — a decentralized betting marketplace with guaranteed payments built on
+                                smart contracts and reliable sports events results sources.
+                            </p>
+                            <p class="link-giant-block">
+                                <a href="products.html">
+                                    <img src="images/aircraft.png">Giant.Bet
+                                </a>
+                            </p>
+                            <p class="link-giant-block">
+                                <img src="images/cal.svg">Release date Q3 2019
+                            </p>
+                            <div class="button-wrapper">
+                                <a href="products.html" class="blu-button">MORE</a>
+                                <a href="index.html#" class="blu-button d-none">VIDEO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="projects-giant-block">
+                        <div class="projects-giant-block-img projects-giant-block-img3"></div>
+                        <div class="projects-giant-block-text">
+                            <h3>Giant.ColdStake</h3>
+                            <p>
+                                Giant.ColdStake — a shared Proof-of-Stake pool providing passive income without the
+                                need for the wallet client to be permanently connected to the network; the rewards
+                                are equally distributed between all participants
+                            </p>
+                            <p class="link-giant-block">
+                                <a href="products.html">
+                                    <img src="images/aircraft.png">Giant.ColdStake
+                                </a>
+                            </p>
+                            <p class="link-giant-block">
+                                <img src="images/cal.svg">Release date Q3 2019
+                            </p>
+                            <div class="button-wrapper">
+                                <a href="products.html" class="blu-button">MORE</a>
+                                <a href="index.html#" class="blu-button d-none">VIDEO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="digital-asset">
+    <div class="container">
+        <h2 class="line-blu white-color">Digital Asset</h2>
+        <div class="digital-asset-wrapper">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="white-color">Giant Coin (GIC)</h3>
+                    <p class="margin-25 white-color font20">
+                        The Giant blockchain has its own internal digital asset called Giant Coin (GIC) — a
+                        universal
+                        means of payment in all products based on the Giant technology. GIC is also required for
+                        every
+                        Giant smart contracts developer — 1000 Giant Coins are needed to launch a masternode, which
+                        opens up a possibility to create smart contracts. You can become a user of this
+                        cryptocurrency
+                        by installing a wallet client compatible with your operating system.
+                    </p>
+                    <h3 class="white-color">Wallet</h3>
+                    <div class="button-wrapper button-wrapper2">
+                        <a href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/giant-1.2.2.1-win64.zip"
+                           target="_blank"
+                           class="blu-button blu-button2">Windows</a>
+                        <a href="index.html#"
+                           rel="nofollow"
+                           target="_blank"
+                           class="button-gray blu-button blu-button2 d-none">IOS</a>
+                        <a href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/giant-1.2.2.1-linux64.zip"
+                           target="_blank"
+                           class="blu-button blu-button2">Linux</a>
+                        <a href="https://github.com/GiantPay/GiantCore/releases"
+                           rel="nofollow"
+                           target="_blank"
+                           class="button-gray blu-button blu-button2 d-none">Android</a>
+                        <a href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/GIANT-Qt.dmg"
+                           target="_blank"
+                           class="blu-button blu-button2">Mac os</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="white-color">Specification</h3>
+                    <div class="specification-list">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Name</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>Giant</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Ticker</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>GIC</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Type</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>POS + MASTERNODE</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Block Time</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>120 seconds</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Difficulty Retarget</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>Every block</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Maturity</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>200</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Max Coin Supply</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>1 323 000 POW Phase +</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Infinity</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>POS Phase</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Premine</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>200 000 GIC</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">Masternode Collateral</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>1000 GIC</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">P2P Port</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>40444</p>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="title-specification white-color">RPC Port</p>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="specification-list-block-white">
+                                    <p>41444</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="market" class="gic-market">
+    <div class="container">
+        <h2 class="line-blu">GIC Market</h2>
+        <div class="graphic-top">
+            <div class="row">
+                <div class="col-md-5 align-items-center d-flex justify-content-between flex-wrap">
+                    <div class="graphic-top-block">
+                        <p><span>Average price</span></p>
+                        <p><img src="images/arrow_green.svg"> <span>2.04</span>%</p>
+
+                    </div>
+                    <div class="graphic-top-block graphic-top-block2 flex-column align-items-end d-flex justify-content-end">
+                        <p><em>0.00002872</em>&nbsp;<span>BTC</span></p>
+                        <p><em>0.18</em>&nbsp;<span>USD</span></p>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5 align-items-center d-flex justify-content-between flex-wrap">
+                    <div class="graphic-top-block">
+                        <p><span>Volume 24h</span></p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="graphic-top-block graphic-top-block2 flex-column align-items-end d-flex justify-content-end">
+                        <p><em>0.1052</em>&nbsp;<span>BTC</span></p>
+                        <p><em>660.35</em>&nbsp;<span>USD</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="exchanges">
+    <div class="container">
+        <h2 class="line-blu white-color">Exchanges</h2>
+        <ul class="nav-tabs-custom nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active"
+                   id="pills-home-tab"
+                   data-toggle="pill"
+                   href="index.html#id1"
+                   role="tab"
+                   aria-controls="pills-home"
+                   aria-selected="true"> Listed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   id="pills-profile-tab"
+                   data-toggle="pill"
+                   href="index.html#id2"
+                   role="tab"
+                   aria-controls="pills-profile"
+                   aria-selected="false"> Voting</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   id="pills-contact-tab"
+                   data-toggle="pill"
+                   href="index.html#id3"
+                   role="tab"
+                   aria-controls="pills-contact"
+                   aria-selected="false"> Soon</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="id1" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="wrapper-carousel-exchanges">
+                    <div class="am-prev"><img src="images/roadmap_arrow.svg"></div>
+                    <div class="am-next"><img src="images/roadmap_arrow.svg"></div>
+                    <div class="owl-carousel owl-carousel2 owl-theme">
+                        <div class="exchanges-block">
+                            <img src="images/cryptobridge.png">
+                            <h3>CryptoBridge</h3>
+                            <a href="https://wallet.crypto-bridge.org/market/BRIDGE.GIC_BRIDGE.BTC"
+                               rel="nofollow"
+                               target="_blank"
+                               class="blu-button">BUY/SELL</a>
+                        </div>
+                        <div class="exchanges-block">
+                            <img src="images/graviex.jpg">
+                            <h3>Graviex</h3>
+                            <a href="https://graviex.net/markets/gicbtc"
+                               rel="nofollow"
+                               target="_blank"
+                               class="blu-button">BUY/SELL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="id2" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="wrapper-carousel-exchanges">
+                    <div class="am-prev"><img src="images/roadmap_arrow.svg"></div>
+                    <div class="am-next"><img src="images/roadmap_arrow.svg"></div>
+                    <div class="owl-carousel owl-carousel5 owl-theme">
+                        <div class="exchanges-block">
+                            <img src="images/southxchange.png">
+                            <h3>SouthXchange</h3>
+                            <a href="https://www.southxchange.com/Home/Vote"
+                               rel="nofollow"
+                               target="_blank"
+                               class="blu-button">Vote</a>
+                        </div>
+                        <div class="exchanges-block">
+                            <img src="images/coinex.svg">
+                            <h3>CoinEx</h3>
+                            <a href="https://www.coinex.com/vote/project?id=2007"
+                               rel="nofollow"
+                               target="_blank"
+                               class="blu-button">Vote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="id3" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="wrapper-carousel-exchanges">
+                    <div class="am-prev"><img src="images/roadmap_arrow.svg"></div>
+                    <div class="am-next"><img src="images/roadmap_arrow.svg"></div>
+                    <div class="owl-carousel owl-carousel6 owl-theme">
+                        <div class="exchanges-block">
+                            <img src="images/cryptopia.png">
+                            <h3>Cryptopia</h3>
+                            <a href="https://www.cryptopia.co.nz"
+                               rel="nofollow"
+                               target="_blank"
+                               class="blu-button">cryptopia.co.nz</a>
+                        </div>
+                        <div class="exchanges-block">
+                            <img src="images/hitbtc.svg">
+                            <h3>HitBTC</h3>
+                            <a href="https://hitbtc.com/"
+                               rel="nofollow"
+                               target="_blank"
+                               class="blu-button">hitbtc.com</a>
+                        </div>
+                        <div class="exchanges-block">
+                            <img src="images/cryptology.svg">
+                            <h3>Cryptology</h3>
+                            <a href="https://cryptology.com/"
+                               rel="nofollow"
+                               target="_blank"
+                               class="blu-button">cryptology.com</a>
+                        </div>
+                        <div class="exchanges-block">
+                            <img src="images/exmo.svg">
+                            <h3>Exmo</h3>
+                            <a href="https://exmo.com/"
+                               rel="nofollow"
+                               target="_blank"
+                               class="blu-button">exmo.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="coin-locked">
+    <div class="container">
+        <h2 class="line-blu">Locked Coins</h2>
+        <p class="font20">
+            Locked coins is a value that displays the amount of the coin supply not used in crypto trading and which
+            are instead stored in the project community investment portfolio. Premine can also be connected to this
+            value - this sum is also reflected in the wallet balance of the Giant developers. Overall, the Locked
+            Coins value can show the general level of trust of the project users and its reliability.
+        </p>
+        <div class="coin-locked-wrapper">
+            <div class="row">
+                <div class="col-md-12 col-lg-4">
+                    <div class="coin-locked-block">
+                        <div class="coin-locked-top">
+                            LOCKED COINS IN MASTERNODES
+                        </div>
+                        <div class="coin-locked-center">
+                            <span>73.4</span>%
+                        </div>
+                        <div class="coin-locked-bottom">
+                            <span>1 496 000</span> GIC
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <div class="coin-locked-block">
+                        <div class="coin-locked-top">
+                            TOTAL<br>
+                            LOCKED COINS
+                        </div>
+                        <div class="coin-locked-center">
+                            <canvas id="chart-area" width="350" height="350"></canvas>
+                            <span>80.8</span>%
+                        </div>
+                        <div class="coin-locked-bottom">
+                            <span>1 646 000</span> GIC
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <div class="coin-locked-block">
+                        <div class="coin-locked-top">
+                            LOCKED COINS IN PREMINE
+                        </div>
+                        <div class="coin-locked-center">
+                            <span>7.4</span>%
+                        </div>
+                        <div class="coin-locked-bottom">
+                            <span>150 000</span> GIC
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="calculator" class="investments-calculator">
+    <div class="container">
+        <h2 class="line-blu white-color">Investments Calculator</h2>
+        <p class="font20">
+            To ensure stable network performance, the Giant blockchain uses the Proof-of-Stake (PoS) consensus
+            algorithm and the Masternode (MN) technology - but users always store their funds on their own wallets.
+            In exchange for this, the blockchain generates a reward for network maintainers.
+            This reward comes from each new block. All this is creating a solid investment opportunity.
+        </p>
+        <div class="investments-calculator-wrapper">
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <div class="investments-calculator-block">
+                        <h3>What is a Masternode?</h3>
+                        <p class="font20">
+                            The Giant blockchain environment is maintained by central hubs similar to Internet
+                            servers. One such server, called a masternode, costs 1000 GIC. You can launch as many
+                            working masternodes as you like, and each of them will generate a passive income from
+                            new network blocks. Additionally, masternode owners have extensive powers and can form
+                            investor votes.
+                        </p>
+                    </div>
+                    <div class="investments-calculator-block">
+                        <h3>What is PoS?</h3>
+                        <p class="font20">
+                            Proof-of-Stake — reward distribution for each new cryptocurrency block created. The
+                            system checks your own Giant Coin stake when the Giant wallet client is online.
+                            The more coins your wallet has, the higher your chances to receive a new block reward.
+                            In PoS, the higher the network difficulty is, the more coins are required
+                            to get a reward.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                    <div class="investments-calculator-r">
+                        <div class="button-wrapper-2 d-flex justify-content-center">
+                            <ul class="nav nav-pills" id="chooseCurrency" role="tablist">
+                                <li class="nav-item mr-1">
+                                    <a class="button-white nav-link active"
+                                       id="chooseBTC"
+                                       data-toggle="tab"
+                                       href="index.html#amountBTC"
+                                       role="tab"
+                                       aria-controls="pills-home"
+                                       aria-selected="true">BTC</a>
+                                </li>
+                                <li class="nav-item ml-1">
+                                    <a class="button-white nav-link"
+                                       id="chooseUSD"
+                                       data-toggle="tab"
+                                       href="index.html#amountUSD"
+                                       role="tab"
+                                       aria-controls="pills-profile"
+                                       aria-selected="false">USD</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="pills-tabContent3">
+                            <div class="tab-pane show active"
+                                 id="amountBTC"
+                                 role="tabpanel"
+                                 aria-labelledby="pills-home-tab">
+                                <div class="calculator-wrapper">
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>GIC Price</p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p id="btcRate">0.00002872</p>
+                                            <span>BTC</span>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>You Invest</p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r-input">
+                                            <input id="btcAmountGIC"
+                                                   type="number"
+                                                   min="0.00000001"
+                                                   max="10000000"
+                                                   step="0.00000001"
+                                                   placeholder="Your Invest in GIC">
+                                            <span>GIC</span>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>You Invest</p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r-input">
+                                            <input id="btcAmountBTC"
+                                                   type="number"
+                                                   min="0.00000001"
+                                                   max="10000000"
+                                                   step="0.00000001"
+                                                   placeholder="Your Invest in BTC">
+                                            <span>BTC</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane"
+                                 id="amountUSD"
+                                 role="tabpanel"
+                                 aria-labelledby="pills-profile-tab">
+                                <div class="calculator-wrapper">
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>GIC Price</p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p id="usdRate">0.18</p>
+                                            <span>USD</span>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>You Invest</p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r-input">
+                                            <input id="usdAmountGIC"
+                                                   type="number"
+                                                   min="0.00000001"
+                                                   max="10000000"
+                                                   step="0.00000001"
+                                                   placeholder="Your Invest in GIC">
+                                            <span>GIC</span>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>You Invest</p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r-input">
+                                            <input id="usdAmountUSD"
+                                                   type="number"
+                                                   min="0.01"
+                                                   max="1000000"
+                                                   step="0.01"
+                                                   placeholder="Your Invest in USD">
+                                            <span>USD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-wrapper-2 d-flex justify-content-center">
+                            <ul class="nav nav-pills" id="chooseInvestment" role="tablist">
+                                <li class="nav-item">
+                                    <a class="button-white nav-link active mr-1"
+                                       id="chooseMasternode"
+                                       data-toggle="pill"
+                                       href="index.html#masternodeCalculator"
+                                       role="tab"
+                                       aria-controls="pills-home"
+                                       aria-selected="true">Masternodes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="button-white nav-link ml-1"
+                                       id="choosePOS"
+                                       data-toggle="pill"
+                                       href="index.html#posCalculator"
+                                       role="tab"
+                                       aria-controls="pills-profile"
+                                       aria-selected="false">Staking</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="pills-tabContent4">
+                            <div class="tab-pane fade show active"
+                                 id="masternodeCalculator"
+                                 role="tabpanel"
+                                 aria-labelledby="pills-home-tab">
+                                <div class="calculator-wrapper">
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Active Masternodes </p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r-input">
+                                            <p id="masternodeCount"></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Masternode Reward</p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p><em>16</em><span>GIC</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Reward frequency</p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p id="rewardFrequency"><em></em><span>GIC</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Daily Income</p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r2">
+                                            <p id="mnDailyIncomeGic"><em></em><span>GIC</span></p>
+                                            <p id="mnDailyIncomeBtc"><em></em><span>BTC</span></p>
+                                            <p id="mnDailyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Weekly income </p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r2">
+                                            <p id="mnWeeklyIncomeGic"><em></em><span>GIC</span></p>
+                                            <p id="mnWeeklyIncomeBtc"><em></em><span>BTC</span></p>
+                                            <p id="mnWeeklyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Monthly income </p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r2">
+                                            <p id="mnMonthlyIncomeGic"><em></em><span>GIC</span></p>
+                                            <p id="mnMonthlyIncomeBtc"><em></em><span>BTC</span></p>
+                                            <p id="mnMonthlyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Yearly income</p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r2">
+                                            <p id="mnAnnualIncomeGic"><em></em><span>GIC</span></p>
+                                            <p id="mnAnnualIncomeBtc"><em></em><span>BTC</span></p>
+                                            <p id="mnAnnualIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>ROI (annual) </p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p id="mnRoiPercent"><em></em><span>%</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Payback period</p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p id="mnRoiDays"><em></em><span>days</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade"
+                                 id="posCalculator"
+                                 role="tabpanel"
+                                 aria-labelledby="pills-home-tab">
+                                <div class="calculator-wrapper">
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Average Difficulty</p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p id="averageDifficulty"></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Stake Reward</p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p><em>4</em><span>GIC</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Stake Interval</p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r-input">
+                                            <p id="stakeInterval"></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Daily Income</p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r2">
+                                            <p id="sDailyIncomeGic"><em></em><span>GIC</span></p>
+                                            <p id="sDailyIncomeBtc"><em></em><span>BTC</span></p>
+                                            <p id="sDailyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Weekly income </p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r2">
+                                            <p id="sWeeklyIncomeGic"><em></em><span>GIC</span></p>
+                                            <p id="sWeeklyIncomeBtc"><em></em><span>BTC</span></p>
+                                            <p id="sWeeklyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Monthly income </p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r2">
+                                            <p id="sMonthlyIncomeGic"><em></em><span>GIC</span></p>
+                                            <p id="sMonthlyIncomeBtc"><em></em><span>BTC</span></p>
+                                            <p id="sMonthlyIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Yearly income</p>
+                                        </div>
+                                        <div class="calculator-block-r calculator-block-r2">
+                                            <p id="sAnnualIncomeGic"><em></em><span>GIC</span></p>
+                                            <p id="sAnnualIncomeBtc"><em></em><span>BTC</span></p>
+                                            <p id="sAnnualIncomeUsd" class="d-none"><em></em><span>USD</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>ROI (annual) </p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p id="sRoiPercent"><em></em><span>%</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-block">
+                                        <div class="calculator-block-l">
+                                            <p>Payback period</p>
+                                        </div>
+                                        <div class="calculator-block-r">
+                                            <p id="sRoiDays"><em></em><span>days</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="p-calculator">
+                            Please note that the estimations above are based on mean values.
+                            The real-time data might be slightly different.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="roadmap">
+    <div class="container">
+        <h2 class="line-blu">Roadmap</h2>
+        <div class="am-arrow-wrapper">
+            <div class="am-arrow am-prev3"><img src="images/slide_arrow.svg"></div>
+        </div>
+        <div id="example5" class="slider-pro">
+            <div class="sp-thumbnails">
+                <div class="sp-thumbnail">
+                    <p>Q1 2018</p>
+                </div>
+                <div class="sp-thumbnail">
+                    <p>Q2 2018</p>
+                </div>
+                <div class="sp-thumbnail">
+                    <p>Q3 2018</p>
+                </div>
+                <div class="sp-thumbnail">
+                    <p>Q4 2018</p>
+                </div>
+                <div class="sp-thumbnail">
+                    <p>Q1 2019</p>
+                </div>
+                <div class="sp-thumbnail">
+                    <p>Q2 2019</p>
+                </div>
+                <div class="sp-thumbnail">
+                    <p>Q3 2019</p>
+                </div>
+            </div>
+            <div class="sp-slides">
+                <div class="sp-slide">
+                    <div class="roadmap-slider-block">
+                        <h3>Q1 2018</h3>
+                        <div class="list-square-wrapper">
+                            <div class="list-square">
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Blockchain research & development</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-slide">
+                    <div class="roadmap-slider-block">
+                        <h3>Q2 2018</h3>
+                        <div class="list-square-wrapper">
+                            <button class="scroll-top scroll-button">
+                                <img src="images/roadmap_arrow.svg">
+                            </button>
+                            <div class="list-square">
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Blockchain launch</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Official website release</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Official explorer release</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Official mining pool release</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">ANN in Bitcointalk</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Discord server</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Bounty program start</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Presale start</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Listing on masternodes.online</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Listing on Graviex</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant Whitepaper release</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Start Giant.Exchange Airdrop campaign</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Apple wallet release</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant Contracts Whitepaper release</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Listing on CryptoBridge</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant.Exchange Whitepaper release</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                            </div>
+                            <button class="scroll-button scroll-bottom">
+                                <img src="images/roadmap_arrow.svg">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-slide">
+                    <div class="roadmap-slider-block">
+                        <h3>Q3 2018</h3>
+                        <div class="list-square-wrapper">
+                            <div class="list-square">
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Listing on coinmarketcap.com</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">New website giantpay.network</div>
+                                    <div class="list-square-r">100%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-slide">
+                    <div class="roadmap-slider-block">
+                        <h3>Q4 2018</h3>
+                        <div class="list-square-wrapper">
+                            <div class="list-square">
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Deanonymization of the team</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant Contracts Development Kit release</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant Contracts release</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant.Exchange release</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Finish Giant.Exchange Airdrop campaign</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant.Exchange marketing</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">The localization of the website giantpay.network</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">The localization of the WPs</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">New explorer explorer.giantpay.network</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">New Desktop wallet release</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Listing on Exchanges</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-slide">
+                    <div class="roadmap-slider-block">
+                        <h3>Q1 2019</h3>
+                        <div class="list-square-wrapper">
+                            <div class="list-square">
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Release of the Giant.Exchange iOS client</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Release of the Giant.Exchange Android client</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Implementation of the Atomic Swap</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Listing on decentralized exchanges which support the
+                                        Atomic Swap
+                                    </div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Android wallet release</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">iOS wallet release</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Web wallet release</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-slide">
+                    <div class="roadmap-slider-block">
+                        <h3>Q2 2019</h3>
+                        <div class="list-square-wrapper">
+                            <div class="list-square">
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant.Bet WP release – a decentralized sports betting
+                                        platform
+                                    </div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant.ColdStake WP release – A DApp for the depository
+                                        storage of funds
+                                    </div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp-slide">
+                    <div class="roadmap-slider-block">
+                        <h3>Q3 2019</h3>
+                        <div class="list-square-wrapper">
+                            <div class="list-square">
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant.Bet release</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                                <div class="list-square-block">
+                                    <div class="list-square-l"></div>
+                                    <div class="list-square-c">Giant.ColdStake release</div>
+                                    <div class="list-square-r">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-arrow-wrapper">
+            <div class="am-arrow am-next3"><img src="images/slide_arrow.svg"></div>
+        </div>
+    </div>
+</section>
+
+
+<section id="workflow" class="transparent-team-work">
+    <div class="container">
+        <h2 class="line-blu white-color">Transparent Teamwork</h2>
+        <div class="transparent-p-wrapper">
+            <p class="font20">
+                To increase productivity, plan our goals clearly, and control the execution of tasks efficiently,
+                the Giant team uses the SCRUM methodology. The work process consists of two-week sprints andis
+                recorded on a public Trello board. Every user can watch over the transparent work of the Giant team,
+                ensuring that we are not standing still.
+            </p>
+        </div>
+        <div class="transparent-team-work-wrapper">
+            <div class="sprint-top">
+                <h3><em id="sprintName"></em><span><span>Date: </span><em id="sprintPeriod"></em></span></h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="team-work-block custom-scroll">
+                        <a id="inProgressUrl"
+                           href="index.html#"
+                           target="_blank"
+                           rel="nofollow"
+                           class="button-white h3-team-work">In Progress</a>
+                        <ul id="inProgressCards" class="team-work-list"></ul>
+                    </div>
+                    <div class="team-work-block-bottom">
+                        <span id="inProgressCount"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-work-block custom-scroll">
+                        <a id="inReviewUrl"
+                           href="index.html#"
+                           target="_blank"
+                           rel="nofollow"
+                           class="button-white h3-team-work">In Review</a>
+                        <ul id="inReviewCards" class="team-work-list"></ul>
+                    </div>
+                    <div class="team-work-block-bottom">
+                        <span id="inReviewCount"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-work-block custom-scroll">
+                        <a id="doneUrl"
+                           target="_blank"
+                           rel="nofollow"
+                           class="button-white h3-team-work">Done</a>
+                        <ul id="doneCards" class="team-work-list"></ul>
+                    </div>
+                    <div class="team-work-block-bottom">
+                        <span id="doneCount"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="articles" class="information">
+    <div class="container">
+        <h2 class="line-blu">News</h2>
+        <div class="nav-wrapper d-none">
+            <ul class="nav-tabs-custom nav-tabs-custom2 nav nav-pills mb-3" id="pills-tab2" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab2" data-toggle="pill" href="index.html#id4" role="tab"
+                       aria-controls="id4" aria-selected="true"> News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab3" data-toggle="pill" href="index.html#id5" role="tab"
+                       aria-controls="id5" aria-selected="false"> Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab4" data-toggle="pill" href="index.html#id6" role="tab"
+                       aria-controls="id6" aria-selected="false"> Articles</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="pills-tabContent2">
+            <div class="tab-pane fade show active" id="id4" role="tabpanel" aria-labelledby="pills-home-tab2">
+                <div class="wrapper-carousel-information">
+                    <div class="am-prev"><img src="images/slide_arrow.svg"></div>
+                    <div class="am-next"><img src="images/slide_arrow.svg"></div>
+                    <div class="owl-carousel owl-carousel-information owl-carousel4 owl-theme owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage">
+                                <div class="owl-item">
+                                    <div class="information-slide">
+                                        <div class="information-slide-top">
+                                            <a href="pages/giant-insight-3.html" target="_blank">
+                                                <img class="cover" src="i/1870a1b4/images(1).jpeg">
+                                            </a>
+                                        </div>
+                                        <div class="information-slide-bottom">
+                                            <h3>Giant Insight #3</h3>
+                                            <p>What&#39;s the contradiction between an effective smart contracts
+                                                execution environment and a successful masternode project? Why the short
+                                                term interest can ruin the network future?</p>
+                                            <div class="information-slide-bottom-date">
+                                                <p class="date"><img src="images/cal.svg"><span>09-10-2018</span></p>
+                                                <a href="pages/giant-insight-3.html" target="_blank" class="read-more">Read
+                                                    more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="information-slide">
+                                        <div class="information-slide-top">
+                                            <a href="pages/giant-insight-2.html" target="_blank">
+                                                <img class="cover" src="i/e919bfc9/images(1).jpeg">
+                                            </a>
+                                        </div>
+                                        <div class="information-slide-bottom">
+                                            <h3>Giant Insight #2</h3>
+                                            <p>What does really matter when it comes to crypto projects? Why do you have
+                                                to rely on your own expertise assessing the project?</p>
+                                            <div class="information-slide-bottom-date">
+                                                <p class="date"><img src="images/cal.svg"><span>09-10-2018</span></p>
+                                                <a href="pages/giant-insight-2.html" target="_blank" class="read-more">Read
+                                                    more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="information-slide">
+                                        <div class="information-slide-top">
+                                            <a href="pages/giant-insight-1.html" target="_blank">
+                                                <img class="cover" src="i/4af71084/images(1).jpeg">
+                                            </a>
+                                        </div>
+                                        <div class="information-slide-bottom">
+                                            <h3>Giant Insight #1</h3>
+                                            <p>Our thoughts on the nature of the masternode projects. Why it&#39;s easy
+                                                to be confused with the technology. </p>
+                                            <div class="information-slide-bottom-date">
+                                                <p class="date"><img src="images/cal.svg"><span>09-10-2018</span></p>
+                                                <a href="pages/giant-insight-1.html" target="_blank" class="read-more">Read
+                                                    more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="information-slide">
+                                        <div class="information-slide-top">
+                                            <a href="pages/sprint-9-backlog.html" target="_blank">
+                                                <img class="cover" src="i/6ab78ba3/sprint9.jpeg">
+                                            </a>
+                                        </div>
+                                        <div class="information-slide-bottom">
+                                            <h3>Sprint #9 Backlog</h3>
+                                            <p>The next sprint or a timebox of two weeks (8-21 October 2018) will have
+                                                several immediate goals we would like to describe in this material. You
+                                                can also read daily announcements on Discord with the description of
+                                                some Giant.Exchange solutions and our vision of the crypto projects
+                                                market. </p>
+                                            <div class="information-slide-bottom-date">
+                                                <p class="date"><img src="images/cal.svg"><span>08-10-2018</span></p>
+                                                <a href="pages/sprint-9-backlog.html" target="_blank" class="read-more">Read
+                                                    more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="information-slide">
+                                        <div class="information-slide-top">
+                                            <a href="pages/latest-sprint-news-new-website-launch.html" target="_blank">
+                                                <img class="cover" src="i/4b23bdc3/latest-sprint.jpeg">
+                                            </a>
+                                        </div>
+                                        <div class="information-slide-bottom">
+                                            <h3>Latest Sprint News: New Website Launch</h3>
+                                            <p>The end of Sprint #8 is just around the corner, and like always, Giant
+                                                sums up the outcome of the past two weeks (24 September - 7 October
+                                                2018). Like many other IT projects, Giant tries its best to solve the
+                                                majority of short-term tasks in two-week periods called sprints. This
+                                                management model for software developers is called Scrum.</p>
+                                            <div class="information-slide-bottom-date">
+                                                <p class="date"><img src="images/cal.svg"><span>05-10-2018</span></p>
+                                                <a href="pages/latest-sprint-news-new-website-launch.html"
+                                                   target="_blank" class="read-more">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="information-slide">
+                                        <div class="information-slide-top">
+                                            <a href="pages/blockchain-binary-options-platforms-comparative-analysis.html"
+                                               target="_blank">
+                                                <img class="cover"
+                                                     src="i/b75c28f3/Blockchain&#32;Binary&#32;Options&#32;Platforms_&#32;Comparative&#32;Analysis.jpeg">
+                                            </a>
+                                        </div>
+                                        <div class="information-slide-bottom">
+                                            <h3>Blockchain Binary Options Platforms: Comparative Analysis</h3>
+                                            <p>The binary options sphere is suffering from various fraud schemes
+                                                connected with false identities, tampering with the process of option
+                                                purchases and Web client manipulation techniques. Naturally, the idea to
+                                                use blockchain as a foundation a new options platform was bound to
+                                                emerge - and we can already see several offerings on this prospective
+                                                market.</p>
+                                            <div class="information-slide-bottom-date">
+                                                <p class="date"><img src="images/cal.svg"><span>30-09-2018</span></p>
+                                                <a href="pages/blockchain-binary-options-platforms-comparative-analysis.html"
+                                                   target="_blank" class="read-more">Read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item">
+                                    <div class="information-slide">
+                                        <div class="information-slide-top">
+                                            <a href="pages/giant-advisors.html" target="_blank">
+                                                <img class="cover" src="i/8ab78ef1/1_1vuImNBriUOqzMHh7kB_vA.jpeg">
+                                            </a>
+                                        </div>
+                                        <div class="information-slide-bottom">
+                                            <h3>Giant Advisors</h3>
+                                            <p>There are a lot of digital currency-related or smart contracts-themed
+                                                projects these days, and many of them hire Advisors. People who have an
+                                                experience in this field offer to participate in the enterprise to
+                                                create an illusion of its credibility. A cryptocurrency project Advisor
+                                                makes a public assessment and bets his reputation that the described
+                                                project is worth the risk. However, one person doesn’t necessarily make
+                                                a difference, and paid advisors are likely to stress only the good
+                                                properties of the project, while keeping silent about its downsides</p>
+                                            <div class="information-slide-bottom-date">
+                                                <p class="date"><img src="images/cal.svg"><span>26-09-2018</span></p>
+                                                <a href="pages/giant-advisors.html" target="_blank" class="read-more">Read
+                                                    more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-nav disabled">
+                            <button type="button"
+                                    role="presentation"
+                                    class="owl-prev">
+                                <span aria-label="Previous">‹</span>
+                            </button>
+                            <button type="button"
+                                    role="presentation"
+                                    class="owl-next">
+                                <span aria-label="Next">›</span>
+                            </button>
+                        </div>
+                        <div class="owl-dots disabled"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-center">
+            <a href="pages.html" class="blu-button">All News</a>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="container">
+        <div class="footer-top">
+            <img src="images/logo_6.png">
+        </div>
+        <div class="footer-center">
+            <div class="row">
+                <div class="col-sm-4 col-md-4 col-lg-2">
+                    <div class="footer-block">
+                        <p class="footer-title">Whitepapers</p>
+                        <p><a href="whitepaper.pdf" target="_blank">Giant</a></p>
+                        <p><a href="GiantContractsWhitepaper.pdf" target="_blank">Giant Contracts</a></p>
+                        <p><a href="GiantExchangeWhitepaper.pdf" target="_blank">Giant.Exchange</a></p>
+                    </div>
+                    <div class="footer-block">
+                        <p class="footer-title">Exchanges</p>
+                        <p><a href="https://wallet.crypto-bridge.org/market/BRIDGE.GIC_BRIDGE.BTC" rel="nofollow"
+                              target="_blank">CryptoBridge</a></p>
+                        <p><a href="https://graviex.net/markets/gicbtc" rel="nofollow" target="_blank">Graviex</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-2">
+                    <div class="footer-block">
+                        <p class="footer-title">Wallets</p>
+                        <p>
+                            <a href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/giant-1.2.2.1-win32.zip"
+                               rel="nofollow" target="_blank">Windows 32-bit wallet</a></p>
+                        <p>
+                            <a href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/giant-1.2.2.1-win64.zip"
+                               rel="nofollow" target="_blank">Windows 64-bit wallet</a></p>
+                        <p>
+                            <a href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/giant-1.2.2.1-linux64.zip"
+                               rel="nofollow" target="_blank">Ubuntu 16.04</a></p>
+                        <p><a href="https://github.com/GiantPay/GiantCore/releases/download/1.2.2.1/GIANT-Qt.dmg"
+                              rel="nofollow" target="_blank">Mac OS</a></p>
+                    </div>
+                    <div class="footer-block d-none">
+                        <p class="footer-title">Wallets</p>
+                        <p><a href="index.html#" rel="nofollow" target="_blank">Android</a></p>
+                        <p><a href="index.html#" rel="nofollow" target="_blank">iOS</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-2">
+                    <div class="footer-block">
+                        <p class="footer-title">Giant Products</p>
+                        <p><a href="https://giant.exchange" target="_blank">Giant.Exchange</a></p>
+                        <p><a href="products.html">Giant.Bet</a></p>
+                        <p><a href="products.html">Giant.Coldstake</a></p>
+                    </div>
+                    <div class="footer-block">
+                        <p><a href="https://trello.com/b/3QPfSlfL" rel="nofollow" target="_blank">Trello</a></p>
+                        <p><a href="https://github.com/GiantPay" rel="nofollow" target="_blank">Github</a></p>
+                        <p><a href="https://explorer.giantpay.network/" target="_blank">Explorer</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-2">
+                    <div class="footer-block">
+                        <p class="footer-title">Listings</p>
+                        <p><a href="https://coinmarketcap.com/currencies/giant-coin/" rel="nofollow"
+                              target="_blank">Coinmarketcap.com</a></p>
+                        <p><a href="https://www.cryptocompare.com/coins/gic/overview" rel="nofollow"
+                              target="_blank">Cryptocompare.com</a></p>
+                        <p><a href="https://www.worldcoinindex.com/coin/giant" rel="nofollow" target="_blank">Worldcoinindex.com</a>
+                        </p>
+                        <p><a href="https://coinlib.io/coin/GIC/Giant" rel="nofollow" target="_blank">Coinlib.io</a>
+                        </p>
+                        <p><a href="https://www.livecoinwatch.com/price/Giant-GIC" rel="nofollow" target="_blank">Livecoinwatch.com</a>
+                        </p>
+                        <p><a href="https://coincodex.com/crypto/giant/" rel="nofollow"
+                              target="_blank">Coincodex.com</a>
+                        </p>
+                        <p><a href="https://www.coinranker.net/cryptocurrency/Giant" rel="nofollow" target="_blank">Coinranker.net</a>
+                        </p>
+                        <p><a href="https://www.coingecko.com/en/coins/giant" rel="nofollow" target="_blank">Coingecko.com</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-2">
+                    <div class="footer-block">
+                        <p class="footer-title">Social</p>
+                        <p><a href="https://discord.gg/7NRqsAN" rel="nofollow" target="_blank">Discord</a></p>
+                        <p><a href="https://bitcointalk.org/index.php?topic=3655657.0" rel="nofollow"
+                              target="_blank">Bitcointalk</a></p>
+                        <p><a href="https://twitter.com/giant_coin" rel="nofollow" target="_blank">Twitter</a></p>
+                        <p><a href="https://t.me/giantcrypto" rel="nofollow" target="_blank">Telegram</a></p>
+                        <p><a href="https://fb.me/giantcrypto" rel="nofollow" target="_blank">Facebook</a></p>
+                        <p><a href="https://www.reddit.com/user/giantadmin" rel="nofollow"
+                              target="_blank">Reddit</a></p>
+                        <p><a href="https://www.youtube.com/channel/UCV4o0e0gtVAU2K97TVxYWcA" rel="nofollow"
+                              target="_blank">Youtube</a></p>
+                        <p><a href="https://vk.com/giantcoin" rel="nofollow" target="_blank">Vkontakte</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-2">
+                    <div class="footer-block">
+                        <p class="footer-title">Articles</p>
+                        <p><a href="https://medium.com/@GiantProject" rel="nofollow" target="_blank">Medium</a></p>
+                        <p><a href="https://steemit.com/@giant-admin" rel="nofollow" target="_blank">Steemit</a></p>
+                        <p><a href="https://golos.io/@giantadmin" rel="nofollow" target="_blank">Golos</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="footer-block footer-block-contacts">
+                        <p class="footer-title">Contact Us</p>
+                        <p>
+                            <span>E-mail:</span><a href="mailto:admin@giantpay.network" target="_blank"
+                                                   rel="nofollow">admin@giantpay.network</a>
+                        </p>
+                        <p><span>Discord:</span><a href="https://discord.gg/7NRqsAN" target="_blank" rel="nofollow">Giant_admin_en#5252</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <p class="copy">GIANT COIN &copy; 2018 ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="buttons">
+    <a class="buttons__up"><i class="fas fa-chevron-up"></i></a>
+    <div class="link-pulsation-wrapper">
+        <a href="https://discordapp.com/invite/7NRqsAN" target="_blank" class="buttons__discord"><i
+                class="fab fa-discord"></i></a>
+        <div class="pulse"></div>
+        <div class="pulse2"></div>
+        <div class="pulse3"></div>
+        <div class="pulse4"></div>
+    </div>
+</div>
+
+<div class="modal-discord">
+    <div class="modal-discord__close"><i class="fas fa-times"></i></div>
+    <div class="modal-discord__title">
+        Join our discord channel
+    </div>
+    <div class="modal-discord__signature">
+        In the Giant blockchain we have combined and upgraded
+        the best practices previously developed by three
+        separate blockchain teams
+    </div>
+    <div class="link-pulsation-wrapper">
+        <form action="https://discordapp.com/invite/7NRqsAN" target="_blank">
+            <button class="modal-discord__button blu-button">
+                Join us
+            </button>
+        </form>
+        <div class="pulse"></div>
+        <div class="pulse2"></div>
+        <div class="pulse3"></div>
+        <div class="pulse4"></div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script src="js/jquery.spincrement.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.modal-discord__close').click(function () {
+            $('.modal-discord').fadeOut(200);
+        });
+
+        $('.buttons__up').click(function () {
+            $('body,html').animate({scrollTop: 0}, 300);
+        });
+
+        setTimeout(modal, 60000);
+
+        function modal() {
+            $('.modal-discord').fadeIn(200);
+        }
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel2, .owl-carousel5, .owl-carousel6').owlCarousel({
+            autoWidth: false,
+            autoPlay: true,
+            nav: false,
+            loop: true,
+            dots: false,
+            autoplayTimeout: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 2
+                },
+                1550: {
+                    items: 2
+                }
+            }
+        })
+    });
+    $(document).ready(function () {
+        $('.owl-carousel3').owlCarousel({
+            autoWidth: false,
+            autoPlay: true,
+            nav: false,
+            loop: true,
+            dots: false,
+            autoplayTimeout: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 2
+                },
+                1550: {
+                    items: 2
+                }
+            }
+        })
+    });
+
+    $(document).ready(function () {
+        $('.owl-carousel4').owlCarousel({
+            autoWidth: false,
+            autoPlay: true,
+            nav: false,
+            loop: true,
+            dots: false,
+            autoplayTimeout: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 3
+                },
+                1550: {
+                    items: 3
+                }
+            }
+        })
+    });
+    $('.am-prev').on('click', function () {
+        $('.owl-prev').trigger('click');
+    });
+
+
+    $('.am-next').on('click', function () {
+        $('.owl-next').trigger('click');
+    });
+
+    $('.am-prev2').on('click', function () {
+        $('.owl-prev').trigger('click');
+    });
+
+
+    $('.am-next2').on('click', function () {
+        $('.owl-next').trigger('click');
+    });
+
+</script>
+
+<script src="js/scrollBar.js"></script>
+
+<script>
+    $(".custom-scroll").scrollBox();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+<script src="js/morris.js"></script>
+
+
+<script src="js/jquery.sliderPro.min.js"></script>
+<script>
+    $(document).ready(function ($) {
+        $('#example5').sliderPro({
+            orientation: 'vertical',
+            loop: true,
+            width: 900,
+            arrows: true,
+            buttons: false,
+            thumbnailsPosition: 'left',
+            thumbnailHeight: 100,
+            thumbnailPointer: true,
+            thumbnailWidth: 280,
+            autoplay: false,
+            startSlide: 3,
+            breakpoints: {
+                1199: {
+                    width: 900,
+                    thumbnailsPosition: 'left',
+                    thumbnailWidth: 280,
+                    thumbnailHeight: 100
+                },
+                991: {
+                    width: 900,
+                    thumbnailsPosition: 'left',
+                    height: 800,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                },
+                767: {
+                    width: 900,
+                    thumbnailsPosition: 'left',
+                    height: 800,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                },
+
+                480: {
+                    width: 500,
+                    thumbnailsPosition: 'left',
+                    height: 600,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                },
+                360: {
+                    width: 500,
+                    thumbnailsPosition: 'left',
+                    height: 700,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                }
+            }
+        });
+    });
+
+    $('.am-prev3').on('click', function () {
+        $('.sp-previous-arrow').trigger('click');
+    });
+
+    $('.am-next3').on('click', function () {
+        $('.sp-next-arrow').trigger('click');
+    });
+
+</script>
+
+
+<script type="text/javascript">
+    $(document).on("click.bs.dropdown.data-api", ".noclose", function (e) {
+        e.stopPropagation()
+    });
+    $('.dropdown-graphic input:checkbox').click(function () {
+        $('.count-span').html($('.dropdown-graphic input:checkbox:checked').length);
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".scroll-top").click(function (event) {
+            $(this).parent().find(".list-square").animate({scrollTop: '-=123'}, 500);
+        });
+
+        $(".scroll-bottom").click(function (event) {
+            $(this).parent().find(".list-square").animate({scrollTop: '+=123'}, 500);
+        });
+    });
+</script>
+
+
+<script>
+    $(function () {
+
+        $('.dropdown-menu-custom a').on('click', function () {
+            $('.dropdown-toggle-custom').html($(this).html() + '<span class="caret"></span>');
+        })
+
+    });
+</script>
+
+
+<script>
+    $(function () {
+        var show = true;
+        var countbox = ".benefits__inner";
+        $(window).on("scroll load resize", function () {
+            if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
+            var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
+            var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
+            var w_height = $(window).height(); // Высота окна браузера
+            var d_height = $(document).height(); // Высота всего документа
+            var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
+            if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+                $('.benefits__number').spincrement({
+                    from: 0,
+                    thousandSeparator: "<span class='number-w'></span>",
+                    duration: 4000
+                });
+                $('.benefits__number2').spincrement({
+                    from: 0,
+                    thousandSeparator: ",",
+                    duration: 4000
+                });
+                show = false;
+            }
+        });
+    });
+</script>
+
+
+<script>
+    $(function () {
+
+
+    });
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script>
+    /*<![CDATA[*/
+    function isVisible(tag) {
+        var t = $(tag);
+        var w = $(window);
+        var wt = w.scrollTop();
+        var tt = t.offset().top;
+        var tb = tt + t.height();
+        return ((tb <= wt + w.height()) && (tt >= wt));
+    }
+
+    $(function () {
+        $(window).scroll(function () {
+            var b = $("#chart-area");
+            if (!b.prop("shown") && isVisible(b)) {
+                b.prop("shown", true);
+                $(function () {
+                    var ctx = $('#chart-area')[0].getContext("2d");
+                    var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+                    gradientStroke.addColorStop(0, "#0b4a8e");
+                    gradientStroke.addColorStop(1, "#127aea");
+
+                    new Chart(ctx, {
+                        type: 'doughnut',
+                        width: 350,
+                        height: 350,
+                        data: {
+                            datasets: [{
+                                data: [
+                                    100 - parseFloat("80.8"),
+                                    parseFloat("80.8")
+                                ],
+                                backgroundColor: [
+                                    "#dcdcdc",
+                                    gradientStroke
+                                ],
+                                borderColor: [
+                                    "#dcdcdc",
+                                    gradientStroke
+                                ],
+                                borderWidth: [
+                                    10,
+                                    10
+                                ],
+                                hoverBackgroundColor: [
+                                    "#dcdcdc",
+                                    gradientStroke
+                                ],
+                                hoverBorderColor: [
+                                    "#dcdcdc",
+                                    gradientStroke
+                                ],
+                                hoverBorderWidth: [
+                                    10,
+                                    10
+                                ]
+                            }]
+                        },
+                        options: {
+                            cutoutPercentage: 96,
+                            rotation: 0,
+                            tooltips: {
+                                enabled: false
+                            },
+                            responsive: false,
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: false,
+                            },
+                            animation: {
+                                easing: 'easeInOutCubic',
+                                animateScale: false,
+                                animateRotate: true
+                            }
+                        }
+                    });
+                });
+            }
+        });
+    });
+
+
+    /*]]>*/
+</script>
+
+
+<script>
+    $(function () {
+
+        var rates = {
+            btc: parseFloat($("#btcRate").text()),
+            usd: parseFloat($("#usdRate").text())
+        };
+        var values = {
+            gic: 0,
+            btc: 0,
+            usd: 0
+        };
+
+        $("#chooseBTC").click(function () {
+            $("[id$=\"IncomeBtc\"]").removeClass("d-none");
+            $("[id$=\"IncomeUsd\"]").addClass("d-none");
+        });
+
+        $("#chooseUSD").click(function () {
+            $("[id$=\"IncomeBtc\"]").addClass("d-none");
+            $("[id$=\"IncomeUsd\"]").removeClass("d-none");
+        });
+
+        $("#btcAmountGIC, #usdAmountGIC").on("keypress keyup", function (e) {
+            var $this = $(this);
+            var oldGicValue = parseFloat($this.val());
+            setTimeout(function () {
+                var newGicValue = parseFloat($this.val());
+                if (oldGicValue === newGicValue) {
+                    setGic(newGicValue);
+                }
+            }, 1000);
+        });
+
+        $("#btcAmountBTC").on("keypress keyup", function (e) {
+            var $this = $(this);
+            var oldBtcValue = parseFloat($this.val());
+            setTimeout(function () {
+                var newBtcValue = parseFloat($this.val());
+                if (oldBtcValue === newBtcValue) {
+                    setBtc(newBtcValue);
+                }
+            }, 500);
+        });
+
+        $("#usdAmountUSD").on("keypress keyup", function (e) {
+            var $this = $(this);
+            var oldUsdValue = parseFloat($this.val());
+            setTimeout(function () {
+                var newUsdValue = parseFloat($this.val());
+                if (oldUsdValue === newUsdValue) {
+                    setUsd(newUsdValue);
+                }
+            }, 500);
+        });
+
+        function setGic(gic) {
+            values.gic = gic.toFixed(0);
+            values.btc = (gic * rates.btc).toFixed(8);
+            values.usd = (gic * rates.usd).toFixed(2);
+
+            $("#btcAmountGIC").val(values.gic);
+            $("#usdAmountGIC").val(values.gic);
+            $("#btcAmountBTC").val(values.btc);
+            $("#usdAmountUSD").val(values.usd);
+            calculate();
+        }
+
+        function setBtc(btc) {
+            values.btc = btc.toFixed(8);
+            values.gic = (values.btc / rates.btc).toFixed(0);
+            values.usd = (values.gic * rates.usd).toFixed(2);
+
+            $("#btcAmountGIC").val(values.gic);
+            $("#usdAmountGIC").val(values.gic);
+            $("#btcAmountBTC").val(values.btc);
+            $("#usdAmountUSD").val(values.usd);
+            calculate();
+        }
+
+        function setUsd(usd) {
+            values.usd = usd.toFixed(2);
+            values.gic = (values.usd / rates.usd).toFixed(0);
+            values.btc = (values.gic * rates.btc).toFixed(8);
+
+            $("#btcAmountGIC").val(values.gic);
+            $("#usdAmountGIC").val(values.gic);
+            $("#btcAmountBTC").val(values.btc);
+            $("#usdAmountUSD").val(values.usd);
+            calculate();
+        }
+
+        function formatDuration(seconds) {
+            var days = Math.floor(seconds / (3600 * 24));
+            seconds -= days * 3600 * 24;
+            var hrs = Math.floor(seconds / 3600);
+            seconds -= hrs * 3600;
+            var mnts = Math.floor(seconds / 60);
+            seconds -= mnts * 60;
+            return (days > 0 ? (days + "d ") : "") + hrs + "h " + mnts + "m";
+        }
+
+        function calculate() {
+            var masternodeResult = false;
+            var posResult = false;
+            $("#btcAmountGIC").attr("readonly", true);
+            $("#btcAmountBTC").attr("readonly", true);
+            $("#usdAmountGIC").attr("readonly", true);
+            $("#usdAmountUSD").attr("readonly", true);
+
+            $.getJSON("/api/masternodes/info", function (info) {
+                var multiply = values.gic / 1000.0;
+                var rewardFrequency = formatDuration(3600 * 16 * 24 / info.daily);
+
+                $("#masternodeCalculator #masternodeCount").text(info.masternodeCount);
+                $("#masternodeCalculator #rewardFrequency").text(rewardFrequency);
+
+                $("#masternodeCalculator #mnDailyIncomeGic em").text(numeral(info.daily * multiply).format('0,0.00'));
+                $("#masternodeCalculator #mnWeeklyIncomeGic em").text(numeral(info.daily * 7 * multiply).format('0,0.00'));
+                $("#masternodeCalculator #mnMonthlyIncomeGic em").text(numeral(info.monthly * multiply).format('0,0.00'));
+                $("#masternodeCalculator #mnAnnualIncomeGic em").text(numeral(info.annual * multiply).format('0,0.00'));
+
+                $("#masternodeCalculator #mnDailyIncomeUsd em").text(numeral(info.daily * rates.usd * multiply).format('0,0.00'));
+                $("#masternodeCalculator #mnWeeklyIncomeUsd em").text(numeral(info.daily * 7 * rates.usd * multiply).format('0,0.00'));
+                $("#masternodeCalculator #mnMonthlyIncomeUsd em").text(numeral(info.monthly * rates.usd * multiply).format('0,0.00'));
+                $("#masternodeCalculator #mnAnnualIncomeUsd em").text(numeral(info.annual * rates.usd * multiply).format('0,0.00'));
+
+                $("#masternodeCalculator #mnDailyIncomeBtc em").text(numeral(info.daily * rates.btc * multiply).format('0,0.00000000'));
+                $("#masternodeCalculator #mnWeeklyIncomeBtc em").text(numeral(info.daily * 7 * rates.btc * multiply).format('0,0.00000000'));
+                $("#masternodeCalculator #mnMonthlyIncomeBtc em").text(numeral(info.monthly * rates.btc * multiply).format('0,0.00000000'));
+                $("#masternodeCalculator #mnAnnualIncomeBtc em").text(numeral(info.annual * rates.btc * multiply).format('0,0.00000000'));
+
+                $("#masternodeCalculator #mnRoiPercent em").text(numeral(info.roi).format('0,0.00'));
+                $("#masternodeCalculator #mnRoiDays em").text(numeral(info.days).format('0'));
+
+                masternodeResult = true;
+                if (masternodeResult && posResult) {
+                    $("#btcAmountGIC").removeAttr("readonly");
+                    $("#btcAmountBTC").removeAttr("readonly");
+                    $("#usdAmountGIC").removeAttr("readonly");
+                    $("#usdAmountUSD").removeAttr("readonly");
+                }
+            });
+
+            $.getJSON("https://giantpay.network/api/gic/calc?amount=" + values.gic, function (r) {
+                $("#stakeInterval").text();
+
+                $("#posCalculator #averageDifficulty").text(r.avgDiff.toFixed(1));
+                $("#posCalculator #stakeInterval").text(formatDuration(r.avgDiffTime));
+
+                $("#posCalculator #sDailyIncomeGic em").text(numeral(4 * 86400.0 / r.avgDiffTime).format('0,0.00'));
+                $("#posCalculator #sWeeklyIncomeGic em").text(numeral(4 * 604800.0 / r.avgDiffTime).format('0,0.00'));
+                $("#posCalculator #sMonthlyIncomeGic em").text(numeral(4 * 2592000.0 / r.avgDiffTime).format('0,0.00'));
+                $("#posCalculator #sAnnualIncomeGic em").text(numeral(4 * 31536000 / r.avgDiffTime).format('0,0.00'));
+
+                $("#posCalculator #sDailyIncomeUsd em").text(numeral(4 * 86400.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
+                $("#posCalculator #sWeeklyIncomeUsd em").text(numeral(4 * 604800.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
+                $("#posCalculator #sMonthlyIncomeUsd em").text(numeral(4 * 2592000.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
+                $("#posCalculator #sAnnualIncomeUsd em").text(numeral(4 * 31536000 / r.avgDiffTime * rates.usd).format('0,0.00'));
+
+                $("#posCalculator #sDailyIncomeBtc em").text(numeral(4 * 86400.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                $("#posCalculator #sWeeklyIncomeBtc em").text(numeral(4 * 604800.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                $("#posCalculator #sMonthlyIncomeBtc em").text(numeral(4 * 2592000.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                $("#posCalculator #sAnnualIncomeBtc em").text(numeral(4 * 31536000 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+
+                $("#posCalculator #sRoiPercent em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00'));
+                $("#posCalculator #sRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
+
+                posResult = true;
+                if (masternodeResult && posResult) {
+                    $("#btcAmountGIC").removeAttr("readonly");
+                    $("#btcAmountBTC").removeAttr("readonly");
+                    $("#usdAmountGIC").removeAttr("readonly");
+                    $("#usdAmountUSD").removeAttr("readonly");
+                }
+            });
+        }
+
+        setGic(1000);
+    });
+</script>
+
+
+<script>
+    $(function () {
+
+        function parseSprintName(boardName) {
+            return "Sprint #" + boardName.replace(/.* #(\d+) .*/, "$1");
+        }
+
+        function parseSprintPeriod(boardName) {
+            return boardName.split("-")[1].replace(")", "").trim();
+        }
+
+        $.getJSON("/api/workflow", function (board) {
+            var sprintName = parseSprintName(board.name);
+            var sprintPeriod = parseSprintPeriod(board.name);
+            var sprintUrl = board.url;
+            var inProgressCount = 0;
+            var inReviewCount = 0;
+            var doneCount = 0;
+
+            if (board.lists) {
+                board.lists.forEach(function (list) {
+                    var listName = list.name.toLowerCase().trim().replace(" ", "-");
+                    if (listName === "in-progress") {
+                        $("#inProgressUrl").attr("href", sprintUrl);
+
+                        var inProgressCards = "";
+                        if (list.cards) {
+                            list.cards.forEach(function (card) {
+                                inProgressCards += "<li><a href="
+                                https://giantpay.network/\&quot;&quot;" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
+                                    inProgressCount++;
+                            });
+                        }
+                        $("#inProgressCards").html(inProgressCards);
+                    } else if (listName === "in-review") {
+                        $("#inReviewUrl").attr("href", sprintUrl);
+
+                        var inReviewCards = "";
+                        if (list.cards) {
+                            list.cards.forEach(function (card) {
+                                inReviewCards += "<li><a href="
+                                https://giantpay.network/\&quot;&quot;" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
+                                    inReviewCount++;
+                            });
+                        }
+                        $("#inReviewCards").html(inReviewCards);
+                    } else if (listName === "done") {
+                        $("#doneUrl").attr("href", sprintUrl);
+
+                        var doneCards = "";
+                        if (list.cards) {
+                            list.cards.forEach(function (card) {
+                                doneCards += "<li><a href="
+                                https://giantpay.network/\&quot;&quot;" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
+                                    doneCount++;
+                            });
+                        }
+                        $("#doneCards").html(doneCards);
+                    }
+                });
+            }
+
+            $("#sprintName").text(sprintName);
+            $("#sprintPeriod").text(sprintPeriod);
+            $("#inProgressCount").text(inProgressCount);
+            $("#inReviewCount").text(inReviewCount);
+            $("#doneCount").text(doneCount);
+        });
+    });
+</script>
+
 </body>
 </html>

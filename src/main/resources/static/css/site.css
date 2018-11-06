@@ -1,42 +1,42 @@
 @font-face {
     font-family: 'Poppins-SemiBold';
-    src: url('../fonts/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/Poppins-SemiBold.woff') format('woff'), url('../fonts/Poppins-SemiBold.ttf') format('truetype'), url('../fonts/Poppins-SemiBold.svg#Poppins-SemiBold') format('svg');
+    src: url('../fonts/Poppins-SemiBold.eot%3F') format('embedded-opentype'), url('../fonts/Poppins-SemiBold.woff') format('woff'), url('../fonts/Poppins-SemiBold.ttf') format('truetype'), url('../fonts/Poppins-SemiBold.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins-Regular';
-    src: url('../fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Poppins-Regular.woff') format('woff'), url('../fonts/Poppins-Regular.ttf') format('truetype'), url('../fonts/Poppins-Regular.svg#Poppins-Regular') format('svg');
+    src: url('../fonts/Poppins-Regular.eot%3F') format('embedded-opentype'), url('../fonts/Poppins-Regular.woff') format('woff'), url('../fonts/Poppins-Regular.ttf') format('truetype'), url('../fonts/Poppins-Regular.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins-Medium';
-    src: url('../fonts/Poppins-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Poppins-Medium.woff') format('woff'), url('../fonts/Poppins-Medium.ttf') format('truetype'), url('../fonts/Poppins-Medium.svg#Poppins-Medium') format('svg');
+    src: url('../fonts/Poppins-Medium.eot%3F') format('embedded-opentype'), url('../fonts/Poppins-Medium.woff') format('woff'), url('../fonts/Poppins-Medium.ttf') format('truetype'), url('../fonts/Poppins-Medium.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins-Light';
-    src: url('../fonts/Poppins-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Poppins-Light.woff') format('woff'), url('../fonts/Poppins-Light.ttf') format('truetype'), url('../fonts/Poppins-Light.svg#Poppins-Light') format('svg');
+    src: url('../fonts/Poppins-Light.eot%3F') format('embedded-opentype'), url('../fonts/Poppins-Light.woff') format('woff'), url('../fonts/Poppins-Light.ttf') format('truetype'), url('../fonts/Poppins-Light.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins-Bold';
-    src: url('../fonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Poppins-Bold.woff') format('woff'), url('../fonts/Poppins-Bold.ttf') format('truetype'), url('../fonts/Poppins-Bold.svg#Poppins-Bold') format('svg');
+    src: url('../fonts/Poppins-Bold.eot%3F') format('embedded-opentype'), url('../fonts/Poppins-Bold.woff') format('woff'), url('../fonts/Poppins-Bold.ttf') format('truetype'), url('../fonts/Poppins-Bold.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'HKGrotesk-Bold';
-    src: url('../fonts/HKGrotesk-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/HKGrotesk-Bold.otf') format('opentype'),
-    url('../fonts/HKGrotesk-Bold.woff') format('woff'), url('../fonts/HKGrotesk-Bold.ttf') format('truetype'), url('../fonts/HKGrotesk-Bold.svg#HKGrotesk-Bold') format('svg');
+    src: url('../fonts/HKGrotesk-Bold.eot%3F') format('embedded-opentype'), url('../fonts/HKGrotesk-Bold.otf') format('opentype'),
+    url('../fonts/HKGrotesk-Bold.woff') format('woff'), url('../fonts/HKGrotesk-Bold.ttf') format('truetype'), url('../fonts/HKGrotesk-Bold.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
