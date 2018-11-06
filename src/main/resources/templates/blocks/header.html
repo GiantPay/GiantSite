@@ -36,8 +36,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="js/tagManager.js"></script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11023961-18"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -50,6 +50,10 @@
     </script>
 </th:block>
 <body>
+<noscript style="display:none;visibility:hidden">
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
+            height="0" width="0"></iframe>
+</noscript>
 <th:block th:fragment="mainmenu">
     <div class="header-top">
         <div class="container">
@@ -79,7 +83,8 @@
                                aria-expanded="false">ABOUT</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="d-none dropdown-item" href="/wallet">Wallets</a>
-                                <a class="dropdown-item" href="https://github.com/GiantPay" target="_blank" rel="nofollow">Github</a>
+                                <a class="dropdown-item" href="https://github.com/GiantPay" target="_blank"
+                                   rel="nofollow">Github</a>
                                 <a class="dropdown-item" href="/whitepaper">White Papers</a>
                                 <a class="dropdown-item" href="/about">Specification</a>
                             </div>
@@ -89,7 +94,8 @@
                         <li class="d-none"><a href="/roadmap">WORKFLOW</a></li>
                         <li><a href="/products">PRODUCTS</a></li>
                         <li class="d-none"><a href="/masternode">INVESTMENTS</a></li>
-                        <li class="d-none"><a href="https://github.com/GiantPay" target="_blank" rel="nofollow">Github</a></li>
+                        <li class="d-none"><a href="https://github.com/GiantPay" target="_blank"
+                                              rel="nofollow">Github</a></li>
                         <li><a href="/pages">NEWS</a></li>
                     </ul>
                 </div>
