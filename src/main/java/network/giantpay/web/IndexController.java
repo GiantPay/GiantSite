@@ -1,12 +1,12 @@
 package network.giantpay.web;
 
+import lombok.AllArgsConstructor;
 import network.giantpay.dto.CoinInfoDto;
 import network.giantpay.dto.InfoDto;
 import network.giantpay.dto.RateDto;
 import network.giantpay.service.MonitoringService;
 import network.giantpay.service.PageService;
 import network.giantpay.utils.FormatUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -15,22 +15,21 @@ import java.math.RoundingMode;
 import java.util.Map;
 
 @Controller
+@AllArgsConstructor
 public class IndexController {
 
-    @Autowired
-    private MonitoringService monitoringService;
-    @Autowired
-    private PageService pageService;
+    private final MonitoringService monitoringService;
+
+    private final PageService pageService;
 
     @GetMapping({"/"})
-    public String index(Map<String, Object> model) {
+    public String index(final Map<String, Object> model) {
         RateDto rates = monitoringService.getRates();
         InfoDto info = monitoringService.getInfo();
         BigDecimal btcRate = rates.getBtc().setScale(8, RoundingMode.HALF_DOWN);
         BigDecimal usdRate = rates.getUsd().setScale(2, RoundingMode.HALF_DOWN);
 
         CoinInfoDto btcInfo = monitoringService.getCoinInfo("BTC");
-
         model.put("currentHeight", info.getHeight());
         model.put("currentDifficulty", info.getNetworkDifficulty().setScale(1, RoundingMode.HALF_DOWN));
         model.put("coinSupply", info.getCoinSupply().longValue());
