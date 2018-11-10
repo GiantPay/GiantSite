@@ -9,7 +9,8 @@
 <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <title>Giant Coin Roadmap | Blockchain research & development | Progress of project</title>
-    <meta name="description" content="The Giant team main commitment is to keep the development public. Using the scrum methodology, we work in 14-day sprints. Sprint backlogs and results are posted on our website and the social media. Investors always see what we do and what to expect">
+    <meta name="description"
+          content="The Giant team main commitment is to keep the development public. Using the scrum methodology, we work in 14-day sprints. Sprint backlogs and results are posted on our website and the social media. Investors always see what we do and what to expect">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +25,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.4.0/css/slider-pro.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200i" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
     <link rel="stylesheet" href="css/site.css"/>
@@ -85,13 +87,21 @@
                 <h2 id="design-goals">What is Proof of Stake?</h2>
                 <div class="proof__block_text">
                     <p>
-                        The Proof-of-Stake algorithm is a cryptocurrency transaction validation mechanism which revolves around the economic share of each cryptocurrency holder. The new block of the cryptocurrency blockchain is more likely to be approved by the validator with a bigger stake, although holders of small sums, too, have a chance to receive a block reward.
+                        The Proof-of-Stake algorithm is a cryptocurrency transaction validation mechanism which revolves
+                        around the economic share of each cryptocurrency holder. The new block of the cryptocurrency
+                        blockchain is more likely to be approved by the validator with a bigger stake, although holders
+                        of small sums, too, have a chance to receive a block reward.
                     </p>
                     <p>
-                        Like every consensus algorithm, Proof-of-Stake is aimed to provide a decentralized economy in which there is no central money issuer or authority. The financial governance is automatic, meaning there are no quarrels which can lead to the coin volatility.
+                        Like every consensus algorithm, Proof-of-Stake is aimed to provide a decentralized economy in
+                        which there is no central money issuer or authority. The financial governance is automatic,
+                        meaning there are no quarrels which can lead to the coin volatility.
                     </p>
                     <p>
-                        In comparison to the more popular Proof-of-Work where cryptocurrency miners solve difficult cryptographic tasks and receive a block reward as a result, Proof-of-Stake is more energy efficient. Another advantage of Proof-of-Stake is its resistance to 51% attacks when hackers rent mining pools and can take over the whole network.
+                        In comparison to the more popular Proof-of-Work where cryptocurrency miners solve difficult
+                        cryptographic tasks and receive a block reward as a result, Proof-of-Stake is more energy
+                        efficient. Another advantage of Proof-of-Stake is its resistance to 51% attacks when hackers
+                        rent mining pools and can take over the whole network.
                     </p>
                 </div>
             </div>
@@ -105,10 +115,16 @@
                         hashProofOfStake < bnCoinDayWeight * bnTargetPerCoinDay
                     </p>
                     <p>
-                        This means that the stakeholder will receive a new block reward when the calculated stake hash is lesser than the multiplication of the stake size by the network difficulty inverse. The network difficulty is connected to the bnTargetPerCoinDay parameter - the lesser it is, the harder it will be to receive a new block reward.
+                        This means that the stakeholder will receive a new block reward when the calculated stake hash
+                        is lesser than the multiplication of the stake size by the network difficulty inverse. The
+                        network difficulty is connected to the bnTargetPerCoinDay parameter - the lesser it is, the
+                        harder it will be to receive a new block reward.
                     </p>
                     <p>
-                        To receive a Proof-of-Stake reward, the synchronized Giant Coin (GIC) wallet client must be active 24/7. Unlike mining, this will not consume a lot of electricity or computing power. Note that your big stake does not necessarily guarantees rewards - the network chooses randomly. You can calculate your chances in the simple Giant PoS calculator.
+                        To receive a Proof-of-Stake reward, the synchronized Giant Coin (GIC) wallet client must be
+                        active 24/7. Unlike mining, this will not consume a lot of electricity or computing power. Note
+                        that your big stake does not necessarily guarantees rewards - the network chooses randomly. You
+                        can calculate your chances in the simple Giant PoS calculator.
                     </p>
                 </div>
             </div>
@@ -154,89 +170,110 @@
             <div class="proof__block">
                 <h2>Your income</h2>
                 <div class="proof__income clear">
+                    <!-- Daily -->
                     <div class="proof__income_item">
                         <div class="proof__income_item-title">
                             Daily
                         </div>
-                        <div class="proof__income_item-field">
-                            11,23
+                        <div class="proof__income_item-field" id="sDailyIncomeGic">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>GIC</span>
                         </div>
-                        <div class="proof__income_item-field">
-                            0.001453
+                        <div class="proof__income_item-field" id="sDailyIncomeBtc">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>BTC</span>
                         </div>
-                        <div class="proof__income_item-field">
-                            6.534
+                        <div class="proof__income_item-field" id="sDailyIncomeUsd">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>USD</span>
                         </div>
                         <div class="proof__income_roi">
-                            ROI: 6,96%
+                            ROI: <!--Value from calculator.html-->
+                            <em></em>
                         </div>
                     </div>
                     <div class="proof__income_item">
+                        <!-- Weekly -->
                         <div class="proof__income_item-title">
-                            Daily
+                            Weekly
                         </div>
-                        <div class="proof__income_item-field">
-                            11,23
+                        <div class="proof__income_item-field" id="sWeeklyIncomeGic">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>GIC</span>
                         </div>
-                        <div class="proof__income_item-field">
-                            0.001453
+                        <div class="proof__income_item-field" id="sWeeklyIncomeBtc">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>BTC</span>
                         </div>
-                        <div class="proof__income_item-field">
-                            6.534
+                        <div class="proof__income_item-field" id="sWeeklyIncomeUsd">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>USD</span>
                         </div>
                         <div class="proof__income_roi">
-                            ROI: 6,96%
+                            ROI: <!--Value from calculator.html-->
+                            <em></em>
                         </div>
                     </div>
                     <div class="proof__income_item">
+                        <!--Monthly-->
                         <div class="proof__income_item-title">
-                            Daily
+                            Monthly
                         </div>
-                        <div class="proof__income_item-field">
-                            11,23
+                        <div class="proof__income_item-field" id="sMonthlyIncomeGic">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>GIC</span>
                         </div>
-                        <div class="proof__income_item-field">
-                            0.001453
+                        <div class="proof__income_item-field" id="sMonthlyIncomeBtc">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>BTC</span>
                         </div>
-                        <div class="proof__income_item-field">
-                            6.534
+                        <div class="proof__income_item-field" id="sMonthlyIncomeUsd">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>USD</span>
                         </div>
                         <div class="proof__income_roi">
-                            ROI: 6,96%
+                            ROI: <!--Value from calculator.html-->
+                            <em></em>
                         </div>
                     </div>
                     <div class="proof__income_item">
+                        <!--Yearly-->
                         <div class="proof__income_item-title">
-                            Daily
+                            Yearly
                         </div>
-                        <div class="proof__income_item-field">
-                            11,23
+                        <div class="proof__income_item-field" id="sAnnualIncomeGic">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>GIC</span>
                         </div>
-                        <div class="proof__income_item-field">
-                            0.001453
+                        <div class="proof__income_item-field" id="sAnnualIncomeBtc">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>BTC</span>
                         </div>
-                        <div class="proof__income_item-field">
-                            6.534
+                        <div class="proof__income_item-field" id="sAnnualIncomeUsd">
+                            <!--Value from calculator.html-->
+                            <em></em>
                             <span>USD</span>
                         </div>
                         <div class="proof__income_roi">
-                            ROI: 6,96%
+                            ROI: <!--Value from calculator.html-->
+                            <em></em>
                         </div>
                     </div>
                 </div>
-                <div class="proof__income_bottom">
-                    Payback period: 69 days
+                <div class="proof__income_bottom" id="sRoiDays">
+                    Payback period:<!--Value from calculator.html-->
+                    <em></em>
                 </div>
             </div>
 
@@ -252,8 +289,8 @@
                             <td>Month</td>
                         </tr>
                         <tr>
-                            <td>Stake interval (Hours):</td>
-                            <td>5489.89</td>
+                            <td>Stake interval :</td>
+                            <td id="stakeInterval"></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -267,24 +304,24 @@
                         </tr>
                         <tr>
                             <td>Total Amount (GIC)</td>
-                            <td>4.00 GIC</td>
-                            <td>0.017487 GIC</td>
-                            <td>0.122407 GIC</td>
-                            <td>0.524600 GIC</td>
+                            <td id="totalGic"></td>
+                            <td id="totalGicDaily"></td>
+                            <td id="totalGicWeekly"></td>
+                            <td id="totalGicMonthly"></td>
                         </tr>
                         <tr>
                             <td>Total Amount (BTC)</td>
-                            <td>0.000268 BTC</td>
-                            <td>0.000001 BTC</td>
-                            <td>0.000008 BTC</td>
-                            <td>0.000035 BTC</td>
+                            <td id="totalBtc"></td>
+                            <td id="totalBtcDaily"></td>
+                            <td id="totalBtcWeekly"></td>
+                            <td id="totalBtcMonthly"></td>
                         </tr>
                         <tr>
                             <td>Total Amount (USD)</td>
-                            <td>$1.787344</td>
-                            <td>$0.007814</td>
-                            <td>$0.054696</td>
-                            <td>$0.234410</td>
+                            <td id="totalUsd"></td>
+                            <td id="totalUsdDaily"></td>
+                            <td id="totalUsdWeekly"></td>
+                            <td id="totalUsdMonthly"></td>
                         </tr>
                     </table>
                 </div>
@@ -301,18 +338,18 @@
                         </tr>
                         <tr>
                             <td>min</td>
-                            <td>0.017487 GIC</td>
-                            <td>0.524600 GIC</td>
+                            <td id="minStake"></td>
+                            <td id="minDiff"></td>
                         </tr>
                         <tr>
                             <td>avg</td>
-                            <td>0.000001 BTC</td>
-                            <td>0.000035 BTC</td>
+                            <td id="avgStake"></td>
+                            <td id="avgDiff"></td>
                         </tr>
                         <tr>
                             <td>max</td>
-                            <td>$0.007814</td>
-                            <td>$0.234410</td>
+                            <td id="maxStake"></td>
+                            <td id="maxDiff"></td>
                         </tr>
                     </table>
                 </div>
@@ -333,8 +370,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
 <script src="js/jquery.spincrement.min.js"></script>
 <script src="js/owl.carousel.js"></script>
-<script src="js/calculator.js"></script>
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<th:block th:replace="javascript/index/calculator :: code"></th:block>
 
 <script>
     $(document).ready(function () {

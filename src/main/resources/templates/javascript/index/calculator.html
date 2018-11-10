@@ -4,10 +4,9 @@
 <th:block th:fragment="code">
     <script>
         $(function () {
-
             var rates = {
-                btc: parseFloat($("#btcRate").text()),
-                usd: parseFloat($("#usdRate").text())
+                btc: parseFloat("[[${btcRate.toPlainString()}]]"),
+                usd: parseFloat("[[${btcRate.toPlainString()}]]")
             };
             var values = {
                 gic: 0,
@@ -150,25 +149,59 @@
                     $("#stakeInterval").text();
 
                     $("#posCalculator #averageDifficulty").text(r.avgDiff.toFixed(1));
-                    $("#posCalculator #stakeInterval").text(formatDuration(r.avgDiffTime));
+                    $("#stakeInterval").text(formatDuration(r.avgDiffTime));
 
-                    $("#posCalculator #sDailyIncomeGic em").text(numeral(4 * 86400.0 / r.avgDiffTime).format('0,0.00'));
-                    $("#posCalculator #sWeeklyIncomeGic em").text(numeral(4 * 604800.0 / r.avgDiffTime).format('0,0.00'));
-                    $("#posCalculator #sMonthlyIncomeGic em").text(numeral(4 * 2592000.0 / r.avgDiffTime).format('0,0.00'));
-                    $("#posCalculator #sAnnualIncomeGic em").text(numeral(4 * 31536000 / r.avgDiffTime).format('0,0.00'));
+                    //GIC
+                    $("#sDailyIncomeGic em").text(numeral(4 * 86400.0 / r.avgDiffTime).format('0,0.00'));
+                    $("#sWeeklyIncomeGic em").text(numeral(4 * 604800.0 / r.avgDiffTime).format('0,0.00'));
+                    $("#sMonthlyIncomeGic em").text(numeral(4 * 2592000.0 / r.avgDiffTime).format('0,0.00'));
+                    $("#sAnnualIncomeGic em").text(numeral(4 * 31536000 / r.avgDiffTime).format('0,0.00'));
 
-                    $("#posCalculator #sDailyIncomeUsd em").text(numeral(4 * 86400.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
-                    $("#posCalculator #sWeeklyIncomeUsd em").text(numeral(4 * 604800.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
-                    $("#posCalculator #sMonthlyIncomeUsd em").text(numeral(4 * 2592000.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
-                    $("#posCalculator #sAnnualIncomeUsd em").text(numeral(4 * 31536000 / r.avgDiffTime * rates.usd).format('0,0.00'));
+                    //USD
+                    $("#sDailyIncomeUsd em").text(numeral(4 * 86400.0 / r.avgDiffTime * rates.usd).format('0,0.000'));
+                    $("#sWeeklyIncomeUsd em").text(numeral(4 * 604800.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
+                    $("#sMonthlyIncomeUsd em").text(numeral(4 * 2592000.0 / r.avgDiffTime * rates.usd).format('0,0.00'));
+                    $("#sAnnualIncomeUsd em").text(numeral(4 * 31536000 / r.avgDiffTime * rates.usd).format('0,0.00'));
 
-                    $("#posCalculator #sDailyIncomeBtc em").text(numeral(4 * 86400.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
-                    $("#posCalculator #sWeeklyIncomeBtc em").text(numeral(4 * 604800.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
-                    $("#posCalculator #sMonthlyIncomeBtc em").text(numeral(4 * 2592000.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
-                    $("#posCalculator #sAnnualIncomeBtc em").text(numeral(4 * 31536000 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                    //BTS
+                    $("#sDailyIncomeBtc em").text(numeral(4 * 86400.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                    $("#sWeeklyIncomeBtc em").text(numeral(4 * 604800.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                    $("#sMonthlyIncomeBtc em").text(numeral(4 * 2592000.0 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
+                    $("#sAnnualIncomeBtc em").text(numeral(4 * 31536000 / r.avgDiffTime * rates.btc).format('0,0.00000000'));
 
-                    $("#posCalculator #sRoiPercent em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00'));
-                    $("#posCalculator #sRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
+                    //TOTAL BTS
+                    $("#totalBtc").text((4 * rates.btc).toFixed(6) + " BTC");
+                    $("#totalBtcDaily").text((4 * 86400.0 * rates.btc / r.avgDiffTime).toFixed(6) + " BTC");
+                    $("#totalBtcWeekly").text((4 * 604800.0 * rates.btc / r.avgDiffTime).toFixed(6) + " BTC");
+                    $("#totalBtcMonthly").text((4 * 2592000.0 * rates.btc / r.avgDiffTime).toFixed(6) + " BTC");
+
+                    //TOTAL FIC
+                    $("#totalGic").text("4.00 GIC");
+                    $("#totalGicDaily").text((4 * 86400.0 / r.avgDiffTime).toFixed(6) + " GIC");
+                    $("#totalGicWeekly").text((4 * 604800.0 / r.avgDiffTime).toFixed(6) + " GIC");
+                    $("#totalGicMonthly").text((4 * 2592000.0 / r.avgDiffTime).toFixed(6) + " GIC");
+
+                    //TOTAL USD
+                    $("#totalUsd").text("$" + (4 * rates.usd).toFixed(6));
+                    $("#totalUsdDaily").text("$" + (4 * 86400.0 * rates.usd / r.avgDiffTime).toFixed(6));
+                    $("#totalUsdWeekly").text("$" + (4 * 604800.0 * rates.usd / r.avgDiffTime).toFixed(6));
+                    $("#totalUsdMonthly").text("$" + (4 * 2592000.0 * rates.usd / r.avgDiffTime).toFixed(6));
+
+
+                    //CALC STAKE
+                    $.getJSON("https://giantpay.network/api/gic/avg", function (stats) {
+                        $("#minStake").text(stats.minStake.toFixed(2) + " GIC");
+                        $("#minDiff").text(r.minDiff.toFixed(3));
+                        $("#avgStake").text(stats.avgStake.toFixed(2) + " GIC");
+                        $("#avgDiff").text(r.avgDiff.toFixed(3));
+                        $("#maxStake").text(stats.maxStake.toFixed(2) + " GIC");
+                        $("#maxDiff").text(r.maxDiff.toFixed(3));
+
+                        $("#statistics").show();
+                    });
+
+                    $(".proof__income_roi em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00')+'%');
+                    $("#sRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
 
                     posResult = true;
                     if (masternodeResult && posResult) {
