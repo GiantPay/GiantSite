@@ -1,5 +1,6 @@
 package network.giantpay.web;
 
+import lombok.AllArgsConstructor;
 import network.giantpay.dto.InfoDto;
 import network.giantpay.dto.MasternodeDto;
 import network.giantpay.dto.MasternodeInfoDto;
@@ -17,13 +18,12 @@ import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/api", produces = "application/json; charset=UTF-8")
+@AllArgsConstructor
 public class ApiController {
 
-    @Autowired
-    private StorageService storageService;
+    private final StorageService storageService;
 
-    @Autowired
-    private MonitoringService monitoringService;
+    private final MonitoringService monitoringService;
 
     @GetMapping("/info")
     public InfoDto getInfo() throws ApiException {
