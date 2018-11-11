@@ -1,5 +1,10 @@
 package network.giantpay.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
 public class MasternodeDto extends AbstractDto {
 
     private String tx;
