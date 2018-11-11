@@ -1,0 +1,412 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+
+    <link rel="stylesheet" href="css/custom.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="js/tagManager.js"></script>
+</head>
+<body class="body-internal">
+<noscript style="display:none;visibility:hidden">
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
+            height="0" width="0"></iframe>
+</noscript>
+
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
+
+
+<section class="internal-section">
+    <div class="container">
+
+        <h2 class="line-blu line-blu-internal">Investments in Masternodes</h2>
+
+        <h3 class="margin-0-767">What is Masternodes?</h3>
+
+        <p class="font20 margin-30 font-regular">The main problem solved by Giant is the conflict of interests and the
+            mutual
+            trust of deal participants.
+            Every financial agreement is made in the form of a reliable smart contract stored on the blockchain. On
+            Giant, there are no deals behind the scenes. Critical parts of the deal - the market data and user
+            reputation - are seen by all other users of the system. </p>
+
+
+        <h3 class="h3-margin">Award Distribution</h3>
+
+        <p class="font20 margin-50 font-regular">The main problem solved by Giant is the conflict of interests and the
+            mutual
+            trust of deal participants.
+            Every financial agreement is made in the form.</p>
+
+
+        <div class="block-blu">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="white-color white-color-bold">Blocks 24h</h3>
+
+                    <h3 class="white-color white-color-bold">Active masternodes</h3>
+
+                    <h3 class="white-color white-color-bold">Block reward for MN</h3>
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="block-input-custom calculator-block-r calculator-block-r-input">
+                        <p class="gray-p">720</p>
+                    </div>
+
+                    <div class="block-input-custom calculator-block-r calculator-block-r-input">
+                        <p class="gray-p" id="masternodeCount" th:utext="${masternodes}"></p>
+                    </div>
+                    <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                        <p class="gray-p">16</p>
+                        <span>GIC</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="wrapperblock-blu">
+
+                        <h3 class="white-color white-color-bold center-align-h3">AVG masternode
+                            reward frequency</h3>
+
+                        <p class="large-p" id="rewardFrequency"></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <h3 class="h3-margin">Required coins for masternode</h3>
+
+        <div class="block-blu">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="white-color white-color-bold">GIC Price</h3>
+
+                    <h3 class="white-color white-color-bold">Masternode Price</h3>
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="row row-custom">
+                        <div class="col-lg-6">
+
+                            <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                                <p class="gray-p">0.000058</p>
+                                <span>BTC</span>
+                            </div>
+                            <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                                <p class="gray-p">0.000058</p>
+                                <span>BTC</span>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                                <p class="gray-p">0.495</p>
+                                <span>USD</span>
+                            </div>
+
+                            <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                                <p class="gray-p">0.495</p>
+                                <span>USD</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-lg-4">
+                    <p class="large-p">MN = 1000
+                    </p>
+
+                    <p class="medium-p">GIC</p>
+
+                </div>
+            </div>
+        </div>
+        <h3 class="h3-margin">Your investment</h3>
+
+        <div class="block-blu">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="block-input-custom calculator-block-r calculator-block-r-input">
+                        <input id="btcAmountGIC"
+                               type="number"
+                               min="0.00000001"
+                               max="10000000"
+                               step="0.00000001"
+                               placeholder="Your Invest in GIC">
+                        <span>
+                           GIC
+                       </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="block-input-custom calculator-block-r calculator-block-r-input">
+                        <input id="btcAmountBTC"
+                               type="number"
+                               min="0.00000001"
+                               max="10000000"
+                               step="0.00000001"
+                               placeholder="Your Invest in BTC">
+                        <span>
+                           BTC
+                       </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="block-input-custom calculator-block-r calculator-block-r-input">
+                        <input id="usdAmountUSD"
+                               type="number"
+                               min="0.01"
+                               max="1000000"
+                               step="0.01"
+                               placeholder="Your Invest in USD">
+                        <span>
+                           USD
+                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="h3-margin">Your income</h3>
+
+        <div class="income-wrapper">
+
+            <ul class="nav mobil-block" role="tablist">
+                <li class="nav-item dropdown dropdown-tabs-custom">
+                    <a class="nav-link dropdown-toggle dropdown-toggle-custom2" data-toggle="dropdown" href="#"
+                       role="button" aria-haspopup="true"
+                       aria-expanded="false">Daily</a>
+
+                    <div class="dropdown-menu">
+                        <div class="nav nav-tabs" role="tablist" id="tabs">
+                            <a data-toggle="tab" class="nav-link active dropdown-item" id="id-tab1"
+                               href="#id-1">Daily</a>
+                            <a data-toggle="tab" class="nav-link dropdown-item" id="id-tab2" href="#id-2">Weekly</a>
+                            <a data-toggle="tab" class="nav-link dropdown-item" id="id-tab3" href="#id-3">Monthly</a>
+                            <a data-toggle="tab" class="nav-link dropdown-item" id="id-tab4" href="#id-4">Yearly</a>
+                        </div>
+                    </div>
+
+
+                </li>
+
+            </ul>
+
+            <div class="row no-mobil-block">
+                <div class="col-md-6 col-lg-3">
+                    <div class="income-block">
+                        <p class="p-blu-h3">Daily</p>
+
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnDailyIncomeGic"></p>
+                            <span>GIC</span>
+                        </div>
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnDailyIncomeBtc"></p>
+                            <span>BTC</span>
+                        </div>
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnDailyIncomeUsd"></p>
+                            <span>USD</span>
+                        </div>
+
+                        <p class="p-blu-h3 margin-0"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="income-block">
+                        <p class="p-blu-h3">Weekly</p>
+
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnWeeklyIncomeGic"></p>
+                            <span>GIC</span>
+                        </div>
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnWeeklyIncomeBtc"></p>
+                            <span>BTC</span>
+                        </div>
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnWeeklyIncomeUsd"></p>
+                            <span>USD</span>
+                        </div>
+
+                        <p class="p-blu-h3 margin-0"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="income-block">
+                        <p class="p-blu-h3">Monthly</p>
+
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnMonthlyIncomeGic"></p>
+                            <span>GIC</span>
+                        </div>
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnMonthlyIncomeBtc"></p>
+                            <span>BTC</span>
+                        </div>
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnMonthlyIncomeUsd"></p>
+                            <span>USD</span>
+                        </div>
+
+                        <p class="p-blu-h3 margin-0"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="income-block">
+                        <p class="p-blu-h3">Yearly</p>
+
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnAnnualIncomeGic"></p>
+                            <span>GIC</span>
+                        </div>
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnAnnualIncomeBtc"></p>
+                            <span>BTC</span>
+                        </div>
+                        <div class="block-input-custom calculator-block-r calculator-block-r-input">
+
+                            <p class="gray-p" id="mnAnnualIncomeUsd"></p>
+                            <span>USD</span>
+                        </div>
+
+                        <p class="p-blu-h3 margin-0"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block-blu block-blu-small" id="sRoiDays">
+            <h3 class="white-color-center white-color white-color-bold">Payback period: <em></em></h3>
+
+        </div>
+        <h2 class="line-blu line-blu-internal">Masternode list</h2>
+
+
+        <table id="masterNodesList" class="table-custom">
+            <thead>
+            <tr>
+                <th>Adress</th>
+                <th>Protocol</th>
+                <th>Endpoint</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+        </table>
+
+
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+<th:block th:replace="blocks/footer :: footer"></th:block>
+
+<th:block th:replace="javascript/index/calculator :: code"></th:block>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+
+<script src="js/bootstrap.js"></script>
+
+
+<script>
+
+    $('.dropdown-menu-custom a').on('click', function () {
+        $('.dropdown-toggle-custom').html($(this).html() + '<span class="caret"></span>');
+    })
+</script>
+
+
+<script>
+
+    $('.dropdown-tabs-custom a').on('click', function () {
+        $('.dropdown-toggle-custom2').html($(this).html() + '<span class="caret"></span>');
+    })
+</script>
+<script type="text/javascript">
+
+    (function ($) {
+
+        $(window).on('load', function () {
+
+            $.getJSON("/api/rates", function (rates) {
+                $("#rateGicBtc").text(rates.btc + " BTC");
+                $("#rateGicUsd").text(rates.usd + "$");
+                $("#collateralPriceGic").text("1000 GIC");
+                $("#collateralPriceUsd").text((1000 * rates.btc).toFixed(2) + " BTC");
+                $("#collateralPriceBtc").text(numeral(1000 * rates.usd).format('0,0.00') + "$");
+
+                $.getJSON("/api/masternodes/info", function (info) {
+                    $("#dailyIncomeGic").text(numeral(info.daily).format('0,0.00') + " GIC");
+                    $("#monthlyIncomeGic").text(numeral(info.monthly).format('0,0.00') + " GIC");
+                    $("#annualIncomeGic").text(numeral(info.annual).format('0,0.00') + " GIC");
+
+                    $("#dailyIncomeUsd").text(numeral(info.daily * rates.usd).format('0,0.00') + "$");
+                    $("#monthlyIncomeUsd").text(numeral(info.monthly * rates.usd).format('0,0.00') + "$");
+                    $("#annualIncomeUsd").text(numeral(info.annual * rates.usd).format('0,0.00') + "$");
+
+                    $("#dailyIncomeBtc").text(numeral(info.daily * rates.btc).format('0,0.00000000') + " BTC");
+                    $("#monthlyIncomeBtc").text(numeral(info.monthly * rates.btc).format('0,0.00000000') + " BTC");
+                    $("#annualIncomeBtc").text(numeral(info.annual * rates.btc).format('0,0.00000000') + " BTC");
+
+                    $("#roiPercent").text(numeral(info.roi).format('0,0.00') + "%");
+                    $("#roiDays").text(numeral(info.days).format('0') + " days");
+                });
+            });
+
+            $.getJSON("/api/masternodes", function (masternodes) {
+                var table = '';
+                $.each(masternodes, function (index, masternode) {
+                    table += '<tr><td>' + masternode.address + '</td><td>' + masternode.protocol + '</td><td>' + masternode.endpoint + '</td><td>' + masternode.status + '</td></tr>';
+                });
+                $('#masterNodesList').append(table);
+            });
+
+        });
+
+    })(jQuery);
+
+</script>
+
+</body>
+</html>

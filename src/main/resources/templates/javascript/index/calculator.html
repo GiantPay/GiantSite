@@ -115,26 +115,27 @@
                     var multiply = values.gic / 1000.0;
                     var rewardFrequency = formatDuration(3600 * 16 * 24 / info.daily);
 
-                    $("#masternodeCalculator #masternodeCount").text(info.masternodeCount);
-                    $("#masternodeCalculator #rewardFrequency").text(rewardFrequency);
+                    $("#masternodeCount").text(info.masternodeCount);
+                    $("#rewardFrequency").text(rewardFrequency);
 
-                    $("#masternodeCalculator #mnDailyIncomeGic em").text(numeral(info.daily * multiply).format('0,0.00'));
-                    $("#masternodeCalculator #mnWeeklyIncomeGic em").text(numeral(info.daily * 7 * multiply).format('0,0.00'));
-                    $("#masternodeCalculator #mnMonthlyIncomeGic em").text(numeral(info.monthly * multiply).format('0,0.00'));
-                    $("#masternodeCalculator #mnAnnualIncomeGic em").text(numeral(info.annual * multiply).format('0,0.00'));
 
-                    $("#masternodeCalculator #mnDailyIncomeUsd em").text(numeral(info.daily * rates.usd * multiply).format('0,0.00'));
-                    $("#masternodeCalculator #mnWeeklyIncomeUsd em").text(numeral(info.daily * 7 * rates.usd * multiply).format('0,0.00'));
-                    $("#masternodeCalculator #mnMonthlyIncomeUsd em").text(numeral(info.monthly * rates.usd * multiply).format('0,0.00'));
-                    $("#masternodeCalculator #mnAnnualIncomeUsd em").text(numeral(info.annual * rates.usd * multiply).format('0,0.00'));
+                    $("#mnDailyIncomeGic").text(numeral(info.daily * multiply).format('0,0.00'));
+                    $("#mnWeeklyIncomeGic").text(numeral(info.daily * 7 * multiply).format('0,0.00'));
+                    $("#mnMonthlyIncomeGic").text(numeral(info.monthly * multiply).format('0,0.00'));
+                    $("#mnAnnualIncomeGic").text(numeral(info.annual * multiply).format('0,0.00'));
 
-                    $("#masternodeCalculator #mnDailyIncomeBtc em").text(numeral(info.daily * rates.btc * multiply).format('0,0.00000000'));
-                    $("#masternodeCalculator #mnWeeklyIncomeBtc em").text(numeral(info.daily * 7 * rates.btc * multiply).format('0,0.00000000'));
-                    $("#masternodeCalculator #mnMonthlyIncomeBtc em").text(numeral(info.monthly * rates.btc * multiply).format('0,0.00000000'));
-                    $("#masternodeCalculator #mnAnnualIncomeBtc em").text(numeral(info.annual * rates.btc * multiply).format('0,0.00000000'));
+                    $("#mnDailyIncomeUsd").text(numeral(info.daily * rates.usd * multiply).format('0,0.00'));
+                    $("#mnWeeklyIncomeUsd").text(numeral(info.daily * 7 * rates.usd * multiply).format('0,0.00'));
+                    $("#mnMonthlyIncomeUsd").text(numeral(info.monthly * rates.usd * multiply).format('0,0.00'));
+                    $("#mnAnnualIncomeUsd").text(numeral(info.annual * rates.usd * multiply).format('0,0.00'));
 
-                    $("#masternodeCalculator #mnRoiPercent em").text(numeral(info.roi).format('0,0.00'));
-                    $("#masternodeCalculator #mnRoiDays em").text(numeral(info.days).format('0'));
+                    $("#mnDailyIncomeBtc").text(numeral(info.daily * rates.btc * multiply).format('0,0.00000000'));
+                    $("#mnWeeklyIncomeBtc").text(numeral(info.daily * 7 * rates.btc * multiply).format('0,0.00000000'));
+                    $("#mnMonthlyIncomeBtc").text(numeral(info.monthly * rates.btc * multiply).format('0,0.00000000'));
+                    $("#mnAnnualIncomeBtc").text(numeral(info.annual * rates.btc * multiply).format('0,0.00000000'));
+
+                    $(".p-blu-h3.margin-0").text('ROI ' + (numeral(info.roi).format('0,0.00')) + '%');
+                    $("#mnRoiDays em").text(numeral(info.days).format('0'));
 
                     masternodeResult = true;
                     if (masternodeResult && posResult) {
@@ -200,7 +201,7 @@
                         $("#statistics").show();
                     });
 
-                    $(".proof__income_roi em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00')+'%');
+                    $(".proof__income_roi em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00') + '%');
                     $("#sRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
 
                     posResult = true;
