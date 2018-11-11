@@ -51,7 +51,7 @@ public class MonitoringService {
     private AtomicReference<BigDecimal> gicUsd = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> btcUsd = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> btcVolume = new AtomicReference<>(BigDecimal.ZERO);
-    private AtomicReference<BigDecimal> masternodeDaily = new AtomicReference<>(BigDecimal.ZERO);
+    private AtomicReference<BigDecimal> masternodeDaily = new AtomicReference<>(BigDecimal.ONE);
     private AtomicReference<BigDecimal> masternodeMonthly = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> masternodeAnnual = new AtomicReference<>(BigDecimal.ZERO);
     private Map<String, MarketDto> markets = Maps.newConcurrentMap();
@@ -86,7 +86,7 @@ public class MonitoringService {
     }
 
     public InfoDto getInfo() {
-        InfoDto info = new InfoDto();
+        final InfoDto info = new InfoDto();
         info.setRate(gicBtc.get());
         info.setChangePrice24h(changePrice24h.get());
         info.setVolume(btcVolume.get());
@@ -99,17 +99,18 @@ public class MonitoringService {
         info.setMasternodes(masternodes.get());
         info.setMasternodeRoi(masternodeRoi.get());
         info.setMasternodeRoiDays(masternodeRoiDays.get());
+
         return info;
     }
 
     @Scheduled(initialDelay = 10000, fixedRate = 3600000)
-    public void updateChanges() {
+    private void updateChanges() {
         InfoDto changes = coinmarketcapApi.getChanges();
         changePrice24h.set(changes.getChangePrice24h());
     }
 
     @Scheduled(initialDelay = 10000, fixedRate = 60000)
-    public void updateRates() {
+    private void updateRates() {
         try {
             logger.info("MonitoringService :: updateRates started");
 
@@ -151,7 +152,7 @@ public class MonitoringService {
     }
 
     @Scheduled(initialDelay = 10000, fixedRate = 60000)
-    public void updateNetworkInfo() {
+    private void updateNetworkInfo() {
         try {
             logger.info("MonitoringService :: updateNetworkInfo started");
 
@@ -178,7 +179,7 @@ public class MonitoringService {
     }
 
     @Scheduled(initialDelay = 10000, fixedRate = 3600000)
-    public void updateTrello() {
+    private void updateTrello() {
         trelloBoard.set(trelloApi.getBoard());
     }
 
@@ -198,7 +199,7 @@ public class MonitoringService {
     }
 
     @Scheduled(initialDelay = 10000, fixedRate = 60000)
-    public void updateCoinInfos() {
+    private void updateCoinInfos() {
         try {
             logger.info("MonitoringService :: updateCoinInfos started");
 
@@ -325,7 +326,7 @@ public class MonitoringService {
     }
 
     @Scheduled(initialDelay = 10000, fixedRate = 60000)
-    public void updateMasternodes() {
+    private void updateMasternodes() {
         try {
             logger.info("MonitoringService :: updateMasternodes started");
 
