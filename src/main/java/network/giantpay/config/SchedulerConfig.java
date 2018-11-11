@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import javax.annotation.PostConstruct;
+
 /**
  * We don't need Scheduling in dev environment
  */
@@ -14,6 +16,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @Slf4j
 public class SchedulerConfig {
 
+    @PostConstruct
     private void init(){
         log.info("Scheduler is enabled");
     }
