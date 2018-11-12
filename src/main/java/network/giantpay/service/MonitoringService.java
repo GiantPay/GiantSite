@@ -3,6 +3,7 @@ package network.giantpay.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import network.giantpay.api.WalletException;
 import network.giantpay.api.cmc.CoinmarketcapApi;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.net.URL;
 import java.util.List;
@@ -409,10 +411,18 @@ public class MonitoringService {
     }
 
     public Map<String, MarketDto> getMarkets() {
-        return this.markets;
+        return markets.isEmpty() ? onEmptyExchange() : markets;
     }
 
     public Board getTrelloBoard() {
         return trelloBoard.get();
+    }
+
+
+    private static Map<String, MarketDto> onEmptyExchange() {
+        return ImmutableMap.of(
+                "cryptobridge", MarketDto.builder().last(new BigDecimal(BigInteger.ONE)).volumeBtc(new BigDecimal(BigInteger.ONE)).build(),
+                "graviex", MarketDto.builder().last(new BigDecimal(BigInteger.ONE)).volumeBtc(new BigDecimal(BigInteger.ONE)).build()
+        );
     }
 }

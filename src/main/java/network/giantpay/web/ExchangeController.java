@@ -1,5 +1,6 @@
 package network.giantpay.web;
 
+import lombok.AllArgsConstructor;
 import network.giantpay.service.MonitoringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,14 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Map;
 
 @Controller
+@AllArgsConstructor
 public class ExchangeController {
 
-    @Autowired
-    private MonitoringService monitoringService;
+    private final MonitoringService monitoringService;
 
     @GetMapping("/exchange")
-    public String exchange(Map<String, Object> model) {
-        model.putAll(monitoringService.getMarkets());
+    public String exchange(final Map<String, Object> model) {
+        model.putAll(this.monitoringService.getMarkets());
         return "exchange";
     }
 }

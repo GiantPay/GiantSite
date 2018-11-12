@@ -1,7 +1,14 @@
 package network.giantpay.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class MarketDto extends AbstractDto {
 
     private BigDecimal buy;
