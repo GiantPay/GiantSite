@@ -1,84 +1,459 @@
 <!doctype html>
 <!--[if lt IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
 <!--[if IE 7]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<html class="no-js lt-ie9 lt-ie8" lang="" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
 <!--[if IE 8]>
-<html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9" lang=""> <![endif]-->
+<html class="no-js lt-ie9" lang="" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
-    <title>List of exchanges | GIC/BTC | GIC/USD</title>
-    <meta name="description" content="List of exchanges where the Giant is listed. It is constantly replenished.">
-    <th:block th:replace="blocks/header :: head"></th:block>
-    <script src="js/tagManager.js"></script>
+    <title>Giant Coin Roadmap | Blockchain research & development | Progress of project</title>
+    <meta name="description"
+          content="The Giant team main commitment is to keep the development public. Using the scrum methodology, we work in 14-day sprints. Sprint backlogs and results are posted on our website and the social media. Investors always see what we do and what to expect">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.4.0/css/slider-pro.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
+    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="css/additions.css"/>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11023961-18"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-11023961-18');
+    </script>
+
 </head>
 <body>
-<noscript style="display:none;visibility:hidden">
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
-            height="0" width="0"></iframe>
-</noscript>
-<div th:replace="blocks/header :: header"></div>
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
 
-<section class="page_header padding">
-    <div class="display-table">
-        <div class="table-cell">
-            <div class="container">
-                <div class="page_content">
-                    <h1>Giant <span>Exchanges</span></h1>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active">Exchanges</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="promo_section bd-bottom padding">
+<div class="content">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 sm-padding">
-                <h2>Giant exchanges</h2>
+        <div class="content-block">
+            <h1 class="content-block__header content-block__header-exchanges">Exchanges</h1>
+        </div>
 
-                <div class="shadow p-3 mt-5 mb-5 bg-white rounded text-center">
-                    <img src="/images/cryptobridge_400x200.png" class="mb-2"><br>
-                    <p>
-                        <a href="https://wallet.crypto-bridge.org/market/BRIDGE.GIC_BRIDGE.BTC" target="_blank"
-                           rel="nofollow">https://wallet.crypto-bridge.org/market/BRIDGE.GIC_BRIDGE.BTC</a>
-                    </p>
-                    <p>Last price: <strong
-                            th:text="${#numbers.formatDecimal(cryptobridge.last,1,'COMMA',8,'POINT')}"></strong>
-                        <strong>BTC</strong></p>
-                    <p>Volume 24h: <strong
-                            th:text="${#numbers.formatDecimal(cryptobridge.volumeBtc,1,'COMMA',8,'POINT')}"></strong>
-                        <strong>BTC</strong></p>
+        <div class="exchanges">
+            <div class="exchanges__title">
+                Listed
+            </div>
+            <div class="exchanges__item clear">
+                <div class="exchanges__item_logo">
+                    <img src="images/cryptobridge.png" alt="Logo">
                 </div>
-                <div class="shadow p-3 mt-5 mb-5 bg-white rounded text-center">
-                    <img src="/images/graviex_400x200.png" class="mb-2"><br>
-                    <p class="text-center">
-                        <a href="https://graviex.net/markets/gicbtc" target="_blank" rel="nofollow">https://graviex.net/markets/gicbtc</a>
-                    </p>
-                    <p>Last price: <strong
-                            th:text="${#numbers.formatDecimal(graviex.last,1,'COMMA',8,'POINT')}"></strong>
-                        <strong>BTC</strong></p>
-                    <p>Volume 24h: <strong
-                            th:text="${#numbers.formatDecimal(graviex.volumeBtc,1,'COMMA',8,'POINT')}"></strong>
-                        <strong>BTC</strong></p>
+                <div class="exchanges__item_name">
+                    <div>
+                        Crypto-bridge
+                    </div>
                 </div>
-                <div class="shadow p-3 mt-5 mb-5 bg-white rounded text-center">
-                    <img src="/images/southexchange_400x200.png" class="mb-2"><br>
-                    <p>
-                        <a href="https://www.southxchange.com/Home/Vote" target="_blank" rel="nofollow">https://www.southxchange.com/Home/Vote</a>
-                    </p>
-                    (Voting in progress)
+                <div class="exchanges__item_price">
+                    <div class="exchanges__item_price-row clear">
+                        <div class="exchanges__item_price-name">
+                            Price
+                        </div>
+                        <div class="exchanges__item_price-value">
+                            <strong th:text="${#numbers.formatDecimal(cryptobridge.last,1,'COMMA',8,'POINT')}"></strong>
+                            <span>BTC</span>
+                        </div>
+                    </div>
+                    <div class="exchanges__item_price-row clear">
+                        <div class="exchanges__item_price-name">
+                            Volume 24
+                        </div>
+                        <div class="exchanges__item_price-value">
+                            <strong th:text="${#numbers.formatDecimal(cryptobridge.volumeBtc,1,'COMMA',8,'POINT')}"></strong>
+                            <span>BTC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exchanges__item_button">
+                    <a href="https://graviex.net/markets/gicbtc" class="blu-button" target="blank">buy/sell</a>
+                </div>
+            </div>
+            <div class="exchanges__item clear">
+                <div class="exchanges__item_logo">
+                    <img src="images/graviex.jpg" alt="Logo">
+                </div>
+                <div class="exchanges__item_name">
+                    <div>
+                        Graviex
+                    </div>
+                </div>
+                <div class="exchanges__item_price">
+                    <div class="exchanges__item_price-row clear">
+                        <div class="exchanges__item_price-name">
+                            Price
+                        </div>
+                        <div class="exchanges__item_price-value">
+                            <strong th:text="${#numbers.formatDecimal(graviex.last,1,'COMMA',8,'POINT')}"></strong>
+                            <span>BTC</span>
+                        </div>
+                    </div>
+                    <div class="exchanges__item_price-row clear">
+                        <div class="exchanges__item_price-name">
+                            Volume 24
+                        </div>
+                        <div class="exchanges__item_price-value">
+                            <strong th:text="${#numbers.formatDecimal(graviex.volumeBtc,1,'COMMA',8,'POINT')}"></strong>
+                            <span>BTC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exchanges__item_button">
+                    <a href="https://www.southxchange.com/Home/Vote" class="blu-button" target="blank">buy/sell</a>
+                </div>
+            </div>
+
+            <div class="exchanges__title">
+                Voting
+            </div>
+            <div class="exchanges__item clear">
+                <div class="exchanges__item_logo">
+                    <img src="images/southxchange.png" alt="Logo">
+                </div>
+                <div class="exchanges__item_name">
+                    <div>
+                        Southxchange
+                    </div>
+                </div>
+
+                <div class="exchanges__item_button">
+                    <a href="https://www.southxchange.com/Home/Vote" class="blu-button" target="blank">vote</a>
+                </div>
+            </div>
+            <div class="exchanges__item clear">
+                <div class="exchanges__item_logo">
+                    <img src="images/coinex.svg" alt="Logo">
+                </div>
+                <div class="exchanges__item_name">
+                    <div>
+                        Coinex
+                    </div>
+                </div>
+
+                <div class="exchanges__item_button">
+                    <a href="https://www.coinex.com/vote/project?id=2007" class="blu-button" target="blank">vote</a>
+                </div>
+            </div>
+
+            <div class="exchanges__title">
+                Soon
+            </div>
+            <div class="exchanges__item clear">
+                <div class="exchanges__item_logo">
+                    <img src="images/cryptopia.png" alt="Logo">
+                </div>
+                <div class="exchanges__item_name">
+                    <div>
+                        Cryptopia
+                    </div>
+                </div>
+                <div class="exchanges__item_button">
+                    <a href="https://www.cryptopia.co.nz" class="blu-button" target="blank">q2 2019</a>
+                </div>
+            </div>
+            <div class="exchanges__item clear">
+                <div class="exchanges__item_logo">
+                    <img src="images/hitbtc.jpg" alt="Logo">
+                </div>
+                <div class="exchanges__item_name">
+                    <div>
+                        HitBTC
+                    </div>
+                </div>
+
+                <div class="exchanges__item_button">
+                    <a href="https://hitbtc.com/" class="blu-button" target="blank">q2 2019</a>
+                </div>
+            </div>
+
+            <div class="exchanges__item clear">
+                <div class="exchanges__item_logo">
+                    <img src="images/exmo.svg" alt="Logo">
+                </div>
+                <div class="exchanges__item_name">
+                    <div>
+                        EXMO
+                    </div>
+                </div>
+
+                <div class="exchanges__item_button">
+                    <a href="https://exmo.com/" class="blu-button" target="blank">q2 2019</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<div th:replace="blocks/footer :: footer"></div>
+<th:block th:replace="blocks/footer :: footer"></th:block>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script src="js/jquery.spincrement.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel2, .owl-carousel5, .owl-carousel6').owlCarousel({
+            autoWidth: false,
+            autoPlay: true,
+            nav: false,
+            loop: true,
+            dots: false,
+            autoplayTimeout: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 2
+                },
+                1550: {
+                    items: 2
+                }
+            }
+        })
+    });
+    $(document).ready(function () {
+        $('.owl-carousel3').owlCarousel({
+            autoWidth: false,
+            autoPlay: true,
+            nav: false,
+            loop: true,
+            dots: false,
+            autoplayTimeout: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 2
+                },
+                1550: {
+                    items: 2
+                }
+            }
+        })
+    });
+
+    $(document).ready(function () {
+        $('.owl-carousel4').owlCarousel({
+            autoWidth: false,
+            autoPlay: true,
+            nav: false,
+            loop: true,
+            dots: false,
+            autoplayTimeout: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 3
+                },
+                1550: {
+                    items: 3
+                }
+            }
+        })
+    });
+    $('.am-prev').on('click', function () {
+        $('.owl-prev').trigger('click');
+    });
+
+
+    $('.am-next').on('click', function () {
+        $('.owl-next').trigger('click');
+    });
+
+    $('.am-prev2').on('click', function () {
+        $('.owl-prev').trigger('click');
+    });
+
+
+    $('.am-next2').on('click', function () {
+        $('.owl-next').trigger('click');
+    });
+
+</script>
+
+<script src="js/scrollBar.js"></script>
+
+<script>
+    $(".custom-scroll").scrollBox();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+<script src="js/morris.js"></script>
+
+
+<script src="js/jquery.sliderPro.min.js"></script>
+<script>
+    $(document).ready(function ($) {
+        $('#example5').sliderPro({
+            orientation: 'vertical',
+            loop: true,
+            width: 900,
+            arrows: true,
+            buttons: false,
+            thumbnailsPosition: 'left',
+            thumbnailHeight: 100,
+            thumbnailPointer: true,
+            thumbnailWidth: 280,
+            autoplay: false,
+            startSlide: 3,
+            breakpoints: {
+                1199: {
+                    width: 900,
+                    thumbnailsPosition: 'left',
+                    thumbnailWidth: 280,
+                    thumbnailHeight: 100
+                },
+                991: {
+                    width: 900,
+                    thumbnailsPosition: 'left',
+                    height: 800,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                },
+                767: {
+                    width: 900,
+                    thumbnailsPosition: 'left',
+                    height: 800,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                },
+
+                480: {
+                    width: 500,
+                    thumbnailsPosition: 'left',
+                    height: 600,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                },
+                360: {
+                    width: 500,
+                    thumbnailsPosition: 'left',
+                    height: 700,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                }
+            }
+        });
+    });
+
+    $('.am-prev3').on('click', function () {
+        $('.sp-previous-arrow').trigger('click');
+    });
+
+    $('.am-next3').on('click', function () {
+        $('.sp-next-arrow').trigger('click');
+    });
+
+</script>
+
+
+<script type="text/javascript">
+    $(document).on("click.bs.dropdown.data-api", ".noclose", function (e) {
+        e.stopPropagation()
+    });
+    $('.dropdown-graphic input:checkbox').click(function () {
+        $('.count-span').html($('.dropdown-graphic input:checkbox:checked').length);
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".scroll-top").click(function (event) {
+            $(this).parent().find(".list-square").animate({scrollTop: '-=123'}, 500);
+        });
+
+        $(".scroll-bottom").click(function (event) {
+            $(this).parent().find(".list-square").animate({scrollTop: '+=123'}, 500);
+        });
+    });
+</script>
+
 </body>
 </html>
