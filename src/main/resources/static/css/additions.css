@@ -26,7 +26,7 @@ body {
 	display: block;
 	text-align: center;
 	border-radius: 4px;
-  box-shadow: 0 1px 6px 0;
+  box-shadow: 0 0 1px 0;
   background: #fff;
   padding-left: 50px;
 	padding-right: 50px;
@@ -892,6 +892,9 @@ a.buttons__discord {
 	.team__content_left {
 		float: none;
 		width: 100%;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
 	}
 
 	.team__content_right {
@@ -902,7 +905,7 @@ a.buttons__discord {
 
 	.content {
 		padding-top: 0;
-		padding-bottom: 50px;
+		padding-bottom: 17px;
 	}
 
 	.exchanges__item_name {
