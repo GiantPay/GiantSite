@@ -1,7 +1,8 @@
 package network.giantpay.config;
 
+import lombok.AllArgsConstructor;
 import network.giantpay.config.security.WebAuthenticationManager;
-import org.springframework.beans.factory.annotation.Autowired;
+import network.giantpay.service.CredentialService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,21 +11,27 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
+@AllArgsConstructor
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
-    @Autowired
-    private UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
+
+    private final CredentialService credentialService;
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
-                .authorizeRequests().antMatchers("/").permitAll();
+                .authorizeRequests()
+                .antMatchers("/admin/*")
+                .access("hasRole('USER')")
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll();
 
         http.headers()
                 .defaultsDisabled()
@@ -33,12 +40,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder builder) throws Exception {
-        builder.userDetailsService(userDetailsService);
+        builder.userDetailsService(this.userDetailsService);
     }
 
     @Bean
     @Override
     public AuthenticationManager authenticationManager() {
-        return new WebAuthenticationManager();
+        return new WebAuthenticationManager(this.userDetailsService, this.credentialService);
     }
 }
