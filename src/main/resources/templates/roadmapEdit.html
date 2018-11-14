@@ -73,12 +73,6 @@
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
             height="0" width="0"></iframe>
 </noscript>
-<header class="header-main">
-    <th:block th:replace="blocks/header :: mainmenu"></th:block>
-</header>
-
-
-<th:block th:replace="blocks/footer :: footer"></th:block>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -93,9 +87,6 @@
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <div class="panel panel-default">
-    <div class="panel-heading">
-        <strong>Update event</strong>
-    </div>
     <div class="panel-body">
         <form class="form-horizontal" th:object="${roadMap}" th:action="@{/roadmap/save}" method="POST"
               style="margin: 10px">
