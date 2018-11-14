@@ -1,0 +1,411 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+<head>
+    <title>Giant Coin Roadmap | Blockchain research & development | Progress of project</title>
+    <meta name="description"
+          content="The Giant team main commitment is to keep the development public. Using the scrum methodology, we work in 14-day sprints. Sprint backlogs and results are posted on our website and the social media. Investors always see what we do and what to expect">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.4.0/css/slider-pro.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
+    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="css/additions.css"/>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11023961-18"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-11023961-18');
+    </script>
+
+</head>
+<body th:with="years=${roadMaps}">
+
+<header class="header-main">
+    <th:block th:replace="blocks/header :: mainmenu"></th:block>
+</header>
+
+<div class="content">
+    <div class="container">
+        <div class="content-block">
+            <h1 class="content-block__header">Roadmap</h1>
+        </div>
+
+        <div class="roadmap" th:each="year : ${years}">
+            <div class="roadmap__period clear">
+                <div class="roadmap__period_title">
+                    Q1
+                </div>
+                <div class="roadmap__period_start" th:text="'JAN' + ${year.key}"></div>
+                <div class="roadmap__period_line"></div>
+                <div class="roadmap__period_end" th:text="'MAR' + ${year.key}"></div>
+            </div>
+            <div class="roadmap__block" th:each="querter : ${years.get(year.key).get('Q1')}">
+                <div class="roadmap__range clear" th:classappend="${querter.color}">
+                    <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
+                    <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
+                        <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
+                            <p th:text="${querter.event}"></p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
+                        <div class="roadmap__range_line" style="width: 30%;">
+                            <p th:text="${querter.event}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap__period clear">
+                <div class="roadmap__period_title">
+                    Q2
+                </div>
+                <div class="roadmap__period_start" th:text="'APR' + ${year.key}"></div>
+                <div class="roadmap__period_line"></div>
+                <div class="roadmap__period_end" th:text="'JUN' + ${year.key}"></div>
+            </div>
+
+            <div class="roadmap__block" th:each="querter : ${years.get(year.key).get('Q2')}">
+                <div class="roadmap__range clear" th:classappend="${querter.color}">
+                    <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
+
+                    <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
+                        <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
+                            <p th:text="${querter.event}"></p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
+                        <div class="roadmap__range_line" style="width: 30%;">
+                            <p th:text="${querter.event}"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="roadmap__period clear">
+                <div class="roadmap__period_title">
+                    Q3
+                </div>
+                <div class="roadmap__period_start" th:text="'JUL' + ${year.key}"></div>
+                <div class="roadmap__period_line"></div>
+                <div class="roadmap__period_end" th:text="'SEP' + ${year.key}"></div>
+            </div>
+
+            <div class="roadmap__block" th:each="querter : ${years.get(year.key).get('Q3')}">
+                <div class="roadmap__range clear" th:classappend="${querter.color}">
+                    <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
+                    <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
+                        <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
+                            <p th:text="${querter.event}"></p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
+                        <div class="roadmap__range_line" style="width: 30%;">
+                            <p th:text="${querter.event}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap__period clear">
+                <div class="roadmap__period_title">
+                    Q4
+                </div>
+                <div class="roadmap__period_start" th:text="'OCT' + ${year.key}"></div>
+                <div class="roadmap__period_line"></div>
+                <div class="roadmap__period_end" th:text="'DEC' + ${year.key}"></div>
+            </div>
+
+            <div class="roadmap__block" th:each="querter : ${years.get(year.key).get('Q4')}">
+                <div class="roadmap__range clear" th:classappend="${querter.color}">
+                    <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
+
+                    <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
+                        <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
+                            <p th:text="${querter.event}"></p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
+                        <div class="roadmap__range_line" style="width: 30%;">
+                            <p th:text="${querter.event}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<th:block th:replace="blocks/footer :: footer"></th:block>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script src="js/jquery.spincrement.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel2, .owl-carousel5, .owl-carousel6').owlCarousel({
+            autoWidth: false,
+            autoPlay: true,
+            nav: false,
+            loop: true,
+            dots: false,
+            autoplayTimeout: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 2
+                },
+                1550: {
+                    items: 2
+                }
+            }
+        })
+    });
+    $(document).ready(function () {
+        $('.owl-carousel3').owlCarousel({
+            autoWidth: false,
+            autoPlay: true,
+            nav: false,
+            loop: true,
+            dots: false,
+            autoplayTimeout: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 2
+                },
+                1550: {
+                    items: 2
+                }
+            }
+        })
+    });
+
+    $(document).ready(function () {
+        $('.owl-carousel4').owlCarousel({
+            autoWidth: false,
+            autoPlay: true,
+            nav: false,
+            loop: true,
+            dots: false,
+            autoplayTimeout: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                767: {
+                    items: 2
+                },
+                992: {
+                    items: 2
+                },
+                1200: {
+                    items: 3
+                },
+                1550: {
+                    items: 3
+                }
+            }
+        })
+    });
+    $('.am-prev').on('click', function () {
+        $('.owl-prev').trigger('click');
+    });
+
+
+    $('.am-next').on('click', function () {
+        $('.owl-next').trigger('click');
+    });
+
+    $('.am-prev2').on('click', function () {
+        $('.owl-prev').trigger('click');
+    });
+
+
+    $('.am-next2').on('click', function () {
+        $('.owl-next').trigger('click');
+    });
+
+</script>
+
+<script src="js/scrollBar.js"></script>
+
+<script>
+    $(".custom-scroll").scrollBox();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+<script src="js/morris.js"></script>
+
+
+<script src="js/jquery.sliderPro.min.js"></script>
+<script>
+    $(document).ready(function ($) {
+        $('#example5').sliderPro({
+            orientation: 'vertical',
+            loop: true,
+            width: 900,
+            arrows: true,
+            buttons: false,
+            thumbnailsPosition: 'left',
+            thumbnailHeight: 100,
+            thumbnailPointer: true,
+            thumbnailWidth: 280,
+            autoplay: false,
+            startSlide: 3,
+            breakpoints: {
+                1199: {
+                    width: 900,
+                    thumbnailsPosition: 'left',
+                    thumbnailWidth: 280,
+                    thumbnailHeight: 100
+                },
+                991: {
+                    width: 900,
+                    thumbnailsPosition: 'left',
+                    height: 800,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                },
+                767: {
+                    width: 900,
+                    thumbnailsPosition: 'left',
+                    height: 800,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                },
+
+                480: {
+                    width: 500,
+                    thumbnailsPosition: 'left',
+                    height: 600,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                },
+                360: {
+                    width: 500,
+                    thumbnailsPosition: 'left',
+                    height: 700,
+                    thumbnailWidth: 0,
+                    thumbnailHeight: 0
+                }
+            }
+        });
+    });
+
+    $('.am-prev3').on('click', function () {
+        $('.sp-previous-arrow').trigger('click');
+    });
+
+    $('.am-next3').on('click', function () {
+        $('.sp-next-arrow').trigger('click');
+    });
+
+</script>
+
+
+<script type="text/javascript">
+    $(document).on("click.bs.dropdown.data-api", ".noclose", function (e) {
+        e.stopPropagation()
+    });
+    $('.dropdown-graphic input:checkbox').click(function () {
+        $('.count-span').html($('.dropdown-graphic input:checkbox:checked').length);
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".scroll-top").click(function (event) {
+            $(this).parent().find(".list-square").animate({scrollTop: '-=123'}, 500);
+        });
+
+        $(".scroll-bottom").click(function (event) {
+            $(this).parent().find(".list-square").animate({scrollTop: '+=123'}, 500);
+        });
+    });
+</script>
+
+</body>
+</html>

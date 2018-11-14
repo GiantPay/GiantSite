@@ -1,0 +1,129 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+<head>
+    <title>Road Map edit</title>
+    <meta name="description"
+          content="The Giant team main commitment is to keep the development public. Using the scrum methodology, we work in 14-day sprints. Sprint backlogs and results are posted on our website and the social media. Investors always see what we do and what to expect">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.4.0/css/slider-pro.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
+    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="css/additions.css"/>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-11023961-18');
+    </script>
+
+</head>
+<body>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Posts</strong>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-sm table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Event</th>
+                    <th>Ready value</th>
+                    <th>Date</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="roadMap : ${roadMaps}">
+                    <td th:text="${roadMap.id}"></td>
+                    <td th:text="${roadMap.event}"></td>
+                    <td th:text="${roadMap.readyValue}+'%'"></td>
+                    <td th:text="${#dates.format(roadMap.date, 'dd/MM/yyyy')}"></td>
+                    <td>
+                        <div class="btn-group pull-right">
+                            <a class="btn btn-sm btn-primary" th:href="'/roadmap/update/'+${roadMap.id}">Edit</a>
+                            <a class="delete btn btn-sm btn-danger"
+                               th:href="'/roadmap/delete/'+${roadMap.id}">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-sm btn-success" href="/roadmap/save">Add</a>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+<script src="js/jquery.spincrement.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+<script src="js/morris.js"></script>
+
+
+</body>
+</html>
