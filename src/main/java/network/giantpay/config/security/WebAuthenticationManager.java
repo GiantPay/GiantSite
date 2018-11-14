@@ -1,21 +1,24 @@
 package network.giantpay.config.security;
 
+import lombok.AllArgsConstructor;
 import network.giantpay.model.User;
-import network.giantpay.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import network.giantpay.service.CredentialService;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+@AllArgsConstructor
 public class WebAuthenticationManager implements AuthenticationManager {
 
-    @Autowired
-    private UserService userService;
+    private final UserDetailsService userService;
+
+    private final CredentialService credentialService;
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        User profile = (User) userService.loadUserByUsername(authentication.getPrincipal().toString());
+        User profile = (User) this.userService.loadUserByUsername(authentication.getPrincipal().toString());
 
         if (profile == null) {
             throw new UsernameNotFoundException(String.format("Unknown profile %s", authentication.getPrincipal()));
@@ -29,10 +32,12 @@ public class WebAuthenticationManager implements AuthenticationManager {
             throw new LockedException(String.format("Locked profile %s", authentication.getPrincipal()));
         }
 
-        if (!userService.isCredentials(profile, authentication.getCredentials().toString())) {
+        if (!this.credentialService.apply(profile, authentication.getCredentials().toString())) {
             throw new BadCredentialsException("Invalid credentials");
         }
 
         return new UsernamePasswordAuthenticationToken(profile, null, profile.getAuthorities());
     }
+
+
 }
