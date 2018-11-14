@@ -89,7 +89,7 @@
                 <div class="roadmap__period_end" th:text="'MAR' + ${year.key}"></div>
             </div>
             <div class="roadmap__block">
-                <div th:each="querter : ${years.get(year.key).get('Q4')}">
+                <div th:each="querter : ${years.get(year.key).get('Q1')}">
                     <div class="roadmap__range clear" th:classappend="${querter.color}">
                         <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
                         <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
