@@ -3,8 +3,9 @@ package network.giantpay.service;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import network.giantpay.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,16 +16,26 @@ import java.util.UUID;
 @Service
 public class StorageService {
 
-    @Value("${storage.path}")
-    private String storagePath;
-    @Autowired
-    private UserService userService;
+    private final String storagePath;
+
+    private final UserDetailsService userService;
+
+    private final CredentialService credentialService;
+
+    public StorageService(final Environment environment,
+                          final CredentialService credentialService,
+                          final UserDetailsService userService) {
+        this.credentialService = credentialService;
+        this.userService = userService;
+        this.storagePath = environment.getProperty("storage.path");
+    }
 
     public Map<String, Object> uploadImage(String username, String password, MultipartFile file) {
         try {
-            User user = (User) userService.loadUserByUsername(username);
-            if (user == null || !userService.isCredentials(user, password)) {
-                throw new RuntimeException();
+            final User userDetails = (User) this.userService.loadUserByUsername(username);
+
+            if (!this.credentialService.apply(userDetails, password)) {
+                throw new UsernameNotFoundException("Passwords not matches");
             }
 
             String randomPath = getRandomString();

@@ -20,6 +20,8 @@ public class PageService {
     private PageRepository pageRepository;
     @Autowired
     private UserService userService;
+    @Autowired
+    private CredentialService credentialService;
 
     public List<Page> findAll(String category) {
         if (Strings.isNullOrEmpty(category)) {
@@ -41,7 +43,7 @@ public class PageService {
         String username = (String) params.getFirst("username");
         String password = (String) params.getFirst("password");
         User user = (User) userService.loadUserByUsername(username);
-        if (user == null || !userService.isCredentials(user, password)) {
+        if (user == null || !credentialService.apply(user, password)) {
             throw new RuntimeException();
         }
 
