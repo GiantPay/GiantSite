@@ -88,18 +88,20 @@
                 <div class="roadmap__period_line"></div>
                 <div class="roadmap__period_end" th:text="'MAR' + ${year.key}"></div>
             </div>
-            <div class="roadmap__block" th:each="querter : ${years.get(year.key).get('Q1')}">
-                <div class="roadmap__range clear" th:classappend="${querter.color}">
-                    <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
-                    <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
-                        <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
-                            <p th:text="${querter.event}"></p>
+            <div class="roadmap__block">
+                <div th:each="querter : ${years.get(year.key).get('Q4')}">
+                    <div class="roadmap__range clear" th:classappend="${querter.color}">
+                        <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
+                        <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
+                            <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
+                                <p th:text="${querter.event}"></p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
-                        <div class="roadmap__range_line" style="width: 30%;">
-                            <p th:text="${querter.event}"></p>
+                        <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
+                            <div class="roadmap__range_line" style="width: 30%;">
+                                <p th:text="${querter.event}"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,22 +116,23 @@
                 <div class="roadmap__period_end" th:text="'JUN' + ${year.key}"></div>
             </div>
 
-            <div class="roadmap__block" th:each="querter : ${years.get(year.key).get('Q2')}">
-                <div class="roadmap__range clear" th:classappend="${querter.color}">
-                    <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
+            <div class="roadmap__block">
+                <div th:each="querter : ${years.get(year.key).get('Q2')}">
+                    <div class="roadmap__range clear" th:classappend="${querter.color}">
+                        <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
 
-                    <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
-                        <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
-                            <p th:text="${querter.event}"></p>
+                        <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
+                            <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
+                                <p th:text="${querter.event}"></p>
+                            </div>
+                        </div>
+
+                        <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
+                            <div class="roadmap__range_line" style="width: 30%;">
+                                <p th:text="${querter.event}"></p>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
-                        <div class="roadmap__range_line" style="width: 30%;">
-                            <p th:text="${querter.event}"></p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
@@ -142,18 +145,20 @@
                 <div class="roadmap__period_end" th:text="'SEP' + ${year.key}"></div>
             </div>
 
-            <div class="roadmap__block" th:each="querter : ${years.get(year.key).get('Q3')}">
-                <div class="roadmap__range clear" th:classappend="${querter.color}">
-                    <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
-                    <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
-                        <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
-                            <p th:text="${querter.event}"></p>
+            <div class="roadmap__block">
+                <div th:each="querter : ${years.get(year.key).get('Q3')}">
+                    <div class="roadmap__range clear" th:classappend="${querter.color}">
+                        <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
+                        <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
+                            <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
+                                <p th:text="${querter.event}"></p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
-                        <div class="roadmap__range_line" style="width: 30%;">
-                            <p th:text="${querter.event}"></p>
+                        <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
+                            <div class="roadmap__range_line" style="width: 30%;">
+                                <p th:text="${querter.event}"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -168,19 +173,21 @@
                 <div class="roadmap__period_end" th:text="'DEC' + ${year.key}"></div>
             </div>
 
-            <div class="roadmap__block" th:each="querter : ${years.get(year.key).get('Q4')}">
-                <div class="roadmap__range clear" th:classappend="${querter.color}">
-                    <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
+            <div class="roadmap__block">
+                <div th:each="querter : ${years.get(year.key).get('Q4')}">
+                    <div class="roadmap__range clear" th:classappend="${querter.color}">
+                        <div class="roadmap__range_perсent" th:text="${querter.readyValue} + '%'"></div>
 
-                    <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
-                        <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
-                            <p th:text="${querter.event}"></p>
+                        <div class="roadmap__range_line-wrapper" th:if="${!querter.isEmpty()}">
+                            <div class="roadmap__range_line" th:style="'width:' + ${querter.readyValue}+'%;'">
+                                <p th:text="${querter.event}"></p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
-                        <div class="roadmap__range_line" style="width: 30%;">
-                            <p th:text="${querter.event}"></p>
+                        <div class="roadmap__range_line-wrapper" th:if="${querter.isEmpty()}">
+                            <div class="roadmap__range_line" style="width: 30%;">
+                                <p th:text="${querter.event}"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
