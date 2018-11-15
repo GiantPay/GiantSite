@@ -1954,14 +1954,6 @@ p.copy {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.container {
-    max-width: 1250px;
-}
-
-#nav-tab3 {
-    display: inline;
-}
-
 .content-block__header {
     position: relative;
     margin: 52px 0;
