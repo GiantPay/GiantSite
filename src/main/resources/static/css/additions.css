@@ -1,0 +1,1033 @@
+.clear:after {
+	width: 100%;
+	display: block;
+	content: "";
+	clear: both;
+}
+
+body {
+	background: #f6f9fa;
+}
+
+.content {
+	padding-bottom: 50px;
+}
+
+.team__content {
+	position: relative;
+}
+
+.team__content_left {
+	width: 50%;
+	float: left;
+}
+
+.team__person {
+	display: block;
+	text-align: center;
+	border-radius: 4px;
+  box-shadow: 0 1px 6px 0;
+  background: #fff;
+  padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 65px;
+	padding-bottom: 75px;
+}
+
+.team__photo {
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+	overflow: hidden;
+	display: inline-block;
+	margin-bottom: 40px;
+}
+
+.team__photo img {
+	width: 100%;
+	height: 100%;
+}
+
+.team__name {
+	font-size: 26px;
+	line-height: 24px;
+	color: #000;
+	font-family: 'Poppins-SemiBold';
+	margin-bottom: 13px;
+}
+
+.team__job {
+	font-size: 20px;
+	line-height: 36px;
+	color: #222;
+	font-family: 'Poppins-Regular';
+	margin-bottom: 13px;
+}
+
+.team__socials {
+	text-align: center;
+	line-height: 50px;
+	margin-bottom: 35px;
+}
+
+.team__socials a {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	background: #127aea;
+	font-size: 17px;
+	margin-left: 10px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.team__description {
+	text-align: left;
+	line-height: 36px;
+	font-size: 20px;
+	font-family: 'Poppins-Regular';
+	color: #222;
+	margin-bottom: 50px;
+}
+
+.team__quote {
+	line-height: 36px;
+	font-size: 20px;
+	color: #222;
+	text-align: left;
+	margin-bottom: 13px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 200;
+	font-style: italic;
+}
+
+.team__quote-author {
+	line-height: 36px;
+	font-size: 20px;
+	font-family: 'Poppins-Regular';
+	color: #222;
+}
+
+.team__content_right {
+	width: 50%;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+	border-radius: 4px;
+	background: #127aea;
+}
+
+.team__content_right-wrapper {
+	padding-left: 45px;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	padding-right: 18px;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #fff; width: 5px; }
+.mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail{ background-color: transparent; } 
+
+.team__block {
+	margin-bottom: 40px;
+}
+
+.team__block_title {
+	font-size: 26px;
+	line-height: 24px;
+	font-family: 'Poppins-SemiBold';
+	color: #fff;
+	margin-bottom: 35px;
+}
+
+.team__block_person {
+	margin-bottom: 30px;
+	padding-left: 80px;
+	position: relative;
+}
+
+.team__block_person-img {
+	float: left;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 19px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.team__block_person-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.team__block_person-name {
+	float: left;
+	line-height: 30px;
+	color: #fff;
+	font-size: 20px;
+	font-family: 'Poppins-SemiBold';
+	width: 100%;
+}
+
+.team__block_person-job {
+	float: left;
+	line-height: 30px;
+	color: #fff;
+	font-family: 'Poppins-Regular';
+	font-size: 16px;
+}
+
+.exchanges__title {
+	text-align: center;
+	line-height: 23px;
+	padding: 15px;
+	color: #fff;
+	background: #127aea;
+	margin-bottom: 29px;
+	font-size: 20px;
+	font-family: 'Poppins-Bold';
+}
+
+.exchanges__item {
+	padding: 25px;
+	background: #fff;
+	border-radius: 5px;
+	width: 100%;
+	-webkit-box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.37);
+-moz-box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.37);
+box-shadow: 0px 0px 34px 0px rgba(0,0,0,0.37);
+margin-bottom: 35px;
+}
+
+.exchanges__item_logo {
+	margin-left: 20px;
+	width: 60px;
+	height: 80px;
+	line-height: 80px;
+	float: left;
+	margin-right: 45px;
+}
+
+.exchanges__item_logo img {
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.exchanges__item_name {
+	height: 80px;
+	line-height: 80px;
+	float: left;
+	margin-right: 100px;
+	width: 250px;
+	text-align: center;
+}
+
+.exchanges__item_name div {
+	display: inline-block;
+	color: #222;
+	line-height: 32px;
+	font-size: 26px;
+	font-family: 'Poppins-SemiBold';
+}
+
+.exchanges__item_price {
+	float: left;
+	width: 320px;
+}
+
+.exchanges__item_price-row {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.exchanges__item_price-name {
+	width: 120px;
+	float: left;
+	line-height: 30px;
+	margin-right: 15px;
+	font-size: 16px;
+	color: #222;
+	font-family: 'Poppins-Regular';
+}
+
+.exchanges__item_price-value {
+	float: left;
+	width: 185px;
+	border: solid 1px #d4d4d4;
+	height: 30px;
+	border-radius: 13px;
+	position: relative;
+	line-height: 28px;
+	padding-right: 60px;
+	padding-left: 20px;
+	font-size: 16px;
+	color: #222;
+}
+
+.exchanges__item_price-value span {
+	position: absolute;
+	line-height: 28px;
+	top: 0;
+	right: 15px;
+	color: #8b8b8b;
+	font-size: 16px;
+}
+
+.exchanges__item_button {
+	float: right;
+	padding-top: 17px;
+}
+
+/*Proof of stake*/
+
+.proof__block {
+	margin-bottom: 30px;
+}
+
+.proof__block h2 {
+	font-family: 'Poppins-Bold';
+	color: #222;
+	font-size: 26px;
+	line-height: 36px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 3px;
+}
+
+.proof__block_text {
+	line-height: 36px;
+	font-size: 20px;
+	font-family: 'Poppins-Regular';
+}
+
+.proof__block_invest {
+	background: #127aea;
+	padding-left: 9px;
+	padding-right: 9px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.proof__block_invest-item {
+	position: relative;
+	float: left;
+	width: calc(33.3% - 48px);
+	margin-left: 24px;
+	margin-right: 24px;
+	height: 30px;
+	line-height: 28px;
+	border-radius: 13px;
+	background: #fff;
+	border: solid 1px #d4d4d4;
+	padding-left: 15px;
+	padding-right: 50px;
+}
+.proof__block_invest-item input {
+	display: block;
+	height: 28px;
+	border: none;
+	outline: none;
+	width: 100%;
+	font-family: 'Poppins-Light';
+	color: #222;
+	font-size: 16px;
+}
+
+.proof__block_invest-item span {
+	position: absolute;
+	line-height: 28px;
+	right: 15px;
+	top: 0;
+	color: #8b8b8b;
+	font-family: 'Poppins-Light';
+	font-size: 16px;
+}
+
+.proof__income_item {
+	float: left;
+	margin-right: 30px;
+	width: calc(25% - 23px);
+	margin-bottom: 30px;
+	border: solid 1px #edeeef;
+  	background-color: #ffffff;
+  	padding-top: 22px;
+  	padding-bottom: 15px;
+  	padding-left: 30px;
+  	padding-right: 30px;
+}
+
+.proof__income_item:last-child {
+	margin-right: 0;
+}
+
+.proof__income_item-title {
+	text-align: center;
+	color: #127aea;
+	line-height: 36px;
+	font-size: 26px;
+	font-family: 'Poppins-Bold';
+	margin-bottom: 20px;
+}
+
+.proof__income_item-field {
+	height: 30px;
+  border-radius: 13px;
+  border: solid 1px #d4d4d4;
+  background-color: #e2e2e2;
+  line-height: 28px;
+  color: #222;
+  font-size: 16px;
+  font-family: 'Poppins-Light';
+  padding-left: 15px;
+  padding-right: 50px;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.proof__income_item-field:nth-child(4) {
+	margin-bottom: 3px;
+}
+
+.proof__income_item-field span {
+	position: absolute;
+	line-height: 28px;
+	right: 15px;
+	top: 0;
+	font-size: 16px;
+	color: #8b8b8b;
+	font-family: 'Poppins-Light';
+}
+
+.proof__income_roi {
+	line-height: 36px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	color: #127aea;
+	font-family: 'Poppins-Bold';
+	font-size: 26px;
+	text-align: center;
+}
+
+.proof__income_bottom {
+	background: #127aea;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	line-height: 36px;
+	color: #fff;
+	font-size: 26px;
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-family: 'Poppins-Bold';
+}
+
+.proof__table {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.proof__table table {
+	width: 100%;
+}
+
+.proof__table table.wide-table {
+	min-width: 690px;
+}
+
+.proof__table table tr td {
+	line-height: 18px;
+	font-size: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	background: #fff;
+	color: #000;
+	font-family: 'Poppins-Light';
+}
+
+.proof__table table tr td:nth-child(1) {
+	font-family: 'Poppins-SemiBold';
+	text-align: left;
+}
+
+.proof__table table tr:nth-child(2n+1) td {
+	background-color: #f4f6f9;
+}
+
+.proof__table table tr:nth-child(1) td {
+	background: #127aea;
+	color: #fff;
+	font-size: 20px;
+	font-family: 'Poppins-SemiBold';
+}
+
+/*Roadmap*/
+
+.roadmap__period {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 35px;
+	padding-right: 35px;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.37);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.37);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.37);
+	margin-bottom: 9px;
+}
+
+.roadmap__period_title {
+	line-height: 24px;
+	float: left;
+	font-family: 'Poppins-SemiBold';
+	font-size: 14px;
+	color: #222;
+	width: 20px;
+	text-align: center;
+	margin-right: 30px;
+}
+
+.roadmap__period_start {
+	width: 60px;
+	margin-right: 5px;
+	line-height: 24px;
+	float: left;
+	color: #6c7a89;
+	font-size: 9px;
+	letter-spacing: 1.2px;
+	font-family: 'Poppins-Bold';
+	float: left;
+}
+
+.roadmap__period_end {
+	width: 60px;
+	line-height: 24px;
+	float: left;
+	color: #6c7a89;
+	font-size: 9px;
+	letter-spacing: 1.2px;
+	font-family: 'Poppins-Bold';
+	float: right;
+	margin-left: 5px;
+	text-align: right;
+}
+
+.roadmap__period_line {
+	width: calc(100% - 180px);
+	position: relative;
+	height: 24px;
+	float: left;
+}
+
+.roadmap__period_line:before {
+	position: absolute;
+	display: block;
+	content: "";
+	width: 100%;
+	height: 2px;
+	background: #e7e7e7;
+	top: 50%;
+	left: 0;
+	margin-top: -1px;
+}
+
+.roadmap__block {
+	padding: 35px;
+	padding-bottom: 26px;
+	margin-bottom: 9px;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.37);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.37);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.37);
+}
+
+.roadmap__range_perсent {
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 50%;
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	font-size: 13px;
+	font-family: 'Poppins-Medium';
+}
+
+.roadmap__range.blue .roadmap__range_perсent {
+	color: #fff;
+	background: #127aea;
+}
+.roadmap__range.dark .roadmap__range_perсent {
+	color: #fff;
+	background: #070b2f;
+}
+.roadmap__range.grey .roadmap__range_perсent {
+	color: #222;
+	background: #e7e7e7;
+}
+.roadmap__range_line-wrapper {
+	width: calc(100% - 41px);
+	float: left;
+}
+
+.roadmap__range_line {
+	line-height: 36px;
+	border-radius: 18px;
+	padding-left: 13px;
+	padding-right: 13px;
+	display: block;
+}
+
+.roadmap__range_line p {
+	line-height: 11px;
+	font-size: 9px;
+	font-family: 'Poppins-Medium';
+	display: inline-block;
+	text-transform: uppercase;
+	vertical-align: middle;
+	margin-bottom: 0;
+}
+
+.roadmap__range.blue .roadmap__range_line {
+	background: #127aea;
+}
+
+.roadmap__range.blue .roadmap__range_line p {
+	color: #fff;
+}
+.roadmap__range.dark .roadmap__range_line {
+	background: #070b2f;
+}
+
+.roadmap__range.dark .roadmap__range_line p {
+	color: #fff;
+}
+.roadmap__range.grey .roadmap__range_line {
+	background: #e7e7e7;
+}
+
+.roadmap__range.grey .roadmap__range_line p {
+	color: #222222;
+}
+
+.roadmap__range {
+	margin-bottom: 9px;
+}
+
+.buttons {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	z-index: 100;
+}
+
+.buttons a {
+	display: block;
+	-webkit-box-shadow: 0px 0px 12px 0px rgba(18,122,234,1);
+	-moz-box-shadow: 0px 0px 12px 0px rgba(18,122,234,1);
+	box-shadow: 0px 0px 12px 0px rgba(18,122,234,1);
+	width: 65px;
+	height: 65px;
+	border-radius: 9px;
+	border: none;
+	background: #127aea;
+	cursor: pointer;
+	outline: none;
+	display: block;
+	font-size: 25px;
+	z-index: 100;
+	position: relative;
+	text-decoration: none;
+	text-align: center;
+	line-height: 65px;
+}
+
+a.buttons__up {
+	margin-bottom: 10px;
+}
+
+a.buttons__up i {
+	color: #b8b8b8;
+}
+
+a.buttons__discord {
+	color: #fff;
+}
+
+.modal-discord {
+	width: 760px;
+	position: fixed;
+	z-index: 150;
+	top: 50%;
+	left: 50%;
+	height: 380px;
+	margin-left: -380px;
+	margin-top: -190px;
+	-webkit-box-shadow: 0px 0px 24px 0px rgba(174,174,174,1);
+	-moz-box-shadow: 0px 0px 24px 0px rgba(174,174,174,1);
+	box-shadow: 0px 0px 24px 0px rgba(174,174,174,1);
+	background-color: #c3c3c3;
+	background-color: linear-gradient(to bottom, #fafafa ,#c3c3c3);
+	background-image: url(../images/discord-bg.jpg);
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	border-radius: 11px;
+	overflow: hidden;
+	padding-top: 80px;
+	padding-left: 40px;
+	padding-right: 40px;
+	text-align: center;
+	display: none;
+}
+
+.modal-discord__close {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	cursor: pointer;
+	top: 11px;
+	right: 11px;
+	color: #d2d2d2;
+	font-size: 20px;
+}
+
+.modal-discord__title {
+	font-family: 'Poppins-Bold';
+	line-height: 50px;
+	font-size: 45px;
+	color: #222222;
+	text-align: center;
+	margin-bottom: 20px;
+	z-index: 300;
+	position: relative;
+}
+
+.modal-discord__signature {
+	line-height: 25px;
+	font-family: 'Poppins-Regular';
+	font-size: 17px;
+	text-align: center;
+	padding-left: 70px;
+	padding-right: 70px;
+	margin-bottom: 20px;
+	z-index: 300;
+	position: relative;
+}
+
+.modal-discord__button {
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+	z-index: 300;
+	position: relative;
+	outline: none;
+}
+
+.modal-discord .link-pulsation-wrapper {
+	margin-bottom: 0;
+}
+
+.modal-discord .pulse, .modal-discord .pulse2, .modal-discord .link-pulsation-wrapper img {
+	top: -70px;
+	left: calc(50% - 95px);
+    width: 190px;
+    height: 190px;
+}
+
+.buttons .link-pulsation-wrapper {
+	margin-bottom: 0;
+}
+
+.buttons .pulse, .buttons .pulse2, .buttons .link-pulsation-wrapper img {
+	position: absolute;
+    top: -10px;
+    left: calc(50% - 35px);
+    width: 70px;
+    height: 70px;
+}
+
+@media screen and (max-width: 1199px)  {
+	.team__person.active {
+		padding-bottom: 20px;
+		padding-top: 40px;
+	}
+
+	.team__photo {
+		margin-bottom: 20px;
+	}
+
+	.team__name {
+		margin-bottom: 0;
+	}
+
+	.team__socials {
+		margin-bottom: 15px;
+	}
+
+	.team__description {
+		line-height: 30px;
+		margin-bottom: 30px;
+	}
+
+	.team__quote {
+		line-height: 30px;
+	}
+
+	.exchanges__item_name {
+		width: 220px;
+		margin-right: 30px;
+	}
+
+	.exchanges__item_price-name {
+		width: 100px;
+		margin-right: 10px;
+	}
+
+	.exchanges__item_logo {
+		margin-right: 30px;
+		margin-left: 0;
+	}
+
+	.proof__income_item {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.buttons a {
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+	}
+
+}
+
+@media screen and (max-width: 991px) {
+	.team__person.active {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.team__content_right-wrapper {
+		padding-left: 20px;
+		padding-right: 10px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.exchanges__item_name {
+		width: 210px;
+		margin-right: 20px;
+	}
+
+	.exchanges__item_button {
+		width: 100%;
+		text-align: center;
+	}
+
+	.proof__block_invest-item {
+		width: calc(33.3% - 20px);
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.proof__income_item {
+		width: calc(50% - 30px);
+		margin-right: 30px;
+	}
+
+	.proof__income_item:nth-child(2) {
+		margin-right: 0;
+	}
+
+	.proof__table table tr td {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.modal-discord {
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 80%;
+		left: 0;
+		margin-left: 10%;
+		height: auto;
+		top: 10%;
+		margin-top: 0;
+		padding-bottom: 50px;
+		padding-top: 50px;
+	}
+
+	.modal-discord__title {
+		font-size: 30px;
+		line-height: 33px;
+	}
+
+	.modal-discord__signature {
+		font-size: 15px;
+		line-height: 20px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.team__content_left {
+		float: none;
+		width: 100%;
+	}
+
+	.team__content_right {
+		position: relative;
+		width: 100%;
+		height: 300px;
+	}
+
+	.content {
+		padding-top: 0;
+		padding-bottom: 50px;
+	}
+
+	.exchanges__item_name {
+		width: calc(100% - 90px);
+		text-align: center;
+		margin-right: 0;
+	}
+
+	.exchanges__item_price {
+		width: 270px;
+		position: relative;
+		left: 50%;
+		margin-left: -135px;
+	}
+
+	.exchanges__item_price-name {
+		width: 90px;
+	}
+
+	.exchanges__item_price-value {
+		width: 170px;
+		padding-left: 10px;
+	}
+
+	.exchanges__item_price-value span {
+		right: 10px;
+	}
+
+	.exchanges__item {
+		padding: 10px;
+	}
+
+	.proof__block_invest-item {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 15px;
+	}
+
+	.proof__block_invest-item:last-child {
+		margin-bottom: 0;
+	}
+
+	.proof__income_item {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.roadmap__period,
+	.roadmap__block {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.exchanges__item_logo {
+		width: 100%;
+		margin-right: 0;
+		text-align: center;
+	}
+
+	.exchanges__item_name {
+		width: 100%;
+		text-align: center;
+		font-size: 26px;
+	}
+
+	.exchanges__item {
+		padding-top: 80px;
+		padding-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.proof__block_text {
+		font-size: 17px;
+		line-height: 26px;
+	}
+
+	.proof__table table tr td {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.proof__income_bottom {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 24px;
+		line-height: 29px;
+	}
+
+	.proof__table table tr:nth-child(1) td {
+		font-size: 17px;
+	}
+
+	.proof__income_item {
+		margin-bottom: 15px;
+	}
+
+	.roadmap__range_line {
+		width: 100% !important;
+	}
+
+	.modal-discord__title {
+		font-size: 25px;
+		line-height: 28px;
+	}
+}
+
+.exchanges,
+.roadmap {
+	padding-top: 30px;
+}
+
+.team__content {
+	margin-top: 85px;
+}
+
+.team__person {
+	display: none;
+}
+
+#team-person-one {
+	display: block;
+}
+
+.proof {
+	padding-top: 20px;
+	margin-bottom: -30px;
+}
