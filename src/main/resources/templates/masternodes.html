@@ -9,23 +9,14 @@
 <html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head lang="en">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <title>Masternodes</title>
 
-    <link rel="stylesheet" href="css/custom.css"/>
+    <th:block th:replace="blocks/header :: head"></th:block>
+    <link rel="stylesheet" href="css/additions.css"/>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="js/tagManager.js"></script>
 </head>
 <body class="body-internal">
-<noscript style="display:none;visibility:hidden">
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
-            height="0" width="0"></iframe>
-</noscript>
-
 <header class="header-main">
     <th:block th:replace="blocks/header :: mainmenu"></th:block>
 </header>
@@ -335,6 +326,9 @@
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 
@@ -342,9 +336,6 @@
 
 <th:block th:replace="javascript/index/calculator :: code"></th:block>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
 
 <script src="js/bootstrap.js"></script>
 

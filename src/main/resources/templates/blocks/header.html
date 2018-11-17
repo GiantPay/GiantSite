@@ -50,11 +50,11 @@
     </script>
 </th:block>
 <body>
-<noscript style="display:none;visibility:hidden">
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
-            height="0" width="0"></iframe>
-</noscript>
 <th:block th:fragment="mainmenu">
+    <noscript style="display:none;visibility:hidden">
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
+                height="0" width="0"></iframe>
+    </noscript>
     <div class="header-top">
         <div class="container">
             <nav class="navbar navbar-default navbar-static-top navbar-expand-lg">
@@ -71,24 +71,48 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-main">
                     <ul class="nav navbar-nav">
-                        <li><a href="/whitepaper">White Paper</a></li>
-                        <li><a href="/wallet">WALLET</a></li>
-                        <li class="nav-item dropdown d-none">
+
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"
                                id="navbarDropdown"
                                href="#"
                                role="button"
                                data-toggle="dropdown"
                                aria-haspopup="true"
-                               aria-expanded="false">ABOUT</a>
+                               aria-expanded="false">About</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="d-none dropdown-item" href="/wallet">Wallets</a>
-                                <a class="dropdown-item" href="https://github.com/GiantPay" target="_blank"
-                                   rel="nofollow">Github</a>
-                                <a class="dropdown-item" href="/whitepaper">White Papers</a>
+                                <a class="dropdown-item" href="/whitepaper">White Paper</a>
                                 <a class="dropdown-item" href="/about">Specification</a>
                             </div>
                         </li>
+
+                        <li><a href="/products">PRODUCTS</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                               id="navbarDropdown"
+                               href="#"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">Giant Coin</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/masternodes">Masternodes</a>
+                                <a class="dropdown-item" href="/proof">Proof-of-Stake</a>
+                                <a class="dropdown-item" href="/exchange">Exchanges</a>
+                            </div>
+                        </li>
+
+                        <li><a href="/wallet">WALLET</a></li>
+
+                        <li><a href="http://explorer.giantpay.network" target="_blank">EXPLORER</a></li>
+                        <li class="d-none"><a href="/roadmap">WORKFLOW</a></li>
+
+                        <li class="d-none"><a href="/masternode">INVESTMENTS</a></li>
+                        <li class="d-none"><a href="https://github.com/GiantPay" target="_blank"
+                                              rel="nofollow">Github</a></li>
+
+                        <li><a href="/team">Team</a></li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"
@@ -99,32 +123,12 @@
                                aria-haspopup="true"
                                aria-expanded="false">WORKFLOW</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/team">Team</a>
-                                <a class="dropdown-item" href="/roadmap">RoadMap</a>
+                                <a class="dropdown-item" target="_blank" href="/roadmap">RoadMap</a>
+                                <a class="dropdown-item" target="_blank" href="https://trello.com/b/3QPfSlfL">Trello</a>
+                                <a class="dropdown-item" target="_blank" href="https://github.com/GiantPay">Github</a>
                             </div>
                         </li>
 
-                        <li class="d-none"><a href="/roadmap">WORKFLOW</a></li>
-                        <li><a href="/products">PRODUCTS</a></li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                               id="navbarDropdown"
-                               href="#"
-                               role="button"
-                               data-toggle="dropdown"
-                               aria-haspopup="true"
-                               aria-expanded="false">INVESTMENTS</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/masternodes">Masternodes</a>
-                                <a class="dropdown-item" href="/proof">Proof-of-Stake</a>
-                                <a class="dropdown-item" href="/exchange">Exchanges</a>
-                            </div>
-                        </li>
-
-                        <li class="d-none"><a href="/masternode">INVESTMENTS</a></li>
-                        <li class="d-none"><a href="https://github.com/GiantPay" target="_blank"
-                                              rel="nofollow">Github</a></li>
                         <li><a href="/pages">NEWS</a></li>
                     </ul>
                 </div>
@@ -167,6 +171,19 @@
             </nav>
         </div>
     </div>
+</th:block>
+
+<th:block th:fragment="header_scripts">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+    <script src="js/jquery.spincrement.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 </th:block>
 </body>
 </html>

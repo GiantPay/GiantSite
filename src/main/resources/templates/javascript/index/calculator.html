@@ -6,7 +6,7 @@
         $(function () {
             var rates = {
                 btc: parseFloat("[[${btcRate.toPlainString()}]]"),
-                usd: parseFloat("[[${btcRate.toPlainString()}]]")
+                usd: parseFloat("[[${usdRate.toPlainString()}]]")
             };
             var values = {
                 gic: 0,
@@ -147,6 +147,7 @@
                 });
 
                 $.getJSON("https://giantpay.network/api/gic/calc?amount=" + values.gic, function (r) {
+                    console.log(r);
                     $("#stakeInterval").text();
 
                     $("#posCalculator #averageDifficulty").text(r.avgDiff.toFixed(1));

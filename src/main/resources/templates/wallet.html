@@ -10,14 +10,13 @@
 <head>
     <title>Download Giant Coin wallet | Windows wallet | Linux 64-bit wallet | MAC wallet | Giant source code</title>
     <meta name="description" content="Hier you can find a list of all Giant wallets available and the source code.">
+
     <th:block th:replace="blocks/header :: head"></th:block>
-    <script src="js/tagManager.js"></script>
+    <link rel="stylesheet" href="css/additions.css"/>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
 </head>
 <body>
-<noscript style="display:none;visibility:hidden">
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
-            height="0" width="0"></iframe>
-</noscript>
+
 <header class="header-main">
     <th:block th:replace="blocks/header :: mainmenu"></th:block>
 </header>
@@ -287,6 +286,8 @@
         </div>
     </div>
 </div>
+
+<th:block th:replace="blocks/header :: header_scripts"></th:block>
 
 <th:block th:replace="blocks/footer :: footer"></th:block>
 <th:block th:replace="javascript/wallet/download :: code"></th:block>
