@@ -1,24 +1,23 @@
 package network.giantpay.web;
 
-import network.giantpay.dto.CoinInfoDto;
+import lombok.AllArgsConstructor;
 import network.giantpay.dto.InfoDto;
 import network.giantpay.service.MonitoringService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Map;
 
 @Controller
+@AllArgsConstructor
 public class AboutController {
 
-    @Autowired
-    private MonitoringService monitoringService;
+
+    private final MonitoringService monitoringService;
 
     @GetMapping("/about")
-    public String about(Map<String, Object> model) {
+    public String about(final Map<String, Object> model) {
 
         InfoDto info = monitoringService.getInfo();
         model.put("currentHeight", info.getHeight());
