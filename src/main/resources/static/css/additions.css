@@ -301,6 +301,13 @@ body {
     padding-top: 17px;
 }
 
+.exchanges__item_button a {
+    width: 182px;
+    height: 46px;
+    text-align: center;
+    display: block;
+}
+
 /*Proof of stake*/
 
 .proof__block {
