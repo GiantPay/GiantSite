@@ -47,4 +47,11 @@ public class RoadMap extends Identifiable {
     public boolean isEmpty() {
         return this.readyValue == 0;
     }
+
+    public static RoadMap withCurrentDate() {
+        final RoadMap roadMap = new RoadMap();
+        roadMap.setDate(new Date());
+
+        return roadMap;
+    }
 }

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -54,9 +53,7 @@ public class RoadmapController {
 
     @GetMapping("/roadmap/save")
     public String toSave(final Map<String, Object> model) {
-        final RoadMap roadMap = new RoadMap();
-        roadMap.setDate(new Date());
-        model.put("roadMap", roadMap);
+        model.put("roadMap", RoadMap.withCurrentDate());
         return "roadmapEdit";
     }
 

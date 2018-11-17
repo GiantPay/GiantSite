@@ -51,6 +51,7 @@ public class RoadMapsService {
         final List<Integer> years = this.availableYearsRepository.get();
         final Map<Integer, Map<String, List<RoadMap>>> result = new HashMap<>(4);
         final List<RoadMap> all = this.roadMapRepository.findAll();
+
         for (final int year : years) {
             final Map<String, List<RoadMap>> quarters = new HashMap<>(10);
 
