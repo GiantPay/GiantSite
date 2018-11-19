@@ -106,6 +106,10 @@ body {
     font-style: italic;
 }
 
+#smallQuote {
+    font-size: 16px;
+}
+
 .team__quote-author {
     line-height: 36px;
     font-size: 20px;
