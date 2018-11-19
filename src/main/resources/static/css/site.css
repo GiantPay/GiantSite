@@ -1080,8 +1080,9 @@ section.investments-calculator {
     padding: 3px 45px 3px 12px;
     position: relative;
     z-index: 100;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
+
 }
 
 em {
