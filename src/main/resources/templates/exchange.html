@@ -50,7 +50,7 @@
                             Price
                         </div>
                         <div class="exchanges__item_price-value">
-                            <strong th:text="${#numbers.formatDecimal(cryptobridge.last,1,'COMMA',8,'POINT')}"></strong>
+                            <p th:text="${#numbers.formatDecimal(cryptobridge.last,1,'COMMA',8,'POINT')}"></p>
                             <span>BTC</span>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                             Volume 24
                         </div>
                         <div class="exchanges__item_price-value">
-                            <strong th:text="${#numbers.formatDecimal(cryptobridge.volumeBtc,1,'COMMA',8,'POINT')}"></strong>
+                            <p th:text="${#numbers.formatDecimal(cryptobridge.volumeBtc,1,'COMMA',8,'POINT')}"></p>
                             <span>BTC</span>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                             Price
                         </div>
                         <div class="exchanges__item_price-value">
-                            <strong th:text="${#numbers.formatDecimal(graviex.last,1,'COMMA',8,'POINT')}"></strong>
+                            <p th:text="${#numbers.formatDecimal(graviex.last,1,'COMMA',8,'POINT')}"></p>
                             <span>BTC</span>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                             Volume 24
                         </div>
                         <div class="exchanges__item_price-value">
-                            <strong th:text="${#numbers.formatDecimal(graviex.volumeBtc,1,'COMMA',8,'POINT')}"></strong>
+                            <p th:text="${#numbers.formatDecimal(graviex.volumeBtc,1,'COMMA',8,'POINT')}"></p>
                             <span>BTC</span>
                         </div>
                     </div>
