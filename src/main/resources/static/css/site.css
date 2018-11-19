@@ -1069,7 +1069,7 @@ section.investments-calculator {
 }
 
 .calculator-block-r p, .calculator-block-r-input p {
-    text-align: center;
+    text-align: left;
 }
 
 .calculator-block-r-input input {
