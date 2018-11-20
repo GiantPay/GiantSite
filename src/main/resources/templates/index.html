@@ -521,6 +521,7 @@
 
             if (board.lists) {
                 board.lists.forEach(function (list) {
+                    //console.log(list);
                     var listName = list.name.toLowerCase().trim().replace(" ", "-");
                     if (listName === "in-progress") {
                         $("#inProgressUrl").attr("href", sprintUrl);
@@ -528,11 +529,13 @@
                         var inProgressCards = "";
                         if (list.cards) {
                             list.cards.forEach(function (card) {
-                                inProgressCards += "<li><a href="
-                                https://giantpay.network/\&quot;&quot;" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
+                              //  console.log(card);
+                                inProgressCards += "<li><a href="+
+                                "https://giantpay.network/\&quot;&quot;" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
                                     inProgressCount++;
                             });
                         }
+                        console.log(inProgressCards);
                         $("#inProgressCards").html(inProgressCards);
                     } else if (listName === "in-review") {
                         $("#inReviewUrl").attr("href", sprintUrl);
@@ -540,8 +543,8 @@
                         var inReviewCards = "";
                         if (list.cards) {
                             list.cards.forEach(function (card) {
-                                inReviewCards += "<li><a href="
-                                https://giantpay.network/\&quot;&quot;" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
+                                inReviewCards += "<li><a href="+
+                                "https://giantpay.network/\&quot;&quot;" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
                                     inReviewCount++;
                             });
                         }
@@ -552,8 +555,8 @@
                         var doneCards = "";
                         if (list.cards) {
                             list.cards.forEach(function (card) {
-                                doneCards += "<li><a href="
-                                https://giantpay.network/\&quot;&quot;" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
+                                doneCards += "<li><a href="+
+                                "https://giantpay.network/\&quot;&quot;" + card.url + "\" target='_blank' rel='nofollow'>" + card.name + "</a></li>";
                                     doneCount++;
                             });
                         }
