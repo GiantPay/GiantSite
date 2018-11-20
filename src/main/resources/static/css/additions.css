@@ -864,6 +864,8 @@ a.buttons__discord {
     .exchanges__item_button {
         width: 100%;
         text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
     .proof__block_invest-item {
