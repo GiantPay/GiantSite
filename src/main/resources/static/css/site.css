@@ -1888,7 +1888,7 @@ p.copy {
 
     ul.team-work-list {
         list-style: none;
-        padding: 0 20px;
+        padding: 0 30px 0 10px;
     }
 
     .nav-tabs-custom li a.nav-link {
@@ -3006,7 +3006,7 @@ li.dropdown-tabs-custom .nav-tabs, li.dropdown-tabs-custom .dropdown-menu {
 
     ul.team-work-list {
         list-style: none;
-        padding: 0 20px;
+        padding: 0 30px 0 10px;
     }
 
     .nav-tabs-custom li a.nav-link {
