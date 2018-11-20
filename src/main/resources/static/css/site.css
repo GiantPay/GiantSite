@@ -2857,6 +2857,7 @@ li.dropdown-tabs-custom .nav-tabs, li.dropdown-tabs-custom .dropdown-menu {
     h2.line-blu-internal {
         padding-top: 40px;
         margin-bottom: 30px;
+        text-align: left;
     }
 
     h3.h3-margin {
