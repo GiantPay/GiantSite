@@ -1844,7 +1844,7 @@ p.copy {
 }
 
 @media screen and (max-width: 480px) {
-
+    
     .header-bottom h1 {
         font-size: 55px;
         line-height: 30px;
@@ -1917,6 +1917,8 @@ p.copy {
     }
 }
 
+
+
 .sb-container {
     position: relative;
     overflow: hidden;
@@ -1930,6 +1932,13 @@ p.copy {
     overflow-y: scroll;
     box-sizing: border-box;
 }
+
+@media only screen and (max-width: 768px) {
+    .sb-content {
+        height: 200px;
+    }
+}
+
 
 .sb-scrollbar-container {
     position: absolute;
