@@ -1935,7 +1935,7 @@ p.copy {
 
 @media only screen and (max-width: 768px) {
     .sb-content {
-        height: 200px;
+        height: 500px;
     }
 }
 
