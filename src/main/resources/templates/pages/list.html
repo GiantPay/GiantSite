@@ -8,55 +8,16 @@
 <!--[if gt IE 8]><!-->
 <html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <title>Giant news | Contracts | Exchange | Progress reports</title>
+    <title>Giant news</title>
     <meta name="description"
           content="All the news of the project in one place. We reveal all the nuances and features.">
 
+    <th:block th:replace="blocks/header :: head"></th:block>
+    <link rel="stylesheet" href="css/fixes.css"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.4.0/css/slider-pro.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200i" rel="stylesheet">
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
-    <link rel="stylesheet" href="css/site.css"/>
-    <link rel="stylesheet" href="css/additions.css"/>
-
-    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-
-    <script src="js/tagManager.js"></script>
 </head>
 <body class="news-page">
-<noscript style="display:none;visibility:hidden">
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
-            height="0" width="0"></iframe>
-</noscript>
+
 <header class="header-main">
     <th:block th:replace="blocks/header :: mainmenu"></th:block>
 </header>
