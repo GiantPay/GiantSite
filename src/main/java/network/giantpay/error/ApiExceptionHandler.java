@@ -6,6 +6,7 @@ import com.google.common.base.Strings;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
@@ -41,5 +42,11 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
             status = HttpStatus.NOT_FOUND;
         }
         return handleExceptionInternal(apiException, jsonMapper.writeValueAsString(body), new HttpHeaders(), status, request);
+    }
+
+
+    @ExceptionHandler(UsernameNotFoundException.class)
+    protected String onAuthFailure() {
+        return "error";
     }
 }
