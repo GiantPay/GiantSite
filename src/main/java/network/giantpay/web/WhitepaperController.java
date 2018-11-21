@@ -11,12 +11,12 @@ public class WhitepaperController {
         return "whitepapers/giant";
     }
 
-    @GetMapping("/whitepaper/contracts")
+    @GetMapping("/giant-contracts")
     public String giantContractsWhitepaper() {
         return "whitepapers/giant-contracts";
     }
 
-    @GetMapping("/whitepaper/exchange")
+    @GetMapping("/giant-exchange")
     public String giantExchangeWhitepaper() {
         return "whitepapers/giant-exchange";
     }
