@@ -699,7 +699,7 @@ a.buttons__discord {
     z-index: 150;
     top: 50%;
     left: 50%;
-    height: 330px;
+    height: 350px;
     margin-left: -380px;
     margin-top: -190px;
     -webkit-box-shadow: 0px 0px 24px 0px rgba(174, 174, 174, 1);
@@ -714,7 +714,7 @@ a.buttons__discord {
     background-position: center center;
     border-radius: 11px;
     overflow: hidden;
-    padding-top: 30px;
+    padding-top: 40px;
     padding-left: 40px;
     padding-right: 40px;
     text-align: center;
