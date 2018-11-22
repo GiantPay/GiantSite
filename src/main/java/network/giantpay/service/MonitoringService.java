@@ -45,7 +45,7 @@ public class MonitoringService {
     private AtomicReference<BigDecimal> networkDifficulty = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<BigDecimal> coinSupply = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicLong masternodes = new AtomicLong(0);
-    private AtomicReference<BigDecimal> masternodeRoi = new AtomicReference<>(BigDecimal.ZERO);
+    private AtomicReference<RoiDto> masternodeRoi = new AtomicReference<>(RoiDto.EMPTY);
     private AtomicReference<BigDecimal> masternodeRoiDays = new AtomicReference<>(BigDecimal.ZERO);
     private AtomicReference<List<MasternodeDto>> masternodesList = new AtomicReference<>(ImmutableList.of());
     private Map<String, CoinInfoDto> coinInfos = Maps.newConcurrentMap();
@@ -99,7 +99,7 @@ public class MonitoringService {
         info.setNetworkDifficulty(networkDifficulty.get());
         info.setCoinSupply(coinSupply.get());
         info.setMasternodes(masternodes.get());
-        info.setMasternodeRoi(masternodeRoi.get());
+        info.setMasternodeRoi(masternodeRoi.get().getPerYear());
         info.setMasternodeRoiDays(masternodeRoiDays.get());
 
         return info;
@@ -342,11 +342,7 @@ public class MonitoringService {
             BigDecimal masternodeReward = GiantUtils.getMasternodeReward(height.get());
 
             if (this.masternodes.get() > 0) {
-                // 720 blocks per day, 365 days annualy
-                masternodeRoi.set(BigDecimal.valueOf(100 * 720 * 365)
-                        .multiply(masternodeReward)
-                        // 1000 colateral price
-                        .divide(BigDecimal.valueOf(1000 * this.masternodes.get()), 2, BigDecimal.ROUND_HALF_UP));
+                masternodeRoi.set(RoiDto.fromMasterNodeReward(masternodeReward, this.masternodes.get()));
 
                 // ROI days
                 masternodeRoiDays.set(BigDecimal.valueOf(1000L) // 1000 colateral price

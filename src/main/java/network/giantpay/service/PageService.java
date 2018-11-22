@@ -39,12 +39,12 @@ public class PageService {
         return pageRepository.findByUrl(url.trim());
     }
 
-    public Page edit(MultiValueMap params) {
+    public Page edit(MultiValueMap<String, Object> params) {
         String username = (String) params.getFirst("username");
         String password = (String) params.getFirst("password");
         User user = (User) userService.loadUserByUsername(username);
         if (user == null || !credentialService.apply(user, password)) {
-            throw new RuntimeException();
+            throw new RuntimeException(String.format("No user with such credentials %s %s", username, password));
         }
 
         Long id = Longs.tryParse((String) params.getFirst("id"));
