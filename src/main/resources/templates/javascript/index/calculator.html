@@ -25,7 +25,7 @@
             });
 
             $("#btcAmountGIC, #usdAmountGIC").on("keypress keyup", function (e) {
-              //  console.log("HERE");
+                //  console.log("HERE");
                 var $this = $(this);
                 var oldGicValue = parseFloat($this.val());
                 setTimeout(function () {
@@ -151,7 +151,7 @@
                     $("#mnMonthlyIncomeBtcMb").text(numeral(info.monthly * rates.btc * multiply).format('0,0.00000000'));
                     $("#mnAnnualIncomeBtcMb").text(numeral(info.annual * rates.btc * multiply).format('0,0.00000000'));
 
-                    $(".p-blu-h3.margin-0").text('ROI ' + (numeral(info.roi).format('0,0.00')) + '%');
+                    $(".p-blu-h3.margin-0").text('ROI ' + (numeral(info.roi.perYear).format('0,0.00')) + '%');
                     $("#mnRoiDays em").text(numeral(info.days).format('0'));
 
                     masternodeResult = true;
@@ -205,6 +205,8 @@
                     $("#totalUsdWeekly").text("$" + (4 * 604800.0 * rates.usd / r.avgDiffTime).toFixed(6));
                     $("#totalUsdMonthly").text("$" + (4 * 2592000.0 * rates.usd / r.avgDiffTime).toFixed(6));
 
+                    $("#sRoiPercent em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00'));
+                    $("#mnRoiPercent em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00'));
 
                     //CALC STAKE
                     $.getJSON("https://giantpay.network/api/gic/avg", function (stats) {
@@ -217,8 +219,12 @@
 
                         $("#statistics").show();
                     });
+                    /*Proof ROI 86400 = seconds in day*/
+                    $("#roiDay em").text(numeral(100 * 4 * 86400 / r.avgDiffTime / values.gic).format('0,0.00') + '%');
+                    $("#roiWeek em").text(numeral(100 * 4 * 86400 * 7 / r.avgDiffTime / values.gic).format('0,0.00') + '%');
+                    $("#roiMonth em").text(numeral(100 * 4 * 86400 * 30 / r.avgDiffTime / values.gic).format('0,0.00') + '%');
+                    $("#roiYear em").text(numeral(100 * 4 * 86400 * 365 / r.avgDiffTime / values.gic).format('0,0.00') + '%');
 
-                    $(".proof__income_roi em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00') + '%');
                     $("#sRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
 
                     posResult = true;
