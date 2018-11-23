@@ -698,6 +698,29 @@ a.buttons__discord {
     margin-left: 2px;
 }
 
+.dataTables_filter {
+    float: right;
+    text-align: right;
+}
+
+#masterNodesList_info {
+    margin-top: 15px;
+}
+
+#masterNodesList_filter label {
+    margin-left: 3px;
+}
+
+.dataTables_filter input {
+    margin-left: 5px;
+}
+
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
 .modal-discord {
     width: 650px;
     position: fixed;

@@ -29,43 +29,77 @@
 
         <h3 class="margin-0-767">What is Masternodes?</h3>
 
-        <p class="font20 margin-30 font-regular">Masternodes (bonded validator systems) are central hubs that maintain
-            the network in exchange for a reward. Each masternode plays a part in the process of block validation and
-            ensuring network stability. Thanks to masternodes, PrivateSend is possible for all Giant Coin holders — this
-            optional feature allows users to make their financial operations more confidential.
-
-            One of the main achievements of the Giant team has been making masternodes an important element of the smart
-            contracts ecosystem and self-governance mechanism.
-            In Giant, masternode technology is a way for investors to have a direct influence on the project’s
-            development. It also gives them the ability to deploy smart contracts in the mainnet and earn a source of
-            passive income.
-
-            In essence, this makes masternode owners essentially shareholders who have a vested interest in ensuring the
-            network’s stability, as well as motivating them to participate in budget allocation decisions of Giant-based
-            products and the Giant proposals fund.
-        </p>
-
-
+        <div class="proof__block_text">
+            <p>
+                Masternodes (bonded validator systems) are central hubs that maintain the network in exchange
+                <br>
+                for a reward. Each masternode plays a part in the process of block validation and ensuring
+                <br>
+                network stability. Thanks to masternodes, PrivateSend is possible for all Giant Coin holders —
+                <br>
+                this optional feature allows users to make their financial operations more confidential.
+                <br>
+            </p>
+            <p>
+                One of the main achievements of the Giant team has been making masternodes an important
+                <br>
+                element of the smart contracts ecosystem and self-governance mechanism.
+                <br>
+                In Giant, masternode technology is a way for investors to have a direct influence on the project’s
+                <br>
+                development. It also gives them the ability to deploy smart contracts in the mainnet and earn a
+                <br>
+                source of passive income.
+                <br>
+            </p>
+            <p>
+                In essence, this makes masternode owners essentially shareholders who have a vested interest
+                <br>
+                in ensuring the network’s stability, as well as motivating them to participate in budget allocation
+                <br>
+                decisions of Giant-based products and the Giant proposals fund.
+            </p>
+        </div>
         <h3 class="h3-margin">Reward Distribution</h3>
 
-        <p class="font20 margin-50 font-regular">The reward mechanism is fully transparent and, like in PoS, is
-            calculated by an explicit provision in the form of mathematical formula. This formula, however, is different
-            than the one used in the PoS rewards distribution.
 
-            The quantity of blocks in 24 hours is divided by the number of masternodes in the network and then
-            multiplied by 100%.
+        <div class="proof__block_text">
+            <p>
+                The reward mechanism is fully transparent and, like in PoS, is calculated by an explicit provision
+                <br>
+                in the form of mathematical formula. This formula, however, is different than the one used in the
+                <br>
+                PoS rewards distribution.
+            </p>
+            <p>
+                The quantity of blocks in 24 hours is divided by the number of masternodes in the network and
+                <br>
+                then multiplied by 100%.
+            </p>
+            <p>
+                Let’s review this formula using the Giant blockchain as a reference. The block time of Giant is
+                <br>
+                120 seconds, which means the average block quantity per day is 720. With 900 active
+                <br>
+                masternodes in the network, your chances to receive a reward are 80% (720/900*100%=80%).
+                <br>
+                Obviously, chances grow even higher if you have several masternodes in your possession. They
+                <br>
+                can be efficiently managed on a single Ubuntu server if you have an IPv6 connection. Each
+                <br>
+                masternode costs 1000 GIC, and the subsequent rewards for network maintenance can equal
+                <br>
+                1000 or more GIC in just a few months.
+            </p>
+            <p>
+                Masternodes are the cornerstones of the Giant economy — their permanent long-term growth will
+                <br>
+                lay a solid foundation for the stability of the Giant blockchain. More maintenance hubs means
+                <br>
+                faster transactions for all the decentralized apps that will be built on Giant in the future.
+            </p>
 
-            Let’s review this formula using the Giant blockchain as a reference. The block time of Giant is 120 seconds,
-            which means the average block quantity per day is 720. With 900 active masternodes in the network, your
-            chances to receive a reward are 80% (720/900*100%=80%). Obviously, chances grow even higher if you have
-            several masternodes in your possession. They can be efficiently managed on a single Ubuntu server if you
-            have an IPv6 connection. Each masternode costs 1000 GIC, and the subsequent rewards for network maintenance
-            can equal 1000 or more GIC in just a few months.
-
-            Masternodes are the cornerstones of the Giant economy — their permanent long-term growth will lay a solid
-            foundation for the stability of the Giant blockchain. More maintenance hubs means faster transactions for
-            all the decentralized apps that will be built on Giant in the future.
-        </p>
+        </div>
 
 
         <div class="block-blu">
@@ -535,7 +569,6 @@
                     "url": "/api/masternodes",
                     "dataSrc": ""
                 },
-                "dom" : '<"row"<"col-sm-4"l><"col-sm-4 text-center"p><"col-sm-4"f>>tip',
                 "columns": [
                     {"data": "address"},
                     {"data": "protocol"},
@@ -543,14 +576,6 @@
                     {"data": "status"}
                 ]
             });
-
-            /*$.getJSON("/api/masternodes", function (masternodes) {
-                var table = '';
-                $.each(masternodes, function (index, masternode) {
-                    table += '<tr><td>' + masternode.address + '</td><td>' + masternode.protocol + '</td><td>' + masternode.endpoint + '</td><td>' + masternode.status + '</td></tr>';
-                });
-                $('#masterNodesList').append(table);
-            });*/
 
         });
 
