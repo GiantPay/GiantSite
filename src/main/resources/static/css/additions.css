@@ -713,7 +713,6 @@ a.buttons__discord {
 
 div#masterNodesList_filter {
     margin-left: auto;
-    margin-top: 5px;
 }
 
 div#masterNodesList_wrapper {
@@ -736,12 +735,12 @@ tfoot input {
 }
 
 .modal-discord {
-    width: 650px;
+    width: 760px;
     position: fixed;
     z-index: 150;
     top: 50%;
     left: 50%;
-    height: 300px;
+    height: 380px;
     margin-left: -380px;
     margin-top: -190px;
     -webkit-box-shadow: 0px 0px 24px 0px rgba(174, 174, 174, 1);
