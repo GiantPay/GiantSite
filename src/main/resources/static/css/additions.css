@@ -707,16 +707,22 @@ a.buttons__discord {
     text-align: right;
 }
 
-.masternode{
+.masternode {
     font-style: italic;
+}
+
+div#masterNodesList_filter {
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+div#masterNodesList_wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #masterNodesList_info {
     margin-top: 15px;
-}
-
-#masterNodesList_filter label {
-    margin-left: 3px;
 }
 
 .dataTables_filter input {
