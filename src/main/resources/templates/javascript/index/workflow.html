@@ -13,7 +13,7 @@
                 return boardName.split("-")[1].replace(")", "").trim();
             }
 
-            $.getJSON("http://localhost:8081/api/workflow", function (board) {
+            $.getJSON("/api/workflow", function (board) {
                 var sprintName = parseSprintName(board.name);
                 var sprintPeriod = parseSprintPeriod(board.name);
                 var sprintUrl = board.url;

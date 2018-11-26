@@ -151,8 +151,15 @@
                     $("#mnMonthlyIncomeBtcMb").text(numeral(info.monthly * rates.btc * multiply).format('0,0.00000000'));
                     $("#mnAnnualIncomeBtcMb").text(numeral(info.annual * rates.btc * multiply).format('0,0.00000000'));
 
-                    $(".p-blu-h3.margin-0").text('ROI ' + (numeral(info.roi.perYear).format('0,0.00')) + '%');
-                    $("#mnRoiDays em").text(numeral(info.days).format('0'));
+                    $("#dayROI").text(numeral(info.roi.perDay).format('0,0.00') + "%");
+                    $("#weekROI").text(numeral(info.roi.perWeek).format('0,0.00') + "%");
+                    $("#monthROI").text(numeral(info.roi.perMonth).format('0,0.00') + "%");
+                    $("#yearROI").text(numeral(info.roi.perYear).format('0,0.00') + "%");
+
+                    $("#dayROIMb").text(numeral(info.roi.perDay).format('0,0.00') + "%");
+                    $("#weekROIMb").text(numeral(info.roi.perWeek).format('0,0.00') + "%");
+                    $("#monthROIMb").text(numeral(info.roi.perMonth).format('0,0.00') + "%");
+                    $("#yearROIMb").text(numeral(info.roi.perYear).format('0,0.00') + "%");
 
                     masternodeResult = true;
                     if (masternodeResult && posResult) {
@@ -207,6 +214,9 @@
 
                     $("#sRoiPercent em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00'));
                     $("#mnRoiPercent em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00'));
+                 //   console.log(values.gic + " " + r.avgDiffTime);
+                    $("#sRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
+                    $("#mnRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
 
                     //CALC STAKE
                     $.getJSON("https://giantpay.network/api/gic/avg", function (stats) {
@@ -224,8 +234,6 @@
                     $("#roiWeek em").text(numeral(100 * 4 * 86400 * 7 / r.avgDiffTime / values.gic).format('0,0.00') + '%');
                     $("#roiMonth em").text(numeral(100 * 4 * 86400 * 30 / r.avgDiffTime / values.gic).format('0,0.00') + '%');
                     $("#roiYear em").text(numeral(100 * 4 * 86400 * 365 / r.avgDiffTime / values.gic).format('0,0.00') + '%');
-
-                    $("#sRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
 
                     posResult = true;
                     if (masternodeResult && posResult) {

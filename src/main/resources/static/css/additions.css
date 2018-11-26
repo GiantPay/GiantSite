@@ -681,6 +681,10 @@ body {
     line-height: 65px;
 }
 
+div.dataTables_length {
+    margin-right: 1em;
+}
+
 a.buttons__up {
     margin-bottom: 10px;
 }
@@ -701,6 +705,10 @@ a.buttons__discord {
 .dataTables_filter {
     float: right;
     text-align: right;
+}
+
+.masternode{
+    font-style: italic;
 }
 
 #masterNodesList_info {

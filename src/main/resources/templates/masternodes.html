@@ -71,7 +71,7 @@
                 <br>
                 PoS rewards distribution.
             </p>
-            <p>
+            <p class="masternode">
                 The quantity of blocks in 24 hours is divided by the number of masternodes in the network and
                 <br>
                 then multiplied by 100%.
@@ -550,7 +550,7 @@
                     $("#roiPercent").text(numeral(info.roi.perYear).format('0,0.00') + "%");
                     $("#roiDays").text(numeral(info.days).format('0') + " days");
 
-
+                    console.log(info.roi)
                     /*ROIS*/
                     $("#dayROI").text(numeral(info.roi.perDay).format('0,0.00') + "%");
                     $("#weekROI").text(numeral(info.roi.perWeek).format('0,0.00') + "%");

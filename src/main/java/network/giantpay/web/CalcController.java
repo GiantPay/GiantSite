@@ -18,10 +18,10 @@ public class CalcController {
     @GetMapping("/calc")
     @ResponseStatus(HttpStatus.MOVED_PERMANENTLY)
     public String oldUrl() {
-        return "redirect:/";
+        return "redirect:/proof-of-stake";
     }
 
-    @GetMapping("/proof")
+    @GetMapping("/proof-of-stake")
     public String proofOfSake(final Map<String, Object> model) {
         this.rateService.accept(model);
 
