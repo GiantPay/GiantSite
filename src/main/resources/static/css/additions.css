@@ -739,7 +739,7 @@ tfoot input {
     width: 660px;
     position: fixed;
     z-index: 150;
-    top: 50%;
+    top: 55%;
     left: 50%;
     height: 300px;
     margin-left: -380px;
