@@ -735,6 +735,10 @@ tfoot input {
     box-sizing: border-box;
 }
 
+.paginate_button{
+    cursor: pointer;
+}
+
 .modal-discord {
     width: 660px;
     position: fixed;
@@ -742,8 +746,8 @@ tfoot input {
     top: 55%;
     left: 50%;
     height: 300px;
-    margin-left: -380px;
-    margin-top: -190px;
+    margin-left: -330px;
+    margin-top: -150px;
     -webkit-box-shadow: 0px 0px 24px 0px rgba(174, 174, 174, 1);
     -moz-box-shadow: 0px 0px 24px 0px rgba(174, 174, 174, 1);
     box-shadow: 0px 0px 24px 0px rgba(174, 174, 174, 1);
