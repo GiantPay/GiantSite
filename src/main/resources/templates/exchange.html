@@ -12,8 +12,8 @@
     <meta name="description"
           content="The Giant team main commitment is to keep the development public. Using the scrum methodology, we work in 14-day sprints. Sprint backlogs and results are posted on our website and the social media. Investors always see what we do and what to expect">
     <th:block th:replace="blocks/header :: head"></th:block>
-    <link rel="stylesheet" href="css/additions.css"/>
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
+    <link rel="stylesheet" th:href="@{'/css/additions.css'}"/>
+    <link rel="stylesheet" th:href="@{'/css/jquery.mCustomScrollbar.css'}"/>
 
 </head>
 <body>
@@ -298,7 +298,7 @@
 
 </script>
 
-<script src="js/scrollBar.js"></script>
+<script th:src="@{'/js/scrollBar.js'}"></script>
 
 <script>
     $(".custom-scroll").scrollBox();
@@ -306,10 +306,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
-<script src="js/morris.js"></script>
+<script th:src="@{'/js/morris.js'}"></script>
 
 
-<script src="js/jquery.sliderPro.min.js"></script>
+<script th:src="@{'/js/jquery.sliderPro.min.js'}"></script>
 <script>
     $(document).ready(function ($) {
         $('#example5').sliderPro({

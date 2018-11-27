@@ -13,7 +13,7 @@
           content="The Giant team main commitment is to keep the development public. Using the scrum methodology, we work in 14-day sprints. Sprint backlogs and results are posted on our website and the social media. Investors always see what we do and what to expect">
 
     <th:block th:replace="blocks/header :: head"></th:block>
-    <link rel="stylesheet" href="css/additions.css"/>
+    <link rel="stylesheet" th:href="@{'/css/additions.css'}"/>
 
 </head>
 <body th:with="years=${roadMaps}">
@@ -164,8 +164,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
-<script src="js/jquery.spincrement.min.js"></script>
-<script src="js/owl.carousel.js"></script>
+<script th:src="@{'/js/jquery.spincrement.min.js'}"></script>
+<script th:src="@{'/js/owl.carousel.js'}"></script>
 
 
 <script>
@@ -280,7 +280,7 @@
 
 </script>
 
-<script src="js/scrollBar.js"></script>
+<script th:src="@{'/js/scrollBar.js'}"></script>
 
 <script>
     $(".custom-scroll").scrollBox();
@@ -288,10 +288,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
-<script src="js/morris.js"></script>
+<script th:src="@{'/js/morris.js'}"></script>
 
 
-<script src="js/jquery.sliderPro.min.js"></script>
+<script th:src="@{'/js/jquery.sliderPro.min.js'}"></script>
 <script>
     $(document).ready(function ($) {
         $('#example5').sliderPro({

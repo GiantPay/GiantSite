@@ -12,8 +12,8 @@
     <title>Masternodes</title>
 
     <th:block th:replace="blocks/header :: head"></th:block>
-    <link rel="stylesheet" href="css/additions.css"/>
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
+    <link rel="stylesheet" th:href="@{'/css/additions.css'}"/>
+    <link rel="stylesheet" th:href="@{'/css/jquery.mCustomScrollbar.css'}"/>
 
 </head>
 <body class="body-internal">
@@ -497,7 +497,7 @@
 <th:block th:replace="javascript/index/calculator :: code"></th:block>
 
 
-<script src="js/bootstrap.js"></script>
+<script th:src="@{'/js/bootstrap.js'}"></script>
 
 
 <script>
@@ -550,7 +550,6 @@
                     $("#roiPercent").text(numeral(info.roi.perYear).format('0,0.00') + "%");
                     $("#roiDays").text(numeral(info.days).format('0') + " days");
 
-                    console.log(info.roi)
                     /*ROIS*/
                     $("#dayROI").text(numeral(info.roi.perDay).format('0,0.00') + "%");
                     $("#weekROI").text(numeral(info.roi.perWeek).format('0,0.00') + "%");

@@ -721,6 +721,7 @@ div#masterNodesList_wrapper {
 }
 
 #masterNodesList_info {
+    width: 100%;
     margin-top: 15px;
 }
 
@@ -735,12 +736,12 @@ tfoot input {
 }
 
 .modal-discord {
-    width: 760px;
+    width: 660px;
     position: fixed;
     z-index: 150;
     top: 50%;
     left: 50%;
-    height: 380px;
+    height: 300px;
     margin-left: -380px;
     margin-top: -190px;
     -webkit-box-shadow: 0px 0px 24px 0px rgba(174, 174, 174, 1);

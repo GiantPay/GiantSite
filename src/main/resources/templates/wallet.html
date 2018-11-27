@@ -6,13 +6,13 @@
 <!--[if IE 8]>
 <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <title>Download Giant Coin wallet | Windows wallet | Linux 64-bit wallet | MAC wallet | Giant source code</title>
     <meta name="description" content="Hier you can find a list of all Giant wallets available and the source code.">
 
 
-    <link rel="stylesheet" href="css/fixes.css"/>
+    <link rel="stylesheet" th:href="@{'/css/fixes.css'}"/>
     <th:block th:replace="blocks/header :: head"></th:block>
 
 </head>
@@ -292,8 +292,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
-<script src="js/jquery.spincrement.min.js"></script>
-<script src="js/owl.carousel.js"></script>
+<script th:src="@{'/js/jquery.spincrement.min.js'}"></script>
+<script th:src="@{'/js/owl.carousel.js'}"></script>
 
 
 <script>
@@ -416,10 +416,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
-<script src="js/morris.js"></script>
+<script th:src="@{'/js/morris.js'}"></script>
 
 
-<script src="js/jquery.sliderPro.min.js"></script>
+<script th:src="@{'/js/jquery.sliderPro.min.js'}"></script>
 <script>
     $(document).ready(function ($) {
         $('#example5').sliderPro({

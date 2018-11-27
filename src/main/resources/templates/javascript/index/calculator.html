@@ -25,7 +25,6 @@
             });
 
             $("#btcAmountGIC, #usdAmountGIC").on("keypress keyup", function (e) {
-                //  console.log("HERE");
                 var $this = $(this);
                 var oldGicValue = parseFloat($this.val());
                 setTimeout(function () {
@@ -214,7 +213,6 @@
 
                     $("#sRoiPercent em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00'));
                     $("#mnRoiPercent em").text(numeral(100 * 4 * 31536000 / r.avgDiffTime / values.gic).format('0,0.00'));
-                 //   console.log(values.gic + " " + r.avgDiffTime);
                     $("#sRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
                     $("#mnRoiDays em").text(numeral(values.gic / (4 * 86400.0 / r.avgDiffTime)).format('0'));
 
