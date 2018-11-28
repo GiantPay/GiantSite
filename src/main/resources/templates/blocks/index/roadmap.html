@@ -26,8 +26,8 @@
                                 <div class="list-square">
                                     <div class="list-square-block" th:each="roadMap : ${quarteredRoadMap.roadMaps}">
                                         <div class="list-square-l"></div>
-                                        <div class="list-square-c"><p th:text="${roadMap.event}"></p></div>
-                                        <div class="list-square-r"><p th:text="${roadMap.readyValue+' %'}"></p></div>
+                                        <div class="list-square-c" th:text="${roadMap.event}"></div>
+                                        <div class="list-square-r" th:text="${roadMap.readyValue+' %'}"></div>
                                     </div>
                                 </div>
                                 <button class="scroll-button scroll-bottom"
