@@ -62,11 +62,11 @@ section.transparent-team-work {
 	font-size: 13px;
 	font-family: 'Poppins-Regular';
 	margin-bottom: 14px;
-	display: -webkit-box;
+	/*display: -webkit-box;*/
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 124px;
+  /*height: 124px;*/
 }
 
 p.date {
