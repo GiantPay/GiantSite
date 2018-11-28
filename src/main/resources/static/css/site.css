@@ -573,14 +573,27 @@ canvas#chart-area {
 }
 
 .projects-giant-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
     box-shadow: 0 1px 6px 0 rgba(184, 206, 219, 0.86);
 }
 
 .projects-giant-block-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px 25px 35px 25px;
 }
 
 .projects-giant-block-text p:nth-child(2) {
+    align-items: initial;
+    flex-grow: 1;
     line-height: 36px;
 }
 
@@ -605,6 +618,10 @@ canvas#chart-area {
 
 .projects-giant-wrapper {
     margin-top: 45px;
+}
+
+.projects-giant-wrapper > .row {
+    flex-wrap: nowrap;
 }
 
 section.digital-asset {
