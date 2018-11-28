@@ -1185,7 +1185,7 @@ em {
 }
 
 .list-square-c {
-    width: calc(100% - 78px);
+    width: calc(100% - 100px);
 }
 
 .am-arrow-wrapper {
