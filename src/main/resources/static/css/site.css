@@ -616,11 +616,16 @@ canvas#chart-area {
 }
 
 .projects-giant-wrapper {
-    margin-top: 45px;
+    margin-top: 30px;
 }
 
 .projects-giant-wrapper > .row {
     flex-wrap: wrap;
+}
+
+.projects-giant-wrapper > .row > div{
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 section.digital-asset {
