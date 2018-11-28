@@ -1181,11 +1181,11 @@ em {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
 }
 
 .list-square-c {
-    width: calc(100% - 100px);
+    width: calc(100% - 78px);
 }
 
 .am-arrow-wrapper {
