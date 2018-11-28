@@ -20,7 +20,7 @@
                             <h3 th:text="${quarteredRoadMap.yearWithQuarter()}"></h3>
                             <div class="list-square-wrapper">
                                 <button class="scroll-top scroll-button"
-                                        th:if="${quarteredRoadMap.roadMaps.size()>5}">
+                                        th:if="${quarteredRoadMap.roadMaps.size()>7}">
                                     <img src="/images/roadmap_arrow.svg">
                                 </button>
                                 <div class="list-square">
@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                                 <button class="scroll-button scroll-bottom"
-                                        th:if="${quarteredRoadMap.roadMaps.size()>5}">
+                                        th:if="${quarteredRoadMap.roadMaps.size()>7}">
                                     <img src="/images/roadmap_arrow.svg">
                                 </button>
                             </div>
