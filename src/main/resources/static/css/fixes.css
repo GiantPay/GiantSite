@@ -35,7 +35,7 @@ section.transparent-team-work {
 	font-size: 24px;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	white-space: nowrap;
+	white-space: initial;
 }
 
 .information-slide-top {
@@ -58,15 +58,23 @@ section.transparent-team-work {
 }
 
 .information-slide-bottom > p {
+	flex-grow: 1;
 	line-height: 31px;
 	font-size: 13px;
 	font-family: 'Poppins-Regular';
 	margin-bottom: 14px;
-	/*display: -webkit-box;*/
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  /*height: 124px;*/
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: initial;
+}
+
+.owl-stage{
+	display: flex;
+}
+
+.news-list > .row > div{
+	display: flex;
+	margin-top: 15px;
 }
 
 p.date {

@@ -1449,6 +1449,9 @@ section.information {
 }
 
 .information-slide-bottom {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
     padding: 20px 24px 0 24px;
 }
 
@@ -1458,6 +1461,8 @@ section.information {
 }
 
 .information-slide {
+    display: flex;
+    flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 1px 6px 0 rgba(184, 206, 219, 0.86);
     background: #fff;
