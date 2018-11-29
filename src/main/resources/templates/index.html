@@ -99,8 +99,6 @@
 <th:block th:replace="javascript/index/calculator :: code"></th:block>
 
 
-
-
 <th:block th:replace="blocks/index/workflow :: block"></th:block>
 <th:block th:replace="blocks/index/news :: block"></th:block>
 
@@ -144,7 +142,6 @@
 </div>
 
 
-
 <script>
     $(document).ready(function () {
         $('.modal-discord__close').click(function () {
@@ -161,6 +158,29 @@
             $('.modal-discord').fadeIn(200);
         }
     })
+</script>
+<script>
+    $(document).ready(function () {
+        console.log("HERE");
+        $(".sp-slide").each(function (index, slide) {
+            var roadMapsAmount = slide.getElementsByClassName("list-square")[0].getElementsByClassName("list-square-block").length;
+            if ((roadMapsAmount <= 7 && isDesctop() || (roadMapsAmount <= 3 && !isDesctop()))) {
+                console.log("HERE");
+                slide.getElementsByClassName("scroll-top scroll-button")[0].style.visibility = 'hidden'
+                slide.getElementsByClassName("scroll-button scroll-bottom")[0].style.visibility = 'hidden'
+            }
+            var slides = slide.getElementsByClassName("list-square")[0].getElementsByClassName("list-square-block");
+            var textLength = 0;
+            for (var i = 0; i < slides.length; i++) {
+                textLength += slides[i].getElementsByClassName("list-square-c")[0].textContent.split("\n").length;
+            }
+            console.log("Length: " + textLength);
+        });
+    });
+
+    function isDesctop() {
+        return $(window).width() > 780;
+    }
 </script>
 <script>
     $(document).ready(function () {
@@ -382,7 +402,6 @@
 
     });
 </script>
-
 
 <script>
     $(function () {

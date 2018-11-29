@@ -1,3 +1,4 @@
+/*
 package network.giantpay.config;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -40,3 +41,4 @@ public class EmailConfig {
     }
 
 }
+*/

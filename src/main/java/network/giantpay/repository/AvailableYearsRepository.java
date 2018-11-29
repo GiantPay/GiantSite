@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 /**
- * Return a list of years from quarter tasks
+ * Return a sorted by asc list of {@link network.giantpay.model.RoadMap} years
  */
 @Component
 @AllArgsConstructor
