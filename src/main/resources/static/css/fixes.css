@@ -7,10 +7,62 @@ section.transparent-team-work {
 	background-color: #080a30;
 }
 
+.projects-giant-block-text p:nth-child(2) {
+    align-items: initial;
+    flex-grow: 1;
+}
+
+.projects-giant-wrapper {
+    margin-top: 30px;
+}
+
+.projects-giant-wrapper > .row {
+    flex-wrap: wrap;
+}
+
+.projects-giant-wrapper > .row > div{
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.projects-giant-block-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projects-giant-block {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.calculator-block-r p {
+    margin: 0 0 10px;
+}
+
+.information-slide-bottom {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.information-slide {
+    display: flex;
+    flex-direction: column;
+}
+
 .table-custom th {
 	font-family: 'Poppins-Light' !important;
 }
 
+.information-slide-bottom > p {
+    margin: 0px 0 10px 0;
+}
 .whitepaper-links a {
 	text-align: center;
 	margin-bottom: 20px;

@@ -573,26 +573,14 @@ canvas#chart-area {
 }
 
 .projects-giant-block {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 0;
-    padding-right: 0;
     box-shadow: 0 1px 6px 0 rgba(184, 206, 219, 0.86);
 }
 
 .projects-giant-block-text {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     padding: 20px 25px 35px 25px;
 }
 
 .projects-giant-block-text p:nth-child(2) {
-    align-items: initial;
-    flex-grow: 1;
     line-height: 36px;
 }
 
@@ -616,16 +604,7 @@ canvas#chart-area {
 }
 
 .projects-giant-wrapper {
-    margin-top: 30px;
-}
-
-.projects-giant-wrapper > .row {
-    flex-wrap: wrap;
-}
-
-.projects-giant-wrapper > .row > div{
-    flex-wrap: wrap;
-    margin-top: 15px;
+    margin-top: 45px;
 }
 
 section.digital-asset {
@@ -1139,8 +1118,9 @@ em {
 .calculator-block-r p {
     padding: 3px 45px 3px 12px;
     position: relative;
+    margin: 0;
     background-color: #e2e2e2;
-    margin: 0 0 10px;
+    margin-bottom: 10px;
     border-radius: 13px;
     color: #222;
 }
@@ -1449,9 +1429,6 @@ section.information {
 }
 
 .information-slide-bottom {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
     padding: 20px 24px 0 24px;
 }
 
@@ -1461,8 +1438,6 @@ section.information {
 }
 
 .information-slide {
-    display: flex;
-    flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 1px 6px 0 rgba(184, 206, 219, 0.86);
     background: #fff;
@@ -1496,7 +1471,7 @@ a.read-more:hover {
 
 .information-slide-bottom > p {
     line-height: 36px;
-    margin: 0px 0 10px 0;
+    margin: 15px 0 10px 0;
 }
 
 .button-center {
@@ -1869,7 +1844,7 @@ p.copy {
 }
 
 @media screen and (max-width: 480px) {
-
+    
     .header-bottom h1 {
         font-size: 55px;
         line-height: 30px;
