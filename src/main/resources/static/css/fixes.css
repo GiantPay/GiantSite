@@ -7,6 +7,18 @@ section.transparent-team-work {
 	background-color: #080a30;
 }
 
+.asterisk {
+	font-size: 16px;
+	font-family: "Poppins-Light";
+	color: #222;
+}
+
+.asterisk-text {
+	font-size: 13px;
+	font-family: "Poppins-Light";
+	color: #222;
+}
+
 .table-custom th {
 	font-family: 'Poppins-Light' !important;
 }
