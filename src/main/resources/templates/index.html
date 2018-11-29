@@ -164,7 +164,7 @@
         console.log("HERE");
         $(".sp-slide").each(function (index, slide) {
             var roadMapsAmount = slide.getElementsByClassName("list-square")[0].getElementsByClassName("list-square-block").length;
-            if ((roadMapsAmount < 7 && isDesctop() || (roadMapsAmount < 3 && !isDesctop()))) {
+            if ((roadMapsAmount <= 7 && isDesctop() || (roadMapsAmount < 3 && !isDesctop()))) {
                 console.log("HERE");
                 slide.getElementsByClassName("scroll-top scroll-button")[0].style.visibility = 'hidden'
                 slide.getElementsByClassName("scroll-button scroll-bottom")[0].style.visibility = 'hidden'
