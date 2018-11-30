@@ -49,7 +49,7 @@ public final class SiteMap implements CheckedRunnable {
             final List<String> urls = this.availableUrls.get();
             if (!urls.isEmpty()) {
                 for (final String url : urls) {
-                    sitemapGenerator.addUrl(new WebSitemapUrl(new WebSitemapUrl.Options(url).lastMod(new Date()).priority(1.0)));
+                    sitemapGenerator.addUrl(new WebSitemapUrl(new WebSitemapUrl.Options(url).lastMod(now).priority(1.0)));
                 }
                 sitemapGenerator.write();
             }
