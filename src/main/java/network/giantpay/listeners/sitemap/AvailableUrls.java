@@ -1,7 +1,6 @@
 package network.giantpay.listeners.sitemap;
 
 import lombok.RequiredArgsConstructor;
-import network.giantpay.repository.PagesUrlsRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -37,11 +36,6 @@ public final class AvailableUrls implements ApplicationListener<ContextRefreshed
      */
     private final Predicate<String> skipUrl;
 
-    /**
-     * Repository to get pages urls
-     */
-    private final PagesUrlsRepository pagesUrlsRepository;
-
     @Override
     public void onApplicationEvent(final ContextRefreshedEvent event) {
         final Map<RequestMappingInfo, HandlerMethod> methods = event.getApplicationContext()
@@ -75,6 +69,5 @@ public final class AvailableUrls implements ApplicationListener<ContextRefreshed
                 .filter(url -> !this.skipUrl.test(url))
                 .map(url -> BASE_URL + url)
                 .collect(toList()));
-        this.urls.addAll(this.pagesUrlsRepository.get());
     }
 }
