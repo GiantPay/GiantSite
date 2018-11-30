@@ -75,8 +75,6 @@ public final class AvailableUrls implements ApplicationListener<ContextRefreshed
                 .filter(url -> !this.skipUrl.test(url))
                 .map(url -> BASE_URL + url)
                 .collect(toList()));
-        this.urls.addAll(
-                this.pagesUrlsRepository.get()
-        );
+        this.urls.addAll(this.pagesUrlsRepository.get());
     }
 }
