@@ -24,6 +24,7 @@ public class PageService {
     private CredentialService credentialService;
 
     public List<Page> findAll(String category) {
+
         if (Strings.isNullOrEmpty(category)) {
             return pageRepository.findAllByVisibleTrueOrderByCreatedAtDesc();
         } else {
