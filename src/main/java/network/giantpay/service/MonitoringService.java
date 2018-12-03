@@ -361,7 +361,7 @@ public class MonitoringService {
                     masternodeDaily.get(),
                     masternodeMonthly.get(),
                     masternodeAnnual.get());
-            logger.info("MonitoringService :: updateMasternodes finished");
+            logger.info("MonitoringService :: update Masternodes finished");
         } catch (Exception e) {
             if (logger.isErrorEnabled()) {
                 logger.error(e.getMessage(), e);
