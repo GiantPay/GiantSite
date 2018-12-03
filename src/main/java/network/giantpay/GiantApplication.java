@@ -13,5 +13,4 @@ public class GiantApplication {
     public static void main(String[] args) {
         SpringApplication.run(GiantApplication.class, args);
     }
-
 }
