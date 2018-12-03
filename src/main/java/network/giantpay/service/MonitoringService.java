@@ -330,7 +330,7 @@ public class MonitoringService {
     @Scheduled(initialDelay = 10000, fixedRate = 60000)
     private void updateMasternodes() {
         try {
-            logger.info("MonitoringService :: updateMasternodes started");
+            logger.info("MonitoringService :: updateMaster nodes started");
 
             List<MasternodeDto> masternodes = giantWallet.masternodelist();
             this.masternodesList.set(masternodes);
