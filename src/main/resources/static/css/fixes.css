@@ -167,6 +167,13 @@ a.read-more {
 	padding-right: 10%;
 }
 
+@media screen and (min-width: 1000px) {
+
+	#indexHeader{
+		height: 1200px;
+	}
+}
+
 @media screen and (max-width: 991px) {
 	.header-top {
 		position: fixed;
