@@ -10,7 +10,7 @@ public interface PageRepository extends JpaRepository<Page, Long> {
 
     List<Page> findFirst7ByVisibleTrueOrderByCreatedAtDesc();
 
-    @Query(nativeQuery = true, value = "SELECT p.* FROM pages AS p WHERE p.visible AND upper(p.category) = upper(?) ORDER BY p.created_id DESC")
+    @Query(nativeQuery = true, value = "SELECT p.* FROM pages AS p WHERE p.visible AND upper(p.category) = upper(?) ORDER BY p.created_at DESC")
     List<Page> findAllByVisibleTrueAndCategoryOrderByCreatedAtDesc(String category);
 
     List<Page> findAllByVisibleTrueOrderByCreatedAtDesc();
