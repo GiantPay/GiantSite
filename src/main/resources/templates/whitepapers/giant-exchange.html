@@ -21,27 +21,7 @@
     <div class="container">
         <h1 class="line-blu line-blu-internal">Giant.Exchange White Paper</h1>
         <div class="row whitepaper-links">
-            <div class="col-sm-12 col-md-4">
-                <a href="/whitepaper">
-                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
-                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
-                    <span>Giant<br>White Paper</span>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <a href="/giant-contracts">
-                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
-                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
-                    <span>Giant Contracts<br>White Paper</span>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <a href="/giant-exchange" class="active">
-                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
-                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
-                    <span>Giant.Exchange<br>White Paper</span>
-                </a>
-            </div>
+            <th:block th:replace="javascript/whitepaper/main :: head"></th:block>
         </div>
         <div class="clearfix"></div>
         <div class="row">
@@ -269,7 +249,7 @@
                         which supports the smart contract technology. Giant technologies are designed in such a way that
                         the questions connected to &laquo;Smart Bets&raquo; are optimally solved. More information on
                         the Giant blockchain can be found in <a href="/whitepaper">the Giant White Paper</a> and in
-                        <a href="/giant-contracts">the Giant Contracts White Paper</a>. It is important to
+                        <a href="/whitepaper/contracts">the Giant Contracts White Paper</a>. It is important to
                         understand that in Giant.Exchange, the “Oracles” and the “Binary options” are smart contracts
                         and a purchase of a binary option is a payment for a call of a smart contract method. On the
                         Giant Exchange all the trades and payments will be only in the space of native tokens of the
@@ -688,7 +668,7 @@ class MyBinaryOption extends GEBinaryOption {
                     <h2 id="references">References</h2>
                     <ol start="1">
                         <li><a href="/whitepaper">Giant White Paper</a></li>
-                        <li><a href="/giant-contracts">Giant Contracts White Paper</a></li>
+                        <li><a href="/whitepaper/contracts">Giant Contracts White Paper</a></li>
                         <li><a href="https://giant.exchange" target="_blank">Airdrop Campaign registration</a></li>
                         <li><a href="https://giantpay.network" target="_blank">Giant blockchain website</a></li>
                     </ol>

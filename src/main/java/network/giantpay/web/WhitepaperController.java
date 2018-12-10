@@ -15,28 +15,15 @@ public class WhitepaperController {
         return "whitepapers/giant";
     }
 
-    @GetMapping("/giant-contracts")
+    @GetMapping("/whitepaper/contracts")
     public String giantContractsWhitepaper() {
         return "whitepapers/giant-contracts";
     }
 
-    @GetMapping("/giant-exchange")
+    @GetMapping("/whitepaper/exchange")
     public String giantExchangeWhitepaper() {
         return "whitepapers/giant-exchange";
     }
 
 
-    @GetMapping("/whitepaper/contracts")
-    public String oldContactsUrl(final HttpServletRequest request) {
-        request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.MOVED_PERMANENTLY);
-
-        return "redirect:/giant-contracts";
-    }
-
-    @GetMapping("/whitepaper/exchange")
-    public String oldExchangeUrl(final HttpServletRequest request) {
-        request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.MOVED_PERMANENTLY);
-
-        return "redirect:/giant-exchange";
-    }
 }
