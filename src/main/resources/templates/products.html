@@ -9,7 +9,8 @@
 <html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <title>Giant Products</title>
-    <meta name="description" content="The Giant blockchain has been designed to solve the problems of trust between the contracts and bets participants and of the safety of obligations fulfillment">
+    <meta name="description"
+          content="The Giant blockchain has been designed to solve the problems of trust between the contracts and bets participants and of the safety of obligations fulfillment">
     <th:block th:replace="blocks/header :: head"></th:block>
     <link rel="stylesheet" th:href="@{'/css/fixes.css'}"/>
 </head>
@@ -25,21 +26,21 @@
                 <div class="projects-tabs">
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="projects-tabs-tab _active"
+                            <div class="projects-tabs-tab " th:classappend="${exchange != null} ? _active: ''"
                                  data-target="#exchange"
                                  style="background-image: url('/images/projects_1.jpg')">
                                 <span class="projects-tabs-tab__text">Giant.Exchange</span>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="projects-tabs-tab"
+                            <div class="projects-tabs-tab" th:classappend="${bet != null} ? _active: ''"
                                  data-target="#bet"
                                  style="background-image: url('/images/projects_2.jpg')">
                                 <span class="projects-tabs-tab__text">Giant.Bet</span>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="projects-tabs-tab"
+                            <div class="projects-tabs-tab" th:classappend="${coldstake != null} ? _active: ''"
                                  data-target="#coldstake"
                                  style="background-image: url('/images/projects_3.jpg')">
                                 <span class="projects-tabs-tab__text">Giant.ColdStake</span>
@@ -48,7 +49,7 @@
                     </div>
                 </div>
                 <div class="projects-content">
-                    <div class="projects-content-block _active" id="exchange" style="display: block;">
+                    <div class="projects-content-block " id="exchange" th:classappend="${exchange != null} ? _active: ''" th:style="${exchange != null ? 'display:block' : 'display:noone'}">
                         <div class="projects-content__heading">Giant.Exchange</div>
                         <div class="projects-content__author">
                             <a href="https://giant.exchange" target="_blank">
@@ -77,7 +78,7 @@
                             <a class="btn btn-primary d-none" href="products.html#">Video</a>
                         </div>
                     </div>
-                    <div class="projects-content-block" id="bet" style="display: none;">
+                    <div class="projects-content-block" id="bet" th:classappend="${bet != null} ? _active: ''" th:style="${bet != null ? 'display:block' : 'display:noone'}">
                         <div class="projects-content__heading">Giant.Bet</div>
                         <div class="projects-content__author">
                             <img class="projects-content__icon" src="/images/arrow.svg"> Giant.Bet
@@ -108,7 +109,7 @@
                             <a class="btn btn-primary d-none" href="products.html#">Video</a>
                         </div>
                     </div>
-                    <div class="projects-content-block" id="coldstake" style="display: none;">
+                    <div class="projects-content-block" id="coldstake" th:classappend="${coldstake != null} ? _active: ''" th:style="${coldstake != null ? 'display:block' : 'display:noone'}">
                         <div class="projects-content__heading">Giant.ColdStake</div>
                         <div class="projects-content__author">
                             <img class="projects-content__icon" src="/images/arrow.svg"> Giant.ColdStake
@@ -392,41 +393,8 @@
 
         init();
 
-        var page = getUrlParameter("page");
-
-        if (page) {
-            var exchange = $('#exchange');
-            if (page === "bet") {
-                var bet = $('#bet');
-                bet.css("display", "block");
-                bet.addClass('_active');
-
-                exchange.removeClass('_active');
-                exchange.css("display", "none");
-
-                $('.projects-tabs-tab[data-target="#exchange"]').removeClass('_active');
-                $('.projects-tabs-tab[data-target="#bet"]').addClass('_active');
-
-            } else if (page === "coldstake") {
-                var coldstake = $('#coldstake');
-                coldstake.css("display", "block");
-                coldstake.addClass('_active');
-
-                exchange.removeClass('_active');
-                exchange.css("display", "none");
-
-                $('.projects-tabs-tab[data-target="#exchange"]').removeClass('_active');
-                $('.projects-tabs-tab[data-target="#coldstake"]').addClass('_active');
-            }
-        }
     });
 
-    function getUrlParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, '    '));
-    };
 </script>
 
 </body>
