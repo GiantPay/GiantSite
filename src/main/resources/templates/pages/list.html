@@ -13,7 +13,8 @@
           content="All the news of the project in one place. We reveal all the nuances and features.">
 
     <th:block th:replace="blocks/header :: head"></th:block>
-    <link rel="stylesheet" href="css/fixes.css"/>
+    <link rel="stylesheet" th:href="@{'/css/fixes.css'}"/>
+    <link rel="stylesheet" th:href="@{'/css/pages.css'}"/>
 
 </head>
 <body class="news-page">
