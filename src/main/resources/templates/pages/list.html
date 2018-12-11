@@ -54,8 +54,10 @@
                                 </a>
                             </div>
                             <div class="information-slide-bottom">
-                                <h3 th:text="${page.title}"></h3>
-                                <p th:text="${page.announcement}"></p>
+                                <a th:href="${'/pages' + page.url}" target="_blank" style="color: inherit">
+                                    <h3 th:text="${page.title}"></h3>
+                                    <p th:text="${page.announcement}"></p>
+                                </a>
                                 <div class="information-slide-bottom-date">
                                     <p class="date">
                                         <img src="/images/cal.svg">
