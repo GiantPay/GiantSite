@@ -26,21 +26,21 @@
                 <div class="projects-tabs">
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="projects-tabs-tab _active"
+                            <div class="projects-tabs-tab " th:classappend="${exchange} ? _active: ''"
                                  data-target="#exchange"
                                  style="background-image: url('/images/projects_1.jpg')">
                                 <span class="projects-tabs-tab__text">Giant.Exchange</span>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="projects-tabs-tab"
+                            <div class="projects-tabs-tab" th:classappend="${bet} ? _active: ''"
                                  data-target="#bet"
                                  style="background-image: url('/images/projects_2.jpg')">
                                 <span class="projects-tabs-tab__text">Giant.Bet</span>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="projects-tabs-tab"
+                            <div class="projects-tabs-tab" th:classappend="${coldstake} ? _active: ''"
                                  data-target="#coldstake"
                                  style="background-image: url('/images/projects_3.jpg')">
                                 <span class="projects-tabs-tab__text">Giant.ColdStake</span>
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="projects-content">
-                    <div class="projects-content-block _active" id="exchange" style="display: block;">
+                    <div class="projects-content-block " id="exchange" th:classappend="${exchange} ? _active: ''" th:style="${exchange} ? 'display:block' : 'display:noone'">
                         <div class="projects-content__heading">Giant.Exchange</div>
                         <div class="projects-content__author">
                             <a href="https://giant.exchange" target="_blank">
@@ -78,7 +78,7 @@
                             <a class="btn btn-primary d-none" href="products.html#">Video</a>
                         </div>
                     </div>
-                    <div class="projects-content-block" id="bet" style="display: none;">
+                    <div class="projects-content-block" id="bet" th:classappend="${bet} ? _active: ''" th:style="${bet} ? 'display:block' : 'display:noone'">
                         <div class="projects-content__heading">Giant.Bet</div>
                         <div class="projects-content__author">
                             <img class="projects-content__icon" src="/images/arrow.svg"> Giant.Bet
@@ -109,7 +109,7 @@
                             <a class="btn btn-primary d-none" href="products.html#">Video</a>
                         </div>
                     </div>
-                    <div class="projects-content-block" id="coldstake" style="display: none;">
+                    <div class="projects-content-block" id="coldstake" th:classappend="${coldstake} ? _active: ''" th:style="${coldstake} ? 'display:block' : 'display:noone'">
                         <div class="projects-content__heading">Giant.ColdStake</div>
                         <div class="projects-content__author">
                             <img class="projects-content__icon" src="/images/arrow.svg"> Giant.ColdStake
@@ -147,224 +147,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
 <script th:src="@{'/js/jquery.spincrement.min.js'}"></script>
-<script th:src="@{'/js/owl.carousel.js'}"></script>
-<script th:src="@{'/js/jquery.sliderPro.min.js'}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
-<script th:src="@{'/js/morris.js'}"></script>
-
-<script>
-    $(document).ready(function () {
-        $('.owl-carousel2, .owl-carousel5, .owl-carousel6').owlCarousel({
-            autoWidth: false,
-            autoPlay: true,
-            nav: false,
-            loop: true,
-            dots: false,
-            autoplayTimeout: 1000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                480: {
-                    items: 1
-                },
-                767: {
-                    items: 2
-                },
-                992: {
-                    items: 2
-                },
-                1200: {
-                    items: 2
-                },
-                1550: {
-                    items: 2
-                }
-            }
-        })
-    });
-    $(document).ready(function () {
-        $('.owl-carousel3').owlCarousel({
-            autoWidth: false,
-            autoPlay: true,
-            nav: false,
-            loop: true,
-            dots: false,
-            autoplayTimeout: 1000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                480: {
-                    items: 1
-                },
-                767: {
-                    items: 2
-                },
-                992: {
-                    items: 2
-                },
-                1200: {
-                    items: 2
-                },
-                1550: {
-                    items: 2
-                }
-            }
-        })
-    });
-
-    $(document).ready(function () {
-        $('.owl-carousel4').owlCarousel({
-            autoWidth: false,
-            autoPlay: true,
-            nav: false,
-            loop: true,
-            dots: false,
-            autoplayTimeout: 1000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                480: {
-                    items: 1
-                },
-                767: {
-                    items: 2
-                },
-                992: {
-                    items: 2
-                },
-                1200: {
-                    items: 3
-                },
-                1550: {
-                    items: 3
-                }
-            }
-        })
-    });
-    $('.am-prev').on('click', function () {
-        $('.owl-prev').trigger('click');
-    });
-
-
-    $('.am-next').on('click', function () {
-        $('.owl-next').trigger('click');
-    });
-
-    $('.am-prev2').on('click', function () {
-        $('.owl-prev').trigger('click');
-    });
-
-
-    $('.am-next2').on('click', function () {
-        $('.owl-next').trigger('click');
-    });
-
-</script>
 
 <script th:src="@{'/js/owl.carousel.js'}"></script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
-<script th:src="@{'/js/morris.js'}"></script>
-
-
-<script th:src="@{'/js/jquery.sliderPro.min.js'}"></script>
-<script>
-    $(document).ready(function ($) {
-        $('#example5').sliderPro({
-            orientation: 'vertical',
-            loop: true,
-            width: 900,
-            arrows: true,
-            buttons: false,
-            thumbnailsPosition: 'left',
-            thumbnailHeight: 100,
-            thumbnailPointer: true,
-            thumbnailWidth: 280,
-            autoplay: false,
-            startSlide: 3,
-            breakpoints: {
-                1199: {
-                    width: 900,
-                    thumbnailsPosition: 'left',
-                    thumbnailWidth: 280,
-                    thumbnailHeight: 100
-                },
-                991: {
-                    width: 900,
-                    thumbnailsPosition: 'left',
-                    height: 800,
-                    thumbnailWidth: 0,
-                    thumbnailHeight: 0
-                },
-                767: {
-                    width: 900,
-                    thumbnailsPosition: 'left',
-                    height: 800,
-                    thumbnailWidth: 0,
-                    thumbnailHeight: 0
-                },
-
-                480: {
-                    width: 500,
-                    thumbnailsPosition: 'left',
-                    height: 600,
-                    thumbnailWidth: 0,
-                    thumbnailHeight: 0
-                },
-                360: {
-                    width: 500,
-                    thumbnailsPosition: 'left',
-                    height: 700,
-                    thumbnailWidth: 0,
-                    thumbnailHeight: 0
-                }
-            }
-        });
-    });
-
-    $('.am-prev3').on('click', function () {
-        $('.sp-previous-arrow').trigger('click');
-    });
-
-    $('.am-next3').on('click', function () {
-        $('.sp-next-arrow').trigger('click');
-    });
-
-</script>
-
-
-<script type="text/javascript">
-    $(document).on("click.bs.dropdown.data-api", ".noclose", function (e) {
-        e.stopPropagation()
-    });
-    $('.dropdown-graphic input:checkbox').click(function () {
-        $('.count-span').html($('.dropdown-graphic input:checkbox:checked').length);
-    });
-</script>
-
-<script>
-    $(document).ready(function () {
-        $(".scroll-top").click(function (event) {
-            $(this).parent().find(".list-square").animate({scrollTop: '-=123'}, 500);
-        });
-
-        $(".scroll-bottom").click(function (event) {
-            $(this).parent().find(".list-square").animate({scrollTop: '+=123'}, 500);
-        });
-    });
-</script>
-
 
 <script>
     $(function () {
@@ -396,41 +181,8 @@
 
         init();
 
-        var page = getUrlParameter("page");
-
-        if (page) {
-            var exchange = $('#exchange');
-            if (page === "bet") {
-                var bet = $('#bet');
-                bet.css("display", "block");
-                bet.addClass('_active');
-
-                exchange.removeClass('_active');
-                exchange.css("display", "none");
-
-                $('.projects-tabs-tab[data-target="#exchange"]').removeClass('_active');
-                $('.projects-tabs-tab[data-target="#bet"]').addClass('_active');
-
-            } else if (page === "coldstake") {
-                var coldstake = $('#coldstake');
-                coldstake.css("display", "block");
-                coldstake.addClass('_active');
-
-                exchange.removeClass('_active');
-                exchange.css("display", "none");
-
-                $('.projects-tabs-tab[data-target="#exchange"]').removeClass('_active');
-                $('.projects-tabs-tab[data-target="#coldstake"]').addClass('_active');
-            }
-        }
     });
 
-    function getUrlParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, '    '));
-    };
 </script>
 
 </body>
