@@ -21,27 +21,7 @@
     <div class="container">
         <h1 class="line-blu line-blu-internal">Giant.Exchange White Paper</h1>
         <div class="row whitepaper-links">
-            <div class="col-sm-12 col-md-4">
-                <a href="/whitepaper">
-                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
-                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
-                    <span>Giant<br>White Paper</span>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <a href="/giant-contracts">
-                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
-                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
-                    <span>Giant Contracts<br>White Paper</span>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <a href="/giant-exchange" class="active">
-                    <img src="/images/logo_6.png" class="wp-logo" width="140"></img>
-                    <img src="/images/bg-wp-link-300.jpg" class="active wp-cover" width="300"/>
-                    <span>Giant.Exchange<br>White Paper</span>
-                </a>
-            </div>
+            <th:block th:replace="blocks/whitepaper/main :: head"></th:block>
         </div>
         <div class="clearfix"></div>
         <div class="row">
@@ -269,7 +249,7 @@
                         which supports the smart contract technology. Giant technologies are designed in such a way that
                         the questions connected to &laquo;Smart Bets&raquo; are optimally solved. More information on
                         the Giant blockchain can be found in <a href="/whitepaper">the Giant White Paper</a> and in
-                        <a href="/giant-contracts">the Giant Contracts White Paper</a>. It is important to
+                        <a href="/whitepaper/contracts">the Giant Contracts White Paper</a>. It is important to
                         understand that in Giant.Exchange, the “Oracles” and the “Binary options” are smart contracts
                         and a purchase of a binary option is a payment for a call of a smart contract method. On the
                         Giant Exchange all the trades and payments will be only in the space of native tokens of the
@@ -688,7 +668,7 @@ class MyBinaryOption extends GEBinaryOption {
                     <h2 id="references">References</h2>
                     <ol start="1">
                         <li><a href="/whitepaper">Giant White Paper</a></li>
-                        <li><a href="/giant-contracts">Giant Contracts White Paper</a></li>
+                        <li><a href="/whitepaper/contracts">Giant Contracts White Paper</a></li>
                         <li><a href="https://giant.exchange" target="_blank">Airdrop Campaign registration</a></li>
                         <li><a href="https://giantpay.network" target="_blank">Giant blockchain website</a></li>
                     </ol>
@@ -699,226 +679,7 @@ class MyBinaryOption extends GEBinaryOption {
 </section>
 
 <th:block th:replace="blocks/footer :: footer"></th:block>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
-<script src="js/jquery.spincrement.min.js"></script>
-<script src="js/owl.carousel.js"></script>
-
-
-<script>
-    $(document).ready(function () {
-        $('.owl-carousel2, .owl-carousel5, .owl-carousel6').owlCarousel({
-            autoWidth: false,
-            autoPlay: true,
-            nav: false,
-            loop: true,
-            dots: false,
-            autoplayTimeout: 1000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                480: {
-                    items: 1
-                },
-                767: {
-                    items: 2
-                },
-                992: {
-                    items: 2
-                },
-                1200: {
-                    items: 2
-                },
-                1550: {
-                    items: 2
-                }
-            }
-        })
-    });
-    $(document).ready(function () {
-        $('.owl-carousel3').owlCarousel({
-            autoWidth: false,
-            autoPlay: true,
-            nav: false,
-            loop: true,
-            dots: false,
-            autoplayTimeout: 1000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                480: {
-                    items: 1
-                },
-                767: {
-                    items: 2
-                },
-                992: {
-                    items: 2
-                },
-                1200: {
-                    items: 2
-                },
-                1550: {
-                    items: 2
-                }
-            }
-        })
-    });
-
-    $(document).ready(function () {
-        $('.owl-carousel4').owlCarousel({
-            autoWidth: false,
-            autoPlay: true,
-            nav: false,
-            loop: true,
-            dots: false,
-            autoplayTimeout: 1000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                480: {
-                    items: 1
-                },
-                767: {
-                    items: 2
-                },
-                992: {
-                    items: 2
-                },
-                1200: {
-                    items: 3
-                },
-                1550: {
-                    items: 3
-                }
-            }
-        })
-    });
-    $('.am-prev').on('click', function () {
-        $('.owl-prev').trigger('click');
-    });
-
-
-    $('.am-next').on('click', function () {
-        $('.owl-next').trigger('click');
-    });
-
-    $('.am-prev2').on('click', function () {
-        $('.owl-prev').trigger('click');
-    });
-
-
-    $('.am-next2').on('click', function () {
-        $('.owl-next').trigger('click');
-    });
-
-</script>
-
-<script src="js/scrollBar.js"></script>
-
-<script>
-    $(".custom-scroll").scrollBox();
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
-<script src="js/morris.js"></script>
-
-
-<script src="js/jquery.sliderPro.min.js"></script>
-<script>
-    $(document).ready(function ($) {
-        $('#example5').sliderPro({
-            orientation: 'vertical',
-            loop: true,
-            width: 900,
-            arrows: true,
-            buttons: false,
-            thumbnailsPosition: 'left',
-            thumbnailHeight: 100,
-            thumbnailPointer: true,
-            thumbnailWidth: 280,
-            autoplay: false,
-            startSlide: 3,
-            breakpoints: {
-                1199: {
-                    width: 900,
-                    thumbnailsPosition: 'left',
-                    thumbnailWidth: 280,
-                    thumbnailHeight: 100
-                },
-                991: {
-                    width: 900,
-                    thumbnailsPosition: 'left',
-                    height: 800,
-                    thumbnailWidth: 0,
-                    thumbnailHeight: 0
-                },
-                767: {
-                    width: 900,
-                    thumbnailsPosition: 'left',
-                    height: 800,
-                    thumbnailWidth: 0,
-                    thumbnailHeight: 0
-                },
-
-                480: {
-                    width: 500,
-                    thumbnailsPosition: 'left',
-                    height: 600,
-                    thumbnailWidth: 0,
-                    thumbnailHeight: 0
-                },
-                360: {
-                    width: 500,
-                    thumbnailsPosition: 'left',
-                    height: 700,
-                    thumbnailWidth: 0,
-                    thumbnailHeight: 0
-                }
-            }
-        });
-    });
-
-    $('.am-prev3').on('click', function () {
-        $('.sp-previous-arrow').trigger('click');
-    });
-
-    $('.am-next3').on('click', function () {
-        $('.sp-next-arrow').trigger('click');
-    });
-
-</script>
-
-
-<script type="text/javascript">
-    $(document).on("click.bs.dropdown.data-api", ".noclose", function (e) {
-        e.stopPropagation()
-    });
-    $('.dropdown-graphic input:checkbox').click(function () {
-        $('.count-span').html($('.dropdown-graphic input:checkbox:checked').length);
-    });
-</script>
-
-<script>
-    $(document).ready(function () {
-        $(".scroll-top").click(function (event) {
-            $(this).parent().find(".list-square").animate({scrollTop: '-=123'}, 500);
-        });
-
-        $(".scroll-bottom").click(function (event) {
-            $(this).parent().find(".list-square").animate({scrollTop: '+=123'}, 500);
-        });
-    });
-</script>
+<th:block th:replace="javascript/whitepaper/whitepaper :: code"></th:block>
 
 </body>
 </html>
