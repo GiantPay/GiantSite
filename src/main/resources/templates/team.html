@@ -12,6 +12,14 @@
     <meta name="description"
           content="The Giant team main commitment is to keep the development public. Using the scrum methodology, we work in 14-day sprints. Sprint backlogs and results are posted on our website and the social media. Investors always see what we do and what to expect">
 
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slider-pro/1.4.0/css/slider-pro.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i" rel="stylesheet">
     <link rel="stylesheet" th:href="@{'/css/jquery.mCustomScrollbar.css'}"/>
     <link rel="stylesheet" th:href="@{'/css/additions.css'}"/>
     <th:block th:replace="blocks/header :: head"></th:block>
@@ -674,7 +682,12 @@
 <script th:src="@{'/js/owl.carousel.js'}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script th:src="@{'/js/jquery.mCustomScrollbar.concat.min.js'}"></script>
-
-
+<script>
+    $('.team__block_person').click(function () {
+        $('.team__person').hide();
+        var link = $(this).attr('data-link');
+        $('#' + link).show();
+    });
+</script>
 </body>
 </html>
