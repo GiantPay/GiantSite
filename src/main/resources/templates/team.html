@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200i" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{'/css/jquery.mCustomScrollbar.css'}"/>
-    <link rel="stylesheet" th:href="@{'/css/additions.css'}"/>
-    <link rel="stylesheet" th:href="@{'/css/site.css'}"/>
+    <link rel="stylesheet" th:href="@{/css/jquery.mCustomScrollbar.css}"/>
+    <link rel="stylesheet" th:href="@{/css/additions.css}"/>
+    <link rel="stylesheet" th:href="@{/css/site.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
-    <script th:src="${'/js/tagManager.js'}"></script>
+    <script th:src="@{/js/tagManager.js}"></script>
 
     <th:block th:replace="blocks/browserIcons :: icons"></th:block>
 
@@ -42,7 +42,7 @@
             <div class="team__content_left">
                 <div class="team__person active" id="team-person-one">
                     <div class="team__photo">
-                        <img src="/images/team/dmitryF.png" alt="Dmitry Filinberg">
+                        <img th:src="@{/images/team/dmitryF.png}" alt="Dmitry Filinberg">
                     </div>
                     <div class="team__name">
                         Dmitry Filinberg
@@ -71,7 +71,7 @@
 
                 <div class="team__person" id="team-person-two">
                     <div class="team__photo">
-                        <img src="/images/team/pavel.png" alt="Pavel Bulatov">
+                        <img th:src="@{/images/team/pavel.png}" alt="Pavel Bulatov">
                     </div>
                     <div class="team__name">
                         Pavel Bulatov
@@ -101,7 +101,7 @@
 
                 <div class="team__person" id="team-person-three">
                     <div class="team__photo">
-                        <img src="/images/team/mikhail.png" alt="Mikhail Maximov">
+                        <img th:src="@{/images/team/mikhail.png}" alt="Mikhail Maximov">
                     </div>
                     <div class="team__name">
                         Mikhail Maximov
@@ -132,7 +132,7 @@
 
                 <div class="team__person" id="team-person-four">
                     <div class="team__photo">
-                        <img src="/images/team/maria.png" alt="Maria Sergeeva">
+                        <img th:src="@{/images/team/maria.png}" alt="Maria Sergeeva">
                     </div>
                     <div class="team__name">
                         Maria Sergeeva
@@ -163,7 +163,7 @@
 
                 <div class="team__person" id="team-person-five">
                     <div class="team__photo">
-                        <img src="/images/team/nikolay.png" alt="Nikolay Korinets">
+                        <img th:src="@{/images/team/nikolay.png}" alt="Nikolay Korinets">
                     </div>
                     <div class="team__name">
                         Nikolay Korinets
@@ -193,7 +193,7 @@
 
                 <div class="team__person" id="team-person-six">
                     <div class="team__photo">
-                        <img src="/images/team/nastya.jpeg" alt="Anastasia Chumachenko">
+                        <img th:src="@{/images/team/nastya.jpeg}" alt="Anastasia Chumachenko">
                     </div>
                     <div class="team__name">
                         Anastasia Chumachenko
@@ -221,7 +221,7 @@
 
                 <div class="team__person" id="team-person-seven">
                     <div class="team__photo">
-                        <img src="/images/team/dmitryM.png" alt="Dmitry Myachin">
+                        <img th:src="@{/images/team/dmitryM.png}" alt="Dmitry Myachin">
                     </div>
                     <div class="team__name">
                         Dmitry Myachin
@@ -248,7 +248,7 @@
 
                 <div class="team__person" id="team-person-eight">
                     <div class="team__photo">
-                        <img src="/images/team/ablai.png" alt="Ablai Tursumbekov">
+                        <img th:src="@{/images/team/ablai.png}" alt="Ablai Tursumbekov">
                     </div>
                     <div class="team__name">
                         Ablai Tursumbekov
@@ -277,7 +277,7 @@
 
                 <div class="team__person" id="team-person-nine">
                     <div class="team__photo">
-                        <img src="/images/team/denis.jpeg" alt="Denis Seliverstov">
+                        <img th:src="@{/images/team/denis.jpeg}" alt="Denis Seliverstov">
                     </div>
                     <div class="team__name">
                         Denis Seliverstov
@@ -305,7 +305,7 @@
 
                 <div class="team__person" id="team-person-ten">
                     <div class="team__photo">
-                        <img src="/images/team/alexei.png" alt="Alexei Bokarev">
+                        <img th:src="@{/images/team/alexei.png}" alt="Alexei Bokarev">
                     </div>
                     <div class="team__name">
                         Alexei Bokarev
@@ -333,7 +333,7 @@
 
                 <div class="team__person" id="team-person-eleven">
                     <div class="team__photo">
-                        <img src="/images/team/almas.jpg" alt="Almas Abdrazak">
+                        <img th:src="@{/images/team/almas.jpg}" alt="Almas Abdrazak">
                     </div>
                     <div class="team__name">
                         Almas Abdrazak
@@ -362,7 +362,7 @@
 
                 <div class="team__person" id="team-person-twelve">
                     <div class="team__photo">
-                        <img src="/images/team/ian.jpeg" alt="Ian Burtovoy">
+                        <img th:src="@{/images/team/ian.jpeg}" alt="Ian Burtovoy">
                     </div>
                     <div class="team__name">
                         Ian Burtovoy
@@ -391,7 +391,7 @@
 
                 <div class="team__person" id="team-person-thirteen">
                     <div class="team__photo">
-                        <img src="/images/team/tuan.jpg" alt="Tuan Nguyen">
+                        <img th:src="@{/images/team/tuan.jpg}" alt="Tuan Nguyen">
                     </div>
                     <div class="team__name">
                         Tuan Nguyen
@@ -418,7 +418,7 @@
 
                 <div class="team__person" id="team-person-fourteen">
                     <div class="team__photo">
-                        <img src="/images/team/veeramanikandan.jpg" alt="Veeramanikandan Arunachalam">
+                        <img th:src="@{/images/team/veeramanikandan.jpg}" alt="Veeramanikandan Arunachalam">
                     </div>
                     <div class="team__name">
                         Veeramanikandan Arunachalam
@@ -445,7 +445,7 @@
 
                 <div class="team__person" id="team-person-fifteen">
                     <div class="team__photo">
-                        <img src="/images/team/alessio.jpg" alt="Alessio Mercurio">
+                        <img th:src="@{/images/team/alessio.jpg}" alt="Alessio Mercurio">
                     </div>
                     <div class="team__name">
                         Alessio Mercurio
@@ -480,7 +480,7 @@
                         </div>
                         <div class="team__block_person clear" data-link="team-person-one">
                             <div class="team__block_person-img">
-                                <img src="/images/team/dmitryF.png" alt="Person photo">
+                                <img th:src="@{/images/team/dmitryF.png}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Dmitry Filinberg
@@ -492,7 +492,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-two">
                             <div class="team__block_person-img">
-                                <img src="/images/team/pavel.png" alt="Person photo">
+                                <img th:src="@{/images/team/pavel.png}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Pavel Bulatov
@@ -504,7 +504,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-three">
                             <div class="team__block_person-img">
-                                <img src="/images/team/mikhail.png" alt="Person photo">
+                                <img th:src="@{/images/team/mikhail.png}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Mikhail Maximov
@@ -521,7 +521,7 @@
                         </div>
                         <div class="team__block_person clear" data-link="team-person-four">
                             <div class="team__block_person-img">
-                                <img src="/images/team/maria.png" alt="Person photo">
+                                <img th:src="@{/images/team/maria.png}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Maria Sergeeva
@@ -533,7 +533,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-five">
                             <div class="team__block_person-img">
-                                <img src="/images/team/nikolay.png" alt="Person photo">
+                                <img th:src="@{/images/team/nikolay.png}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Nikolay Korinets
@@ -545,7 +545,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-six">
                             <div class="team__block_person-img">
-                                <img src="/images/team/nastya.jpeg" alt="Person photo">
+                                <img th:src="@{/images/team/nastya.jpeg}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Anastasia Chumachenko
@@ -557,7 +557,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-seven">
                             <div class="team__block_person-img">
-                                <img src="/images/team/dmitryM.png" alt="Person photo">
+                                <img th:src="@{/images/team/dmitryM.png}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Dmitry Myachin
@@ -569,7 +569,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-eight">
                             <div class="team__block_person-img">
-                                <img src="/images/team/ablai.png" alt="Person photo">
+                                <img th:src="@{/images/team/ablai.png}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Ablai Tursumbekov
@@ -581,7 +581,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-nine">
                             <div class="team__block_person-img">
-                                <img src="/images/team/denis.jpeg" alt="Person photo">
+                                <img th:src="@{/images/team/denis.jpeg}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Denis Seliverstov
@@ -593,7 +593,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-ten">
                             <div class="team__block_person-img">
-                                <img src="/images/team/alexei.png" alt="Person photo">
+                                <img th:src="@{/images/team/alexei.png}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Alexei Bokarev
@@ -605,7 +605,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-eleven">
                             <div class="team__block_person-img">
-                                <img src="/images/team/almas.jpg" alt="Person photo">
+                                <img th:src="@{/images/team/almas.jpg}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Almas Abdrazak
@@ -617,7 +617,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-twelve">
                             <div class="team__block_person-img">
-                                <img src="/images/team/ian.jpeg" alt="Person photo">
+                                <img th:src="@{/images/team/ian.jpeg}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Ian Burtovoy
@@ -629,7 +629,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-thirteen">
                             <div class="team__block_person-img">
-                                <img src="/images/team/tuan.jpg" alt="Person photo">
+                                <img th:src="@{/images/team/tuan.jpg}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Tuan Nguyen
@@ -641,7 +641,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-fourteen">
                             <div class="team__block_person-img">
-                                <img src="/images/team/veeramanikandan.jpg" alt="Veeramanikandan Arunachalam">
+                                <img th:src="@{/images/team/veeramanikandan.jpg}" alt="Veeramanikandan Arunachalam">
                             </div>
                             <div class="team__block_person-name">
                                 Veeramanikandan Arunachalam
@@ -653,7 +653,7 @@
 
                         <div class="team__block_person clear" data-link="team-person-fifteen">
                             <div class="team__block_person-img">
-                                <img src="/images/team/alessio.jpg" alt="Person photo">
+                                <img th:src="@{/images/team/alessio.jpg}" alt="Person photo">
                             </div>
                             <div class="team__block_person-name">
                                 Alessio Mercurio
@@ -679,8 +679,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
-<script th:src="@{'/js/jquery.spincrement.min.js'}"></script>
-<script th:src="@{'/js/owl.carousel.js'}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script th:src="@{'/js/jquery.mCustomScrollbar.concat.min.js'}"></script>
 

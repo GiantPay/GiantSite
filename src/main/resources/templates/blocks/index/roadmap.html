@@ -6,7 +6,7 @@
         <div class="container">
             <h2 class="line-blu">Roadmap</h2>
             <div class="am-arrow-wrapper">
-                <div class="am-arrow am-prev3"><img src="/images/slide_arrow.svg"></div>
+                <div class="am-arrow am-prev3"><img th:src="@{/images/slide_arrow.svg}"></div>
             </div>
             <div id="example5" class="slider-pro">
                 <div class="sp-thumbnails">
@@ -20,7 +20,7 @@
                             <h3 th:text="${quarteredRoadMap.yearWithQuarter()}"></h3>
                             <div class="list-square-wrapper">
                                 <button class="scroll-top scroll-button">
-                                    <img src="/images/roadmap_arrow.svg">
+                                    <img th:src="@{/images/roadmap_arrow.svg}">
                                 </button>
                                 <div class="list-square">
                                     <div class="list-square-block" th:each="roadMap : ${quarteredRoadMap.roadMaps}">
@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                                 <button class="scroll-button scroll-bottom">
-                                    <img src="/images/roadmap_arrow.svg">
+                                    <img th:src="@{/images/roadmap_arrow.svg}">
                                 </button>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="am-arrow-wrapper">
-                <div class="am-arrow am-next3"><img src="/images/slide_arrow.svg"></div>
+                <div class="am-arrow am-next3"><img th:src="@{/images/slide_arrow.svg}"></div>
             </div>
         </div>
     </section>

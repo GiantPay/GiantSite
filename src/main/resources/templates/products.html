@@ -53,11 +53,11 @@
                         <div class="projects-content__heading">Giant.Exchange</div>
                         <div class="projects-content__author">
                             <a href="https://giant.exchange" target="_blank">
-                                <img class="projects-content__icon" src="/images/arrow.svg"> Giant.Exchange
+                                <img class="projects-content__icon" th:src="@{/images/arrow.svg}"> Giant.Exchange
                             </a>
                         </div>
                         <div class="projects-content__date">
-                            <img class="projects-content__icon" src="/images/date.svg"> Release date Q4 2018
+                            <img class="projects-content__icon" th:src="@{/images/date.svg}"> Release date Q4 2018
                         </div>
                         <p class="projects-content-block-text">
                             This decentralized binary options platform puts every step of traditional binary options
@@ -81,9 +81,9 @@
                     <div class="projects-content-block" id="bet" th:classappend="${bet} ? _active: ''" th:style="${bet} ? 'display:block' : 'display:noone'">
                         <div class="projects-content__heading">Giant.Bet</div>
                         <div class="projects-content__author">
-                            <img class="projects-content__icon" src="/images/arrow.svg"> Giant.Bet
+                            <img class="projects-content__icon" th:src="@{/images/arrow.svg}"> Giant.Bet
                         </div>
-                        <div class="projects-content__date"><img class="projects-content__icon" src="/images/date.svg">
+                        <div class="projects-content__date"><img class="projects-content__icon" th:src="@{/images/date.svg}">
                             Release date Q3 2019
                         </div>
                         <p class="projects-content-block-text">
@@ -112,10 +112,10 @@
                     <div class="projects-content-block" id="coldstake" th:classappend="${coldstake} ? _active: ''" th:style="${coldstake} ? 'display:block' : 'display:noone'">
                         <div class="projects-content__heading">Giant.ColdStake</div>
                         <div class="projects-content__author">
-                            <img class="projects-content__icon" src="/images/arrow.svg"> Giant.ColdStake
+                            <img class="projects-content__icon" th:src="@{/images/arrow.svg}"> Giant.ColdStake
                         </div>
                         <div class="projects-content__date">
-                            <img class="projects-content__icon" src="/images/date.svg"> Release date Q3 2019
+                            <img class="projects-content__icon" th:src="@{/images/date.svg}"> Release date Q3 2019
                         </div>
                         <p class="projects-content-block-text">
                             This project seriously differs from two previously explained, as it is aimed solely at the
@@ -144,13 +144,6 @@
 </div>
 
 <th:block th:replace="blocks/footer :: footer"></th:block>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script th:src="@{'/js/jquery.spincrement.min.js'}"></script>
-
-<script th:src="@{'/js/owl.carousel.js'}"></script>
-
 <script>
     $(function () {
         var $tabs;
