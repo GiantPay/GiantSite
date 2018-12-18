@@ -13,8 +13,8 @@
           content="All the news of the project in one place. We reveal all the nuances and features.">
 
     <th:block th:replace="blocks/header :: head"></th:block>
-    <link rel="stylesheet" th:href="@{/css/fixes.css}"/>
-    <link rel="stylesheet" th:href="@{/css/pages.css}"/>
+    <link rel="stylesheet" th:href="@{/css/news.css}"/>
+    <link rel="stylesheet" th:href="@{/css/site.css}"/>
 
 </head>
 <body class="news-page">
@@ -46,26 +46,28 @@
             </div>
             <div class="col-md-12 col-lg-9 news-list">
                 <div class="row">
-                    <div th:each="page : ${pages}" class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="information-slide">
-                            <div class="information-slide-top">
+                    <div class="news__items">
+                        <div th:each="page : ${pages}" class="news__item flex">
+                            <div class="news__item_img">
                                 <a th:href="${'/pages' + page.url}" target="_blank">
-                                    <img class="cover" th:src="${page.coverUrl}">
+                                    <img th:src="${page.coverUrl}">
                                 </a>
                             </div>
-                            <div class="information-slide-bottom">
+                            <div class="news__item_info">
                                 <a th:href="${'/pages' + page.url}" target="_blank" style="color: inherit">
-                                    <h3 th:text="${page.title}"></h3>
+                                    <div class="news__item_title" th:text="${page.title}"></div>
                                     <p th:text="${page.announcement}"></p>
                                 </a>
-                                <div class="information-slide-bottom-date">
-                                    <p class="date">
-                                        <img src="/images/cal.svg">
-                                        <span th:text="${#dates.format(page.createdAt, 'dd-MM-yyyy')}"></span>
-                                    </p>
-                                    <a th:href="${'/pages' + page.url}" target="_blank" class="read-more">
-                                        Read more
-                                    </a>
+                                <div class="news__item_bottom flex">
+                                    <div class="news__item_date">
+                                        <img th:src="@{/images/cal.svg}"
+                                             th:text="${#dates.format(page.createdAt, 'dd-MM-yyyy')}">
+                                    </div>
+                                    <div class="news__item_more">
+                                        <a th:href="${'/pages' + page.url}" target="_blank" class="read-more">
+                                            Read more
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -77,9 +79,7 @@
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
 
 <th:block th:replace="blocks/footer :: footer"></th:block>
 </body>

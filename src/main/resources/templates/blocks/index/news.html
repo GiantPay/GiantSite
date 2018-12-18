@@ -22,28 +22,33 @@
                 </ul>
             </div>
 
-            <div class="tab-content" id="pills-tabContent2" >
+            <div class="tab-content" id="pills-tabContent2">
                 <div class="tab-pane fade show active" id="id4" role="tabpanel"  aria-labelledby="pills-home-tab2">
-                    <div class="wrapper-carousel-information" >
+                    <div class="wrapper-carousel-information">
                         <div class="am-prev"><img th:src="@{/images/slide_arrow.svg}"></div>
                         <div class="am-next"><img th:src="@{/images/slide_arrow.svg}"></div>
-                        <div class="owl-carousel owl-carousel-information owl-carousel4 owl-theme owl-loaded owl-drag" >
+                        <div class="owl-carousel owl-carousel-information owl-carousel4 owl-theme owl-loaded owl-drag">
                             <div class="owl-stage-outer" >
                                 <div class="owl-stage">
-                                    <div th:each="page : ${lastPages}" class="owl-item information-slide" >
-                                            <div class="information-slide-top">
-                                                <a th:href="${'/pages' + page.url}" target="_blank">
-                                                    <img class="cover" th:src="${page.coverUrl}">
-                                                </a>
-                                            </div>
-                                            <div class="information-slide-bottom">
+                                    <div th:each="page : ${lastPages}" class="owl-item information-slide">
+                                        <div class="information-slide-top">
+                                            <a th:href="${'/pages' + page.url}" target="_blank">
+                                                <img class="cover" th:src="${page.coverUrl}">
+                                            </a>
+                                        </div>
+                                        <div class="information-slide-bottom">
+                                            <a th:href="${'/pages' + page.url}" target="_blank" style="color: inherit">
                                                 <h3 th:text="${page.title}"></h3>
                                                 <p th:text="${page.announcement}"></p>
-                                                <div class="information-slide-bottom-date" >
-                                                    <p class="date"><img src="/images/cal.svg"><span th:text="${#dates.format(page.createdAt, 'dd-MM-yyyy')}"></span> </p>
-                                                    <a th:href="${'/pages' + page.url}" target="_blank" class="read-more">Read more</a>
-                                                </div>
+                                            </a>
+                                            <div class="information-slide-bottom-date">
+                                                <p class="date"><img src="/images/cal.svg"><span
+                                                        th:text="${#dates.format(page.createdAt, 'dd-MM-yyyy')}"></span>
+                                                </p>
+                                                <a th:href="${'/pages' + page.url}" target="_blank" class="read-more">Read
+                                                    more</a>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
