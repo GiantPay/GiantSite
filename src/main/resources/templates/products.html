@@ -153,34 +153,21 @@
 
 <script>
     $(function () {
-        var $tabs;
-        var $tabControls;
+            var $tabControls = $(".projects-tabs-tab");
 
-        var init = function init() {
-            $tabs = $(".projects-content-block");
-            $tabControls = $(".projects-tabs-tab");
-            $tabs.length && $tabControls.length && _events();
-        };
-
-        var _showTab = function _showTab() {
-            $(this).addClass("_active");
-        };
-
-        var _events = function _events() {
             $tabControls.on("click", function () {
                 var target = $(this).data("target");
                 $tabControls.removeClass("_active");
                 $(this).addClass("_active");
-                $target = $tabs.filter(target);
+                $target = $(".projects-content-block").filter(target);
+
                 $target.siblings().fadeOut(200).promise().done(function () {
                     $(this).removeClass("_active");
-                    $target.fadeIn(200, _showTab);
+                    $target.fadeIn(200, function () {
+                        $(this).addClass("_active")
+                    });
                 });
             });
-        };
-
-        init();
-
     });
 
 </script>

@@ -290,5 +290,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
+
+
+<script>
+    $(function () {
+        var $tabControls = $(".wallets-selector-tabs__item");
+
+        $tabControls.on("click", function () {
+            var target = $(this).data("target");
+            $tabControls.removeClass("_active");
+            $(this).addClass("_active");
+            $target = $(".wallets-download-panel").filter(target);
+
+            $target.siblings().fadeOut(200).promise().done(function () {
+                $(this).removeClass("_active");
+                $target.fadeIn(200, function () {
+                    $(this).addClass("_active");
+                });
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
