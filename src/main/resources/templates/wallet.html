@@ -12,7 +12,7 @@
     <meta name="description" content="Hier you can find a list of all Giant wallets available and the source code.">
 
 
-    <link rel="stylesheet" th:href="@{'/css/fixes.css'}"/>
+    <link rel="stylesheet" th:href="@{/css/fixes.css}"/>
     <th:block th:replace="blocks/header :: head"></th:block>
 
 </head>
@@ -289,6 +289,43 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
+
+
+<script>
+    $(function () {
+        var $tabs;
+        var $tabControls;
+
+        var init = function init() {
+            $tabs = $(".wallets-download-panel");
+            $tabControls = $(".wallets-selector-tabs__item");
+            $tabs.length && $tabControls.length && _events();
+        };
+
+        var _showTab = function _showTab() {
+            $(this).addClass("_active");
+        };
+
+        var _events = function _events() {
+            $tabControls.on("click", function () {
+                var target = $(this).data("target");
+                $tabControls.removeClass("_active");
+                $(this).addClass("_active");
+                $target = $tabs.filter(target);
+                $target.siblings().fadeOut(200).promise().done(function () {
+                    $(this).removeClass("_active");
+                    $target.fadeIn(200, _showTab);
+                });
+            });
+        };
+
+        init();
+    });
+</script>
 
 
 

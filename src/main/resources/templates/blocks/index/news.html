@@ -23,12 +23,12 @@
             </div>
 
             <div class="tab-content" id="pills-tabContent2">
-                <div class="tab-pane fade show active" id="id4" role="tabpanel" aria-labelledby="pills-home-tab2">
+                <div class="tab-pane fade show active" id="id4" role="tabpanel"  aria-labelledby="pills-home-tab2">
                     <div class="wrapper-carousel-information">
-                        <div class="am-prev"><img src="./images/slide_arrow.svg"></div>
-                        <div class="am-next"><img src="./images/slide_arrow.svg"></div>
+                        <div class="am-prev"><img th:src="@{/images/slide_arrow.svg}"></div>
+                        <div class="am-next"><img th:src="@{/images/slide_arrow.svg}"></div>
                         <div class="owl-carousel owl-carousel-information owl-carousel4 owl-theme owl-loaded owl-drag">
-                            <div class="owl-stage-outer">
+                            <div class="owl-stage-outer" >
                                 <div class="owl-stage">
                                     <div th:each="page : ${lastPages}" class="owl-item information-slide">
                                         <div class="information-slide-top">

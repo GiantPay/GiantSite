@@ -10,8 +10,8 @@
                     <div class="col-md-5 align-items-center d-flex justify-content-between flex-wrap">
                         <div class="graphic-top-block">
                             <p><span>Average price</span></p>
-                            <p th:if="${changePrice.doubleValue() >= 0}"><img src="/images/arrow_green.svg"> <span th:text="${changePrice.toPlainString()}"></span>%</p>
-                            <p th:if="${changePrice.doubleValue() < 0}"><img src="/images/arrow_red.svg"> <span th:text="${changePrice.toPlainString()}"></span>%</p>
+                            <p th:if="${changePrice.doubleValue() >= 0}"><img th:src="@{/images/arrow_green.svg}"> <span th:text="${changePrice.toPlainString()}"></span>%</p>
+                            <p th:if="${changePrice.doubleValue() < 0}"><img th:src="@{/images/arrow_red.svg}"> <span th:text="${changePrice.toPlainString()}"></span>%</p>
                         </div>
                         <div class="graphic-top-block graphic-top-block2 flex-column align-items-end d-flex justify-content-end">
                             <p><em th:text="${btcRate.toPlainString()}"></em>&nbsp;<span>BTC</span></p>
