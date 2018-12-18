@@ -294,33 +294,21 @@
 
 <script>
     $(function () {
-        var $tabs;
-        var $tabControls;
+        var $tabControls = $(".wallets-selector-tabs__item");
 
-        var init = function init() {
-            $tabs = $(".wallets-download-panel");
-            $tabControls = $(".wallets-selector-tabs__item");
-            $tabs.length && $tabControls.length && _events();
-        };
-
-        var _showTab = function _showTab() {
+        $tabControls.on("click", function () {
+            var target = $(this).data("target");
+            $tabControls.removeClass("_active");
             $(this).addClass("_active");
-        };
+            $target = $(".wallets-download-panel").filter(target);
 
-        var _events = function _events() {
-            $tabControls.on("click", function () {
-                var target = $(this).data("target");
-                $tabControls.removeClass("_active");
-                $(this).addClass("_active");
-                $target = $tabs.filter(target);
-                $target.siblings().fadeOut(200).promise().done(function () {
-                    $(this).removeClass("_active");
-                    $target.fadeIn(200, _showTab);
+            $target.siblings().fadeOut(200).promise().done(function () {
+                $(this).removeClass("_active");
+                $target.fadeIn(200, function () {
+                    $(this).addClass("_active");
                 });
             });
-        };
-
-        init();
+        });
     });
 </script>
 
