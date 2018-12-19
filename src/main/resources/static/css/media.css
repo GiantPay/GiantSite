@@ -1,0 +1,37 @@
+@media screen and (max-width: 1200px) {
+	.container {
+		width: 970px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.container {
+		width: 750px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+
+	.container {
+		width: 100%;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.cookies span {
+		position: absolute;
+		top: 0;
+		right: 0;
+		right: 50px;
+		top: -10px;
+	}
+
+	.cookies .container > a {
+		margin-top: 10px;
+	}
+
+	.cookies p {
+		width: calc(100% - 130px);
+	}
+
+}
