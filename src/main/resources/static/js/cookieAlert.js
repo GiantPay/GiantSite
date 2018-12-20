@@ -6,7 +6,7 @@
 (function () {
 
     var hide = function () {
-        document.getElementsByClassName("cookies")[0].style.visibility ='hidden';
+        $('.cookies').fadeOut(300);
     }
 
     var acceptCookies = document.querySelector(".cookie-btn");
