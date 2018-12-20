@@ -15,20 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css"/>
     <link rel="stylesheet" th:href="@{/css/site.css}"/>
+    <link rel="stylesheet" th:href="@{/css/media.css}"/>
 
-    <link rel="apple-touch-icon" sizes="57x57" th:href="@{/images/apple-icon-57x57.png}">
-    <link rel="apple-touch-icon" sizes="60x60" th:href="@{/images/apple-icon-60x60.png}">
-    <link rel="apple-touch-icon" sizes="72x72" th:href="@{/images/apple-icon-72x72.png}">
-    <link rel="apple-touch-icon" sizes="76x76" th:href="@{/images/apple-icon-76x76.png}">
-    <link rel="apple-touch-icon" sizes="114x114" th:href="@{/images/apple-icon-114x114.png}">
-    <link rel="apple-touch-icon" sizes="120x120" th:href="@{/images/apple-icon-120x120.png}">
-    <link rel="apple-touch-icon" sizes="144x144" th:href="@{/images/apple-icon-144x144.png}">
-    <link rel="apple-touch-icon" sizes="152x152" th:href="@{/images/apple-icon-152x152.png}">
-    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/images/apple-icon-180x180.png}">
-    <link rel="icon" type="image/png" sizes="192x192" th:href="@{/images/android-icon-192x192.png}">
-    <link rel="icon" type="image/png" sizes="32x32" th:href="@{/images/favicon-32x32.png}">
-    <link rel="icon" type="image/png" sizes="96x96" th:href="@{/images/favicon-96x96.png}">
-    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/images/favicon-16x16.png}">
+    <th:block th:replace="blocks/browserIcons :: icons"></th:block>
+
     <link rel="manifest" th:href="@{/images/manifest.json}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
@@ -37,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script th:src="${'/js/tagManager.js'}"></script>
+    <script th:src="@{/js/tagManager.js}"></script>
 
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -59,7 +49,7 @@
     <div class="header-top">
         <div class="container">
             <nav class="navbar navbar-default navbar-static-top navbar-expand-lg">
-                <a class="navbar-brand" href="/"><img src="/images/logo.png"></a>
+                <a class="navbar-brand" href="/"><img th:src="@{/images/logo.png}"></a>
                 <div class="navbar-header">
                     <button class="navbar-toggler collapsed"
                             type="button"
@@ -181,9 +171,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>
-    <script th:src="${'/js/jquery.spincrement.min.js'}"></script>
-    <script th:src="${'/js/owl.carousel.js'}"></script>
-    <script th:src="${'/js/jquery.mCustomScrollbar.concat.min.js'}"></script>
+    <script th:src="@{/js/jquery.spincrement.min.js}"></script>
+    <script th:src="@{/js/owl.carousel.js}"></script>
+    <script th:src="@{/js/jquery.mCustomScrollbar.concat.min.js}"></script>
 </th:block>
 </body>
 </html>

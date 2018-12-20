@@ -1,0 +1,150 @@
+.news__item {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;	
+	justify-content: space-between;
+	flex-wrap: wrap;
+	box-shadow: 0px 1px 6px rgba(184, 206, 219, 0.855072);
+	border-radius: 5px;
+	margin-bottom: 40px;
+}
+
+.news__item_img {
+	width: 340px;
+	height: 220px;
+	overflow: hidden;
+}
+
+.news__item_img img {
+	width: 100%;
+}
+
+.news__item_info {
+	width: calc(100% - 377px);
+	padding-right: 34px;
+	padding-top: 20px;
+	padding-bottom: 22px;
+}
+
+.news__item_title {
+	font-family: 'Poppins-SemiBold';
+	line-height: 32px;
+	font-size: 26px;
+	color: #222;
+	margin-bottom: 16px;
+}
+
+.news__item_info p {
+	margin-bottom: 15px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #222;
+	font-family: 'Poppins-Regular';
+	display: -webkit-box;
+	  -webkit-line-clamp: 3;
+	  -webkit-box-orient: vertical;
+	  overflow: hidden;
+	  height: 60px;
+}
+
+.news__item_bottom {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;	
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.news__item_date {
+	line-height: 16px;
+	font-size: 12px;
+	color: #222;
+	font-family: 'Poppins-SemiBold';
+	max-width: 50%;
+}
+
+.news__item_date img {
+	display: inline-block;
+	margin-right: 3px;
+	height: 22px;
+	position: relative;
+	top: -3px;
+}
+
+.news__item_more {
+	max-width: 50%;
+}
+
+.news__item_more a {
+	line-height: 16px;
+	font-size: 12px;
+	color: #222;
+	text-decoration: none;
+	font-family: 'Poppins-SemiBold';
+}
+
+@media screen and (max-width: 991px) {
+	.download-pdf {
+		text-align: center;
+	}
+
+	.download-pdf a {
+		margin-right: 0;
+	}
+
+	.nav {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.news__item_img {
+		width: 100%;
+		height: auto;
+	}
+
+	.news__item_info {
+		width: 100%;
+		padding-left: 34px;
+	}
+
+	.row {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.news__item_info {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.navbar-brand {
+		margin-right: 0;
+	}
+
+	.navbar {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.navbar-expand-lg {
+	justify-content: space-between;
+}
+
+.navbar-brand {
+	margin-right: 0;
+}
+
+.navbar-expand-lg .navbar-collapse {
+	justify-content: center;
+}

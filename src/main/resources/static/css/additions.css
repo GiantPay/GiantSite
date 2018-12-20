@@ -685,8 +685,12 @@ a.buttons__up {
     margin-bottom: 10px;
 }
 
+
 a.buttons__up i {
-    color: #b8b8b8;
+    color: #fff;
+}
+a.buttons__up i:hover{
+    color: #0056b3;
 }
 
 a.buttons__discord {

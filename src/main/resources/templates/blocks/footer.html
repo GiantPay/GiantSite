@@ -23,6 +23,10 @@
                             <p><a href="https://graviex.net/markets/gicbtc" rel="nofollow" target="_blank">Graviex</a>
                             </p>
                         </div>
+                        <div class="footer-block">
+                            <p><a th:href="@{/GiantTermsOfService.pdf}" rel="nofollow"
+                                  target="_blank">Terms of Use</a></p>
+                        </div>
                     </div>
                     <div class="col-sm-4 col-md-4 col-lg-2">
                         <div class="footer-block">
@@ -94,9 +98,21 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </footer>
+    <div class="cookies">
+        <div class="container flex">
+            <p>
+                Our website is using the Cookies technology. By continuing to use our site, you are accepting the <a th:href="@{/GiantTermsOfService.pdf}">Terms of Use</a>
+            </p>
+            <button class="cookie-btn">Accept</button>
+            <span class="close-cookie">
+				Close
+			</span>
+        </div>
+    </div>
+
+    <script th:src="@{/js/cookieAlert.js}" type="application/javascript"></script>
 
 </th:block>
 </body>
