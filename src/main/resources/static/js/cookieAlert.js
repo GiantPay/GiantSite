@@ -3,6 +3,7 @@
  * https://github.com/Wruczek/Bootstrap-Cookie-Alert
  * Released under MIT license
  */
+
 (function () {
 
     var hide = function () {
@@ -11,15 +12,21 @@
 
     var acceptCookies = document.querySelector(".cookie-btn");
 
-    if (getCookie("acceptCookies")) {
+    if (getCookie("acceptCookies") || getCookie("rejectCookies")) {
+        console.log("HERE2");
         hide();
+    } else {
+        $('.cookies').css("display", "table");
     }
+
     acceptCookies.addEventListener("click", function () {
         setCookie("acceptCookies", true, 365);
         hide();
     });
 
-    document.getElementsByClassName("close-cookie")[0].addEventListener("click",function () {
+    document.getElementsByClassName("close-cookie")[0].addEventListener("click", function () {
+        console.log("CL00");
+        setCookie("rejectCookies", true, 365);
         hide();
     })
 
