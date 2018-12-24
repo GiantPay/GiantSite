@@ -39,6 +39,19 @@
         gtag('js', new Date());
         gtag('config', 'UA-11023961-18');
     </script>
+    <script>
+        $(document).ready(function () {
+            var header = document.getElementsByClassName("header-top")[0];
+            var style = window.getComputedStyle(header);
+            var position = style.getPropertyValue("position");
+            //For mobile
+            if (position === "fixed") {
+                var height = header.clientHeight;
+                $('.cookies').css("position", "fixed");
+                $('.cookies').css("top", height);
+            }
+        })
+    </script>
 </th:block>
 <body>
 <th:block th:fragment="mainmenu">
@@ -46,10 +59,12 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKVBDB"
                 height="0" width="0"></iframe>
     </noscript>
+
     <div class="cookies">
         <div class="container flex">
             <p>
-                Our website is using the Cookies technology. By continuing to use our site, you are accepting the <a th:href="@{/GiantTermsOfService.pdf}">Terms of Use</a>
+                Our website is using the Cookies technology. By continuing to use our site, you are accepting the <a
+                    th:href="@{/GiantTermsOfService.pdf}">Terms of Use</a>
             </p>
             <button class="cookie-btn">Accept</button>
             <span class="close-cookie">
