@@ -5,7 +5,6 @@
  */
 
 (function () {
-
     var hide = function () {
         $('.cookies').fadeOut(300);
     }
@@ -13,7 +12,6 @@
     var acceptCookies = document.querySelector(".cookie-btn");
 
     if (getCookie("acceptCookies") || getCookie("rejectCookies")) {
-        console.log("HERE2");
         hide();
     } else {
         $('.cookies').css("display", "table");
@@ -25,7 +23,6 @@
     });
 
     document.getElementsByClassName("close-cookie")[0].addEventListener("click", function () {
-        console.log("CL00");
         setCookie("rejectCookies", true, 365);
         hide();
     })
