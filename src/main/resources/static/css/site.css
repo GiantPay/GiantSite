@@ -62,7 +62,6 @@ body {
 }
 
 .cookies {
-    position: fixed;
     width: 100%;
     left: 0;
     bottom: 0;
@@ -70,7 +69,7 @@ body {
     padding-top: 16px;
     padding-bottom: 16px;
     z-index: 100;
-    display: table;
+    display: none;
     top: 0;
 }
 
