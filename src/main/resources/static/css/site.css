@@ -618,6 +618,7 @@ canvas#chart-area {
     height: 350px;
     position: absolute;
     top: -170px;
+    left: 0;
 }
 
 .about-page section.giant-network {
@@ -2003,6 +2004,10 @@ p.copy {
     #circleChart {
         width: 290px !important;
         height: 290px !important;
+    }
+
+    canvas#chart-area{
+        left: 180px;
     }
 
     #circleChart {
