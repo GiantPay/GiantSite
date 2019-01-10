@@ -172,6 +172,9 @@ a.read-more {
 	#indexHeader{
 		height: 1200px;
 	}
+	canvas#chart-area {
+		left:0
+	}
 }
 
 @media screen and (max-width: 991px) {

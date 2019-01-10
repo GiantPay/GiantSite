@@ -1,6 +1,9 @@
 package network.giantpay.utils;
 
+import network.giantpay.dto.CoinInfoDto;
+
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class GiantUtils {
 
@@ -30,5 +33,13 @@ public class GiantUtils {
 
     public static BigDecimal getMasternodeReward(long height) {
         return getBlockReward(height).multiply(BigDecimal.valueOf(0.8));
+    }
+
+    public static BigDecimal getUsdVolume(CoinInfoDto btcInfo, BigDecimal volume) {
+        if (btcInfo != null) {
+            return volume.multiply(btcInfo.getPrice()).setScale(2, RoundingMode.HALF_DOWN);
+        } else {
+            return BigDecimal.ZERO;
+        }
     }
 }

@@ -12,6 +12,7 @@ public class InfoDto extends AbstractDto {
     private BigDecimal rate;
     private BigDecimal changePrice24h;
     private BigDecimal volume;
+    private BigDecimal usdVolume;
     private BigDecimal changeVolume24h;
     private long height;
     private BigDecimal reward;
