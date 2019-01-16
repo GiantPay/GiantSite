@@ -88,10 +88,13 @@ public class MonitoringService {
     }
 
     public InfoDto getInfo() {
+        final CoinInfoDto btc = getCoinInfo("BTC");
+
         final InfoDto info = new InfoDto();
         info.setRate(gicBtc.get());
         info.setChangePrice24h(changePrice24h.get());
         info.setVolume(btcVolume.get());
+        info.setUsdVolume(GiantUtils.getUsdVolume(btc,info.getVolume()));
         info.setChangeVolume24h(changeVolume24h.get());
         info.setHeight(height.get());
         info.setReward(reward.get());

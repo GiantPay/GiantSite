@@ -8,6 +8,7 @@ import network.giantpay.service.MonitoringService;
 import network.giantpay.service.PageService;
 import network.giantpay.service.RoadMapsService;
 import network.giantpay.utils.FormatUtils;
+import network.giantpay.utils.GiantUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -38,11 +39,7 @@ public class IndexController {
         model.put("changePrice", info.getChangePrice24h());
 
         CoinInfoDto btcInfo = monitoringService.getCoinInfo("BTC");
-        if (btcInfo != null) {
-            model.put("usdVolume", info.getVolume().multiply(btcInfo.getPrice()).setScale(2, RoundingMode.HALF_DOWN));
-        } else {
-            model.put("usdVolume", BigDecimal.ZERO);
-        }
+        model.put("usdVolume", GiantUtils.getUsdVolume(btcInfo, info.getVolume()));
 
         BigDecimal btcRate = rates.getBtc().setScale(8, RoundingMode.HALF_DOWN);
         BigDecimal usdRate = rates.getUsd().setScale(2, RoundingMode.HALF_DOWN);
