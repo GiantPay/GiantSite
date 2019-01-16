@@ -619,6 +619,9 @@ canvas#chart-area {
     position: absolute;
     top: -170px;
 }
+.gic-market{
+    padding-bottom: 0;
+}
 
 .about-page section.giant-network {
     padding-top: 50px;
