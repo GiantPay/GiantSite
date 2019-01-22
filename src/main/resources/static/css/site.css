@@ -1581,6 +1581,11 @@ a.read-more:hover {
     padding: 50px 0 70px 0;
 }
 
+.button-locked{
+    padding-bottom: 0;
+    padding-top: 50px;
+}
+
 .wrapper-carousel-information {
     position: relative;
 }
@@ -2344,6 +2349,10 @@ p.copy {
     background: #070b2f;
 }
 
+.line-blu-locked{
+    padding-top: 40px;
+}
+
 .line-blu-internal {
     padding-top: 50px;
     display: block;
@@ -2918,6 +2927,10 @@ li.dropdown-tabs-custom .nav-tabs, li.dropdown-tabs-custom .dropdown-menu {
         padding-top: 40px;
     }
 
+    h2.line-blu-locked{
+        padding-top: 0;
+    }
+
     .header-bottom {
         padding-bottom: 30px;
     }
@@ -3067,6 +3080,7 @@ li.dropdown-tabs-custom .nav-tabs, li.dropdown-tabs-custom .dropdown-menu {
 }
 
 @media screen and (max-width: 480px) {
+
 
     .header-bottom h1 {
         font-size: 55px;
