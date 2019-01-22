@@ -55,7 +55,7 @@ public final class SiteMap implements CheckedRunnable {
     @Override
     public void run() throws Exception {
         try {
-            final WebSitemapGenerator sitemapGenerator = WebSitemapGenerator.builder(BASE_URL, new File((this.filaPath))).build();
+            final WebSitemapGenerator sitemapGenerator = WebSitemapGenerator.builder(BASE_URL, new File(("/home/site/"))).build();
             final Date now = new Date();
             final List<String> urls = this.siteUrls();
             if (!urls.isEmpty()) {
