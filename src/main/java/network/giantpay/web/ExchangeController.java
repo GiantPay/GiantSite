@@ -14,7 +14,7 @@ public class ExchangeController {
 
     private final MonitoringService monitoringService;
 
-    @GetMapping("/exchange")
+    @GetMapping("/exchanges")
     public String exchange(final Map<String, Object> model) {
         model.putAll(this.monitoringService.getMarkets());
         return "exchange";
