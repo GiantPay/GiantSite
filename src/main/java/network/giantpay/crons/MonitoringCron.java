@@ -101,7 +101,7 @@ public final class MonitoringCron {
     }
 
     /**
-     * @param responses List of pairs where key is server url and key is success representation
+     * @param responses List of pairs where key is server url and value is success representation
      */
     private void saveMetrics(final List<Pair<String, Boolean>> responses) {
         this.transactionTemplate.execute(transactionStatus -> {
