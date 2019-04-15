@@ -108,13 +108,13 @@ public class MonitoringService {
         return info;
     }
 
-    @Scheduled(initialDelay = 10000, fixedRate = 3600000)
+  //  @Scheduled(initialDelay = 10000, fixedRate = 3600000)
     private void updateChanges() {
         InfoDto changes = coinmarketcapApi.getChanges();
         changePrice24h.set(changes.getChangePrice24h());
     }
 
-    @Scheduled(initialDelay = 10000, fixedRate = 60000)
+ //   @Scheduled(initialDelay = 10000, fixedRate = 60000)
     private void updateRates() {
         try {
             logger.info("MonitoringService :: updateRates started");
@@ -156,7 +156,7 @@ public class MonitoringService {
         }
     }
 
-    @Scheduled(initialDelay = 10000, fixedRate = 60000)
+ //   @Scheduled(initialDelay = 10000, fixedRate = 60000)
     private void updateNetworkInfo() {
         try {
             logger.info("MonitoringService :: updateNetworkInfo started");
@@ -183,7 +183,7 @@ public class MonitoringService {
         }
     }
 
-    @Scheduled(initialDelay = 10000, fixedRate = 3600000)
+  //  @Scheduled(initialDelay = 10000, fixedRate = 3600000)
     private void updateTrello() {
         trelloBoard.set(trelloApi.getBoard());
     }
@@ -203,7 +203,7 @@ public class MonitoringService {
         return height != null && height.longValue() > 0 ? height.longValue() : info.getHeight();
     }
 
-    @Scheduled(initialDelay = 10000, fixedRate = 60000)
+   // @Scheduled(initialDelay = 10000, fixedRate = 60000)
     private void updateCoinInfos() {
         try {
             logger.info("MonitoringService :: updateCoinInfos started");
@@ -330,7 +330,7 @@ public class MonitoringService {
         }
     }
 
-    @Scheduled(initialDelay = 10000, fixedRate = 60000)
+    //@Scheduled(initialDelay = 10000, fixedRate = 60000)
     private void updateMasternodes() {
         try {
             logger.info("MonitoringService :: updateMaster nodes started");
